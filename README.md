@@ -34,3 +34,9 @@ Para llevar a cabo este proyecto, tomamos como páginas referentes a las mas gra
  * [DigitalTech](https://www.digitaltech.com.ar/)
  * [XT-PC](https://www.xt-pc.com.ar/)
  * [Maximus](https://www.maximus.com.ar/)
+
+<details>
+<summary>Click to Link</summary>
+  
+  #### [grupo_14_Geek_Studio](https://github.com/Facundojs/grupo_14_Geek_Studio)
+  </details>
