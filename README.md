@@ -5,13 +5,14 @@
 Principalmente componentes como motherboards, microprocesadores, módulos de memoria tanto RAM SSD y HDD, tarjetas gráficas y fuentes de poder en donde trabajaremos con marcas como Asus, SkullCandy, MSI, Gigabyte, Kingston, Intel, Nvidia, AMD, entre otras.
 
 <dl>
-  <dt>**¿Quién será nuestra audiencia objetivo?**</dt>
+  <dt>¿Quién será nuestra audiencia objetivo?</dt>
   <dd>El público objetivo serán aquellas personas interesadas en actualizar su ordenador o adquirir los primeros componentes del mismo.</dd>
 
 
 <dl>
   <dt>¿Cómo ajustaremos nuestra oferta a ese público?</dt>
 <dd>Ajustaremos la oferta a traves de encuestas y conocimiento de lo más requerido en el mercado actual.<dd>
+
 
 
 ## Integrantes del equipo
