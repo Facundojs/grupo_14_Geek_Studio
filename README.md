@@ -2,13 +2,17 @@
 
 ## **E-Commerce: Geek Studio** :computer::video_game:
 - Nuestro sitio ofrecerá todo tipo de productos del rubro tecnológico relacionados al mundo del gaming en computadoras. 
-Principalmente componentes como motherboards, microprocesadores, módulos de memoria tanto RAM SSD y HDD, tarjetas gráficas y fuentes de poder en donde trabajaremos con marcas como Asus, SkullCandy, MSI, Gigabyte, Kingston, Intel, Nvidia, AMD, etcétera.
+Principalmente componentes como motherboards, microprocesadores, módulos de memoria tanto RAM SSD y HDD, tarjetas gráficas y fuentes de poder en donde trabajaremos con marcas como Asus, SkullCandy, MSI, Gigabyte, Kingston, Intel, Nvidia, AMD, entre otras.
 
-#### ¿Quién será nuestra audiencia objetivo? 
-El público objetivo serán aquellas personas interesadas en actualizar su ordenador o adquirir los primeros componentes del mismo.
+<dl>
+  <dt>**¿Quién será nuestra audiencia objetivo?**</dt>
+  <dd>El público objetivo serán aquellas personas interesadas en actualizar su ordenador o adquirir los primeros componentes del mismo.</dd>
 
-#### ¿Cómo ajustaremos nuestra oferta a ese público?
-Ajustaremos la oferta a traves de encuestas y conocimiento de lo más requerido en el mercado actual.
+
+<dl>
+  <dt>¿Cómo ajustaremos nuestra oferta a ese público?</dt>
+<dd>Ajustaremos la oferta a traves de encuestas y conocimiento de lo más requerido en el mercado actual.<dd>
+
 
 ## Integrantes del equipo
 
