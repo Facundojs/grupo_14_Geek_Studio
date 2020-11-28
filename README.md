@@ -1,6 +1,6 @@
-# **Grupo 14** 
+# **Grupo 14** :alien:
 
-## **E-Commerce: Geek Studio :ordenador: :videojuego:
+## **E-Commerce: Geek Studio** :computer::video_game:
 - Nuestro sitio ofrecerá todo tipo de productos del rubro tecnológico relacionados al mundo del gaming en computadoras. 
 Principalmente componentes como motherboards, microprocesadores, módulos de memoria tanto RAM SSD y HDD, tarjetas gráficas y fuentes de poder en donde trabajaremos con marcas como Asus, SkullCandy, MSI, Gigabyte, Kingston, Intel, Nvidia, AMD, etcétera.
 
@@ -14,7 +14,7 @@ Ajustaremos la oferta a traves de encuestas y conocimiento de lo más requerido 
 
 * **Facundo Serrano:** Tengo 18 años. Actualmente estudio en la UNSAM la carrera Ing. Electrónica. Me gustan mucho los deportes (rugby, tenis/paddle y volleyball principalmente). También siempre me llamo la atención la programación y la informática, por eso decidí estudiar en DH.
 
-* **Mauro Pedrozo:** Tengo 30 años. Soy Técnico Superior en Marketing de la F.A.E.C.C. Si bien no conocía nada sobre programación, encontré una carrera muy interesante que me dio ganas de aprender. Disfruto de juntadas con amigos y hacer deporte, pero recuerden, cuando empiecen a programar eso va a empezar a disminuir :rolling_on_the_floor_laughing:
+* **Mauro Pedrozo:** Tengo 30 años. Soy Técnico Superior en Marketing de la F.A.E.C.C. Si bien no conocía nada sobre programación, encontré una carrera muy interesante que me dio ganas de aprender. Disfruto de juntadas con amigos y hacer deporte, pero recuerden, cuando empiecen a programar eso va a empezar a disminuir :joy:
 
 
 ## Referentes del mercado
