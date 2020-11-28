@@ -26,12 +26,19 @@ Principalmente componentes como motherboards, microprocesadores, módulos de mem
 
 Para llevar a cabo este proyecto, tomamos como páginas referentes a las mas grandes y conocidas del momento:
 
- * [Compragamer](https://compragamer.com/)
+
  * [Tiendamia](https://tiendamia.com/ar/)
+ * [Maximus](https://www.maximus.com.ar/)
+ * [Corsair](https://www.corsair.com/lm/es/)
+ * [Razer](https://www.razer.com/)
+ * [Cougar](https://cougargaming.com/es/)
+ * [XT-PC](https://www.xt-pc.com.ar/)
+ * [AKRacing](https://www.akracing.com/)
+ * [DXRacer](https://www.dxracer.com/us/en-us/)
  * [Compumundo](https://www.compumundo.com.ar/)
  * [DigitalTech](https://www.digitaltech.com.ar/)
- * [XT-PC](https://www.xt-pc.com.ar/)
- * [Maximus](https://www.maximus.com.ar/)
+
+
 
 
 
