@@ -23,7 +23,7 @@ Principalmente componentes como motherboards, microprocesadores, módulos de mem
 
 
 * **Karina Escobar:** Tengo 33 años. Soy progradora de la old school con muchas granas de aprender
-nuevas cositas. Memeadicta y nerd. Quiero dar un giro a mi carrera profesional con este curso :) so let's Go!>w
+nuevas cositas. Memeadicta y nerd. Quiero dar un giro a mi carrera profesional con este curso :) so let's Go! 
 
 ## Referentes del mercado
 
