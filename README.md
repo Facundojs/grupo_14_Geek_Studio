@@ -21,7 +21,6 @@ Principalmente componentes como motherboards, microprocesadores, módulos de mem
 
 * **Mauro Pedrozo:** Tengo 30 años. Soy Técnico Superior en Marketing de la F.A.E.C.C. Si bien no conocía nada sobre programación, encontré una carrera muy interesante que me dio ganas de aprender. Disfruto de juntadas con amigos y hacer deporte, pero recuerden, cuando empiecen a programar eso va a empezar a disminuir :joy:
 
-
 * **Karina Escobar:** Tengo 33 años. Soy progradora de la old school con muchas granas de aprender
 nuevas cositas. Memeadicta y nerd. Quiero dar un giro a mi carrera profesional con este curso :) so let's Go! 
 
