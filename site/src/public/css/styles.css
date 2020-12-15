@@ -27,10 +27,14 @@ ul li {
 }
 
 .nav-1{
-    align-items: center;
+    text-align: center;
+    padding: 1rem;
 }
 
-/*Falta centrar el logo y la barra de búsqueda*/
+
+.browser-bar{
+    margin: 1rem ;
+}
 
 .fa.fa-bars.burger{
     background-color: #03264c;
