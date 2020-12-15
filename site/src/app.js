@@ -21,4 +21,4 @@ app.listen(3000, () => {
     console.log('|==================================================================|');
 });
 
-//console.log(publicPath);
+console.log(__dirname);
