@@ -8,6 +8,10 @@ Las medidas estándares por ahora son: 576, 768, 992, 1200
     box-sizing: border-box;
 }
 
+body{
+    background-color: burlywood;
+}
+
 header{
     background-color: yellowgreen;
     padding: 1rem ;
@@ -44,13 +48,7 @@ ul li {
 }
 
 .user-options{
-    /*Ya esta bien configurado para cuando se le aplique "display: flex"
-    en la próxima media*/
     display: none;
-    margin: 2rem;
-    justify-content: space-between;
-    border: black 0.2rem solid;
-    padding: 0.5rem;
 }
 
 .log{
@@ -69,7 +67,7 @@ footer{
 }
 
 footer nav{
-    justify-content: space-around;
+    justify-content: space-between;
     display: flex ;
 }
 
@@ -88,4 +86,69 @@ footer span ul{
     margin-top: 3rem;
     text-align: left;
     font-size: 0.8rem;
+}
+
+@media (min-width:768px){
+    h2 {
+        font-size: 2rem;
+    }
+    footer span ul li {
+        font-size: 1rem;
+    }
+}
+
+@media (min-width:992px){
+    .fa.fa-bars.burger{
+        display: none;
+    }
+    
+    header{
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    header .nav-1{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        align-items: center;
+    }
+    .logo{
+        order: 0;
+        width: 35%;
+    }
+    .browser-bar{
+        order: 1;
+        width: 18rem;
+    }
+    .user-options{
+        order: 2;
+        width: 30%;
+        padding-left: 2rem ;
+        align-items: flex-end;
+    }
+    .user-options{
+        display: flex ;
+        justify-content: space-between;
+        border: transparent 0.2rem solid;
+        padding: 0.5rem;
+    }
+
+    .user-options a, .user-options a span{
+        padding: 1rem;
+        width: 33%;
+        display: flex;
+        text-align: center;
+    }
+
+    .nav-2{
+        display: block;
+        width: 100%;
+    }
+}
+
+@media(min-width: 1200px){
+    header, footer {
+        max-width: 1200px;
+    }
 }
