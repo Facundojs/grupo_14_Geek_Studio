@@ -163,9 +163,19 @@ footer span ul{
     }
     
     header, footer{
+        display: block;
+        margin:auto;
+        max-width: 1300px;
         font-size: 1.8rem;
     }
 
+    header{
+        max-height: 310px;
+    }
+
+    footer{
+        max-height: 415px;
+    }
     footer nav span h2{
         font-size: 2.8rem
     }
