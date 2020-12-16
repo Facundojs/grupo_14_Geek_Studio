@@ -6,7 +6,7 @@ app.use(express.static(publicPath));
 
 
 app.get('/' , (req,res) => {
-    res.sendFile(path.resolve(__dirname, '/views/home.html'))
+    res.sendFile(path.join(__dirname, '/views/home.html'))
 });
 // http://localhost:3000/header
 
