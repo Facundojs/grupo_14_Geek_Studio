@@ -63,13 +63,29 @@ ul li {
     justify-content: space-around;
 }
 
-footer {
-    padding: 1rem ;
+footer{
     background-color: aqua ;
-    display: flex;
-    justify-content: space-between;
+    padding: 1rem ;
+}
+
+footer nav{
+    justify-content: space-around;
+    display: flex ;
 }
 
 footer span ul{
     padding-left: 0 ;
+}
+
+.about-us, .utility-info, .support {
+    align-items: flex-start;
+    width: 33%;
+    font-size: 0.7rem;
+    text-align: center;
+}
+
+.rigths{
+    margin-top: 3rem;
+    text-align: left;
+    font-size: 0.8rem;
 }
