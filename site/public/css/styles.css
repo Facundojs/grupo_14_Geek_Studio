@@ -15,9 +15,7 @@ body{
     background-color: burlywood;
 }
 
-main .aligner-container{
-    margin: 1rem
-}
+/*Header-section*/
 
 header {
     background-color: yellowgreen;
@@ -68,6 +66,14 @@ ul li {
     justify-content: space-around;
     padding-left: 0 ;
 }
+
+/*Main-section*/
+
+main .aligner-container{
+    margin: 1rem
+}
+
+/*Footer-section*/
 
 footer {
     background-color: aqua ;
