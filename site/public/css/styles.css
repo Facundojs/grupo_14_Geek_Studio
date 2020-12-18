@@ -7,8 +7,16 @@ Las medidas estándares por ahora son: 576, 768, 992, 1200
     box-sizing: border-box;
 }
 
+.aligner-container{
+    border: black solid .5rem;
+}
+
 body{
     background-color: burlywood;
+}
+
+main .aligner-container{
+    margin: 1rem
 }
 
 header {
@@ -62,7 +70,7 @@ ul li {
 
 footer {
     background-color: aqua ;
-    padding: 1rem 1rem 1rem 0rem;
+    padding: 1rem ;
 }
 
 footer nav{
@@ -167,7 +175,7 @@ footer span ul{
 
     .browser-bar{
         order: 1;
-        width: 28rem ;
+        width: 25rem ;
     }
     
     header .aligner-container, footer .aligner-container{
