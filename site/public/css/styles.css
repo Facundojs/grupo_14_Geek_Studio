@@ -8,7 +8,7 @@ Las medidas estándares por ahora son: 576, 768, 992, 1200
 }
 
 .aligner-container{
-    border: black solid .5rem;
+    border: black solid .2rem;
 }
 
 body{
@@ -66,6 +66,7 @@ ul li {
 .nav-2 ul{
     display: flex ;
     justify-content: space-around;
+    padding-left: 0 ;
 }
 
 footer {
@@ -93,6 +94,12 @@ footer span ul{
     margin-top: 3rem;
     text-align: left;
     font-size: 0.8rem;
+}
+
+@media (max-width: 403px){
+    .aligner-container .nav-2 ul li{
+        font-size: .7rem;
+    }
 }
 
 @media (min-width:768px){
@@ -178,7 +185,7 @@ footer span ul{
         width: 25rem ;
     }
     
-    header .aligner-container, footer .aligner-container{
+    header .aligner-container, main .aligner-container, footer .aligner-container{
         display: block;
         margin:auto;
         max-width: 1300px;
