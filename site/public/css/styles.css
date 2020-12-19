@@ -7,12 +7,15 @@ Las medidas estándares por ahora son: 576, 768, 992, 1200
     box-sizing: border-box;
 }
 
+/* Container General */
+
 .aligner-container{
     border: black solid .2rem;
+    margin: 0 auto;
 }
 
 body{
-    background-color: burlywood;
+    background-color: #272932;
 }
 
 main .aligner-container{
@@ -45,6 +48,7 @@ ul li {
 
 .fa.fa-bars.burger{
     background-color: #03264c;
+    font-size: 1.2rem;
     padding: 1rem ;
     margin: auto;
     border-radius: 1rem;
@@ -69,8 +73,58 @@ ul li {
     padding-left: 0 ;
 }
 
+header a:hover {
+    color: lightseagreen;
+}
+
+/* Detalle del Producto */
+
+main .flex-container-detalle {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.flex-items {
+    width: 500px;
+    justify-content: space-around;
+
+    background-color: white;
+    margin: 0 12px 12px;
+    padding: 12px;
+}
+
+.flex-items img {
+    width: 100%;
+}
+
+.precio-detalle-prod {
+    display: inline-block;
+    font-size: 2rem;
+    font-weight: bold;
+
+}
+
+.desc-detalle-prod {
+    display: inline-block;
+    margin-left: 2rem;
+    font-size: 2rem;
+    color: #ef8354;
+}
+
+button .comprar-detalle {
+    background-color: #4F5D75;
+    color: #ef8354;
+}
+
+.caract-align {
+    display: flex;
+    justify-content: space-between;
+}
+
+
 footer {
-    background-color: aqua ;
+    background-color: aqua;
     padding: 1rem ;
 }
 
