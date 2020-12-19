@@ -2,6 +2,10 @@
     box-sizing: border-box;
 }
 
+.hero-container{
+    background-color: lightgray ;
+}
+
 .home-banner {
     width: 96%;
     margin: 2%;
@@ -102,6 +106,8 @@
     }
     .for-sale .articles ul li {
         width: 16%;
+        padding-top: 0;
+        padding-bottom: 0;
     }
 
     .for-sale .articles ul li img {

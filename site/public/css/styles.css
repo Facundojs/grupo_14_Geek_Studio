@@ -71,7 +71,6 @@ ul li {
     padding-left: 0 ;
 }
 
-<<<<<<< HEAD
 header a:hover {
     color: lightseagreen;
 }
@@ -121,15 +120,7 @@ button .comprar-detalle {
     justify-content: space-between;
 }
 
-=======
-/*Main-section*/
-
-main .aligner-container{
-    margin: 1rem
-}
-
-/*Footer-section*/
->>>>>>> 6c1c7b7ae1e8853d4327e33b72bf99721cd85487
+/*Footer*/
 
 footer {
     background-color: aqua;
@@ -157,6 +148,8 @@ footer span ul{
     text-align: left;
     font-size: 0.8rem;
 }
+
+/*Medias-Quires*/
 
 @media (max-width: 403px){
     .aligner-container .nav-2 ul li{
