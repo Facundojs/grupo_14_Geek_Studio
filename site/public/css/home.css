@@ -1,12 +1,14 @@
+* {
+    box-sizing: border-box;
+}
+
 .home-banner {
-    width: 100%;
+    width: 96%;
+    margin: 2%;
 }
 
 .sections-navbar ul{
     padding-left: 0 ;
-}
-
-.sections-navbar ul{
     display: flex ;
     flex-direction: column;
     justify-content: space-between;
@@ -19,7 +21,7 @@
     padding: 2rem;
     background-color: white;
     border-radius: 3rem;
-    margin: 3rem;
+    margin: 2rem;
 }
 
 .for-sale{
@@ -32,6 +34,7 @@
 .for-sale .articles ul {
     text-align: center;
     padding: 10%;
+    border: black solid 2px;
 }
 
 .for-sale .articles ul li {
@@ -45,4 +48,65 @@
     padding-left: 0 ;
     width: 80%;
     justify-content: space-between;
+}
+
+@media(min-width: 768px){
+
+}
+
+@media(min-width: 992px){
+    .sections-navbar{
+        padding: 3rem ;
+        background-color: gray;   
+    }
+
+    .sections-navbar nav ul{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+
+    .sections-navbar ul li{
+        font-size: 2rem;
+        padding: 2rem;
+        background-color: white;
+        border-radius: 3rem;
+        margin: 2;
+        width: 40%;
+    }
+
+    .for-sale .articles ul{
+        display: flex;
+        flex-direction: row ;
+        flex-wrap: wrap;
+    }
+
+    .for-sale .articles ul li {
+        width: 46%;
+        margin: 2%;
+    }
+}
+
+@media(min-width: 1200px){
+    .sections-navbar ul li{
+        font-size: 1.6rem;
+        padding: 2rem;
+        background-color: white;
+        border-radius: 3rem;
+        margin: 2rem;
+        width: 14%
+    }
+    .for-sale .articles ul{
+        padding: 0;
+    }
+    .for-sale .articles ul li {
+        width: 16%;
+    }
+
+    .for-sale .articles ul li img {
+        width: 80%;
+        height: 50%;
+    }
+
 }

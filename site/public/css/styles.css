@@ -18,9 +18,7 @@ body{
     background-color: #272932;
 }
 
-main .aligner-container{
-    margin: 1rem
-}
+/*Header-section*/
 
 header {
     background-color: yellowgreen;
@@ -73,6 +71,7 @@ ul li {
     padding-left: 0 ;
 }
 
+<<<<<<< HEAD
 header a:hover {
     color: lightseagreen;
 }
@@ -122,6 +121,15 @@ button .comprar-detalle {
     justify-content: space-between;
 }
 
+=======
+/*Main-section*/
+
+main .aligner-container{
+    margin: 1rem
+}
+
+/*Footer-section*/
+>>>>>>> 6c1c7b7ae1e8853d4327e33b72bf99721cd85487
 
 footer {
     background-color: aqua;
