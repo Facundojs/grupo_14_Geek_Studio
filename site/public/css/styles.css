@@ -15,7 +15,7 @@ Las medidas estándares por ahora son: 576, 768, 992, 1200
 }
 
 body{
-    background-color: #272932;
+    background-color: #999999;
 }
 
 /*Header-section*/
@@ -86,7 +86,6 @@ main .flex-container-detalle {
 .flex-items {
     width: 500px;
     justify-content: space-around;
-
     background-color: white;
     margin: 0 12px 12px;
     padding: 12px;

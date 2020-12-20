@@ -1,0 +1,71 @@
+* {
+    box-sizing: border-box;
+}
+
+body main, body header, body footer {
+    margin: auto;
+}
+
+/*Carrito*/
+ h1{
+    text-align: center;
+ }
+.image-article{
+    display: flex;
+    flex-wrap: wrap;
+    font-size: .8rem;
+    flex-direction: column;
+}
+
+body main .aligner-container section ul {
+    background-color: blanchedalmond;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 1rem ;
+}
+
+body main .aligner-container section ul li {
+    border: black solid .5rem ;
+    width: 100% ;
+    margin: auto;
+    margin: 1rem 0rem 1rem ;
+}
+
+body main .aligner-container section ul li article{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.cart-article{
+    width: 20%;
+    text-align: center;
+}
+
+.cart-article-image{
+    width: 100%
+}
+
+.purchase-summary{
+    border: white 1rem solid;
+    display: flex;
+    flex-direction: column;
+    height: 14rem;
+    width: 40%;
+    margin: auto;
+    flex-wrap: wrap;
+    text-align: center;
+}
+
+@media (min-width:992px){
+    body main .aligner-container *{
+        font-size: 2rem;
+    }
+
+    body main .aligner-container section ul {
+        justify-content: space-between ;
+    }
+
+
+}
