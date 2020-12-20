@@ -189,21 +189,24 @@ footer span ul{
         order: 0;
         width: 14rem;
     }
+
+    .bvar-container{
+        width: 40%;
+    }
+
     .browser-bar{
+        border-radius: 5px ;
         order: 1;
-        width: 14rem;
+        width: 100%;
+        margin: 0%;
     }
     .user-options{
         order: 2;
         width: 30%;
-        padding-left: 2rem ;
-        align-items: center
-    }
-    .user-options{
-        display: flex ;
-        justify-content: space-between;
-        border: transparent 0.2rem solid;
         padding: 0.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between
     }
 
     .user-options a, .user-options a span{

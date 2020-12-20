@@ -1,0 +1,56 @@
+* {
+    box-sizing: border-box;
+}
+
+h1{
+    text-align: center;
+}
+
+h2{
+    text-align: center;
+    font-style: italic;
+}
+
+ul{
+    padding: 10%
+}
+
+ul li article {
+    border: white solid .5rem;
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    margin: auto;
+    margin-top: 2rem;
+    text-align: center;
+    padding: .5rem;
+}
+
+.article-image{
+    width: 90%;
+    margin:auto;
+}
+
+@media(min-width: 992px){
+    ul{
+        padding: 0;
+    }
+    section ul{
+        border: red solid 1rem;
+        margin: 1rem;
+        margin: auto;
+        display: flex;
+        flex-wrap: wrap;
+    }
+    section ul li {
+        width: 40%;
+        margin: auto;
+    }
+}
+
+@media(min-width: 1200px){
+    section ul li {
+        width: 30%;
+        margin: auto;
+    }
+}

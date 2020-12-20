@@ -48,14 +48,23 @@ body main .aligner-container section ul li article{
 }
 
 .purchase-summary{
-    border: white 1rem solid;
+    border: white .5rem solid;
     display: flex;
     flex-direction: column;
-    height: 14rem;
+    flex-wrap: wrap;
+    height: 16rem;
+    width: 70%;
+    max-width: 16rem;
+    margin: auto;
+    text-align: center;
+    padding: .5rem;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+}
+
+.purchase-summary button{
     width: 40%;
     margin: auto;
-    flex-wrap: wrap;
-    text-align: center;
 }
 
 @media (min-width:992px){
@@ -67,5 +76,12 @@ body main .aligner-container section ul li article{
         justify-content: space-between ;
     }
 
+    .purchase-summary {
+        height: 20rem ;
+    }
 
+    .purchase-summary button{
+        width: 60%;
+        margin: auto
+    }
 }
