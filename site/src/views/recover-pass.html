@@ -3,18 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
+    <title>Login</title>
     <script src="https://kit.fontawesome.com/cac22ebe42.js" crossorigin="anonymous"></script>
     <link rel="shortcut icon" href="/img/shortcut-icon.png">
     <link rel="stylesheet" href="/css/normalize.css">
     <link rel="stylesheet" href="/css/styles.css">
-    <link rel="stylesheet" href="/css/home.css">
+    <link rel="stylesheet" href="/css/login.css">
 </head>
 <body>
     <header>
         <div class="aligner-container">
             <nav class="nav-1">
-                <div class="logo"><a href="http://localhost:3000/"><img src="/img/logo.jpg"></a></div>
+                <div class="logo"><a href="http://localhost:3000/home"><img src="/img/logo.jpg"></a></div>
                 <div class="bvar-container">
                     <input type="search" class="browser-bar" placeholder="Buscar">
                 </div>
@@ -25,48 +25,30 @@
                     <span><a href="http://localhost:3000/carro"><i class="fas fa-shopping-cart"></i>Mi carrito</a></span>
                 </nav>
             </nav>
-            <nav class="nav-2">
-                <ul>
-                <li><a href="http://localhost:3000/productos">Componentes</a></li>
-                <li><a href="http://localhost:3000/productos">Periféricos</a></li>
-                <li><a href="http://localhost:3000/productos">PC Armadas</a></li>
-                <li><a href="http://localhost:3000/productos">Nootebooks</a></li>
-                <li><a href="http://localhost:3000/productos">Soporte</a></li>
-                </ul>
-            </nav>
         </div>
     </header>
     <main>
         <div class="aligner-container">
-            <div >
-            <div class="hero-container">
-                <img class="home-banner" src="/img/home-hero-banner.jpg" alt="">
-            </div>
-                <section class="sections-navbar">
-                    <nav>
-                        <ul>
-                            <li><a href="http://localhost:3000/productos#componentes">Comp</a></li>
-                            <li><a href="http://localhost:3000/productos#perifericos">Periféricos</a></li>
-                            <li><a href="http://localhost:3000/productos#gabinetes">Gabinetes</a></li>
-                            <li><a href="http://localhost:3000/productos#sillasgamer">Sillas Gamers</a></li>
-                            <li><a href="http://localhost:3000/productos#combos">Combos</a></li>
-                        </ul>
-                    </nav>
-                </section>
-                <section class="for-sale">
-                    <h2>Ofertas destacadas</h2>
-                    <section class="articles">
-                        <ul>
-                            <li><img class="product" src="/img/product-1.jpg" alt=""><span class="product-info"><h4>Producto X</h4>100$</span></li>
-                            <li><img class="product" src="/img/product-2.jpg" alt=""><span class="product-info"><h4>Producto X</h4>100$</span></li>
-                            <li><img class="product" src="/img/product-3.jpg" alt=""><span class="product-info"><h4>Producto X</h4>100$</span></li>
-                            <li><img class="product" src="/img/product-4.jpg" alt=""><span class="product-info"><h4>Producto X</h4>100$</span></li>
-                            <li><img class="product" src="/img/product-5.jpg" alt=""><span class="product-info"><h4>Producto X</h4>100$</span></li>
-                        </ul>
-                    </section>
-                </section>
-            </div>
-        </div>
+            <div class= "login-container"> 
+                <form class="login">
+                    <h1 class="h1-login"> RECUPERAR CONTRASEÑA </h1>
+
+                    <div class="contenedor-login">
+                        <div class="input_contenedor">
+                            <i class="far fa-envelope" icon-login> </i>
+                            <input class= "input-login" type="email" name="email"  placeholder="Ingrese E-mail">                 
+                        </div>
+
+                    
+                    <div class="div-robot">
+                        <input type="checkbox" value ="No soy un robot" name="check-robot">
+                        <label>No soy un robot</label>
+                    </div>
+                    <br>
+                    <input type="submit" name = "button-recover" value ="Enviar" class="button-login button-login-centrar">
+                </form>
+            </div> 
+        </div>  
     </main>
     <footer>
         <div class="aligner-container">

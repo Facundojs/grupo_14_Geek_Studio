@@ -1,0 +1,301 @@
+* {
+    box-sizing: border-box;
+}
+
+.hero-container{
+    background-color: lightgray ;
+}
+
+.home-banner {
+    width: 96%;
+    margin: 2%;
+}
+
+.sections-navbar ul{
+    padding-left: 0 ;
+    display: flex ;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+}
+
+.sections-navbar ul li {
+    font-size: 2rem;
+    padding: 2rem;
+    background-color: white;
+    border-radius: 3rem;
+    margin: 2rem;
+}
+
+.for-sale{
+    margin-top: 3rem;
+    text-align: center;
+    font-style: italic;
+    text-decoration: underline;
+}
+
+.for-sale .articles ul {
+    text-align: center;
+    padding: 10%;
+    border: black solid 2px;
+}
+
+.for-sale .articles ul li {
+    padding-top: 5%;
+    padding-bottom: 5%;
+    border: white solid 2px;
+    margin-top: 5%;
+}
+
+
+.for-sale .articles .product {
+    padding-left: 0 ;
+    width: 80%;
+    justify-content: space-between;
+}
+
+.login-container
+{
+width:100%;
+padding: 15px;
+background: #56E39F;
+align-content: center;
+}
+
+
+.input_contenedor
+{
+    font-size: 18px;
+    width: 40%;
+    padding: 2px;
+    border:blue;
+    margin-bottom:15px;
+    min-width: 50px;
+    text-align: center;
+    color:black;
+
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+.form-login
+{
+    margin-top: 150px;
+    padding: 1px;
+}
+
+.h1-login
+{
+   text-align: center;
+   color:black;
+   font-size: 25px;
+
+}
+
+.icon{
+    min-width: 50px;
+    text-align: center;
+    color:black;
+}
+
+.input_login{
+    font-size: 20px;
+    width: 80%;
+    padding: 10px;   
+}
+
+.button-login{
+    border:none;
+    width:180px;
+    color:white;
+    font-size: 30px;
+    background:#262928b0;
+    padding: 10px 10px;
+    cursor: pointer;
+
+    display:block;
+    margin-left: auto;
+    margin-right: auto;
+    align-items: center;
+}
+
+.button-login:hover
+{
+    background-color: #5B6C5D;
+}
+
+.contenedor-registro
+{
+    display: flex;
+    flex-wrap: wrap;
+    margin:auto;
+    justify-content: flex-start;
+}
+
+.flex-item
+{
+    flex:none;
+    width: calc((70%-10px)/2);
+    margin-bottom: 1px;
+    justify-content: flex-end; /*flex-start;*/
+    align-items: center;
+    text-align: right;
+    padding: 2px;
+   
+}
+
+.flex-item-button
+{
+    display: inline-block;
+    width: 100%;
+    margin-bottom: 1px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 15px;
+   
+}
+
+
+
+.div_p_login
+{
+    text-decoration: none;
+    text-align: center;
+    color: black;
+    font-style: normal;
+    font-weight: 200;
+    font-size: 15px;
+    align-content: center;
+}
+
+.link-login{
+    text-decoration: none;
+    color: black;
+    font-weight: 600;
+}
+
+.link-login:hover{
+    color:blue;
+}
+
+.centrado{
+  display:block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+.div-robot
+{
+    width: 200px;
+    height: 5px;
+    margin:2px;
+    border:solid 1px grey;
+    font-size: 50%;
+    padding: 2%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    
+}
+
+/*
+@media(min-width: 768px){
+    .form-login-{
+        margin: auto;
+        width: 500px;
+        margin-top:150px;
+        border-radius:2%;
+    }
+}
+
+*/
+
+@media(min-width: 992px){
+    .sections-navbar{
+        padding: 3rem ;
+        background-color: gray;   
+    }
+
+    .sections-navbar nav ul{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+
+    .sections-navbar ul li{
+        font-size: 2rem;
+        padding: 2rem;
+        background-color: white;
+        border-radius: 3rem;
+        margin: 2;
+        width: 40%;
+    }
+
+    .for-sale .articles ul{
+        display: flex;
+        flex-direction: row ;
+        flex-wrap: wrap;
+    }
+
+    .for-sale .articles ul li {
+        width: 46%;
+        margin: 2%;
+    }
+}
+
+@media(min-width: 1200px){
+    .sections-navbar ul li{
+        font-size: 1.6rem;
+        padding: 2rem;
+        background-color: white;
+        border-radius: 3rem;
+        margin: 2rem;
+        width: 14%
+    }
+    .for-sale .articles ul{
+        padding: 0;
+    }
+    .for-sale .articles ul li {
+        width: 16%;
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+
+    .for-sale .articles ul li img {
+        width: 80%;
+        height: 50%;
+    }
+
+}
+
+@media(max-width: 460px)
+{
+
+    .div_p_login
+    {
+        text-decoration: none;
+        text-align: center;
+        color: black;
+        font-style: normal;
+        font-weight: 100;
+        font-size: 8px;
+        align-content: center;
+    }
+
+    .flex-item
+    {
+        flex:none;
+        width: calc((70%-10px)/2);
+        margin-bottom: 1px;
+        justify-content: flex-start;
+        align-items: left;
+        text-align: right;
+        /*padding: 0px;*/
+       
+    }
+}

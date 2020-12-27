@@ -39,3 +39,21 @@ app.get('/detalle' , (req,res) => {
 app.get('/carro' , (req,res) => {
     res.sendFile(path.join(__dirname, '/views/carrito.html'))
 });
+
+
+//Login
+app.get('/login' , (req,res) => {
+    res.sendFile(path.join(__dirname, '/views/login.html'))
+});
+
+
+//Registro
+app.get('/registro' , (req,res) => {
+    res.sendFile(path.join(__dirname, '/views/registro.html'))
+});
+
+
+//Recuperar contraseña
+app.get('/recover-pass' , (req,res) => {
+    res.sendFile(path.join(__dirname, '/views/recover-pass.html'))
+});
