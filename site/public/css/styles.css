@@ -11,7 +11,9 @@ Las medidas estándares por ahora son: 576, 768, 992, 1200
 
 .aligner-container{
     border: black solid .2rem;
+    max-width: 1400px;
     margin: 0 auto;
+    padding: 1rem;
 }
 
 body{
@@ -68,7 +70,11 @@ ul li {
 .nav-2 ul{
     display: flex ;
     justify-content: space-around;
-    padding-left: 0 ;
+    padding-left: 0;
+}
+
+.nav-2 ul a {
+    font-size: .7rem;
 }
 
 header a:hover {
@@ -77,46 +83,80 @@ header a:hover {
 
 /* Detalle del Producto */
 
-main .flex-container-detalle {
+section .product {
+    background-color: white;
+    padding: 1rem;
+}
+
+section .product div {
+    margin-bottom: 1rem;
+}
+
+main section .product .product-detail {
+    font-size: .8rem;
+    display: block;
+}
+
+main section .product .product-detail img {
+    width: 100%;
+    border: black 1px solid;
+    padding: 5px;
+}
+
+main section div .product-foot {
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+}
+
+main section div .product-foot .price-detail {
+    width: 50%;
+    font-size: 2rem;
+    text-align: center;    
+}
+
+main section div .product-foot .discount-detail {
+    width: 50%;
+}
+
+.price-detail {
+    margin: 20px;
+    font-size: 2rem;
+    font-weight: bold;
+    align-items: right;
+
+}
+
+.discount-detail {
+    margin: 20px;
+    font-size: 2rem;
+    color: #ef8354;
+    font-weight: bolder;
+}
+
+main section .product .product-features {
+    font-size: 1.2rem;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
 }
 
-.flex-items {
-    width: 500px;
-    justify-content: space-around;
-    background-color: white;
-    margin: 0 12px 12px;
-    padding: 12px;
-}
-
-.flex-items img {
+main section .product .product-features .feature {
     width: 100%;
+    padding-left: 10px;
 }
 
-.precio-detalle-prod {
-    display: inline-block;
-    font-size: 2rem;
-    font-weight: bold;
-
+main section div label .quantity {
+    width: 50%;
 }
 
-.desc-detalle-prod {
-    display: inline-block;
-    margin-left: 2rem;
-    font-size: 2rem;
-    color: #ef8354;
-}
-
-button .comprar-detalle {
-    background-color: #4F5D75;
-    color: #ef8354;
-}
-
-.caract-align {
-    display: flex;
-    justify-content: space-between;
+main section button {
+    background-color: blue;
+    color: white;
+    width: 50%;
+    padding: .5rem;
+    margin-left: 1rem;
+    border-radius: .2rem;
 }
 
 /*Footer*/
@@ -150,16 +190,32 @@ footer span ul{
 
 /*Medias-Quires*/
 
-@media (max-width: 403px){
+@media (min-width: 403px){
     .aligner-container .nav-2 ul li{
         font-size: .7rem;
     }
+
+    main section button {
+        width: 200px;
+    }
+
+}
+
+@media (min-width: 576px) {
+
+    /* Detalle del Producto */
+    main section .product .product-features .feature {
+        width: 33%;
+        padding: 0 1rem;
+    }
+
 }
 
 @media (min-width:768px){
     h2 {
         font-size: 2rem;
     }
+
     footer span ul li {
         font-size: 1rem;
     }
@@ -219,6 +275,10 @@ footer span ul{
     .nav-2{
         display: block;
         width: 100%;
+    }
+
+    .nav-2 ul a {
+        font-size: 1.5rem;
     }
     
     footer nav span h2{
