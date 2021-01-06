@@ -201,15 +201,10 @@ footer span ul{
 
 }
 
-@media (min-width: 576px) {
-
-    /* Detalle del Producto */
-    main section .product .product-features .feature {
-        width: 33%;
-        padding: 0 1rem;
-    }
+/*@media (min-width: 576px) {
 
 }
+*/
 
 @media (min-width:768px){
     h2 {
@@ -218,6 +213,12 @@ footer span ul{
 
     footer span ul li {
         font-size: 1rem;
+    }
+
+    /* Detalle del Producto */
+    main section .product .product-features .feature {
+        width: 33%;
+        padding: 0 1rem;
     }
 }
 
