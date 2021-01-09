@@ -1,7 +1,9 @@
 /*
-Mobile first.
-Arranco trabajando en una resolución de 576px
-Las medidas estándares por ahora son: 576, 768, 992, 1200
+--oscuro: #2D3142
+--silver: #BFC0C0
+--white: #FFFFFF
+--orange: #EF8354
+--blue: #4F5D75
 */
 * {
     box-sizing: border-box;
@@ -10,25 +12,30 @@ Las medidas estándares por ahora son: 576, 768, 992, 1200
 /* Container General */
 
 .aligner-container{
-    border: black solid .2rem;
+    border: #2D3142 solid .2rem;
     max-width: 1400px;
     margin: 0 auto;
     padding: 1rem;
+    border-radius: 1.5rem;
 }
 
 body{
-    background-color: #999999;
+    background-color: lightgray;
+    font-family: 'Roboto', 'Lato', 'Yanone', sans-serif;
 }
 
 /*Header-section*/
 
 header {
-    background-color: yellowgreen;
     padding: 1rem ;
 }
 
-a {
-    color: black;
+header .aligner-container{
+    background-color: #2D3142;
+}
+
+header a {
+    color: white;
     text-decoration: none;
 }
 
@@ -78,7 +85,7 @@ ul li {
 }
 
 header a:hover {
-    color: lightseagreen;
+    color: orange;
 }
 
 /* Detalle del Producto */
@@ -162,8 +169,18 @@ main section button {
 /*Footer*/
 
 footer {
-    background-color: aqua;
     padding: 1rem ;
+}
+
+footer .aligner-container{
+    background-color: white;
+    color: #2a3446;
+}
+
+.footer-info span ul li a{
+    list-style: none;
+    text-decoration: none;
+    color: #000000;
 }
 
 footer nav{
