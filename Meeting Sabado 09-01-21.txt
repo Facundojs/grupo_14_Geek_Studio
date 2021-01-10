@@ -1,0 +1,39 @@
+1) Evaluar en la Mediaquery 360:
+   Los botones: Componentes/perifericos tienen que display: none
+Nota: Lo cambie pero aparecen en cualquier lado, queda acomodarlos - Kari
+
+2) Footer mediaquery desde 360 a 996
+Display Block para que se muestre uno debajo del otro - Esto esta listo - Kari
+
+3) A partir de la mediaquery 576
+   Poner los botones circulares en 2 columnas
+   A partir de la media 576 mostrar 3 columnas
+
+4) Setear el link del detalle de producto
+
+
+5) Header: Sacar los textos de login/registrarse/carrito dejar solo iconos
+Modo Mobile Iconitos disponibles
+
+
+
+6) Header mobile: Mostrar los iconos del login/registrarse/carrito
+Nota: styles.css: aca lo que sucede es que se ven pero todos debajo del button burger 
+corregir ubicacion
+/*
+.user-options{
+    display: none;
+}*/
+
+7) Footer: Agregar redes sociales
+
+8) Usar los colores como variables definidas en el CSS Para más comodidad,
+los deje definidos en el styles.css
+NOTA: Solo modique la codificacion dentro del styles.css, hay que ir cambiando en los otros .css - Kari
+:root{
+--oscuro: #2D3142;
+--silver: #BFC0C0;
+--white: #FFFFFF;
+--orange: #EF8354;
+--blue: #4F5D75;
+}

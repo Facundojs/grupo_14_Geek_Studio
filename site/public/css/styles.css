@@ -1,10 +1,11 @@
-/*
---oscuro: #2D3142
---silver: #BFC0C0
---white: #FFFFFF
---orange: #EF8354
---blue: #4F5D75
-*/
+:root{
+--oscuro: #2D3142;
+--silver: #BFC0C0;
+--white: #FFFFFF;
+--orange: #EF8354;
+--blue: #4F5D75;
+--body-color: lightgray;
+}
 * {
     box-sizing: border-box;
 }
@@ -12,7 +13,8 @@
 /* Container General */
 
 .aligner-container{
-    border: #2D3142 solid .2rem;
+    /*border: #2D3142 solid .2rem;*/
+    border: var(--oscuro) solid .2rem;
     max-width: 1400px;
     margin: 0 auto;
     padding: 1rem;
@@ -20,7 +22,7 @@
 }
 
 body{
-    background-color: lightgray;
+    background-color: var(--body-color);
     font-family: 'Roboto', 'Lato', 'Yanone', sans-serif;
 }
 
@@ -31,11 +33,11 @@ header {
 }
 
 header .aligner-container{
-    background-color: #2D3142;
+    background-color:var(--oscuro) ;
 }
 
 header a {
-    color: white;
+    color:var(--white);
     text-decoration: none;
 }
 
@@ -65,9 +67,10 @@ ul li {
     max-width: 3rem;
 }
 
+/*
 .user-options{
     display: none;
-}
+}*/
 
 .log{
     max-width: 30%;
@@ -85,7 +88,7 @@ ul li {
 }
 
 header a:hover {
-    color: orange;
+    color:var(--orange);
 }
 
 /* Detalle del Producto */
@@ -137,7 +140,7 @@ main section div .product-foot .discount-detail {
 .discount-detail {
     margin: 20px;
     font-size: 2rem;
-    color: #ef8354;
+    color: var(--orange);
     font-weight: bolder;
 }
 
@@ -158,12 +161,17 @@ main section div label .quantity {
 }
 
 main section button {
-    background-color: blue;
+    background-color:var(--blue);
+    font-size: 18px;
     color: white;
     width: 50%;
     padding: .5rem;
     margin-left: 1rem;
     border-radius: .2rem;
+}
+
+main section button:hover{
+    background-color: #394a96;
 }
 
 /*Footer*/
@@ -173,7 +181,7 @@ footer {
 }
 
 footer .aligner-container{
-    background-color: white;
+    background-color:var(--white);
     color: #2a3446;
 }
 
@@ -185,7 +193,7 @@ footer .aligner-container{
 
 footer nav{
     justify-content: space-between;
-    display: flex ;
+    display: block; /*flex ;*/
 }
 
 footer span ul{
@@ -215,13 +223,18 @@ footer span ul{
     main section button {
         width: 200px;
     }
+    footer nav{
+        justify-content: space-between;
+        display: block ;
+    }
 
 }
 
-/*@media (min-width: 576px) {
+/*@media (min-width: 580px) {
+ /*  Agregar para que muestre dos columnas los botones comp perifericos gabinetes*/
 
-}
-*/
+
+
 
 @media (min-width:768px){
     h2 {
@@ -237,6 +250,12 @@ footer span ul{
         width: 33%;
         padding: 0 1rem;
     }
+
+    footer nav{
+        justify-content: space-between;
+        display: flex ;
+    }
+
 }
 
 @media (min-width:992px){
@@ -275,18 +294,21 @@ footer span ul{
         margin: 0%;
     }
     .user-options{
+        border:1px red solid;
         order: 2;
-        width: 30%;
+        width: 10%;
         padding: 0.5rem;
         display: flex;
         align-items: center;
-        justify-content: space-between
+        justify-content: space-between;
     }
 
     .user-options a, .user-options a span{
         padding: 1rem;
-        align-items: center;
+        align-items:flex-end;
+        right: 30px;
         display: flex;
+        flex-wrap: wrap;
         text-align: center;
     }
 
@@ -302,6 +324,10 @@ footer span ul{
     footer nav span h2{
         font-size: 2.5rem;
     }
+    footer nav{
+        justify-content: space-between;
+        display: flex ;
+    }
 }
 
 @media(min-width: 1200px){
@@ -309,10 +335,13 @@ footer span ul{
         max-height: 420px;
 
     }
-    .user-options{
-        width: 40%;
-        align-items: center;
-        justify-content: space-between
+    
+    .user-options {
+        width: 20%;
+        flex:wrap;
+        flex-direction: row;
+        justify-content:center;
+        align-items:baseline;
     }
 
     .browser-bar{
@@ -333,5 +362,9 @@ footer span ul{
     .rigths{
         font-size: 1.5rem;
         text-align: center;
+    }
+    footer nav{
+        justify-content: space-between;
+        display: flex ;
     }
 }
