@@ -41,6 +41,14 @@ header a {
     text-decoration: none;
 }
 
+header .aligner-container .nav-1 .user-options{
+    display: flex;
+    margin: auto;
+    max-width: 60%;
+    justify-content: space-around;
+    padding: 2rem
+}
+
 ul li {
     list-style: none;
 }
@@ -48,6 +56,7 @@ ul li {
 .nav-1{
     text-align: center;
     padding: 1rem;
+
 }
 
 
@@ -75,6 +84,10 @@ ul li {
 .log{
     max-width: 30%;
     text-align: right
+}
+
+.nav-2{
+    display: none;
 }
 
 .nav-2 ul{
@@ -234,28 +247,25 @@ footer span ul{
  /*  Agregar para que muestre dos columnas los botones comp perifericos gabinetes*/
 
 
-
+ @media (min-width:520px){
+    footer nav{
+        justify-content: space-between;
+        display: flex ;
+    }
+    footer span ul li {
+        font-size: 1rem;
+    }
+ }
 
 @media (min-width:768px){
     h2 {
         font-size: 2rem;
     }
-
-    footer span ul li {
-        font-size: 1rem;
-    }
-
     /* Detalle del Producto */
     main section .product .product-features .feature {
         width: 33%;
         padding: 0 1rem;
     }
-
-    footer nav{
-        justify-content: space-between;
-        display: flex ;
-    }
-
 }
 
 @media (min-width:992px){
@@ -263,6 +273,10 @@ footer span ul{
         display: none;
     }
     
+    .nav-2{
+        display: block;
+    }
+
     header, footer nav span ul li{
         font-size: 1.4rem;
     }
@@ -275,18 +289,18 @@ footer span ul{
     header .nav-1{
         display: flex;
         flex-wrap: wrap;
-        justify-content: flex-start;
+        justify-content:space-between;
         align-items: center;
+        width: 100%;
     }
     header .aligner-container .nav-1 .logo{
         order: 0;
-        width: 14rem;
+        width: 30%;
     }
 
     .bvar-container{
         width: 40%;
     }
-
     .browser-bar{
         border-radius: 5px ;
         order: 1;
@@ -296,11 +310,13 @@ footer span ul{
     .user-options{
         border:1px red solid;
         order: 2;
-        width: 10%;
+        width: 30%;
         padding: 0.5rem;
         display: flex;
-        align-items: center;
-        justify-content: space-between;
+        /**/
+        flex:wrap;
+        justify-content:space-around;
+        align-items:baseline;
     }
 
     .user-options a, .user-options a span{
@@ -337,10 +353,9 @@ footer span ul{
     }
     
     .user-options {
-        width: 20%;
         flex:wrap;
         flex-direction: row;
-        justify-content:center;
+        justify-content:space-around;
         align-items:baseline;
     }
 
