@@ -29,6 +29,7 @@ body main .aligner-container section ul li {
     width: 100% ;
     margin: auto;
     margin: 1rem 0rem 1rem ;
+    padding: 1rem;
 }
 
 body main .aligner-container section ul li article{
@@ -47,14 +48,39 @@ body main .aligner-container section ul li article{
     width: 100%
 }
 
-.purchase-summary{
+.user-buttons{
+    display: flex;
+    flex-direction: column;
+}
+
+.user-buttons .secondary-options{
+    box-sizing: border-box;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    margin: auto;
+}
+.user-buttons .secondary-options div{
+    border: black 4px solid;
+    margin:auto;
+    margin: 1rem;
+    padding: .5rem;
+    background-color: orange;
+    display: inline;
+    text-align: center;
+}
+.user-buttons .secondary-options div a{
+    text-decoration: none;
+    color: black;
+}
+.purchase-option{
     border: white .5rem solid;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
     height: 16rem;
     width: 70%;
-    max-width: 16rem;
+    max-width: 25rem;
     margin: auto;
     text-align: center;
     padding: .5rem;
@@ -62,7 +88,7 @@ body main .aligner-container section ul li article{
     margin-bottom: 2rem;
 }
 
-.purchase-summary button{
+.purchase-option button{
     width: 40%;
     margin: auto;
 }
@@ -75,12 +101,15 @@ body main .aligner-container section ul li article{
     body main .aligner-container section ul {
         justify-content: space-between ;
     }
-
-    .purchase-summary {
+    .user-buttons{
+        flex-direction: row;
+        justify-content: space-around;
+    }
+    .purchase-option {
         height: 20rem ;
     }
 
-    .purchase-summary button{
+    .purchase-optionbutton{
         width: 60%;
         margin: auto
     }

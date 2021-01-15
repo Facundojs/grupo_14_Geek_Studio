@@ -50,4 +50,5 @@ Para llevar a cabo este proyecto, tomamos como páginas referentes a las mas gra
   #### [grupo_14_Geek_Studio](https://github.com/Facundojs/grupo_14_Geek_Studio)
 
   #### [DH-PROYECTO-INTEGRADOR-TRELLO](https://trello.com/b/Asbk5uKV/dh-proyecto-integrador)
+  
   </details>

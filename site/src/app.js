@@ -9,8 +9,7 @@ app.listen(3000, () => {
     console.log('|--------------Servidor corriendo en el puerto 3000----------------|');
     console.log('|==================================================================|');
 });
-// http://localhost:3000/header acá pueden agarrar head, header, main y footer, pegarlo en su archivo HTML
-// Y ya les queda la pág. con las configuraciones y alineaciones, así solo trabajan el interior del main
+
 app.get('/header' , (req,res) => {
     res.sendFile(path.join(__dirname, '/views/header.html'))
 });
