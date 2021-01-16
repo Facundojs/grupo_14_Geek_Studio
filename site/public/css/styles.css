@@ -142,9 +142,8 @@ main section div .product-foot .discount-detail {
 .price-detail {
     margin: 20px;
     font-size: 2rem;
-    font-weight: bold;
+    font-weight: bolder;
     align-items: right;
-
 }
 
 .discount-detail {
@@ -295,6 +294,26 @@ footer span ul{
         padding: 0 1rem;
     }
 
+    main section .product {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    main section div .product-detail {
+        width: 50%;
+        font-size: .8rem;
+    }
+
+    main section .product-foot {
+        width: 50%;
+        font-size: .8rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+
+    /* Footer */
     .social-networks-icons {
         font-size: 1rem;
         padding: 4px;
