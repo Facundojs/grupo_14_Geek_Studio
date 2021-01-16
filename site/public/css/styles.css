@@ -27,13 +27,14 @@ body{
 }
 
 /*Header-section*/
-
 header {
-    padding: 1rem ;
+    padding: 1rem;
 }
 
 header .aligner-container{
     background-color:var(--oscuro) ;
+    padding: 1rem;
+    border: black 2px solid;
 }
 
 header a {
@@ -62,6 +63,7 @@ ul li {
 
 .browser-bar{
     margin: 1rem ;
+    border-radius: .3rem;
 }
 
 .fa.fa-bars.burger{
@@ -75,11 +77,6 @@ ul li {
     display: block;
     max-width: 3rem;
 }
-
-/*
-.user-options{
-    display: none;
-}*/
 
 .log{
     max-width: 30%;
@@ -97,7 +94,7 @@ ul li {
 }
 
 .nav-2 ul a {
-    font-size: .7rem;
+    font-size: 1rem;
 }
 
 header a:hover {
@@ -213,20 +210,29 @@ footer span ul{
     padding-left: 0 ;
 }
 
-.about-us, .utility-info, .support {
-    align-items: flex-start;
-    width: 33%;
-    font-size: 0.7rem;
+.about-us, .utility-info, .support, .social-networks {
+    width: 100%;
+    font-size: .9rem;
     text-align: center;
+}
+
+.social-networks {
+    padding-top: 1rem;
+}
+
+.social-networks-icons {
+    font-size: 1.5rem;
+    padding: 4px;
+    color: var(--oscuro);
 }
 
 .rigths{
     margin-top: 3rem;
-    text-align: left;
-    font-size: 0.8rem;
+    text-align: center;
+    font-size: .8rem;
 }
 
-/*Medias-Quires*/
+/*Media queries*/
 
 @media (min-width: 403px){
     .aligner-container .nav-2 ul li{
@@ -236,26 +242,48 @@ footer span ul{
     main section button {
         width: 200px;
     }
-    footer nav{
-        justify-content: space-between;
+}
+
+ @media (min-width: 576px) {
+
+    .nav-2 {
         display: block ;
     }
 
-}
+    .nav-2 {
+        font-size: .7rem;
+    }
 
-/*@media (min-width: 580px) {
- /*  Agregar para que muestre dos columnas los botones comp perifericos gabinetes*/
+    .fa.fa-bars.burger{
+        display: none;
+    }
 
-
- @media (min-width:520px){
     footer nav{
         justify-content: space-between;
         display: flex ;
+        padding-top: 50px;
     }
-    footer span ul li {
+
+    .social-networks {
+        padding-top: 0;
+    }
+    
+    .social-networks-icons {
+        font-size: 1.1rem;
+    }
+
+    footer span h2 {
         font-size: 1rem;
     }
+
+    footer span ul li {
+        font-size: .7rem;
+    }
+
+
  }
+
+  /*  Agregar para que muestre dos columnas los botones comp perifericos gabinetes*/
 
 @media (min-width:768px){
     h2 {
@@ -266,6 +294,31 @@ footer span ul{
         width: 33%;
         padding: 0 1rem;
     }
+
+    .social-networks-icons {
+        font-size: 1rem;
+        padding: 4px;
+        color: var(--oscuro);
+    }
+
+    footer span h2 {
+        font-size: 1rem;
+    }
+
+    footer span ul li a{
+        font-size: 1rem;
+    }
+
+    .social-networks h4 {
+        font-size: 1rem;
+    }
+
+    .social-networks-icons {
+        font-size: 1.3rem;
+        padding: 4px;
+        color: var(--oscuro);
+    }
+
 }
 
 @media (min-width:992px){
@@ -273,10 +326,6 @@ footer span ul{
         display: none;
     }
     
-    .nav-2{
-        display: block;
-    }
-
     header, footer nav span ul li{
         font-size: 1.4rem;
     }
@@ -302,9 +351,10 @@ footer span ul{
         width: 40%;
     }
     .browser-bar{
-        border-radius: 5px ;
+        border-radius: .5rem ;
+        font-size: 1.5rem;
         order: 1;
-        width: 100%;
+        width: 80%;
         margin: 0%;
     }
     .user-options{
@@ -335,15 +385,7 @@ footer span ul{
 
     .nav-2 ul a {
         font-size: 1.5rem;
-    }
-    
-    footer nav span h2{
-        font-size: 2.5rem;
-    }
-    footer nav{
-        justify-content: space-between;
-        display: flex ;
-    }
+    }    
 }
 
 @media(min-width: 1200px){
@@ -359,10 +401,6 @@ footer span ul{
         align-items:baseline;
     }
 
-    .browser-bar{
-        order: 1;
-        width: 25rem ;
-    }
     
     header .aligner-container, main .aligner-container, footer .aligner-container{
         display: block;
@@ -372,14 +410,30 @@ footer span ul{
     }
 
     footer nav span h2{
-        font-size: 2.8rem
+        font-size: 1.5rem
     }
-    .rigths{
-        font-size: 1.5rem;
-        text-align: center;
+
+    footer nav span a {
+        font-size: 1.1rem;
     }
+    
     footer nav{
         justify-content: space-between;
         display: flex ;
     }
+
+    .social-networks h4 {
+        font-size: 1.1rem;
+    }
+
+    .social-networks-icons {
+        font-size: 1.7rem;
+        padding: 4px;
+        color: var(--oscuro);
+    }
+
+    .rigths {
+        font-size: 1.2rem;
+    }
+
 }
