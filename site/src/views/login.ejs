@@ -1,29 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
-    <script src="https://kit.fontawesome.com/cac22ebe42.js" crossorigin="anonymous"></script>
-    <link rel="shortcut icon" href="/img/shortcut-icon.png">
-    <link rel="stylesheet" href="/css/normalize.css">
-    <link rel="stylesheet" href="/css/login.css">
-    <link rel="stylesheet" href="/css/styles.css">
-    
-</head>
+    <%- include('./partials/head.ejs') %>
 <body>
     <header>
         <div class="aligner-container">
             <nav class="nav-1">
-                <div class="logo"><a href="http://localhost:3000/home"><img src="/img/logo.jpg"></a></div>
+                <div class="logo"><a href="/"><img src="/img/logo.jpg"></a></div>
                 <div class="bvar-container">
                     <input type="search" class="browser-bar" placeholder="Buscar">
                 </div>
                 <i id="burger" class="fa fa-bars burger"></i>
                 <nav class="user-options">
-                    <span><a href="http://localhost:3000/login" class="log"><i class="fas fa-user-circle"></i>Iniciar sesión</a><a href="http://localhost:3000/registro">Registrarse</a></span>
+                    <span><a href="/login" class="log"><i class="fas fa-user-circle"></i>Iniciar sesión</a><a href="/registro">Registrarse</a></span>
                     <span><a href="#"><i class="far fa-heart"></i> Mis favoritos<!-- <i class="fas fa-heart"></i> corazon lleno !--></a></span>
-                    <span><a href="http://localhost:3000/carro"><i class="fas fa-shopping-cart"></i>Mi carrito</a></span>
+                    <span><a href="/carro"><i class="fas fa-shopping-cart"></i>Mi carrito</a></span>
                 </nav>
             </nav>
         </div>
@@ -48,47 +38,14 @@
                     <input type="submit" value ="Ingresar" class="button-login button-login-centrar">
 
                     <div class="div_p_login">
-                        <p> <a class ="link-login" href="http://localhost:3000/recover-pass#recover-pass"> ¿Olvidaste tu contraseña? </a> </p>
+                        <p> <a class ="link-login" href="/recover-pass#recover-pass"> ¿Olvidaste tu contraseña? </a> </p>
                         
-                        <p> <a class ="link-login" href="http://localhost:3000/registro#registrarse"> Quiero Registrarme </a> </p>
+                        <p> <a class ="link-login" href="registro#registrarse"> Quiero Registrarme </a> </p>
                     </div>
                 </form>
             </div> 
         </div>  
     </main>
-    <footer>
-        <div class="aligner-container">
-            <nav class="footer-info">
-                <span class="about-us">
-                    <h2>Nosotros</h2>
-                    <ul>
-                        <li><a href="#">Av. Siempre viva 742 - Bs. As.</a></li>
-                        <li><a href="#">+54 9 11 2233-4455</a></li>
-                    </ul>
-                </span>
-                <span class="utility-info">
-                    <h2>Información útil</h2>
-                    <ul>
-                        <li><a href="#">¿Qué es Geek Studio?</a></li>
-                        <li><a href="#">Centro de ayuda</a></li>
-                        <li><a href="#">Medios de pago</a></li>
-                        <li><a href="#">Formas de envio</a></li>
-                        <li><a href="#">Puntos de venta</a></li>
-                    </ul>
-                </span>
-                <span class="support">
-                    <h2>Soporte</h2>
-                    <ul>
-                        <li><a href="#">Contacto</a></li>
-                        <li><a href="#">FAQ</a></li>
-                        <li><a href="#">Garantías</a></li>
-                    </ul>
-                </span>
-            </nav>
-            <div>
-                <p class="rigths">GeekStudio.com Copyright © 2020 GeekStudio Inc. All rights reverved.</p>
-            </div>
-        </div>
-    </footer>
+    <%- include('./partials/footer.ejs') %>
 </body>
 </html>
