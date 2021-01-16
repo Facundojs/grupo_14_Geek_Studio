@@ -1,5 +1,6 @@
 const express = require('express') ;
 const path = require('path') ;
+const { products } = require('./controllers/productsController');
 const app = express();
 
 const publicPath = path.resolve(__dirname, '../public');
@@ -13,50 +14,18 @@ app.listen(3000, () => {
     console.log('|==================================================================|');
 });
 
-
-app.get('/header' , (req,res) => {
-    res.sendFile(path.join(__dirname, '/views/header.html'))
-});
-
 //Home
-app.get('/' , (req,res) => {
-    res.sendFile(path.join(__dirname, '/views/home.html'))
-});
+const mainRouter = require('./routes/mainRouter')
+app.use('/', mainRouter)
 
-app.get('/home' , (req,res) => {
-    res.sendFile(path.join(__dirname, '/views/home.html'))
-    //Redirección
-});
+/************************************************************************************/ 
 
 //Productos
-app.get('/productos' , (req,res) => {
-    res.sendFile(path.join(__dirname, '/views/products.html'))
-});
+const productsRouter = require('./routes/productsRouter')
+app.use('/productos', productsRouter);
 
-//Detalle del producto
-app.get('/detalle' , (req,res) => {
-    res.sendFile(path.join(__dirname, '/views/detalle.html'))
-});
-
-//Carrito
-app.get('/carro' , (req,res) => {
-    res.sendFile(path.join(__dirname, '/views/carrito.html'))
-});
-
+/************************************************************************************/ 
 
 //Login
-app.get('/login' , (req,res) => {
-    res.sendFile(path.join(__dirname, '/views/login.html'))
-});
-
-
-//Registro
-app.get('/registro' , (req,res) => {
-    res.sendFile(path.join(__dirname, '/views/registro.html'))
-});
-
-
-//Recuperar contraseña
-app.get('/recover-pass' , (req,res) => {
-    res.sendFile(path.join(__dirname, '/views/recover-pass.html'))
-});
+const userRouter = require('./routes/userRouter')
+app.use('/user', userRouter);

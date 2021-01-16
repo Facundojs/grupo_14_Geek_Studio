@@ -15,32 +15,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Bitter&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header>
-        <div class="aligner-container">
-            <nav class="nav-1">
-                <div class="logo"><a href="http://localhost:3000/"><img src="/img/logo.jpg"></a></div>
-                <div class="bvar-container">
-                    <input type="search" class="browser-bar" placeholder="Buscar">
-                </div>
-                <nav class="user-options">
-                    <span><a href="http://localhost:3000/login" class="log"><i class="fas fa-user-circle"></i></a></span>
-                        <!--<i class="fas fa-user-circle"></i></a><a href="http://localhost:3000/registro"> --KE - Esto lo voy a llamar dentro del login para registrarse !-->
-                    <span><a href="#"><i class="far fa-heart"></i></a></span>
-                    <span><a href="http://localhost:3000/carro"><i class="fas fa-shopping-cart"></i></a></span>
-                </nav>
-                <i id="burger" class="fa fa-bars burger"></i>
-            </nav>
-            <nav class="nav-2">
-                <ul>
-                <li><a href="http://localhost:3000/productos">Componentes</a></li>
-                <li><a href="http://localhost:3000/productos">Periféricos</a></li>
-                <li><a href="http://localhost:3000/productos">PC Armadas</a></li>
-                <li><a href="http://localhost:3000/productos">Nootebooks</a></li>
-                <li><a href="http://localhost:3000/productos">Soporte</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+    <%- include('./partials/header.ejs') %>
     <main>
         <div class="aligner-container">
             <div >
