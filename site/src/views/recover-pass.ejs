@@ -1,15 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
-    <script src="https://kit.fontawesome.com/cac22ebe42.js" crossorigin="anonymous"></script>
-    <link rel="shortcut icon" href="/img/shortcut-icon.png">
-    <link rel="stylesheet" href="/css/normalize.css">
-    <link rel="stylesheet" href="/css/styles.css">
-    <link rel="stylesheet" href="/css/login.css">
-</head>
+    <%- include('./partials/head.ejs') %>
+<body>
+    <%- include('./partials/header.ejs') %>
+    <main>
+    <div class="aligner-container">
+        <div class= "login-container"> 
+            <form class="form-login" action="">
+                <h1>Recuperar Contraseña </h1>
+                <div class="textbox-login">
+                    <i class="fa fa-user" aria-hidden="true"></i>
+                    <input type="email" placeholder="E-Mail" name="" required />
+                </div>
+            
+                <input class="btn-login" type="submit" value="Ingresar" >
+
+                <div class="div_p_login">
+                    <p> <a class ="link-login" href="/user/register#registrarse"> Quiero Registrarme </a> </p>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <%- include('./partials/footer.ejs') %>
+</body>
+</html>
+
+
+<!--
+    <!DOCTYPE html>
+<html lang="en">
+    <%- include('./partials/head.ejs') %>
 <body>
     <%- include('./partials/header.ejs') %>
     <main>
@@ -38,3 +59,4 @@
     <%- include('./partials/footer.ejs') %>
 </body>
 </html>
+!-->

@@ -1,67 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
-    <script src="https://kit.fontawesome.com/cac22ebe42.js" crossorigin="anonymous"></script>
-    <link rel="shortcut icon" href="/img/shortcut-icon.png">
-    <link rel="stylesheet" href="/css/normalize.css">
-    <link rel="stylesheet" href="/css/styles.css">
-    <link rel="stylesheet" href="/css/login.css">
-</head>
+    <%- include('./partials/head.ejs') %>
 <body>
     <%- include('./partials/header.ejs') %>
     <main>
-        <div class="aligner-container">
-            <div class= "login-container"> 
-                <form class="login">
-                    <h1 class="h1-login"> COMPLETA TUS DATOS </h1>
-
-                    <div class="contenedor-registro">
-                        <div class="flex-item"> <label>E-mail: </label> </div>
-                        <div class="flex-item">
-                           <!--<i class="fas fa-user-circle" icon-login> </i> !-->
-                           <input class= "input-login" type="email" name="Email"  placeholder="E-Mail">                 
-                        </div>
-                        
-                        <div class="flex-item"> <label>Nombre: </label> </div>
-                        <div class="flex-item">
-                            <!--<i class="fas fa-user-circle" icon-login> </i> !-->
-                            <input class= "input-login" type="text" name="name"  placeholder="Nombre">                 
-                         </div>
-
-                         <div class="flex-item"> <label>Apellido: </label> </div>
-                         <div class="flex-item">
-                            <!--<i class="fas fa-user-circle" icon-login> </i> !-->
-                            <input class= "input-login" type="text" name="surname"  placeholder="Apellido">                 
-                         </div>
-
-                         <div class="flex-item"> <label>Telefono: </label> </div>
-                         <div class="flex-item">
-                            <!--<i class="fas fa-user-circle" icon-login> </i> !-->
-                            <input class= "input-login" type="tel" name="telephone"  placeholder="Telefono">
-                         </div>
-
-                        <div class="flex-item"> <label>Clave:  </label> </div>
-                        <div class="flex-item"> 
-                            <!--<i class="fas fa-unlock-alt" icon-login></i> !-->
-                            <input class= "input-login"type="password" name="pass" placeholder="Ingrese Clave"> 
-                        </div>        
-
-                        <div class="flex-item"> <label>Repetir Clave:  </label> </div>
-                        <div class="flex-item"> 
-                            <!--<i class="fas fa-unlock-alt" icon-login></i> !-->
-                            <input class= "input-login"type="password" name="pass2" placeholder="Repetir Clave"> 
-                        </div>        
-                        <div class="flex-item-button">
-                            <input type="submit" value ="Registrate" class="button-login button-login-centrar">
-                        </div>
-                    </form>    
+    <div class="aligner-container">
+        <div class= "login-container"> 
+            <form class="form-login" action="">
+                <h1>Login </h1>
+                <div class="textbox-login">
+                    <input type="email" placeholder="E-Mail" name="" required />
                 </div>
-            </div> 
-        </div>  
-    </main>
+
+                <div class="textbox-login">
+                    <input type="text" placeholder="Nombre" name="name" required />
+                </div>
+                
+                <div class="textbox-login">
+                    <input type="text" placeholder="Apellido" name="surname" required />
+                </div>
+
+                <div class="textbox-login">
+                    <input type="text" placeholder="Telefono" name="telephone" />
+                </div>
+
+                <div class="textbox-login">
+                    <i class="fa fa-lock" aria-hidden="true"></i>
+                    <input type="password" placeholder="Contraseña" name="pass-1" required/>
+                </div>
+
+                <div class="textbox-login">
+                    <i class="fa fa-lock" aria-hidden="true"></i>
+                    <input type="password" placeholder="Repetir Contraseña" name="pass-2" required/>
+                </div>
+            
+                <input class="btn-login" type="submit" value="Registrarse" >
+
+            </form>
+        </div>
+    </div>
+
     <%- include('./partials/footer.ejs') %>
 </body>
 </html>
