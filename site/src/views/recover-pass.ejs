@@ -1,32 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
-    <script src="https://kit.fontawesome.com/cac22ebe42.js" crossorigin="anonymous"></script>
-    <link rel="shortcut icon" href="/img/shortcut-icon.png">
-    <link rel="stylesheet" href="/css/normalize.css">
-    <link rel="stylesheet" href="/css/styles.css">
-    <link rel="stylesheet" href="/css/login.css">
-</head>
+    <%- include('./partials/head.ejs') %>
 <body>
-    <header>
-        <div class="aligner-container">
-            <nav class="nav-1">
-                <div class="logo"><a href="http://localhost:3000/home"><img src="/img/logo.jpg"></a></div>
-                <div class="bvar-container">
-                    <input type="search" class="browser-bar" placeholder="Buscar">
+    <%- include('./partials/header.ejs') %>
+    <main>
+    <div class="aligner-container">
+        <div class= "login-container"> 
+            <form class="form-login" action="">
+                <h1>Recuperar Contraseña </h1>
+                <div class="textbox-login">
+                    <i class="fa fa-user" aria-hidden="true"></i>
+                    <input type="email" placeholder="E-Mail" name="" required />
                 </div>
-                <i id="burger" class="fa fa-bars burger"></i>
-                <nav class="user-options">
-                    <span><a href="http://localhost:3000/login" class="log"><i class="fas fa-user-circle"></i>Iniciar sesión</a><a href="http://localhost:3000/registro">Registrarse</a></span>
-                    <span><a href="#"><i class="far fa-heart"></i> Mis favoritos<!-- <i class="fas fa-heart"></i> corazon lleno !--></a></span>
-                    <span><a href="http://localhost:3000/carro"><i class="fas fa-shopping-cart"></i>Mi carrito</a></span>
-                </nav>
-            </nav>
+            
+                <input class="btn-login" type="submit" value="Ingresar" >
+
+                <div class="div_p_login">
+                    <p> <a class ="link-login" href="/user/register#registrarse"> Quiero Registrarme </a> </p>
+                </div>
+            </form>
         </div>
-    </header>
+    </div>
+
+    <%- include('./partials/footer.ejs') %>
+</body>
+</html>
+
+
+<!--
+    <!DOCTYPE html>
+<html lang="en">
+    <%- include('./partials/head.ejs') %>
+<body>
+    <%- include('./partials/header.ejs') %>
     <main>
         <div class="aligner-container">
             <div class= "login-container"> 
@@ -53,3 +59,4 @@
     <%- include('./partials/footer.ejs') %>
 </body>
 </html>
+!-->

@@ -1,41 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Carrito</title>
-    <script src="https://kit.fontawesome.com/cac22ebe42.js" crossorigin="anonymous"></script>
-    <link rel="shortcut icon" href="/img/shortcut-icon.png">
-    <link rel="stylesheet" href="/css/normalize.css">
-    <link rel="stylesheet" href="/css/styles.css">
-    <link rel="stylesheet" href="/css/carrito.css">
+    <%- include('./partials/head.ejs') %>
+ 
 </head>
 <body>
-    <header>
-        <div class="aligner-container">
-            <nav class="nav-1">
-                <div class="logo"><a href="http://localhost:3000/"><img src="/img/logo.jpg"></a></div>
-                <div class="bvar-container">
-                    <input type="search" class="browser-bar" placeholder="Buscar">
-                </div>
-                <i id="burger" class="fa fa-bars burger"></i>
-                <nav class="user-options">
-                    <span><a href="http://localhost:3000/login" class="log"><i class="fas fa-user-circle"></i>Iniciar sesión</a><a href="http://localhost:3000/registro">Registrarse</a></span>
-                    <span><a href="#"><i class="far fa-heart"></i> Mis favoritos<!-- <i class="fas fa-heart"></i> corazon lleno !--></a></span>
-                    <span><a href="http://localhost:3000/carro"><i class="fas fa-shopping-cart"></i>Mi carrito</a></span>
-                </nav>
-            </nav>
-            <nav class="nav-2">
-                <ul>
-                    <li><a href="http://localhost:3000/productos">Componentes</a></li>
-                    <li><a href="http://localhost:3000/productos">Periféricos</a></li>
-                    <li><a href="http://localhost:3000/productos">PC Armadas</a></li>
-                    <li><a href="http://localhost:3000/productos">Nootebooks</a></li>
-                    <li><a href="http://localhost:3000/productos">Soporte</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+    <%- include('./partials/header.ejs') %>
     <main>
         <div class="aligner-container">
             <h1>Carrito de compras</h1>

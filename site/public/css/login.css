@@ -1,162 +1,101 @@
-* {
+*{
     box-sizing: border-box;
 }
 
-.hero-container{
-    background-color: lightgray ;
-}
 
-.home-banner {
-    width: 96%;
-    margin: 2%;
-}
-
-.sections-navbar ul{
-    padding-left: 0 ;
-    display: flex ;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    text-align: center;
-}
-
-.sections-navbar ul li {
-    font-size: 2rem;
-    padding: 2rem;
-    background-color: white;
-    border-radius: 3rem;
-    margin: 2rem;
-}
-.for-sale{
-    margin-top: 3rem;
-    text-align: center;
-    font-style: italic;
-    text-decoration: underline;
-}
-
-.for-sale .articles ul {
-    text-align: center;
-    padding: 10%;
-    border: black solid 2px;
-}
-
-.for-sale .articles ul li {
-    padding-top: 5%;
-    padding-bottom: 5%;
-    border: white solid 2px;
-    margin-top: 5%;
-}
-
-
-.for-sale .articles .product {
-    padding-left: 0 ;
-    width: 80%;
-    justify-content: space-between;
-}
-
-.login-container
+.login-container .form-login
 {
 width:100%;
 padding: 15px;
-background: #56E39F;
+background: var(--white);
+/*170120*/
+display: flex; 
+flex-wrap: nowrap;
+flex-direction: column;
+align-items: center;
+text-align: center;
 align-content: center;
 }
 
 
-.input_contenedor
-{
-    font-size: 18px;
-    width: 40%;
-    padding: 2px;
-    border:blue;
-    margin-bottom:15px;
-    min-width: 50px;
+.login-box {
+  display: flex;
+  flex:wrap;
+  align-items: center;
+  align-content: center;
+  width: 320px;
+  padding: 20px;
+  border-radius: 10px;
+  margin:auto;
+}
+
+.login-box h1 {
+  font-size: 45px;
+  color: #2a3446;
+  margin-bottom: 10px;
+  padding: 13px 0;
+  text-align: center;
+}
+
+.textbox-login {
+  width: 40%;
+  overflow: hidden;
+  font-size: 20px;
+  padding: 8px 0;
+  margin: 8px 0 30px 0;
+  border-bottom: 2px solid var(--oscuro);
+}
+
+.textbox-login i {
+    display: flex;
+    flex-wrap: wrap;
+    width: 26px;
+    float: left;
     text-align: center;
-    color:black;
-
-    margin-left: auto;
-    margin-right: auto;
-
+    color: var(--oscuro);
 }
 
-.form-login
-{
-    margin-top: 150px;
-    padding: 1px;
+.textbox-login input {
+  border: none;
+  outline: none;
+  background: none;
+  font-size: 18px;
+  width: 80%;
+  float: left;
+  margin: 0 10px;
+  color: var(--oscuro);
 }
 
-.h1-login
-{
-   text-align: center;
-   color:black;
-   font-size: 25px;
-
+.btn-login {
+  width: 20%;
+  height: 50px;
+  background: none;
+  border: 2px solid; 
+  border-radius: 5px;
+  color: white; 
+  padding: 5px;
+  font-size: 18px;
+  cursor: pointer;
+  margin: 12px 0;
+  color: var(--white);
+  background-color:var(--blue);
 }
 
-.icon{
-    min-width: 50px;
-    text-align: center;
-    color:black;
+.btn-login:hover{
+    background-color: #394a96;
 }
 
-.input_login{
-    font-size: 20px;
-    width: 80%;
-    padding: 10px;   
-}
 
-.button-login{
-    border:none;
-    width:180px;
-    color:white;
-    font-size: 30px;
-    background:#262928b0;
-    padding: 10px 10px;
-    cursor: pointer;
+/* FIN NUEVO LOGIN KE*/
 
-    display:block;
-    margin-left: auto;
-    margin-right: auto;
-    align-items: center;
-}
-
-.button-login:hover
-{
-    background-color: #5B6C5D;
-}
-
+/*
 .contenedor-registro
 {
     display: flex;
     flex-wrap: wrap;
     margin:auto;
     justify-content: flex-start;
-}
-
-.flex-item
-{
-    flex:none;
-    width: calc((70%-10px)/2);
-    margin-bottom: 1px;
-    justify-content: flex-end; /*flex-start;*/
-    align-items: center;
-    text-align: right;
-    padding: 2px;
-   
-}
-
-.flex-item-button
-{
-    display: inline-block;
-    width: 100%;
-    margin-bottom: 1px;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding: 15px;
-   
-}
-
+}*/
 
 
 .div_p_login
@@ -201,76 +140,28 @@ align-content: center;
     
 }
 
-/*
-@media(min-width: 768px){
-    .form-login-{
+/*kari*/
+
+@media(min-width: 360px){
+    .login-container{
         margin: auto;
-        width: 500px;
-        margin-top:150px;
-        border-radius:2%;
+        border: solid 3px red;
     }
 }
-
+/*
+    .textbox-login{
+        width: 65%;
+    }
+    .btn-login{
+        width: 50%;
+    }
+    
+    .btn-login:hover{
+        background-color: #394a96;
+    }
+}
 */
 
-@media(min-width: 992px){
-    .sections-navbar{
-        padding: 3rem ;
-        background-color: gray;   
-    }
-
-    .sections-navbar nav ul{
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: space-around;
-    }
-
-    .sections-navbar ul li{
-        font-size: 2rem;
-        padding: 2rem;
-        background-color: white;
-        border-radius: 3rem;
-        margin: 2;
-        width: 40%;
-    }
-
-    .for-sale .articles ul{
-        display: flex;
-        flex-direction: row ;
-        flex-wrap: wrap;
-    }
-
-    .for-sale .articles ul li {
-        width: 46%;
-        margin: 2%;
-    }
-}
-
-@media(min-width: 1200px){
-    .sections-navbar ul li{
-        font-size: 1.6rem;
-        padding: 2rem;
-        background-color: white;
-        border-radius: 3rem;
-        margin: 2rem;
-        width: 14%
-    }
-    .for-sale .articles ul{
-        padding: 0;
-    }
-    .for-sale .articles ul li {
-        width: 16%;
-        padding-top: 0;
-        padding-bottom: 0;
-    }
-
-    .for-sale .articles ul li img {
-        width: 80%;
-        height: 50%;
-    }
-
-}
 
 @media(max-width: 460px)
 {
@@ -286,15 +177,4 @@ align-content: center;
         align-content: center;
     }
 
-    .flex-item
-    {
-        flex:none;
-        width: calc((70%-10px)/2);
-        margin-bottom: 1px;
-        justify-content: flex-start;
-        align-items: left;
-        text-align: right;
-        /*padding: 0px;*/
-       
-    }
 }
