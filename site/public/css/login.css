@@ -40,14 +40,6 @@
     border: black solid 2px;
 }
 
-.for-sale .articles ul li {
-    padding-top: 5%;
-    padding-bottom: 5%;
-    border: white solid 2px;
-    margin-top: 5%;
-}
-
-
 .for-sale .articles .product {
     padding-left: 0 ;
     width: 80%;

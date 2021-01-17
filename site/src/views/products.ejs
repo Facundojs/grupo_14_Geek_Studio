@@ -11,31 +11,7 @@
     <link rel="stylesheet" href="/css/productos.css">
 </head>
 <body>
-    <header>
-        <div class="aligner-container">
-            <nav class="nav-1">
-                <div class="logo"><a href="http://localhost:3000/home"><img src="/img/logo.jpg"></a></div>
-                <div class="bvar-container">
-                    <input type="search" class="browser-bar" placeholder="Buscar">
-                </div>
-                <i id="burger" class="fa fa-bars burger"></i>
-                <nav class="user-options">
-                    <span><a href="http://localhost:3000/login" class="log"><i class="fas fa-user-circle"></i>Iniciar sesión</a><a href="http://localhost:3000/registro">Registrarse</a></span>
-                    <span><a href="#"><i class="far fa-heart"></i> Mis favoritos<!-- <i class="fas fa-heart"></i> corazon lleno !--></a></span>
-                    <span><a href="#"><i class="fas fa-shopping-cart"></i>Mi carrito</a></span>
-                </nav>
-            </nav>
-            <nav class="nav-2">
-                <ul>
-                    <li><a href="http://localhost:3000/productos">Componentes</a></li>
-                    <li><a href="http://localhost:3000/productos">Periféricos</a></li>
-                    <li><a href="http://localhost:3000/productos">PC Armadas</a></li>
-                    <li><a href="http://localhost:3000/productos">Nootebooks</a></li>
-                    <li><a href="http://localhost:3000/productos">Soporte</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+    <%- include('./partials/header.ejs') %>
     <main>
         <div class="aligner-container">
             <h1>PRODUCTOS</h1>
@@ -53,7 +29,7 @@
                                 <div>$50.070
                                 </div>
                             </span>
-                            <a href="http://localhost:3000/detalle">Detalle del producto</a>
+                            <a href="productos/detalle">Detalle del producto</a>
                             <form action="" method="" >
                                 <button type="submit">
                                     Agregar al carro
@@ -71,7 +47,7 @@
                                 <div>Precio</div>
                                 <div>$88.470</div>
                             </span>
-                            <a href="http://localhost:3000/detalle">Detalle del producto</a>
+                            <a href="productos/detalle">Detalle del producto</a>
                             <form action="" method="" >
                                 <button type="submit">
                                     Agregar al carro
@@ -89,7 +65,7 @@
                                 <div>Precio</div>
                                 <div>$188.210</div>
                             </span>
-                            <a href="http://localhost:3000/detalle">Detalle del producto</a>
+                            <a href="productos/detalle">Detalle del producto</a>
                             <form action="" method="" >
                                 <button type="submit">
                                     Agregar al carro
@@ -108,7 +84,7 @@
                                 <div>$31.450
                                 </div>
                             </span>
-                            <a href="http://localhost:3000/detalle">Detalle del producto</a>
+                            <a href="productos/detalle">Detalle del producto</a>
                             <form action="" method="" >
                                 <button type="submit">
                                     Agregar al carro
@@ -127,7 +103,7 @@
                                 <div>$40.220
                                 </div>
                             </span>
-                            <a href="http://localhost:3000/detalle">Detalle del producto</a>
+                            <a href="productos/detalle">Detalle del producto</a>
                             <form action="" method="" >
                                 <button type="submit">
                                     Agregar al carro
@@ -146,7 +122,7 @@
                                 <div>$81.260
                                 </div>
                             </span>
-                            <a href="http://localhost:3000/detalle">Detalle del producto</a>
+                            <a href="productos/detalle">Detalle del producto</a>
                             <form action="" method="" >
                                 <button type="submit">
                                     Agregar al carro
@@ -181,7 +157,7 @@
                                 <div>$140.370
                                 </div>
                             </span>
-                            <a href="http://localhost:3000/detalle">Detalle del producto</a>
+                            <a href="productos/detalle">Detalle del producto</a>
                             <form action="" method="" >
                                 <button type="submit">
                                     Agregar al carro
@@ -205,7 +181,7 @@
                                 <div>$45.030
                                 </div>
                             </span>
-                            <a href="http://localhost:3000/detalle">Detalle del producto</a>
+                            <a href="productos/detalle">Detalle del producto</a>
                             <form action="" method="" >
                                 <button type="submit">
                                     Agregar al carro
@@ -229,7 +205,7 @@
                                 <div>$40.470
                                 </div>
                             </span>
-                            <a href="http://localhost:3000/detalle">Detalle del producto</a>
+                            <a href="productos/detalle">Detalle del producto</a>
                             <form action="" method="" >
                                 <button type="submit">
                                     Agregar al carro

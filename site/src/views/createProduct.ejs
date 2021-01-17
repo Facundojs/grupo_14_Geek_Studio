@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('./partials/head.ejs') %>
+<body>
+    <%- include('./partials/header.ejs') %>
+    <main> 
+        <div class="aligner-container create-product">
+            <div class="create-form">
+                <form action="POST">
+                    <div>
+                        <input type="text" name="product-name" id="product-name" placeholder="Nombre del producto">
+                    </div>
+                    <div>
+                        <input type="number" name="price" id="price" placeholder="Precio">
+                    </div>
+                    <div class="description">
+                        <input type="text-area" name="description" id="description" placeholder="Descripción">
+                    </div>
+                    <div class="category">
+                        <label>
+                        Seleccione una categoría
+                        <select name="category" id="category" placeholder="Categoría">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                        </select>
+                        </label>
+                    </div>
+                    <div class="file-div">
+                        <label for="image">Selecciona una/s imagen/es</label>
+                        <input type="file" class="file" name="image" id="image" placeholder="Imagen/es">
+                    </div>
+                    <div class="extra">
+                        <input type="text-area" name="anything else" id="anything else" placeholder="Otras consideraciones">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+    <%- include('./partials/footer.ejs') %> >
+</body>
+</html>

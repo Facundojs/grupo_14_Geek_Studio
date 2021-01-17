@@ -11,22 +11,7 @@
     <link rel="stylesheet" href="/css/login.css">
 </head>
 <body>
-    <header>
-        <div class="aligner-container">
-            <nav class="nav-1">
-                <div class="logo"><a href="/"><img src="/img/logo.jpg"></a></div>
-                <div class="bvar-container">
-                    <input type="search" class="browser-bar" placeholder="Buscar">
-                </div>
-                <i id="burger" class="fa fa-bars burger"></i>
-                <nav class="user-options">
-                    <span><a href="login" class="log"><i class="fas fa-user-circle"></i>Iniciar sesión</a><a href="http://localhost:3000/registro">Registrarse</a></span>
-                    <span><a href="#"><i class="far fa-heart"></i> Mis favoritos<!-- <i class="fas fa-heart"></i> corazon lleno !--></a></span>
-                    <span><a href="http://localhost:3000/carro"><i class="fas fa-shopping-cart"></i>Mi carrito</a></span>
-                </nav>
-            </nav>
-        </div>
-    </header>
+    <%- include('./partials/header.ejs') %>
     <main>
         <div class="aligner-container">
             <div class= "login-container"> 
@@ -77,39 +62,6 @@
             </div> 
         </div>  
     </main>
-    <footer>
-        <div class="aligner-container">
-            <nav class="footer-info">
-                <span class="about-us">
-                    <h2>Nosotros</h2>
-                    <ul>
-                        <li><a href="#">Av. Siempre viva 742 - Bs. As.</a></li>
-                        <li><a href="#">+54 9 11 2233-4455</a></li>
-                    </ul>
-                </span>
-                <span class="utility-info">
-                    <h2>Información útil</h2>
-                    <ul>
-                        <li><a href="#">¿Qué es Geek Studio?</a></li>
-                        <li><a href="#">Centro de ayuda</a></li>
-                        <li><a href="#">Medios de pago</a></li>
-                        <li><a href="#">Formas de envio</a></li>
-                        <li><a href="#">Puntos de venta</a></li>
-                    </ul>
-                </span>
-                <span class="support">
-                    <h2>Soporte</h2>
-                    <ul>
-                        <li><a href="#">Contacto</a></li>
-                        <li><a href="#">FAQ</a></li>
-                        <li><a href="#">Garantías</a></li>
-                    </ul>
-                </span>
-            </nav>
-            <div>
-                <p class="rigths">GeekStudio.com Copyright © 2020 GeekStudio Inc. All rights reverved.</p>
-            </div>
-        </div>
-    </footer>
+    <%- include('./partials/footer.ejs') %>
 </body>
 </html>
