@@ -108,56 +108,164 @@ section .product {
     padding: 1rem;
 }
 
-section .product div {
-    margin-bottom: 1rem;
+section .product product-price-and-shipping {
+    margin-bottom: .2rem;
 }
 
-main section .product .product-detail {
-    font-size: .8rem;
+main section .img-main {
+    width: 100%;
+    border: black 1px solid;
+    padding: 20px;
     display: block;
 }
 
-main section .product .product-detail img {
-    width: 100%;
-    border: black 1px solid;
-    padding: 5px;
-}
 
-main section div .product-foot {
-    margin: 0 auto;
-    display: flex;
-    justify-content: center;
-}
-
-main section div .product-foot .price-detail {
-    width: 50%;
-    font-size: 2rem;
-    text-align: center;    
-}
-
-main section div .product-foot .discount-detail {
-    width: 50%;
-}
-
-.price-detail {
-    margin: 20px;
-    font-size: 2rem;
-    font-weight: bolder;
-    align-items: right;
-}
-
-.discount-detail {
-    margin: 20px;
-    font-size: 2rem;
-    color: var(--orange);
-    font-weight: bolder;
-}
-
-main section .product .product-features {
-    font-size: 1.2rem;
+/* Precio y Descuento */
+.price-discount {
+    border: yellow 2px solid;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    align-items: center;
+}
+
+.discount-detail {
+    color: var(--orange);
+}
+
+.price-detail {
+    color: black
+}
+
+main section div .discount-detail, 
+main section div .price-detail {
+    border: red 2px solid;
+    font-size: 2rem;
+    font-weight: bolder;
+    padding: 1rem 1rem;
+}
+
+/* Para que es esto??? */
+element.style {
+    box-sizing: border-box;
+}
+
+/* Ficha de cuotas y envíos de Detalle de Producto*/
+
+.ship-container {
+    max-width: 600px;
+    display: block;
+    margin-left: 2rem;
+} /* ponerlo como display: block en 768 */
+
+
+.info-ficha {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 2px solid rgba(126,126,131,.15);
+}
+
+.top-file {
+    border-top: 2px solid rgba(126,126,131,.15);
+}
+
+.ship-country {
+    line-height: 22px;
+}
+
+.img-ship {
+    width: 50px;
+    height: 50px;
+}
+
+.img-ship img {
+    width: 100%;
+}
+
+.img-store {
+    width: 30px;
+    height: 30px;
+    margin-left: 12px;
+}
+
+.icons-ship {
+    font-size: 42px;
+    margin-left: 5px;
+}
+
+.truck-ship {
+    font-size: 25px;
+    margin-left: 15px;
+    color: rgb(112, 112, 112);
+}
+
+.stock, .green {
+    color: green;
+    font-weight: bolder;
+}
+
+.ship-text {
+    font-family: 'Lato';
+    width: 80%;
+    color: var(--oscuro);
+    padding-left: 1rem;
+    font-size: .8rem;
+}
+
+.retiro-text {
+    font-family: 'Lato';
+    width: 80%;
+    color: var(--oscuro);
+    padding-left: 1rem;
+    font-size: .8rem;
+}
+
+.warranty-text {
+    font-family: 'Lato';
+    width: 80%;
+    color: rgb(152, 22, 228);
+    padding-left: .9rem;
+    font-size: .8rem;
+}
+
+.warranty i {
+    color: rgb(116, 33, 163);
+    font-size: 33px;
+    margin-left: 15px;
+}
+
+.warranty-text span {
+    font-weight: bold;
+}
+
+.links-ship {
+    width: 100%;
+    font-size: .6rem;
+    color:rgb(31, 111, 216);
+    text-decoration: none;
+}
+
+.links-ship:hover {
+    color: lightskyblue;
+}
+
+main section .product .product-features {
+    font-size: .8rem;
+    line-height: 1.1rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.feature {
+    padding: 5px 0;
+}
+
+.title-detail {
+    width: 100%;
 }
 
 main section .product .product-features .feature {
@@ -165,23 +273,92 @@ main section .product .product-features .feature {
     padding-left: 10px;
 }
 
-main section div label .quantity {
-    width: 50%;
+main section div .div-quantity {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
 }
 
-main section button {
-    background-color:var(--blue);
-    font-size: 18px;
-    color: white;
+main section div .div-quantity {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 50%;
-    padding: .5rem;
-    margin-left: 1rem;
-    border-radius: .2rem;
+    max-width: 220px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 2em;
+}
+
+main section .product .div-button {
+    background-color: var(--blue);
+    color: white;
+    width: 100%;
+    padding: .8rem;
+    border: none;
+    border-radius: .5rem;
+    margin: .5rem 1rem;
 }
 
 main section button:hover{
     background-color: #394a96;
 }
+
+main section .recomended-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    padding-top: 20px;
+}
+
+main section .recomended-container img {
+    width: 100%;
+}
+
+.product-recomended {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    padding: 15px 5px;
+}
+
+.product-recomended .item-recomended, .cuotas {
+    width: 100%;
+    text-align: center;
+    font-weight: bolder;
+}
+
+.cuotas {
+    margin-top: .5rem;
+}
+
+.title-rec {
+    font-size: .9rem;
+}
+
+.rec-button {
+    background-color: var(--blue);
+    color: white;
+    width: 100%;
+    padding: .8rem;
+    border: none;
+    border-radius: .5rem;
+    margin: .5rem auto;
+    display: block;
+}
+
+.item-recomended span{
+    font-family: 'Lato';
+    font-size: 20px;
+    color: rgb(3, 199, 3);
+}
+
+
 
 /*Footer*/
 
@@ -257,6 +434,21 @@ footer span ul{
         display: none;
     }
 
+    main section .product .product-features {
+        font-size: 1rem;
+        line-height: 1.3rem;
+    }
+
+    main section .recomended-container h3 {
+        width: 100%;
+        text-align: center;
+    }
+
+    main section .recomended-container .product-recomended {
+        width: 46%;
+        margin: 0 10px;
+    }
+
     footer nav{
         justify-content: space-between;
         display: flex ;
@@ -294,6 +486,12 @@ footer span ul{
         padding: 0 1rem;
     }
 
+    main section .product .product-features {
+        width: 100%;
+        font-size: 1rem;
+        line-height: 1.5rem;
+    }
+
     main section .product {
         display: flex;
         flex-wrap: wrap;
@@ -304,12 +502,29 @@ footer span ul{
         font-size: .8rem;
     }
 
-    main section .product-foot {
+    .title-detail, .product-detail {
+        order: -10;
+    }
+    
+    .product-price-and-shipping {
         width: 50%;
+    }
+
+    main section .product .div-quantity {
+        order: 0;
+        width: 100%;
+        height: 50%;
+        border: blue 5px solid;
+    }
+
+    main section .recomended-container .product-recomended {
+        width: 22%;
+        margin: 0 10px;
+    }
+
+    main section .product-recomended .title-rec, 
+    main section .product-recomended span {
         font-size: .8rem;
-        display: flex;
-        justify-content: center;
-        align-items: center;
     }
 
 
