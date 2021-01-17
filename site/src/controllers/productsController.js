@@ -10,4 +10,7 @@ module.exports = {
     detalle: (req, res) => {
         res.render('detalle')
     },
+    productscrud: (req, res) => {
+        res.render('productscrud')
+    },
 }

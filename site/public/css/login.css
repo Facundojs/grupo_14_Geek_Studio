@@ -8,7 +8,6 @@
 width:100%;
 padding: 15px;
 background: var(--white);
-/*170120*/
 display: flex; 
 flex-wrap: nowrap;
 flex-direction: column;
@@ -88,16 +87,6 @@ align-content: center;
 
 /* FIN NUEVO LOGIN KE*/
 
-/*
-.contenedor-registro
-{
-    display: flex;
-    flex-wrap: wrap;
-    margin:auto;
-    justify-content: flex-start;
-}*/
-
-
 .div_p_login
 {
     text-decoration: none;
@@ -145,27 +134,32 @@ align-content: center;
 @media(min-width: 360px){
     .login-container{
         margin: auto;
-        border: solid 3px red;
     }
-}
-/*
-    .textbox-login{
-        width: 65%;
-    }
-    .btn-login{
-        width: 50%;
-    }
-    
-    .btn-login:hover{
-        background-color: #394a96;
-    }
-}
-*/
 
+    .btn-login {
+        width: 40%;
+        height: 50px;
+        font-size: 16px;
+      }
+
+    .textbox-login i{
+    /*    width: 10px;*/
+    display:none;
+
+    }
+      .textbox-login {
+        width: 65%;
+        font-size: 15px;
+      }
+      
+}
 
 @media(max-width: 460px)
 {
 
+    .textbox-login i{
+        width: 22px;
+    }
     .div_p_login
     {
         text-decoration: none;
@@ -175,6 +169,56 @@ align-content: center;
         font-weight: 100;
         font-size: 8px;
         align-content: center;
+    }
+
+}
+
+@media (min-width: 576px) {
+    .btn-login {
+        width: 30%;
+        height: 50px;
+        font-size: 16px;
+    }
+}
+
+@media (min-width: 768px) {
+    
+    .btn-login {
+        width: 20%;
+        height: 50px;
+        font-size: 18px;
+      }
+      
+}
+
+
+@media (min-width: 992px) {
+    .textbox-login i {
+        display: flex;
+        flex-wrap: wrap;
+        width: 26px;
+        float: left;
+        text-align: center;
+        color: var(--oscuro);
+    }
+
+    .textbox-login input {
+        font-size: 18px;
+        width: 50%;
+        float: left;
+        margin: 0 10px;
+        color: var(--oscuro);
+    }
+
+    .btn-login {
+        width: 20%;
+        height: 50px;
+        font-size: 18px;
+    }
+
+    .textbox-login {
+        width: 40%;
+        font-size: 15px;
     }
 
 }
