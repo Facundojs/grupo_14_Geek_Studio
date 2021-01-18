@@ -7,7 +7,7 @@ module.exports = {
         res.render('products', {productos})
     },
     carro: (req, res) => {
-        res.render('carro')
+        res.render('carro', {productos})
     },
     create: (req, res) => {
         res.render('createProduct')

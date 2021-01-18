@@ -1,0 +1,27 @@
+<% productos.forEach(elemento =>{%>
+<li>
+    <article>
+        <span class="cart-article">
+            <img class="cart-article-image"src=<%= elemento.img %> >
+            <div class="article-description"><%= elemento.name %> ></div>
+        </span>
+        <span>
+            <div>
+                Precio
+            </div>
+            <div>
+                <%= elemento.price %> 
+            </div>
+        </span>
+            <span>
+                <div>
+                    Subtotal
+                </div>
+                <div>
+                    <%= elemento.price %> 
+                </div>
+            </span>
+            <i class="fas fa-trash"></i>
+    </article>
+</li>
+<%}) %> 
