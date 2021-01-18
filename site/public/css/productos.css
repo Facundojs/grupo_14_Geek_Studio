@@ -11,16 +11,16 @@ h2{
     font-style: italic;
 }
 
-ul{
+/* ul{
     padding: 10%
-}
+} Este es el que rompía todo, despues lo arreglamos */
 
 ul li article {
     border: white solid .5rem;
     display: flex;
     flex-direction: column;
-    width: 80%;
-    margin: auto;
+    width: 100%;
+    margin: 0 auto;
     margin-top: 2rem;
     text-align: center;
     padding: .5rem;
@@ -28,7 +28,7 @@ ul li article {
 
 .article-image{
     width: 90%;
-    margin:auto;
+    margin: auto;
 }
 
 @media(min-width: 992px){

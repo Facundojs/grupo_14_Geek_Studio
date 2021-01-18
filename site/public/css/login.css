@@ -2,52 +2,6 @@
     box-sizing: border-box;
 }
 
-<<<<<<< HEAD
-.hero-container{
-    background-color: lightgray ;
-}
-
-.home-banner {
-    width: 96%;
-    margin: 2%;
-}
-
-.sections-navbar ul{
-    padding-left: 0 ;
-    display: flex ;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    text-align: center;
-}
-
-.sections-navbar ul li {
-    font-size: 2rem;
-    padding: 2rem;
-    background-color: white;
-    border-radius: 3rem;
-    margin: 2rem;
-}
-.for-sale{
-    margin-top: 3rem;
-    text-align: center;
-    font-style: italic;
-    text-decoration: underline;
-}
-
-.for-sale .articles ul {
-    text-align: center;
-    padding: 10%;
-    border: black solid 2px;
-}
-
-.for-sale .articles .product {
-    padding-left: 0 ;
-    width: 80%;
-    justify-content: space-between;
-}
-=======
->>>>>>> 3cba96166492dc5de89b0c82d60ea4b9940de3d1
 
 .login-container .form-login
 {
@@ -179,7 +133,7 @@ align-content: center;
 
 @media(min-width: 360px){
     .login-container{
-        margin: auto;
+        margin: 0 auto;
     }
 
     .btn-login {
