@@ -100,7 +100,133 @@ ul li {
 header a:hover {
     color:var(--orange);
 }
+.bvar-container{
+    width: 40%;
+}
+.browser-bar{
+    border-radius: .5rem ;
+    font-size: 1.5rem;
+    order: 1;
+    width: 80%;
+    margin: 0%;
+}
+.user-options{
+    order: 2;
+    width: 30%;
+    padding: 0.5rem;
+    display: flex;
+    /**/
+    flex:wrap;
+    justify-content:space-around;
+    align-items:baseline;
+}
 
+.user-options a, .user-options a span{
+    padding: 1rem;
+    align-items:flex-end;
+    right: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+}
+
+.nav-2{
+    display: block;
+    width: 100%;
+}
+
+.nav-2 ul a {
+    font-size: 1.5rem;
+}    
+
+/*******************************************************************************************************/
+/*Carrito*/
+.chart-title{
+    text-align: center;
+ }
+/* .image-article{
+    display: flex;
+    flex-wrap: wrap;
+    font-size: .8rem;
+    flex-direction: column;
+    border: green solid 2rem
+} */
+
+main .aligner-container section .chart-list {
+    background-color: blanchedalmond;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 1rem ;
+}
+
+main .aligner-container section .chart-list li {
+    border: black solid .5rem ;
+    width: 100% ;
+    margin: auto;
+    margin: 1rem 0rem 1rem ;
+    padding: 1rem;
+}
+
+main .aligner-container section .chart-list li article{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.chart-article{
+    width: 20%;
+    text-align: center;
+}
+
+.chart-article-image{
+    width: 100%
+}
+
+.user-buttons{
+    display: flex;
+    flex-direction: column;
+}
+
+.user-buttons .secondary-options{
+    box-sizing: border-box;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    margin: auto;
+}
+.user-buttons .secondary-options div{
+    border: black 4px solid;
+    margin:auto;
+    margin: 1rem;
+    padding: .5rem;
+    background-color: orange;
+    display: inline;
+    text-align: center;
+}
+.user-buttons .secondary-options div a{
+    text-decoration: none;
+    color: black;
+}
+.purchase-option{
+    border: white .5rem solid;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    height: 16rem;
+    width: 70%;
+    max-width: 25rem;
+    margin: auto;
+    text-align: center;
+    padding: .5rem;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+}
+
+.purchase-option button{
+    width: 40%;
+    margin: auto;
+}
 /* Detalle del Producto */
 
 section .product {
@@ -583,46 +709,172 @@ footer span ul{
         order: 0;
         width: 30%;
     }
-
-    .bvar-container{
-        width: 40%;
+    /*Carrito*/
+    main .aligner-container section .chart-list {
+        justify-content: space-between ;
     }
-    .browser-bar{
-        border-radius: .5rem ;
-        font-size: 1.5rem;
-        order: 1;
-        width: 80%;
-        margin: 0%;
+    .user-buttons{
+        flex-direction: row;
+        justify-content: space-around;
     }
-    .user-options{
-        order: 2;
-        width: 30%;
-        padding: 0.5rem;
-        display: flex;
-        /**/
-        flex:wrap;
-        justify-content:space-around;
-        align-items:baseline;
+    .purchase-option {
+        height: 20rem ;
     }
 
-    .user-options a, .user-options a span{
-        padding: 1rem;
-        align-items:flex-end;
-        right: 30px;
-        display: flex;
-        flex-wrap: wrap;
-        text-align: center;
+    .purchase-optionbutton{
+        width: 60%;
+        margin: auto
     }
-
-    .nav-2{
-        display: block;
-        width: 100%;
-    }
-
-    .nav-2 ul a {
-        font-size: 1.5rem;
-    }    
+    /***********************************************************************************************/
+/*
+LOGIN, REGISTER Y RECOVER PASS
+*/
+.login-container .form-login
+{
+width:100%;
+padding: 15px;
+background: var(--white);
+display: flex; 
+flex-wrap: nowrap;
+flex-direction: column;
+align-items: center;
+text-align: center;
+align-content: center;
 }
+
+
+.login-box {
+  display: flex;
+  flex:wrap;
+  align-items: center;
+  align-content: center;
+  width: 320px;
+  padding: 20px;
+  border-radius: 10px;
+  margin:auto;
+}
+
+.login-box h1 {
+  font-size: 45px;
+  color: #2a3446;
+  margin-bottom: 10px;
+  padding: 13px 0;
+  text-align: center;
+}
+
+.textbox-login {
+  width: 40%;
+  overflow: hidden;
+  font-size: 20px;
+  padding: 8px 0;
+  margin: 8px 0 30px 0;
+  border-bottom: 2px solid var(--oscuro);
+}
+
+.textbox-login i {
+    display: flex;
+    flex-wrap: wrap;
+    width: 26px;
+    float: left;
+    text-align: center;
+    color: var(--oscuro);
+}
+
+.textbox-login input {
+  border: none;
+  outline: none;
+  background: none;
+  font-size: 18px;
+  width: 80%;
+  float: left;
+  margin: 0 10px;
+  color: var(--oscuro);
+}
+
+.btn-login {
+  width: 20%;
+  height: 50px;
+  background: none;
+  border: 2px solid; 
+  border-radius: 5px;
+  color: white; 
+  padding: 5px;
+  font-size: 18px;
+  cursor: pointer;
+  margin: 12px 0;
+  color: var(--white);
+  background-color:var(--blue);
+}
+
+.btn-login:hover{
+    background-color: #394a96;
+}
+
+
+/* FIN NUEVO LOGIN KE*/
+
+.div_p_login
+{
+    text-decoration: none;
+    text-align: center;
+    color: black;
+    font-style: normal;
+    font-weight: 200;
+    font-size: 15px;
+    align-content: center;
+}
+
+.link-login{
+    text-decoration: none;
+    color: black;
+    font-weight: 600;
+}
+
+.link-login:hover{
+    color:blue;
+}
+
+.centrado{
+  display:block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+.div-robot
+{
+    width: 200px;
+    height: 5px;
+    margin:2px;
+    border:solid 1px grey;
+    font-size: 50%;
+    padding: 2%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    
+}
+
+.login-container{
+    margin: 0 auto;
+}
+
+.btn-login {
+    width: 40%;
+    height: 50px;
+    font-size: 16px;
+}
+
+.textbox-login i{
+    /*width: 10px;*/
+    display:none;
+}
+.textbox-login {
+    width: 65%;
+    font-size: 15px;
+}
+}
+/***********************************************************************************************/
 
 @media(min-width: 1200px){
     header, footer{

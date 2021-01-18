@@ -1,8 +1,7 @@
-*{
-    box-sizing: border-box;
-}
-
-
+/***********************************************************************************************/
+/*
+LOGIN, REGISTER Y RECOVER PASS
+*/
 .login-container .form-login
 {
 width:100%;
@@ -129,30 +128,26 @@ align-content: center;
     
 }
 
-/*kari*/
-
-@media(min-width: 360px){
-    .login-container{
-        margin: 0 auto;
-    }
-
-    .btn-login {
-        width: 40%;
-        height: 50px;
-        font-size: 16px;
-      }
-
-    .textbox-login i{
-    /*    width: 10px;*/
-    display:none;
-
-    }
-      .textbox-login {
-        width: 65%;
-        font-size: 15px;
-      }
-      
+.login-container{
+    margin: 0 auto;
 }
+
+.btn-login {
+    width: 40%;
+    height: 50px;
+    font-size: 16px;
+}
+
+.textbox-login i{
+    /*width: 10px;*/
+    display:none;
+}
+.textbox-login {
+    width: 65%;
+    font-size: 15px;
+}
+
+/*kari*/
 
 @media(max-width: 460px)
 {

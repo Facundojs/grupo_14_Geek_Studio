@@ -1,30 +1,24 @@
-* {
-    box-sizing: border-box;
-}
-
-body main, body header, body footer {
-    margin: auto;
-}
-
+/*******************************************************************************************************/
 /*Carrito*/
- h1{
+.chart-title{
     text-align: center;
  }
-.image-article{
+/* .image-article{
     display: flex;
     flex-wrap: wrap;
     font-size: .8rem;
     flex-direction: column;
-}
+    border: green solid 2rem
+} */
 
-body main .aligner-container section ul {
+main .aligner-container section .chart-list {
     background-color: blanchedalmond;
     display: flex;
     flex-wrap: wrap;
     padding: 1rem ;
 }
 
-body main .aligner-container section ul li {
+main .aligner-container section .chart-list li {
     border: black solid .5rem ;
     width: 100% ;
     margin: auto;
@@ -32,19 +26,19 @@ body main .aligner-container section ul li {
     padding: 1rem;
 }
 
-body main .aligner-container section ul li article{
+main .aligner-container section .chart-list li article{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
     align-items: center;
 }
 
-.cart-article{
+.chart-article{
     width: 20%;
     text-align: center;
 }
 
-.cart-article-image{
+.chart-article-image{
     width: 100%
 }
 
@@ -94,11 +88,11 @@ body main .aligner-container section ul li article{
 }
 
 @media (min-width:992px){
-    body main .aligner-container *{
+    main .aligner-container *{
         font-size: 2rem;
     }
 
-    body main .aligner-container section ul {
+    main .aligner-container section .chart-list {
         justify-content: space-between ;
     }
     .user-buttons{
@@ -114,3 +108,4 @@ body main .aligner-container section ul li article{
         margin: auto
     }
 }
+/*******************************************************************************************************/
