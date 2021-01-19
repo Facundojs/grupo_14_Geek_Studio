@@ -8,6 +8,7 @@
 }
 * {
     box-sizing: border-box;
+    padding-inline-start: 0;
 }
 
 /* Container General */
@@ -28,7 +29,7 @@ body{
 
 /*Header-section*/
 header {
-    padding: 1rem;
+    padding: 1rem 0;
 }
 
 header .aligner-container{
@@ -58,12 +59,6 @@ ul li {
     text-align: center;
     padding: 1rem;
 
-}
-
-
-.browser-bar{
-    margin: 1rem ;
-    border-radius: .3rem;
 }
 
 .fa.fa-bars.burger{
@@ -101,14 +96,17 @@ header a:hover {
     color:var(--orange);
 }
 .bvar-container{
-    width: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
+
 .browser-bar{
     border-radius: .5rem ;
     font-size: 1.5rem;
     order: 1;
-    width: 80%;
-    margin: 0%;
+    width: 40%;
+    margin: 1rem auto;
 }
 .user-options{
     order: 2;
@@ -131,7 +129,7 @@ header a:hover {
 }
 
 .nav-2{
-    display: block;
+    display: none;
     width: 100%;
 }
 
@@ -492,7 +490,7 @@ main section .recomended-container img {
 /*Footer*/
 
 footer {
-    padding: 1rem ;
+    padding: 1rem 0;
 }
 
 footer .aligner-container{
@@ -551,16 +549,8 @@ footer span ul{
 
  @media (min-width: 576px) {
 
-    .nav-2 {
-        display: block ;
-    }
-
-    .nav-2 {
-        font-size: .7rem;
-    }
-
     .fa.fa-bars.burger{
-        display: none;
+        display: block;
     }
 
     main section .product .product-features {
@@ -609,6 +599,15 @@ footer span ul{
     h2 {
         font-size: 2rem;
     }
+
+    .fa.fa-bars.burger{
+        display: none;
+    }
+
+    .nav-2{
+        display: block;
+    }
+
     /* Detalle del Producto */
     main section .product .product-features .feature {
         width: 33%;
@@ -685,10 +684,7 @@ footer span ul{
 }
 
 @media (min-width:992px){
-    .fa.fa-bars.burger{
-        display: none;
-    }
-    
+   
     header, footer nav span ul li{
         font-size: 1.4rem;
     }
@@ -709,6 +705,11 @@ footer span ul{
         order: 0;
         width: 30%;
     }
+
+    .browser-bar{
+        width: 100%;
+    }
+
     /*Carrito*/
     main .aligner-container section .chart-list {
         justify-content: space-between ;
