@@ -13,7 +13,7 @@ module.exports = [
         discount: false,
         features: [],
         featuresUrl: '/productos/detalle',
-        type: 'Componentes',
+        category: 'Componentes',
     },
     {
         id: 2,
@@ -23,7 +23,7 @@ module.exports = [
         discount: false,
         features: [],
         featuresUrl: '/productos/detalle',
-        type: 'Componentes',
+        category: 'Componentes',
     },
     {
         id: 3,
@@ -33,7 +33,7 @@ module.exports = [
         discount: false,
         features: [],
         featuresUrl: '/productos/detalle',
-        type: 'Componentes',
+        category: 'Componentes',
     },
     {
         id: 4,
@@ -43,7 +43,7 @@ module.exports = [
         discount: false,
         features: [],
         featuresUrl: '/productos/detalle',
-        type: 'Componentes',
+        category: 'Componentes',
     },
     {
         id: 5,
@@ -53,7 +53,7 @@ module.exports = [
         discount: false,
         features: [],
         featuresUrl: '/productos/detalle',
-        type: 'Componentes',
+        category: 'Componentes',
     },
     {
         id: 6,
@@ -63,7 +63,7 @@ module.exports = [
         discount: false,
         features: [],
         featuresUrl: '/productos/detalle',
-        type: 'Componentes',
+        category: 'Componentes',
     },
     {
         id: 7,
@@ -73,7 +73,7 @@ module.exports = [
         discount: false,
         features: [],
         featuresUrl: '/productos/detalle',
-        type: 'Perifericos',
+        category: 'Perifericos',
     },
     {
         id: 8,
@@ -83,7 +83,7 @@ module.exports = [
         discount: false,
         features: [],
         featuresUrl: '/productos/detalle',
-        type: 'Gabinete',
+        category: 'Gabinete',
     },
     {
         id: 9,
@@ -93,7 +93,7 @@ module.exports = [
         discount: false,
         features: [],
         featuresUrl: '/productos/detalle',
-        type: 'Silla',
+        category: 'Silla',
     },
     {
         id: 10,
@@ -103,6 +103,6 @@ module.exports = [
         discount: false,
         features: [],
         featuresUrl: '/productos/detalle',
-        type: 'Combos',
+        category: 'Combos',
     },
 ]
