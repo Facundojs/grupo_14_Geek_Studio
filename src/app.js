@@ -8,7 +8,7 @@ app.use(express.static(publicPath));
 app.set('view engine', 'ejs');
 app.set('views', './src/views');
 
-app.listen(3000, () => {
+app.listen(process.env.PORT || 3000, () => {
     console.log('|==================================================================|');
     console.log('|--------------Servidor corriendo en el puerto 3000----------------|');
     console.log('|==================================================================|');
