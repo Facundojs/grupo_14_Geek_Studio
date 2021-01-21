@@ -7,6 +7,10 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "npx nodemon ./src/app.js"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Facundojs/grupo_14_Geek_Studio.git"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
