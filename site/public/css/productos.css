@@ -1,21 +1,9 @@
-* {
-    box-sizing: border-box;
-}
-
-h1{
-    text-align: center;
-}
-
-h2{
+h1, h2{
     text-align: center;
     font-style: italic;
 }
 
-/* ul{
-    padding: 10%
-} Este es el que rompía todo, despues lo arreglamos */
-
-ul li article {
+.section-product-list li article {
     border: white solid .5rem;
     display: flex;
     flex-direction: column;

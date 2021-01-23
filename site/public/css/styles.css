@@ -534,6 +534,53 @@ footer span ul{
     text-align: center;
     font-size: .8rem;
 }
+/*******************************************************************************************************/
+/*Productos*/
+h1, h2{
+    text-align: center;
+    font-style: italic;
+}
+
+.section-product-list li article {
+    border: white solid .5rem;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: 0 auto;
+    margin-top: 2rem;
+    text-align: center;
+    padding: .5rem;
+}
+
+.article-image{
+    width: 90%;
+    margin: auto;
+}
+
+@media(min-width: 992px){
+    ul{
+        padding: 0;
+    }
+    section ul{
+        border: red solid 1rem;
+        margin: 1rem;
+        margin: auto;
+        display: flex;
+        flex-wrap: wrap;
+    }
+    section ul li {
+        width: 40%;
+        margin: auto;
+    }
+}
+
+@media(min-width: 1200px){
+    section ul li {
+        width: 30%;
+        margin: auto;
+    }
+}
+
 
 /*Media queries*/
 
@@ -547,7 +594,7 @@ footer span ul{
     }
 }
 
- @media (min-width: 576px) {
+@media (min-width: 576px) {
 
     .fa.fa-bars.burger{
         display: block;
@@ -590,10 +637,9 @@ footer span ul{
         font-size: .7rem;
     }
 
+}
 
- }
-
-  /*  Agregar para que muestre dos columnas los botones comp perifericos gabinetes*/
+/*  Agregar para que muestre dos columnas los botones comp perifericos gabinetes*/
 
 @media (min-width:768px){
     h2 {
@@ -726,12 +772,13 @@ footer span ul{
         width: 60%;
         margin: auto
     }
-    /***********************************************************************************************/
+
+
+/***********************************************************************************************/
 /*
 LOGIN, REGISTER Y RECOVER PASS
 */
-.login-container .form-login
-{
+.login-container .form-login{
 width:100%;
 padding: 15px;
 background: var(--white);
