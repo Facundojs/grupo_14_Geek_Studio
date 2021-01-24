@@ -80,6 +80,7 @@ ul li {
 
 .nav-2{
     display: none;
+    width: 100%;
 }
 
 .nav-2 ul{
@@ -90,7 +91,7 @@ ul li {
 
 .nav-2 ul a {
     font-size: 1rem;
-}
+}    
 
 header a:hover {
     color:var(--orange);
@@ -102,10 +103,13 @@ header a:hover {
 }
 
 .browser-bar{
+    width: 65%;
+    height: 2rem;
+    max-width: 300px;
     border-radius: .5rem ;
-    font-size: 1.5rem;
+    font-size: .8rem;
+    padding-left: .5rem;
     order: 1;
-    width: 70%;
     margin: 1rem auto;
 }
 .user-options{
@@ -128,27 +132,8 @@ header a:hover {
     text-align: center;
 }
 
-.nav-2{
-    display: none;
-    width: 100%;
-}
-
-.nav-2 ul a {
-    font-size: 1.5rem;
-}    
-
 /*******************************************************************************************************/
 /*Carrito*/
-.chart-title{
-    text-align: center;
- }
-/* .image-article{
-    display: flex;
-    flex-wrap: wrap;
-    font-size: .8rem;
-    flex-direction: column;
-    border: green solid 2rem
-} */
 
 main .aligner-container section .chart-list {
     background-color: blanchedalmond;
@@ -162,23 +147,51 @@ main .aligner-container section .chart-list li {
     width: 100% ;
     margin: auto;
     margin: 1rem 0rem 1rem ;
-    padding: 1rem;
+    padding: .5rem;
 }
 
-main .aligner-container section .chart-list li article{
+main section .chart-item {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
+    border: yellow 2px solid;
 }
 
-.chart-article{
-    width: 20%;
+main section .chart-item div {
+    padding: .3rem 0;
+}
+
+.chart-article {
+    width: 100%;
     text-align: center;
 }
 
 .chart-article-image{
-    width: 100%
+    width: 80px;
+    height: 80px;
+}
+
+.article-description {
+    font-size: 1rem;
+}
+
+.free-ship {
+    font-size: .8rem;
+    margin: 0 auto;
+    color: green;
+    font-weight: bolder;
+}
+
+.chart-quantity {
+    width: 100%;
+    text-align: center;
+}
+
+.chart-price {
+    width: 100%;
+    text-align: center;
+    font-weight: bolder;
 }
 
 .user-buttons{
@@ -561,7 +574,6 @@ h1, h2{
         padding: 0;
     }
     section ul{
-        border: red solid 1rem;
         margin: 1rem;
         margin: auto;
         display: flex;
@@ -584,10 +596,6 @@ h1, h2{
 /*Media queries*/
 
 @media (min-width: 403px){
-    .aligner-container .nav-2 ul li{
-        font-size: .7rem;
-    }
-
     main section button {
         width: 200px;
     }
@@ -596,6 +604,14 @@ h1, h2{
 @media (min-width: 576px) {
 
     .fa.fa-bars.burger{
+        display: block;
+    }
+
+    .fa.fa-bars.burger{
+        display: none;
+    }
+    
+    .nav-2{
         display: block;
     }
 
@@ -613,6 +629,65 @@ h1, h2{
         width: 46%;
         margin: 0 10px;
     }
+
+    /********************CARRITO*********************/
+
+    
+main section .chart-item {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+    border: yellow 2px solid;
+}
+
+main section .chart-item div {
+    padding: .3rem 0;
+}
+
+.chart-article {
+    width: 20%;
+    margin: 20px 20px;
+    text-align: left;
+}
+
+.chart-article-image{
+    width: 100px;
+    height: 100px;
+}
+
+.article-description {
+    font-size: 1.2rem;
+    margin: 10px 0 5px 0;
+}
+
+.free-ship {
+    font-size: .8rem;
+    margin: 0 auto;
+    color: green;
+    font-weight: bolder;
+    margin: 10px 0 10px 0;
+}
+
+.chart-quantity {
+    width: 100%;
+    font-size: 1.2rem;
+    text-align: center;
+}
+
+.chart-price {
+    width: 100%;
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: bolder;
+}
+
+.chart-item div .trash {
+    width: 100%;
+    font-size: 1.3rem;
+    text-align: center;
+    /*Este falta centar */
+}
 
     footer nav{
         justify-content: space-between;
@@ -645,13 +720,9 @@ h1, h2{
         font-size: 2rem;
     }
 
-    .fa.fa-bars.burger{
-        display: none;
-    }
-
-    .nav-2{
-        display: block;
-    }
+    .nav-2 ul a {
+        font-size: 1.2rem;
+    }    
 
     /* Detalle del Producto */
     main section .product .product-features .feature {
@@ -672,23 +743,21 @@ h1, h2{
 
     main section div .product-detail {
         width: 50%;
-        font-size: .8rem;
     }
 
-    .title-detail, .product-detail {
-        order: -10;
-    }
     
     .product-price-and-shipping {
         width: 50%;
     }
 
     main section .product .div-quantity {
-        order: 0;
         width: 100%;
         height: 50%;
         border: blue 5px solid;
+        position: relative;
     }
+
+
 
     main section .recomended-container .product-recomended {
         width: 22%;
@@ -698,6 +767,64 @@ h1, h2{
     main section .product-recomended .title-rec, 
     main section .product-recomended span {
         font-size: .8rem;
+    }
+
+ /********************CARRITO*********************/
+
+ /*   
+main section .chart-item div {
+    padding: .5rem 0;
+}*/
+
+.chart-article {
+    margin: 20px 0 20px 20px;
+}
+
+.chart-description {
+    width: 35%;
+}
+
+.chart-article-image{
+    width: 100px;
+    height: 100px;
+}
+
+.article-description {
+    font-size: 1rem;
+}
+
+.chart-quantity {
+    width: 20%;
+    font-size: .9rem;
+}
+
+.chart-price {
+    width: 15%;
+    text-align: center;
+    font-size: 1rem;
+}
+
+.chart-item div .trash {
+    width: 100%;
+    font-size: 1.2rem;
+    justify-self: flex-end;
+}
+
+    /*Carrito*/
+    main .aligner-container section .chart-list {
+        justify-content: space-between ;
+    }
+    .user-buttons{
+        flex-direction: row;
+        justify-content: space-around;
+    }
+    .purchase-option {
+        height: 20rem ;
+    }
+
+    .purchase-optionbutton{
+        width: 60%;
+        margin: auto
     }
 
 
@@ -752,24 +879,8 @@ h1, h2{
     }
 
     .browser-bar{
-        width: 100%;
-    }
-
-    /*Carrito*/
-    main .aligner-container section .chart-list {
-        justify-content: space-between ;
-    }
-    .user-buttons{
-        flex-direction: row;
-        justify-content: space-around;
-    }
-    .purchase-option {
-        height: 20rem ;
-    }
-
-    .purchase-optionbutton{
-        width: 60%;
-        margin: auto
+        font-size: 1.1rem;
+        width: 500px;
     }
 
 
@@ -920,6 +1031,41 @@ align-content: center;
     width: 65%;
     font-size: 15px;
 }
+
+ /********************CARRITO*********************/
+
+ /*   
+main section .chart-item div {
+    padding: .5rem 0;
+}*/
+
+
+.chart-article-image{
+    width: 150px;
+    height: 150px;
+}
+
+.article-description {
+    font-size: 1.2rem;
+}
+
+.free-ship {
+    font-size: 1.1rem;
+}
+
+.chart-quantity {
+    width: 20%;
+    font-size: 1.1rem;
+}
+
+.chart-price {
+    font-size: 1.3rem;
+}
+
+.chart-item div .trash {
+    font-size: 1.3rem;
+}
+
 }
 /***********************************************************************************************/
 
