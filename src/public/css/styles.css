@@ -853,7 +853,10 @@ align-content: center;
   color: var(--white);
   background-color:var(--blue);
 }
-
+.btn-login.increate{
+    margin: auto;
+    margin: 1rem;
+}
 .btn-login:hover{
     background-color: #394a96;
 }

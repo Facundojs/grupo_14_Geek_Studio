@@ -9,13 +9,13 @@ module.exports = {
     carro: (req, res) => {
         res.render('carro', {productos})
     },
-    create: (req, res) => {
-        res.render('createProduct')
-    },
     detalle: (req, res) => {
         res.render('detalle')
     },
-    productscrud: (req, res) => {
-        res.render('productscrud')
+    create: (req, res) => {
+        res.render('createProduct')
     },
+    // productscrud: (req, res) => {
+    //     res.render('productscrud')
+    // },
 }
