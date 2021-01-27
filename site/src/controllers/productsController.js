@@ -10,7 +10,8 @@ module.exports = {
         res.render('carro', {productos})
     },
     detalle: (req, res) => {
-        res.render('detalle')
+        res.render('detalle');
+        
     },
     create: (req, res) => {
         res.render('createProduct')
