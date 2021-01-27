@@ -14,15 +14,22 @@
     justify-content: space-between;
     align-items: center;
     text-align: center;
+    text-decoration: none;
 }
 
 .sections-navbar ul li {
-    font-size: 2rem;
+    font-size: 1.3rem;
     padding: 2rem;
     background-color: white;
     border-radius: 3rem;
     margin: 2rem;
+    text-decoration: none;
 }
+
+.sections-navbar ul li a{
+    text-decoration: none;
+}
+
 
 .for-sale{
     margin-top: 3rem;
@@ -93,12 +100,12 @@
 
 @media(min-width: 1200px){
     .sections-navbar ul li{
-        font-size: 1.6rem;
+        font-size: 1.3rem;
         padding: 2rem;
         background-color: white;
         border-radius: 3rem;
         margin: 2rem;
-        width: 14%
+        width: 10%
     }
     .for-sale .articles ul{
         padding: 0;

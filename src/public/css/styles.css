@@ -155,7 +155,7 @@ main section .chart-item {
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    border: yellow 2px solid;
+    /*border: yellow 2px solid;*/
 }
 
 main section .chart-item div {
@@ -197,6 +197,7 @@ main section .chart-item div {
 .user-buttons{
     display: flex;
     flex-direction: column;
+    padding: 1rem;
 }
 
 .user-buttons .secondary-options{
@@ -291,7 +292,6 @@ element.style {
 
 .ship-container {
     max-width: 600px;
-    display: block;
     margin-left: 2rem;
 } /* ponerlo como display: block en 768 */
 
@@ -636,9 +636,9 @@ h1, h2{
 main section .chart-item {
     display: flex;
     flex-wrap: wrap;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: center;
-    border: yellow 2px solid;
+
 }
 
 main section .chart-item div {
@@ -671,7 +671,7 @@ main section .chart-item div {
 
 .chart-quantity {
     width: 100%;
-    font-size: 1.2rem;
+    font-size: 1rem;
     text-align: center;
 }
 
@@ -682,11 +682,12 @@ main section .chart-item div {
     font-weight: bolder;
 }
 
+
+
 .chart-item div .trash {
     width: 100%;
     font-size: 1.3rem;
     text-align: center;
-    /*Este falta centar */
 }
 
     footer nav{
@@ -817,6 +818,7 @@ main section .chart-item div {
     .user-buttons{
         flex-direction: row;
         justify-content: space-around;
+        padding-top: 2.5rem;
     }
     .purchase-option {
         height: 20rem ;
@@ -888,16 +890,16 @@ main section .chart-item div {
 /*
 LOGIN, REGISTER Y RECOVER PASS
 */
-.login-container .form-login{
-width:100%;
-padding: 15px;
-background: var(--white);
-display: flex; 
-flex-wrap: nowrap;
-flex-direction: column;
-align-items: center;
-text-align: center;
-align-content: center;
+.login-container .form-login {
+    width: 100%;
+    padding: 15px;
+    background: var(--white);
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    align-content: center;
 }
 
 
@@ -1062,7 +1064,7 @@ main section .chart-item div {
     font-size: 1.3rem;
 }
 
-.chart-item div .trash {
+.chart-item div .chart-trash {
     font-size: 1.3rem;
 }
 
