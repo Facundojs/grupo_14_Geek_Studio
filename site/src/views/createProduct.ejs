@@ -6,37 +6,44 @@
     <main> 
         <div class="aligner-container create-product">
             <div class="create-form">
-                <form action="POST">
-                    <div>
-                        <input type="text" name="product-name" id="product-name" placeholder="Nombre del producto">
-                    </div>
-                    <div>
-                        <input type="number" name="price" id="price" placeholder="Precio">
+                <form action="POST" class = "form-product">
+                    <div class="prodname">
+                        <input type="text" name="product-name" id="product-name" placeholder="Nombre del producto" >
                     </div>
                     <div class="description">
                         <input type="text-area" name="description" id="description" placeholder="Descripción">
                     </div>
-                    <div class="category">
-                        <label>
-                        Seleccione una categoría
+                    <div>
+                        <input type="number" name="price" id="price" placeholder="Precio">
+                    </div>
+                    <div>
+                        <input type="number" name="discount" id="discount" placeholder="Descuento" max=50>
+                    </div>
+                    <div class="product-category">
+                        <label>Seleccione una categoría</label>
                         <select name="category" id="category" placeholder="Categoría">
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5</option>
+                            <option value="motherboard"> Motherboards </option>
+                            <option value="memory"> Memorias </option>
+                            <option value="processor"> Procesadores </option>
+                            <option value="storage"> Almacenamiento </option>
+                            <option value="peripheral"> Perifericos </option>
+                            <option value="screen"> Pantallas </option>
+                            <option value="videocard"> Placas de video </option>
+                            <option value="cabinet"> Gabinetes </option>
+                            <option value="office"> Oficina </option>
+
                         </select>
-                        </label>
+                        
                     </div>
                     <div class="file-div">
-                        <label for="image">Selecciona una/s imagen/es</label>
+                        <label for="image">Seleccionar imagen/es</label>
                         <input type="file" class="file" name="image" id="image" placeholder="Imagen/es">
                     </div>
                     <div class="extra">
                         <input type="text-area" name="anything else" id="anything else" placeholder="Otras consideraciones">
                     </div>
-                    <input class="btn-login increate" type="submit" value="Crear">
-                    <input class="btn-login increate" type="reset" value="Borrar">
+                    <input class="btn-login" type="submit" value="Crear">
+                    <input class="btn-login" type="reset" value="Borrar">
                 </form>
             </div>
         </div>
