@@ -33,9 +33,9 @@ module.exports = {
     },
     destroy: (req, res) => {
         console.log(2)
-        res.send('Estoy en el send')
+        res.send('Estoy en el destroy')
     },
     carro: (req, res) => {
-            res.render('carro', {productos})
+        res.render('carro', {productos})
     },
 }

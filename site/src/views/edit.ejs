@@ -4,7 +4,6 @@
 <body>
     <%- include('./partials/header.ejs') %>
     <main> 
-        <h1>AAAAAAAAAAAAAAAAAAAAAAAAAAA</h1>
         <div class="aligner-container create-product">
             <div class="create-form">
                 <form action="/productos/editando?_method=PUT"  method="POST" class ="form-product">
@@ -43,14 +42,14 @@
                     <div class="extra">
                         <input value="<%= productToEdit.features %>" type="text-area" name="anything else" id="anything else" placeholder="Otras consideraciones">
                     </div>
-                    <input value="" class="btn-login" type="submit" value="Crear">
-                    <input value="" class="btn-login" type="reset" value="Borrar">
+                    <input class="btn-login" type="submit" value="Crear">
+                    <input class="btn-login" type="reset" value="Borrar">
+                </form>
+                <form action="/productos/borrando?_method=DELETE" method="POST" >
+                    <input type="submit" name="delete" id="delete" value="Eliminar">
                 </form>
             </div>
         </div>
-        <form action="/productos/borrando?_method=DELETE" method="POST" >
-            <input type="submit" name="delete" id="delete" value="Eliminar producto">
-        </form>
     </main>
     <%- include('./partials/footer.ejs') %> >
 </body>
