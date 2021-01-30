@@ -579,13 +579,27 @@ h1, h2{
     background: none;
     border: 2px solid; 
     border-radius: 5px;
-    color: white; 
     padding: 5px;
     font-size: 18px;
     cursor: pointer;
     margin: 12px 0;
     color: var(--white);
     background-color:var(--blue);
+}
+
+.btn-danger {
+    width: 30%;
+    height: 50px;
+    background: none;
+    border: 2px solid; 
+    border-radius: 5px;
+    color: black; 
+    padding: 5px;
+    font-size: 18px;
+    font-weight: bolder;
+    cursor: pointer;
+    margin: 12px 0;
+    background-color: red;
 }
 
 @media(min-width: 992px){
