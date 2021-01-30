@@ -4,20 +4,21 @@
 <body>
     <%- include('./partials/header.ejs') %>
     <main> 
+        <h1>AAAAAAAAAAAAAAAAAAAAAAAAAAA</h1>
         <div class="aligner-container create-product">
             <div class="create-form">
-                <form action="/productos/crear"  method="POST" class ="form-product">
+                <form action="POST" class = "form-product">
                     <div class="prodname">
-                        <input type="text" name="product-name" id="product-name" placeholder="Nombre del producto" >
+                        <input value="<%= productToEdit.name %> " type="text" name="product-name" id="product-name" placeholder="Nombre del producto" >
                     </div>
                     <div class="description">
-                        <input type="text-area" name="description" id="description" placeholder="Descripción">
+                        <input value="" type="text-area" name="description" id="description" placeholder="Descripción">
                     </div>
                     <div>
-                        <input type="number" name="price" id="price" placeholder="Precio">
+                        <input value="" type="number" name="price" id="price" placeholder="Precio">
                     </div>
                     <div>
-                        <input type="number" name="discount" id="discount" placeholder="Descuento" max=50>
+                        <input value="" type="number" name="discount" id="discount" placeholder="Descuento" max=50>
                     </div>
                     <div class="product-category">
                         <label>Seleccione una categoría</label>
@@ -37,13 +38,13 @@
                     </div>
                     <div class="file-div">
                         <label for="image">Seleccionar imagen/es</label>
-                        <input type="file" class="file" name="image" id="image" placeholder="Imagen/es">
+                        <input value="" type="file" class="file" name="image" id="image" placeholder="Imagen/es">
                     </div>
                     <div class="extra">
-                        <input type="text-area" name="anything else" id="anything else" placeholder="Otras consideraciones">
+                        <input value="" type="text-area" name="anything else" id="anything else" placeholder="Otras consideraciones">
                     </div>
-                    <input class="btn-login" type="submit" value="Crear">
-                    <input class="btn-login" type="reset" value="Borrar">
+                    <input value="" class="btn-login" type="submit" value="Crear">
+                    <input value="" class="btn-login" type="reset" value="Borrar">
                 </form>
             </div>
         </div>

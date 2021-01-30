@@ -6,17 +6,54 @@ module.exports = {
     products: (req, res) => {
         res.render('products', {productos})
     },
-    carro: (req, res) => {
-        res.render('carro', {productos})
-    },
     detalle: (req, res) => {
-        res.render('detalle');
-        
+        let productToShow = productos.find(elemento => {
+            return elemento.id == req.params.id
+        });
+        res.render('detalle', {productToShow});
     },
     create: (req, res) => {
         res.render('createProduct')
-    }
-    // productscrud: (req, res) => {
-    //     res.render('productscrud')
-    // },
+    },
+    store: (req, res) => {
+        let form = req.body;
+        res.send('store')
+    },
+    edit: (req, res) => {
+        let productToEdit = productos.find(elemento => {
+            return elemento.id == req.params.id
+        });
+        res.render('edit', { productToEdit });
+    },
+    update: () => {
+        console.log(1);
+    },
+    destroy: () => {
+        console.log(2)
+    },
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    carro: (req, res) => {
+            res.render('carro', {productos})
+    },
 }
