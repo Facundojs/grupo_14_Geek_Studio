@@ -24,37 +24,17 @@ module.exports = {
         let productToEdit = productos.find(elemento => {
             return elemento.id == req.params.id
         });
-        console.table(productToEdit)
+        //console.log(productToEdit)
         res.render('edit', { productToEdit });
     },
-    update: () => {
+    update: (req, res) => {
         console.log(1);
+        res.send('Estoy en el edit')
     },
-    destroy: () => {
+    destroy: (req, res) => {
         console.log(2)
+        res.send('Estoy en el send')
     },
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     carro: (req, res) => {
             res.render('carro', {productos})
     },

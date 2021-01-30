@@ -11,8 +11,8 @@ router.get('/detalle', productController.detalle);//********//
 router.get('/crear', productController.create);
 router.post('/crear', productController.store);
 router.get('/:id/editar', productController.edit);
-router.put('/:id', productController.update);
-router.delete('/:id', productController.destroy);
+router.put('/editando', productController.update);
+router.delete('/borrando', productController.destroy);
 
 //Otras
 router.get('/carro', productController.carro);

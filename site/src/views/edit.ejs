@@ -7,7 +7,7 @@
         <h1>AAAAAAAAAAAAAAAAAAAAAAAAAAA</h1>
         <div class="aligner-container create-product">
             <div class="create-form">
-                <form action="POST" class = "form-product">
+                <form action="/productos/editando?_method=PUT"  method="POST" class ="form-product">
                     <div class="prodname">
                         <input value="<%= productToEdit.name %>" type="text" name="product-name" id="product-name" placeholder="Nombre del producto" >
                     </div>
@@ -48,6 +48,9 @@
                 </form>
             </div>
         </div>
+        <form action="/productos/borrando?_method=DELETE" method="POST" >
+            <input type="submit" name="delete" id="delete" value="Eliminar producto">
+        </form>
     </main>
     <%- include('./partials/footer.ejs') %> >
 </body>
