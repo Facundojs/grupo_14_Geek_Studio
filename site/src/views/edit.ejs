@@ -9,16 +9,16 @@
             <div class="create-form">
                 <form action="POST" class = "form-product">
                     <div class="prodname">
-                        <input value="<%= productToEdit.name %> " type="text" name="product-name" id="product-name" placeholder="Nombre del producto" >
+                        <input value="<%= productToEdit.name %>" type="text" name="product-name" id="product-name" placeholder="Nombre del producto" >
                     </div>
                     <div class="description">
-                        <input value="" type="text-area" name="description" id="description" placeholder="Descripción">
+                        <input value="<%= productToEdit.description %>" type="text-area" name="description" id="description" placeholder="Descripción">
                     </div>
                     <div>
-                        <input value="" type="number" name="price" id="price" placeholder="Precio">
+                        <input value="<%= productToEdit.price %>" type="number" name="price" id="price" placeholder="Precio">
                     </div>
                     <div>
-                        <input value="" type="number" name="discount" id="discount" placeholder="Descuento" max=50>
+                        <input value="<%= productToEdit.discount %>" type="number" name="discount" id="discount" placeholder="Descuento" max=50>
                     </div>
                     <div class="product-category">
                         <label>Seleccione una categoría</label>
@@ -41,7 +41,7 @@
                         <input value="" type="file" class="file" name="image" id="image" placeholder="Imagen/es">
                     </div>
                     <div class="extra">
-                        <input value="" type="text-area" name="anything else" id="anything else" placeholder="Otras consideraciones">
+                        <input value="<%= productToEdit.features %>" type="text-area" name="anything else" id="anything else" placeholder="Otras consideraciones">
                     </div>
                     <input value="" class="btn-login" type="submit" value="Crear">
                     <input value="" class="btn-login" type="reset" value="Borrar">

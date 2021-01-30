@@ -10,7 +10,7 @@ router.get('/detalle', productController.detalle);//********//
 //router.get('/:id',);/**/
 router.get('/crear', productController.create);
 router.post('/crear', productController.store);
-router.get('/:id/edit', productController.edit);
+router.get('/:id/editar', productController.edit);
 router.put('/:id', productController.update);
 router.delete('/:id', productController.destroy);
 

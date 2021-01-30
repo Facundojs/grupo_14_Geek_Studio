@@ -1,6 +1,7 @@
 const express = require('express');
 
-const productos = require('../database/products')
+const productos = require('../database/products');
+const { login } = require('./userController');
 
 module.exports = {
     products: (req, res) => {
@@ -23,6 +24,7 @@ module.exports = {
         let productToEdit = productos.find(elemento => {
             return elemento.id == req.params.id
         });
+        console.table(productToEdit)
         res.render('edit', { productToEdit });
     },
     update: () => {
