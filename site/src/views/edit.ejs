@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('./partials/head.ejs') %>
+<body>
+    <%- include('./partials/header.ejs') %>
+    <main> 
+        <h1>AAAAAAAAAAAAAAAAAAAAAAAAAAA</h1>
+        <div class="aligner-container create-product">
+            <div class="create-form">
+                <form action="POST" class = "form-product">
+                    <div class="prodname">
+                        <input value="<%= productToEdit.name %> " type="text" name="product-name" id="product-name" placeholder="Nombre del producto" >
+                    </div>
+                    <div class="description">
+                        <input value="" type="text-area" name="description" id="description" placeholder="Descripción">
+                    </div>
+                    <div>
+                        <input value="" type="number" name="price" id="price" placeholder="Precio">
+                    </div>
+                    <div>
+                        <input value="" type="number" name="discount" id="discount" placeholder="Descuento" max=50>
+                    </div>
+                    <div class="product-category">
+                        <label>Seleccione una categoría</label>
+                        <select name="category" id="category" placeholder="Categoría">
+                            <option value="motherboard"> Motherboards </option>
+                            <option value="memory"> Memorias </option>
+                            <option value="processor"> Procesadores </option>
+                            <option value="storage"> Almacenamiento </option>
+                            <option value="peripheral"> Perifericos </option>
+                            <option value="screen"> Pantallas </option>
+                            <option value="videocard"> Placas de video </option>
+                            <option value="cabinet"> Gabinetes </option>
+                            <option value="office"> Oficina </option>
+
+                        </select>
+                        
+                    </div>
+                    <div class="file-div">
+                        <label for="image">Seleccionar imagen/es</label>
+                        <input value="" type="file" class="file" name="image" id="image" placeholder="Imagen/es">
+                    </div>
+                    <div class="extra">
+                        <input value="" type="text-area" name="anything else" id="anything else" placeholder="Otras consideraciones">
+                    </div>
+                    <input value="" class="btn-login" type="submit" value="Crear">
+                    <input value="" class="btn-login" type="reset" value="Borrar">
+                </form>
+            </div>
+        </div>
+    </main>
+    <%- include('./partials/footer.ejs') %> >
+</body>
+</html>
