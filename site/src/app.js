@@ -10,7 +10,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(methodOverride('_method'));
 
 app.set('view engine', 'ejs');
-app.set('views', './views');
+app.set('views', './site/src/views');
 
 app.listen(process.env.PORT || 3000, () => {
     console.log('|==================================================================|');
