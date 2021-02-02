@@ -12,7 +12,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(methodOverride('_method'));
 
 app.set('view engine', 'ejs');
-//app.set('views', viewsPath);  //app.set('views', './site/src/views');
+app.set('views', viewsPath);  
 
 app.listen(process.env.PORT || 3000, () => {
     console.log('|==================================================================|');
