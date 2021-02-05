@@ -261,7 +261,7 @@ main section .img-main {
 
 /* Precio y Descuento */
 .price-discount {
-    border: yellow 2px solid;
+    /* border: yellow 2px solid; */
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -273,12 +273,13 @@ main section .img-main {
 }
 
 .price-detail {
-    color: black
+    color: black;
+    font-weight: bolder;    
 }
 
 main section div .discount-detail, 
 main section div .price-detail {
-    border: red 2px solid;
+    /* border: red 2px solid; */
     font-size: 2rem;
     font-weight: bolder;
     padding: 1rem 1rem;
@@ -317,7 +318,6 @@ element.style {
 
 .img-ship {
     width: 50px;
-    height: 50px;
 }
 
 .img-ship img {
@@ -434,7 +434,6 @@ main section div .div-quantity {
 main section .product .div-button {
     background-color: var(--blue);
     color: white;
-    width: 100%;
     padding: .8rem;
     border: none;
     border-radius: .5rem;
@@ -844,7 +843,7 @@ main section .chart-item div {
     main section .product .div-quantity {
         width: 100%;
         height: 50%;
-        border: blue 5px solid;
+        /* border: blue 5px solid; */
         position: relative;
     }
 
