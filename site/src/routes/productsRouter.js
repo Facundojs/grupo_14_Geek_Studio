@@ -19,8 +19,8 @@ const upload = multer({ storage });
 
 //Crud
 router.get('/', productController.products);
-router.get('/detalle/:id', productController.detalle);
 router.get('/crear', productController.create);
+router.get('/:id', productController.detalle);
 router.post('/crear', productController.store);
 router.get('/:id/editar', productController.edit);
 router.put('/editando', productController.update);
