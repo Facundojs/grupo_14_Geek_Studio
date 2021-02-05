@@ -7,7 +7,7 @@ module.exports = [
         discount: false,
         features: [],
         featuresUrl: '/productos/detalle',
-        category: 'Componentes',
+        category: 'componentes',
     },
     {
         id: 2,
@@ -17,7 +17,7 @@ module.exports = [
         discount: false,
         features: [],
         featuresUrl: '/productos/detalle',
-        category: 'Componentes',
+        category: 'componentes',
     },
     {
         id: 3,
@@ -27,7 +27,7 @@ module.exports = [
         discount: false,
         features: [],
         featuresUrl: '/productos/detalle',
-        category: 'Componentes',
+        category: 'componentes',
     },
     {
         id: 4,
@@ -37,7 +37,7 @@ module.exports = [
         discount: false,
         features: [],
         featuresUrl: '/productos/detalle',
-        category: 'Componentes',
+        category: 'componentes',
     },
     {
         id: 5,
@@ -47,7 +47,7 @@ module.exports = [
         discount: false,
         features: [],
         featuresUrl: '/productos/detalle',
-        category: 'Componentes',
+        category: 'componentes',
     },
     {
         id: 6,
@@ -57,7 +57,7 @@ module.exports = [
         discount: false,
         features: [],
         featuresUrl: '/productos/detalle',
-        category: 'Componentes',
+        category: 'componentes',
     },
     {
         id: 7,
@@ -67,7 +67,7 @@ module.exports = [
         discount: false,
         features: [],
         featuresUrl: '/productos/detalle',
-        category: 'Perifericos',
+        category: 'perifericos',
     },
     {
         id: 8,
@@ -77,7 +77,7 @@ module.exports = [
         discount: false,
         features: [],
         featuresUrl: '/productos/detalle',
-        category: 'Gabinete',
+        category: 'gabinete',
     },
     {
         id: 9,
@@ -87,7 +87,7 @@ module.exports = [
         discount: false,
         features: [],
         featuresUrl: '/productos/detalle',
-        category: 'Silla',
+        category: 'silla',
     },
     {
         id: 10,
@@ -97,6 +97,6 @@ module.exports = [
         discount: false,
         features: [],
         featuresUrl: '/productos/detalle',
-        category: 'Combos',
+        category: 'combos',
     },
 ]
