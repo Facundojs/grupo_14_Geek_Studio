@@ -6,8 +6,7 @@ const productController = require('../controllers/productsController')
 //Crud
 
 router.get('/', productController.products);
-router.get('/detalle', productController.detalle);//********// 
-//router.get('/:id',);/**/
+router.get('/:id', productController.detalle);
 router.get('/crear', productController.create);
 router.post('/crear', productController.store);
 router.get('/:id/editar', productController.edit);
