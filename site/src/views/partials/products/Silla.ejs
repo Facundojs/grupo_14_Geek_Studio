@@ -1,4 +1,4 @@
-<% let componentes = productos.filter(element => element.category === 'combos')%>
+<% let componentes = productos.filter(element => element.category === 'silla')%>
 <% componentes.forEach(elemento => {%>
     <li>
         <article>
@@ -14,7 +14,7 @@
                     <%=elemento.price %> 
                 </div>
             </span>
-            <a href="productos/detalle">Detalle del producto</a>
+            <a href="productos/detalle/<%= elemento.id %>">Detalle del producto</a>
             <form action="" method="" >
                 <button type="submit">
                     Agregar al carro
