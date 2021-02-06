@@ -1,16 +1,22 @@
 const express = require('express');
-
-const productos = require('../database/products');
-const { login } = require('./userController');
+const fs = require('fs');
+const path = require('path');
+// const productos = require('../database/products');
+const products = require('../database/products.json');
+const jsonTable = require('../database/jsonTable');
+const model = require('../database/jsonTable');
 
 module.exports = {
     products: (req, res) => {
-        res.render('products', {productos})
+        jsonTable().readFile;
+        res.render('products', {productos: products})
     },
     detalle: (req, res) => {
-        let productToShow = productos.find(elemento => {
+        jsonTable().readFile;
+        let productToShow = products.find(elemento => {
             return elemento.id == req.params.id
         });
+        console.log(productToShow);
         res.render('detalle', {productToShow});
     },
     create: (req, res) => {
@@ -18,13 +24,16 @@ module.exports = {
     },
     store: (req, res) => {
         let form = req.body;
-        res.send('store')
+        console.table(form);
+        //jsonTable().create(form);
+        res.send(form)
     },
     edit: (req, res) => {
-        let productToEdit = productos.find(elemento => {
+        jsonTable().readFile;
+        let productToEdit = products.find(elemento => {
             return elemento.id == req.params.id
         });
-        //console.log(productToEdit)
+        console.log(productToEdit)
         res.render('edit', { productToEdit });
     },
     update: (req, res) => {
