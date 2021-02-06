@@ -100,5 +100,35 @@
   "telephone": "112233444",
   "password": "1234",
   "password2": "1234"
+ },
+ {
+  "email": "kari.belen@gmail.com",
+  "first_name": "Karina Belen",
+  "surname": "Escobar",
+  "telephone": "112233444",
+  "password": "1234",
+  "password2": "1234"
+ },
+ {
+  "email": "kari.belen@gmail.com",
+  "first_name": "Karina Belen",
+  "surname": "Escobar",
+  "telephone": "112233444",
+  "password": "1234",
+  "password2": "1234"
+ },
+ {
+  "name": "Mau",
+  "surname": "Mau",
+  "telephone": "1224",
+  "pass-1": "123",
+  "pass-2": "123"
+ },
+ {
+  "name": "Mau",
+  "surname": "Mau",
+  "telephone": "1224",
+  "pass-1": "123",
+  "pass-2": "123"
  }
 ]

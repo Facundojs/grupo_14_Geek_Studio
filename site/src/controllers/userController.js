@@ -1,7 +1,19 @@
 const express = require('express');
 const fs = require('fs');
 const path = require('path');
+const multer = require('multer');
+const { callbackify } = require('util');
 
+const storage= multer.diskStorage({
+destination: (req, file, callback) => {
+    callback(null, path.join(__dirname, "../../public/img/users/"));
+},
+filename: (req,res, callback) =>{
+    callback(null,'user-img', Date.now(), path.extname(file.originalname))
+}
+});
+
+    
 const usersFile = path.join(__dirname, "../database/users.json");
 let users = fs.readFileSync(usersFile, 'utf-8');
 
