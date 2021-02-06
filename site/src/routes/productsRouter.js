@@ -18,9 +18,9 @@ const storage = multer.diskStorage({
 const upload = multer({ storage });
 
 //Crud
-router.get('/', productController.products);
-router.get('/crear', productController.create);
-router.get('/:id', productController.detalle);
+router.get('/', productController.products);//Done
+router.get('/crear', productController.create);//Done
+router.get('/:id', productController.detalle);//Done
 router.post('/crear', productController.store);
 router.get('/:id/editar', productController.edit);
 router.put('/editando', productController.update);
