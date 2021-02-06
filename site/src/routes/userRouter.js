@@ -10,7 +10,6 @@ router.get('/:id', userController.show); //get para mostrar
 
 //Edit
 router.get('/:id/edit', userController.edit); //get para editar
-//router.post('/:id/edit', userController.edit); //get para editar
 router.post('/:id/edit', userController.update); //post para editar
 
 //router.delete('/borrando', productController.destroy);

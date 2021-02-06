@@ -5,7 +5,11 @@
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+<<<<<<< HEAD
     "start": "npx nodemon ./site/src/app.js"
+=======
+    "startdev": "npx nodemon ./site/src/app.js -e js,ejs"
+>>>>>>> 2012171e6294d4ae8f1f4c4dba3e93f6db422db6
   },
   "repository": {
     "type": "git",
@@ -20,6 +24,7 @@
     "g": "^2.0.1",
     "heroku": "^7.47.11",
     "method-override": "^3.0.0",
+    "multer": "^1.4.2",
     "path": "^0.12.7"
   },
   "devDependencies": {

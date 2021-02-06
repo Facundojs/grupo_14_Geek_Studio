@@ -7,29 +7,32 @@
         <section class="aligner-container">
             <div class="product">
                 <div class="title-detail">
-                    <h2> Microprocesador - Micro AMD (FM2+) Apu A6-7480 3.8 Ghz</h2>
+                    <h2><%= productToShow.name %></h2>
                 </div>
                 <div class="product-detail">
                     <div>
-                        <img class="img-main" src="../img/detalle/mother.jpg" alt="Imagen del producto">
+                        <img class="img-main" src="<%= productToShow.img %>" alt="Imagen del producto">
                     </div>
                 </div>
                 <div class="product-price-and-shipping">
                     <div class="price-discount">
                         <div class="price-detail">
-                            $4.298,39
+                            $<%= productToShow.price %>
                         </div> 
                         <div class="discount-detail">
-                            -30%
+                            <% if (productToShow.discount) { %>
+                                <%= productToShow.discount %>
+                           <% } %>
                         </div>
                     </div> 
+                    
                     <div class="ship-container">
                         <div class="info-ficha top-file">
                                 <div class="img-ship">
-                                    <img src="../img/detalle/icono-ahora-12.png">
+                                    <img src="../../img/detalle/icono-ahora-12.png">
                                 </div> 
                                 <div class="ship-text">
-                                    <p>12 cuotas sin interés de $358.20</p> 
+                                    <p>12 cuotas sin interés de $<%= Number(productToShow.price) / 12 %></p> 
                                     <div>
                                         <a class="links-ship" href="">Ver cuotas</a>
                                     </div>
@@ -88,7 +91,6 @@
                             </div>
                         </div>
                     </div>
-
                 </div>
                 <div class="div-quantity">                 
                     <div class="cantidad">
@@ -98,7 +100,6 @@
                         <button  class="div-button">Añadir al carrito</button>
                     </div>
                 </div>
-
                 <div class="product-features">
                     <div class="feature">
                         <h3>General</h3>
@@ -140,13 +141,12 @@
                                     <strong>L3</strong> <span>No</span>
                     </div>
                 </div>
-
                 <div class="recomended-container">
                     <h3>Productos <strong>Recomendados</strong></h3>
                     <br>
                         <div class="product-recomended">
                             <div class="item-recomended">
-                                <img class="img-main" src="../img/detalle/mother-item-1.jpg" alt="Imagen del producto">
+                                <img class="img-main" src="../../img/detalle/mother-item-1.jpg" alt="Imagen del producto">
                             </div>
                             <div class="item-recomended">
                                 <p class="title-rec">Motherboard Gigabyte B550M H AM4</p>
@@ -163,7 +163,7 @@
                         </div>
                         <div class="product-recomended">
                             <div class="item-recomended">
-                                <img class="img-main" src="../img/detalle/mother-item-2.jpg" alt="Imagen del producto">
+                                <img class="img-main" src="../../img/detalle/mother-item-2.jpg" alt="Imagen del producto">
                             </div>
                             <div class="item-recomended">
                                 <p class="title-rec">Motherboard Asrock B550M PRO 4 AM4</p>
@@ -178,10 +178,9 @@
                                 <button class="rec-button">Ver producto</button>
                             </div>
                         </div>
-
                         <div class="product-recomended">
                             <div class="item-recomended">
-                                <img class="img-main" src="../img/detalle/mother-item-3.jpg" alt="Imagen del producto">
+                                <img class="img-main" src="../../img/detalle/mother-item-3.jpg" alt="Imagen del producto">
                             </div>
                             <div class="item-recomended">
                                 <p class="title-rec">Motherboard Asrock B550M Steel Legend</p>
@@ -196,10 +195,9 @@
                                 <button class="rec-button">Ver producto</button>
                             </div>
                         </div>
-
                         <div class="product-recomended">
                             <div class="item-recomended">
-                                <img class="img-main" src="../img/detalle/mother-item-4.jpg" alt="Imagen del producto">
+                                <img class="img-main" src="../../img/detalle/mother-item-4.jpg" alt="Imagen del producto">
                             </div>
                             <div class="item-recomended">
                                 <p class="title-rec">Motherboard Asus B450M TUF PLUS II</p>
@@ -215,12 +213,7 @@
                             </div>
                         </div>
                 </div>
-
-
-
-
             </div>
-
         </section>
     </main>
     <%- include('./partials/footer.ejs') %>
