@@ -15,25 +15,32 @@ app.set('view engine', 'ejs');
 app.set('views', viewsPath);  
 
 app.listen(process.env.PORT || 3000, () => {
-    console.log('|==================================================================|');
-    console.log('|--------------Servidor corriendo en el puerto 3000----------------|');
-    console.log('|==================================================================|');
+    console.log('|==============================================================================|');
+    console.log('|--------------⭐⭐ Servidor corriendo en el puerto 3000 ⭐⭐----------------|');
+    console.log('|==============================================================================|');
 });
 
 /************************************************************************************/ 
 
+//middleWares
+const notFoundMiddleware = require("./middlewares/notFoundMiddleware");
+
 //Main
 const mainRouter = require('./routes/mainRouter')
-app.use('/', mainRouter)
+app.use('/', mainRouter);
 
 /************************************************************************************/ 
-
 //Productos
 const productsRouter = require('./routes/productsRouter')
 app.use('/productos', productsRouter);
-
 /************************************************************************************/ 
 
 //Login
 const userRouter = require('./routes/userRouter')
-app.use('/user', userRouter);
+app.use('/users', userRouter);
+
+
+/************************************************************************************/  
+//Middleware Not-Found
+app.use(notFoundMiddleware);
+/************************************************************************************/  
