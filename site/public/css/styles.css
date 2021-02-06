@@ -602,6 +602,61 @@ h1, h2{
     background-color: red;
 }
 
+
+
+/********************************** USO GRID LISTADO DE USUARIOS ********************************************************/
+.container-table{
+    width: 90%;
+    background: white;
+    margin: 50px auto;
+    box-shadow: 0 0 20px #333;
+
+    display: grid;
+    grid-template-columns: repeat(7, 14.28%); 
+    grid-auto-rows: 50px; /*alto de filas*/
+    }
+
+    .table__title{
+        grid-column-start:1;
+        grid-column-end:6; 
+        background-color:var(--blue) ;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-weight: bold;
+        font-size: 1.2rem;
+        padding:2px;
+    }
+
+    .table__header, .table_item {
+    display:flex;
+    justify-content: center;
+    align-items:center;
+    }
+
+    .table__header{
+    font-weight: bold;
+    font-size: 1.5rem;
+    }
+
+    .table__item{
+    padding: 12px;
+    font-size: 1rem;
+    text-align: center;
+    }
+
+/********************************** FIN USO GRID LISTADO DE USUARIOS ********************************************************/
+
+/************************************************************************************************************************/
+/* KBE - Por ahora oculto el ID ver como se manejará con BD */
+.id-oculto{
+    display:none;
+}
+/************************************************************************************************************************/
+
+
+
 @media(min-width: 992px){
     ul{
         padding: 0;
@@ -1081,14 +1136,21 @@ align-content: center;
   background-color:var(--blue);
 }
 
-/*.btn-login.increate{
-    margin: auto;
-    margin: 1rem;
-}
-*/
+
 .btn-login:hover{
     background-color: #394a96;
 }
+
+/* MIDDLEWARE NOTFOUND */
+
+.img-center{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+}
+
+
 
 
 /* FIN NUEVO LOGIN KE*/

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('../partials/head.ejs') %>
+<body>
+    <%- include('../partials/header.ejs') %>
+    <main>
+    <div class="aligner-container">
+        <div class= "login-container"> 
+            <!-- <form class="form-login" action=""> -->
+                <div class = "product">
+                <h1> DETALLE USUARIO </h1>
+                <p>ID: <%= user.id %> </p>
+                <p>Nombre: <%= user.first_name %> </p>
+                <p>Apellido: <%= user.surname %> </p>
+                <p>Mail: <%= user.email %> </p>
+                <p>Telefono: <%= user.telephone %> </p>
+                <p>Categoria: <%= user.category %> </p>
+            </div>               
+        </div>
+    </div>
+
+    <%- include('../partials/footer.ejs') %>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('../partials/head.ejs') %>
+<body>
+    <%- include('../partials/header.ejs') %>
+    <main>
+    <div class="aligner-container">
+        <div class= "login-container"> 
+            <div class="table__header">Listado de Usuarios </div>
+            <div class="container-table">
+                <div class="table__header"> ID </div>
+                <div class="table__header"> Nombre </div>
+                <div class="table__header"> Apellido </div>
+                <div class="table__header"> E-mail </div>
+                <div class="table__header"> Telefono </div>
+                <div class="table__header"> Categoria </div>
+                <div class="table__header"> Acción </div>
+                <% users.forEach(user => { %> <!-- para cada usuario que me llega en el array users-->
+                    <div class="table__item"><%= user.id %>  </div>
+                    <div class="table__item"><%= user.first_name %>  </div>
+                    <div class="table__item"><%= user.surname %>  </div>
+                    <div class="table__item"><%= user.email %>  </div>
+                    <div class="table__item"><%= user.telephone %>  </div>
+                    <div class="table__item"><%= user.category %> </div>
+                    <div class="table__item"> <a class="button" href="/users/<%= user.id %>/edit"><i class="fas fa-pen"></i> </a>         
+                                              <a class="button" href="/users/<%= user.id %>/edit"><i class="fas fa-trash"></i></i> </a> 
+                    </div>
+                    
+                    
+                <% }) %>
+            </div>
+    </div>
+
+    <%- include('../partials/footer.ejs') %>
+</body>
+</html>

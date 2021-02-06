@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('../partials/head.ejs') %>
+<body>
+    <%- include('../partials/header.ejs') %>
+    <main>
+    <div class="aligner-container">
+        <div class= "login-container"> 
+            <form class="form-login" action="/users/<% user.id %>" method="POST" >
+                <h1> Editar Usuario </h1>
+                <div class="id-oculto"> <input type="text" name="<% user.id %>"/> </div>
+
+                <div class="textbox-login">
+                    <input type="email" placeholder="E-Mail" name ="email" value="<%= user.email%>" required />
+                </div>
+
+                <div class="textbox-login">
+                    <input type="text" placeholder="Nombre" name="first_name" value="<%= user.first_name%>" required />
+                </div>
+                
+                <div class="textbox-login">
+                    <input type="text" placeholder="Apellido" name="surname" value="<%= user.surname %>" required />
+                </div>
+
+                <div class="textbox-login">
+                    <input type="text" placeholder="Telefono" name="telephone" value="<%= user.telephone %>" />
+                </div>
+
+                <div class="textbox-login">
+                    <i class="fa fa-lock" aria-hidden="true"></i>
+                    <input type="password" placeholder="Contraseña" name="password" value="<%=user.password %>" required/>
+                </div>
+
+                <div class="textbox-login">
+                    <i class="fa fa-lock" aria-hidden="true"></i>
+                    <input type="password" placeholder="Repetir Contraseña" name="password2" value="<%= user.password2 %>" required/>
+                </div>
+            
+                <input class="btn-login" type="submit" value="Modificar" >
+
+            </form>
+        </div>
+    </div>
+
+    <%- include('../partials/footer.ejs') %>
+</body>
+</html>

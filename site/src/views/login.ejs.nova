@@ -22,9 +22,9 @@
                 <input class="btn-login" type="submit" value="Ingresar" >
 
                 <div class="div_p_login">
-                    <p> <a class ="link-login" href="/user/recover-pass#recover-pass"> ¿Olvidaste tu contraseña? </a> </p>
+                    <p> <a class ="link-login" href="/users/recover-pass#recover-pass"> ¿Olvidaste tu contraseña? </a> </p>
                     
-                    <p> <a class ="link-login" href="/user/register#registrarse"> Quiero Registrarme </a> </p>
+                    <p> <a class ="link-login" href="/users/register#registrarse"> Quiero Registrarme </a> </p>
                 </div>
             </form>
         </div>

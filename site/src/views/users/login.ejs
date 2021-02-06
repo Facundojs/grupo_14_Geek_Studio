@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('../partials/head.ejs') %>
+<body>
+    <%- include('../partials/header.ejs') %>
+    <main>
+    <div class="aligner-container">
+        <div class= "login-container"> 
+            <form class="form-login" action="/users">
+                <h1>Login </h1>
+                <div class="textbox-login">
+                    <i class="fa fa-user" aria-hidden="true"></i>
+                    <input type="email" placeholder="E-Mail" name="" required />
+                </div>
+            
+                <div class="textbox-login">
+                    <i class="fa fa-lock" aria-hidden="true"></i>
+                    <input type="password" placeholder="Contraseña" name="" required/>
+                </div>
+            
+                <!--  <input class="btn-login" type="button" name="" value="Ingresar" />   !-->
+                <input class="btn-login" type="submit" value="Ingresar" >
+
+                <div class="div_p_login">
+                    <p> <a class ="link-login" href="/users/recover-pass#recover-pass"> ¿Olvidaste tu contraseña? </a> </p>
+                    
+                    <p> <a class ="link-login" href="/users/crear#crear"> Quiero Registrarme </a> </p>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <%- include('../partials/footer.ejs') %>
+</body>
+</html>
