@@ -1,4 +1,5 @@
 const jsonTable = require('../database/jsonTable');
+//const model = require('../database/jsonTable');
 const productsTable = jsonTable('products')
 const { validationResult } = require('express-validator');
 

@@ -139,10 +139,16 @@
   "img": "product-1612737611386.jpg",
   "id": 14
  },
- {
-  "id": 15,
-  "img": "product-1612738019256.jpg"
- },
+{
+  "productName": "Prueba",
+  "features": "Prueba",
+  "price": "100",
+  "discount": "10",
+  "category": "Perifericos",
+  "anything else": "PruebaPrueba",
+  "img": "/img/products/product-1612711996717.jpg",
+  "id": 15
+},
  {
   "name": "PRUEBA 2",
   "features": "General Modelo Micro AMD APU A6-7480 3.8 Ghz Familia AMD A Series Nucleos 2 Hilos 2 Frecuencia 3.5 GHz Frecuencia Turbo 3.8 GHz Proceso De Fabricacion 28 Nm Grafica Integrada AMD Radeon R5 Socket FM2+ Coolers Y Disipadores Incluye Cooler CPU Si TDP 65W Desbloqueado - Overclockeable No Memoria L1 256 KB L2 1 MB L3 No",
