@@ -11,7 +11,7 @@
                         <input value="<%= productToEdit.name %>" type="text" name="product-name" id="product-name" placeholder="Nombre del producto" >
                     </div>
                     <div class="description">
-                        <input value="<%= productToEdit.description %>" type="text-area" name="description" id="description" placeholder="Descripción">
+                        <input value="<%= productToEdit.features %>" type="text-area" name="features" id="features" placeholder="Descripción">
                     </div>
                     <div>
                         <input value="<%= productToEdit.price %>" type="number" name="price" id="price" placeholder="Precio">
@@ -36,7 +36,7 @@
                         <input value="" type="file" class="file" name="image" id="image" placeholder="Imagen/es">
                     </div>
                     <div class="extra">
-                        <input value="<%= productToEdit.features %>" type="text-area" name="anything else" id="anything else" placeholder="Otras consideraciones">
+                        <input value="<%= productToEdit.anythingElse %>" type="text-area" name="anythingElse" id="anythingElse" placeholder="Otras consideraciones">
                     </div>
                     <input value="Editar" class="btn-login" type="submit">
                 </form>
