@@ -1,33 +1,24 @@
 const express = require('express');
 const router = express.Router();
+const path = require('path');
 const productController = require('../controllers/productsController')
 
-//Multer
-//Solo es la config, falta agregar a la ruta y configurar los controladores
-const multer = require('multer');
-const storage = multer.diskStorage({
-    destination: (req, file, callback) => {
-        callback(null, path.join(__dirname, '../../public/img/products/'));
-    },
-    filename: (req, file, callback) => {
-        //console.log(file);
-        // https://www.npmjs.com/package/uuidv4
-        callback(null, 'product-' + Date.now() + path.extname(file.originalname));
-    }
-});
-const upload = multer({ storage });
+
+//Middlewares
+const uploadFile = require('../middlewares/multerMiddleware');
+const validations = require('../middlewares/validateCreateProductMiddleware');
 
 //Crud
-router.get('/', productController.products);//Done
-router.get('/crear', productController.create);//Done
-router.get('/:id', productController.detalle);//Done
-router.post('/crear', productController.store);
-router.get('/:id/editar', productController.edit);
-router.put('/editando', productController.update);
-router.delete('/borrando', productController.destroy);
+router.get('/', productController.index);//Done
+router.get('/crear', productController.create);// Formulario de creación
+router.get('/:id', productController.show);// Detalle del producto (Terminado)
+router.post('/crear', uploadFile.single('image'), validations, productController.store); //Proceso de Formulario (Terminado)
+router.get('/:id/editar', productController.edit); // Formulario de edición
+router.put('/:id', productController.update); // Proceso de edición (Terminado)
+router.delete('/:id', productController.destroy); // Proceso de eliminar un producto
 
 //Otras
-router.get('/carro', productController.carro);
+router.get('/chart', productController.chart);
 
 
 module.exports = router;

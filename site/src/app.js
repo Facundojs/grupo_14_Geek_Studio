@@ -4,6 +4,7 @@ const path = require('path');
 const methodOverride = require('method-override');
 const publicPath = path.resolve(__dirname, '../public');
 const viewsPath = path.resolve(__dirname, "./views");
+const multer = require('multer');
 
 app.use(express.static(publicPath));
 

@@ -7,21 +7,21 @@
         <section class="aligner-container">
             <div class="product">
                 <div class="title-detail">
-                    <h2><%= productToShow.name %></h2>
+                    <h2><%= product.name %></h2>
                 </div>
                 <div class="product-detail">
                     <div>
-                        <img class="img-main" src="<%= productToShow.img %>" alt="Imagen del producto">
+                        <img class="img-main" src="<%= product.img %>" alt="Imagen del producto">
                     </div>
                 </div>
                 <div class="product-price-and-shipping">
                     <div class="price-discount">
                         <div class="price-detail">
-                            $<%= productToShow.price %>
+                            $<%= product.price %>
                         </div> 
                         <div class="discount-detail">
-                            <% if (productToShow.discount) { %>
-                                <%= productToShow.discount %>
+                            <% if (product.discount) { %>
+                                <%= product.discount %>
                            <% } %>
                         </div>
                     </div> 
@@ -32,7 +32,7 @@
                                     <img src="../../img/detalle/icono-ahora-12.png">
                                 </div> 
                                 <div class="ship-text">
-                                    <p>12 cuotas sin interés de $<%= Number(productToShow.price) / 12 %></p> 
+                                    <p>12 cuotas sin interés de $<%= Number(product.price) / 12 %></p> 
                                     <div>
                                         <a class="links-ship" href="">Ver cuotas</a>
                                     </div>

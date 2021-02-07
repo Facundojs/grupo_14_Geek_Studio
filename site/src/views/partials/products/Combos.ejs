@@ -1,9 +1,9 @@
-<% let componentes = productos.filter(element => element.category === 'combos')%>
+<% let componentes = products.filter(element => element.category === 'combos')%>
 <% componentes.forEach(elemento => {%>
     <li>
         <article>
             <span class="article-image">
-                <img class="article-image"src=<%= elemento.img %>  alt="GeForce RTX 3090">
+                <img class="article-image"src=<%= elemento.img %>  alt="<%=elemento.name %>">
                 <div class="article-description"><%=elemento.name %></div>
             </span>
             <span>

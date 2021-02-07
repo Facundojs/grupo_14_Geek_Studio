@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('../partials/head.ejs') %>
+<body>
+    <%- include('../partials/header.ejs') %>
+    <main> 
+        <div class="aligner-container create-product">
+            <div class="create-form">
+                <form action="/productos/crear"  method="POST" class ="form-product" enctype="multipart/form-data">
+                    <!-- Aca voy a tener que poner un nuevo div que encierre tanto el div del input como el error, y así para cada campo (field) -->
+                    <div class="productName">
+                        <input type="text" name="productName" id="productName" placeholder="Nombre del producto" >
+                    </div>
+                    <% if (locals.errors && errors.productName) { %>
+                        <p class="feedback is-danger"><%= errors.productName.msg %></p>
+                    <% } %>
+                    <div class="description">
+                        <input type="text-area" name="features" id="features" placeholder="Características" >
+                    </div>
+                    <% if (locals.errors && errors.features) { %>
+                        <p class="feedback is-danger"><%= errors.features.msg %></p>
+                    <% } %>
+                    <div>
+                        <input type="number" name="price" id="price" placeholder="Precio" >
+                    </div>
+                    <% if (locals.errors && errors.price) { %>
+                        <p class="feedback is-danger"><%= errors.price.msg %></p>
+                    <% } %>
+                    <div>
+                        <input type="number" name="discount" id="discount" placeholder="Descuento" max=50>
+                    </div>
+                    <div class="product-category">
+                        
+                        <select name="category" id="category" placeholder="Categoría" >
+                            <option>Seleccione una categoría</option>
+                            <% 
+                                let categories = ['Motherboards', 'Memorias', 'Procesadores', 'Almacenamiento', 'Perifericos', 'Pantallas', 'Placas de video', 'Gabinetes', 'Oficina']
+                            %> 
+                            <% for (const oneCategory of categories) { %> 
+                                <option value="<%= oneCategory %>"><%= oneCategory %></option>
+                            <% } %> 
+    
+                        </select>
+                        
+                    </div>
+                    <div class="file-div">
+                        <label for="image">Seleccionar imagen/es</label>
+                        <input type="file" class="file" name="image" id="image" placeholder="Imagen/es" >
+                    </div>
+                    <div class="extra">
+                        <input type="text-area" name="anything else" id="anything else" placeholder="Otras consideraciones" >
+                    </div>
+                    <input class="btn-login" type="submit" value="Crear">
+                    <input class="btn-login" type="reset" value="Borrar">
+                </form>
+            </div>
+        </div>
+    </main>
+    <%- include('../partials/footer.ejs') %> >
+</body>
+</html>
