@@ -4,7 +4,7 @@ const path = require('path');
 // const productos = require('../database/products');
 const products = require('../database/products.json');
 const jsonTable = require('../database/jsonTable');
-const model = require('../database/jsonTable');
+//const model = require('../database/jsonTable');
 
 module.exports = {
     products: (req, res) => {
@@ -25,7 +25,7 @@ module.exports = {
     store: (req, res) => {
         let form = req.body;
         console.table(form);
-        //jsonTable().create(form);
+        jsonTable().create(form);
         res.send(form)
     },
     edit: (req, res) => {
