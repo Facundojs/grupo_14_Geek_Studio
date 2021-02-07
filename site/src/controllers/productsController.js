@@ -18,19 +18,18 @@ module.exports = {
 
         // Me fijo si no hay errores
         if (errors.isEmpty()) {
-        // Genero el nuevo producto
-        let product = req.body;
-
-        if (req.file) {
+            // Genero el nuevo producto
+            let product = req.body;
+            if (req.file) {
             product.img = req.file.filename
         }
 
         let productId = productsTable.create(product)
 
         res.redirect('/productos/' + productId);
-        // Si hay errores
+            // Si hay errores
         } else {
-        // Renderizo el formulario nuevamente con los errors y los datos completados
+            // Renderizo el formulario nuevamente con los errors y los datos completados
             return res.render('products/create', { errors: errors.mapped(), old: req.body });
         }
         console.table(product); //para ver que se creo por consola
@@ -57,7 +56,7 @@ module.exports = {
         // Si viene una imagen nueva la guardo
         if (req.file) {
             product.img = req.file.filename;
-        // Si no viene una imagen nueva, busco en base la que ya había
+            // Si no viene una imagen nueva, busco en base la que ya había
         } else {
             oldProduct = productsTable.find(product.id);
             product.img = oldProduct.img;

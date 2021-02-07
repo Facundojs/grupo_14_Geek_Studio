@@ -34,7 +34,10 @@
                         <select name="category" id="category" placeholder="Categoría" >
                             <option>Seleccione una categoría</option>
                             <% 
-                                let categories = ['Motherboards', 'Memorias', 'Procesadores', 'Almacenamiento', 'Perifericos', 'Pantallas', 'Placas de video', 'Gabinetes', 'Oficina']
+                                let categories = [
+                                    'silla', 'perifericos', 'gabinete', 'componentes','combos',
+                                    'Motherboards', 'Memorias', 'Procesadores', 'Almacenamiento', 'Pantallas', 'Placas de video', 'Oficina'
+                                ]
                             %> 
                             <% for (const oneCategory of categories) { %> 
                                 <option value="<%= oneCategory %>"><%= oneCategory %></option>
