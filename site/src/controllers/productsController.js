@@ -32,7 +32,7 @@ module.exports = {
         // Renderizo el formulario nuevamente con los errors y los datos completados
             return res.render('products/create', { errors: errors.mapped(), old: req.body });
         }
-        console.table(product); //para ver que se creo por consola
+        // console.table(product); //para ver que se creo por consola
     },
     show: (req, res) => {
         let product = productsTable.find(req.params.id)

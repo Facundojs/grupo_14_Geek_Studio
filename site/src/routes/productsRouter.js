@@ -19,6 +19,6 @@ router.delete('/:id', productController.destroy); // Proceso de eliminar un prod
 
 //Otras
 router.get('/chart', productController.chart);
-
+    
 
 module.exports = router;
