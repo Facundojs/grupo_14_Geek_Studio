@@ -139,7 +139,7 @@
   "image": "product-1612683992109.txt",
   "id": 14
  },
- {
+{
   "productName": "Prueba",
   "features": "Prueba",
   "price": "100",
@@ -148,5 +148,15 @@
   "anything else": "PruebaPrueba",
   "img": "/img/products/product-1612711996717.jpg",
   "id": 15
+},
+ {
+  "productName": "PRUEBA IMAGEN 123",
+  "features": "ASD",
+  "price": "1500",
+  "discount": "",
+  "category": "Procesadores",
+  "anything else": "asd",
+  "img": "product-1612725344084.jpg",
+  "id": 16
  }
 ]
