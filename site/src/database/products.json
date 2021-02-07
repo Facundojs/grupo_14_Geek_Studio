@@ -1,14 +1,14 @@
 [
- {
-  "id": 1,
-  "name": "Gigabyte Z490 AORUS MASTER",
-  "price": "50700",
-  "img": "https://compragamer.net/pga/imagenes_publicadas/compragamer_Imganen_general_18915_Mother_Gigabyte_Z490_AORUS_MASTER_10th_Gen_Socket_1200_9949e7d4-grn.jpg",
-  "discount": false,
-  "features": [],
-  "featuresUrl": "/productos/detalle",
-  "category": "componentes"
- },
+{
+    "id": 1,
+    "name": "AMD RYZEN 9 3950X",
+    "price": "88470",
+    "img": "https://compragamer.net/pga/imagenes_publicadas/compragamer_Imganen_general_19123_Procesador_AMD_RYZEN_9_3950X_4.7GHz_Turbo_AM4_eb125692-grn.jpg",
+    "discount": false,
+    "features": [],
+    "featuresUrl": "/productos/detalle",
+    "category": "componentes"
+},
  {
   "id": 2,
   "name": "AMD RYZEN 9 3950X",
@@ -98,5 +98,45 @@
   "features": [],
   "featuresUrl": "/productos/detalle",
   "category": "combos"
+ },
+ {
+  "product-name": "PLACA DE VIDEO",
+  "features": "ASD",
+  "price": "1000000",
+  "discount": "",
+  "category": "Placas de video",
+  "anything else": "ASDASD",
+  "image": "product-1612682895772.jpg",
+  "id": 11
+ },
+ {
+  "product-name": "PLACA DE VIDEO",
+  "features": "asdasd",
+  "price": "123123",
+  "discount": "",
+  "category": "Seleccione una categoría",
+  "anything else": "asd",
+  "image": "product-1612683025576.jpg",
+  "id": 12
+ },
+ {
+  "product-name": "asd",
+  "features": "aasd",
+  "price": "123",
+  "discount": "",
+  "category": "Seleccione una categoría",
+  "anything else": "asd",
+  "image": "product-1612683754394.xlsx",
+  "id": 13
+ },
+ {
+  "product-name": "asd",
+  "features": "aasd",
+  "price": "123",
+  "discount": "",
+  "category": "Seleccione una categoría",
+  "anything else": "asd",
+  "image": "product-1612683992109.txt",
+  "id": 14
  }
 ]
