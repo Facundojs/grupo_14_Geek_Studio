@@ -5,43 +5,9 @@ const multer = require('multer');
 const { callbackify } = require('util');
 const User = require('../models/User');
 
-const storage= multer.diskStorage({
-destination: (req, file, callback) => {
-    callback(null, path.join(__dirname, "../../public/img/users/"));
-},
-filename: (req,res, callback) =>{
-    callback(null,'user-img', Date.now(), path.extname(file.originalname))
-}
-});
-
-    
-const usersFile = path.join(__dirname, "../database/users.json");
-let users = fs.readFileSync(usersFile, 'utf-8');
-
-users = JSON.parse(users);
-
-const jsonTable = {
-    filePath: path.join(__dirname, '../database/users.json'),
-    readFile() {
-        let rows = fs.readFileSync(this.filePath, 'utf-8');
-        rows = JSON.parse(rows);
-
-        return rows;
-    },
-
-    findById(id) {
-        // Me traigo todas las filas
-        let rows = this.readFile();
-
-        // Retorno solo aquella que tenga el mismo id
-        return rows.find(user => user.id == id);
-    }
-};
-
-console.log("1 user:", users);
-
 module.exports = {
     index: (req,res) => {
+        let users = User.findAll();
         res.render('users/index', {users})
     },
     login: (req, res) => {
@@ -51,7 +17,6 @@ module.exports = {
         res.render('users/create');
     },
     processRegister: (req,res) => {
-        //console.log("body", req.body);
         //valido si el mail esta registrado
         let userInDb = User.findField('email', req.body.email);
 
@@ -70,15 +35,14 @@ module.exports = {
 
         User.create(req.body);
         users = User.findAll();
-        console.log("todos los usuarios:", users);
         //res.redirect('users/index/', {users} );
         res.redirect('login'); //res.redirect('index');
     },
     destroy: (req,res) => {
-        console.log("usuario a eliminar ", req.body);
-        let userDelete = req.body;
+        let userDelete = req.params.id;
+        console.log(userDelete);
         User.delete(userDelete);
-        res.redirect('index');
+        res.redirect('/users/index');
     },
     show: (req,res)=>{
         //busco el usuario en el json
@@ -94,14 +58,9 @@ module.exports = {
         }
     },
     edit: (req, res) => {
-        let updatedUser = req.body; //tomo el usuario que viene del form
-        updatedUser = User.findByPk(req.params.id);
-        if (updatedUser) {
-            res.render('users/edit', {user});
-        }
-
-        
-
+        let updatedUser = User.findByPk(req.params.id);
+        res.render('users/edit', {user:updatedUser});
+               
     },
     update: (req,res) => {
         let updatedUser = req.body; //tomo el usuario que viene del form

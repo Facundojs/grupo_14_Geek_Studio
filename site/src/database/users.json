@@ -11,43 +11,11 @@
  },
  {
   "id": 2,
-  "email": "facu_serrano@gmail.com",
-  "first_name": "Facundo",
+  "first_name": "Facu",
   "surname": "Serrano",
-  "telephone": "112233444",
-  "password": "1234",
-  "password2": "1234",
-  "category": "vendedor"
- },
- {
-  "id": 3,
-  "first_name": "as",
-  "surname": "as",
-  "email": "asda@asdasd",
-  "telephone": "1",
-  "pass-1": "1",
-  "pass-2": "1"
- },
- {
-  "id": 4,
-  "delete": "Eliminar Usuario"
- },
- {
-  "id": 5,
-  "first_name": "Karina",
-  "surname": "Belen",
-  "email": "belenk@gmail.com",
-  "telephone": "4565447",
-  "pass-1": "123",
-  "pass-2": "123"
- },
- {
-  "id": 6,
-  "first_name": "Ezequiel",
-  "surname": "Perez",
-  "email": "eperez@puma.com",
-  "telephone": "12",
-  "pass-1": "12",
-  "pass-2": "12"
+  "email": "facu_serrano@gmail.com",
+  "telephone": "1234",
+  "pass-1": "1234",
+  "pass-2": "1234"
  }
 ]
