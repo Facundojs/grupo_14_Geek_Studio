@@ -69,19 +69,19 @@ const User = {
 
     delete: function(id) {
         let allUsers = this.findAll();
-        let finalUsers = allUsers.filter(oneUser => oneUser.id !== id); 
-        console.log("finalUsers", finalUsers);
+        let finalUsers = allUsers.filter(oneUser => oneUser.id != id); 
+        //console.log("finalUsers", finalUsers);
         //Busco TODOS los registros excepto el que pase x ID
         //lo que obtengo es un array solo con los IDs que me quiero quedar y vuelvo a escribir el archivo
-
         fs.writeFileSync(this.fileName, JSON.stringify(finalUsers, null, ' '));
+        console.log(finalUsers);
         return true;
     }
 
 }; //fin User
 
 
-
+//console.log(User.delete(6));
 module.exports = User; //exporto la funcionalidad de mi modelo
 
 
