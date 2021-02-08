@@ -9,17 +9,20 @@ const validations = require('../middlewares/validateCreateProductMiddleware');
 
 router.get('/index', userController.index);
 router.get('/login', userController.login);
-router.get('/crear',userController.crear); //router.get('/register',userController.register);
-router.post('/', userController.store); //post para grabar
-router.get('/:id', userController.show); //get para mostrar
+router.get('/create',userController.create); //router.get('/register',userController.register);
+router.post('/create', userController.processRegister);
 
+//router.post('/', userController.store); //post para grabar
+router.get('/:id/edit', userController.edit); //get para mostrar
 //Edit
-router.get('/:id/edit', userController.edit); //get para editar
-router.post('/:id/edit', userController.update); //post para editar
+//router.get('/:id/show', userController.edit); //get para editar
+router.put('/:id', userController.update); //post para editar
 
-//router.delete('/borrando', productController.destroy);
+//Eliminar
+router.delete('/:id', userController.destroy); // Eliminar un usuario
 
 router.get('/recover-pass', userController.recoverPass);
+//
 
 module.exports = router;
 

@@ -3,71 +3,52 @@ const fs = require('fs');
 const path = require('path');
 const multer = require('multer');
 const { callbackify } = require('util');
-
-const storage= multer.diskStorage({
-destination: (req, file, callback) => {
-    callback(null, path.join(__dirname, "../../public/img/users/"));
-},
-filename: (req,res, callback) =>{
-    callback(null,'user-img', Date.now(), path.extname(file.originalname))
-}
-});
-
-    
-const usersFile = path.join(__dirname, "../database/users.json");
-let users = fs.readFileSync(usersFile, 'utf-8');
-
-users = JSON.parse(users);
-
-const jsonTable = {
-    filePath: path.join(__dirname, '../database/users.json'),
-    readFile() {
-        let rows = fs.readFileSync(this.filePath, 'utf-8');
-        rows = JSON.parse(rows);
-
-        return rows;
-    },
-
-    findById(id) {
-        // Me traigo todas las filas
-        let rows = this.readFile();
-
-        // Retorno solo aquella que tenga el mismo id
-        return rows.find(user => user.id == id);
-    }
-};
-
+const User = require('../models/User');
 
 module.exports = {
     index: (req,res) => {
-        //res.send("LISTADO USERS")
+        let users = User.findAll();
         res.render('users/index', {users})
     },
     login: (req, res) => {
         res.render('users/login');
     },
-    crear: (req, res) => {
-        res.render('users/crear');
+    create: (req, res) => {
+        res.render('users/create');
     },
-    store: (req,res) =>{
-        //res.send('estoy en el store');
+    processRegister: (req,res) => {
+        //valido si el mail esta registrado
+        let userInDb = User.findField('email', req.body.email);
 
-        //Genero un nuevo usuario
-        let newUser = req.body;
+        /* --Agregar tema de validaciones primero
+        if (userInDb) {
+            return res.render('userRegisterForm', {
+                errors: {
+                    email: {
+                        msg: 'Este email ya esta registrado'}
+                }, 
+                //oldData = req.body
+            });
+            
+        }
+        */
 
-        //Agrego el nuevo usuario
-        users.push(newUser);
-    
-        //guardo info en el json
-        let userJson = JSON.stringify(users, null, ' ');
-        fs.writeFileSync(path.join(__dirname, "../database/users.json"), userJson);
-
-        
+        User.create(req.body);
+        users = User.findAll();
+        //res.redirect('users/index/', {users} );
+        res.redirect('login'); //res.redirect('index');
+    },
+    destroy: (req,res) => {
+        let userDelete = req.params.id;
+        console.log(userDelete);
+        User.delete(userDelete);
+        res.redirect('/users/index');
     },
     show: (req,res)=>{
         //busco el usuario en el json
-        let user = jsonTable.findById(req.params.id);
-        res.render('users/detail', { user });   
+        //let user = jsonTable.findById(req.params.id);
+        let user = User.findByPk(req.params.id);
+        res.render('users/edit', { user });   
         //mi ruta para ejecutar seria: http://localhost:3000/users/1
         if ( user ) {
             res.send(req.body);
@@ -77,13 +58,13 @@ module.exports = {
         }
     },
     edit: (req, res) => {
-        let user = users.find(user => user.id == req.params.id);
-        res.render('users/edit', {user});
-
+        let updatedUser = User.findByPk(req.params.id);
+        res.render('users/edit', {user:updatedUser});
+               
     },
     update: (req,res) => {
         let updatedUser = req.body; //tomo el usuario que viene del form
-
+        updatedUser.id = req.params.id;
         //Actualizo el array encontrado
         let updatedUsers = users.map(user => {
             if (user.id == req.params.id){
@@ -98,11 +79,12 @@ module.exports = {
         let userJson = JSON.stringify(updatedUsers, null, ' ');
         fs.writeFileSync(path.join(__dirname, "../database/users.json"), userJson);
 
-        res.redirect('users/index');
+        res.redirect('/users/index');
 
     },
     recoverPass: (req, res) => {
-        res.render('users/recover-pass')
+        //res.send("recover");
+        res.render('/users/recover-pass');
     }
 };
 
