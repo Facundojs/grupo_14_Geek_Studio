@@ -6,9 +6,8 @@
     <main>
     <div class="aligner-container">
         <div class= "login-container"> 
-            <form class="form-login" action="/users/<% user.id %>" method="POST" >
+            <form class="form-login" action="/users/<% user.id %>/edit" method="POST" >
                 <h1> Editar Usuario </h1>
-                <div class="id-oculto"> <input type="text" name="<% user.id %>"/> </div>
 
                 <div class="textbox-login">
                     <input type="email" placeholder="E-Mail" name ="email" value="<%= user.email%>" required />
@@ -36,9 +35,15 @@
                     <input type="password" placeholder="Repetir Contraseña" name="password2" value="<%= user.password2 %>" required/>
                 </div>
             
+                
                 <input class="btn-login" type="submit" value="Modificar" >
 
+                <form action="/users/<% user.id %>?_method=DELETE" method="POST" >
+                    <input type="submit" name="delete" id="delete" class="btn-danger" value="Eliminar Usuario">
+                </form>
+
             </form>
+
         </div>
     </div>
 

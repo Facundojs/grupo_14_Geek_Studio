@@ -132,6 +132,159 @@ header a:hover {
     text-align: center;
 }
 
+/*
+LOGIN, REGISTER Y RECOVER PASS
+*/
+.login-container .form-login{
+    width:100%;
+    padding: 15px;
+    background: var(--white);
+    display: flex; 
+    flex-wrap: nowrap;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    align-content: center;
+    }
+    
+    
+    .login-box {
+      display: flex;
+      flex:wrap;
+      align-items: center;
+      align-content: center;
+      width: 320px;
+      padding: 20px;
+      border-radius: 10px;
+      margin:auto;
+    }
+    
+    .login-box h1 {
+      font-size: 45px;
+      color: #2a3446;
+      margin-bottom: 10px;
+      padding: 13px 0;
+      text-align: center;
+    }
+    
+    .textbox-login {
+      width: 40%;
+      overflow: hidden;
+      font-size: 20px;
+      padding: 8px 0;
+      margin: 8px 0 30px 0;
+      border-bottom: 2px solid var(--oscuro);
+    }
+    
+    .textbox-login i {
+        display: flex;
+        flex-wrap: wrap;
+        width: 26px;
+        float: left;
+        text-align: center;
+        color: var(--oscuro);
+    }
+    
+    .textbox-login input {
+      border: none;
+      outline: none;
+      background: none;
+      font-size: 18px;
+      width: 80%;
+      float: left;
+      margin: 0 10px;
+      color: var(--oscuro);
+    }
+    
+    .btn-login {
+      width: 100px;
+      height: 50px;
+      background: none;
+      border: 2px solid; 
+      border-radius: 5px;
+      color: white; 
+      padding: 5px;
+      font-size: 18px;
+      cursor: pointer;
+      margin: 12px 0;
+      color: var(--white);
+      background-color:var(--blue);
+    }
+    
+    
+    .btn-login:hover{
+        background-color: #394a96;
+    }
+    
+    /* MIDDLEWARE NOTFOUND */
+    
+    .img-center{
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 100%;
+    }
+    
+    
+    
+    
+    /* FIN NUEVO LOGIN KE*/
+    
+    .div_p_login
+    {
+        text-decoration: none;
+        text-align: center;
+        color: black;
+        font-style: normal;
+        font-weight: 200;
+        font-size: 15px;
+        align-content: center;
+    }
+    
+    .link-login{
+        text-decoration: none;
+        color: black;
+        font-weight: 600;
+    }
+    
+    .link-login:hover{
+        color:blue;
+    }
+    
+    .centrado{
+      display:block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    
+    
+    .div-robot
+    {
+        width: 200px;
+        height: 5px;
+        margin:2px;
+        border:solid 1px grey;
+        font-size: 50%;
+        padding: 2%;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        
+    }
+    
+    .login-container{
+        margin: 0 auto;
+    }  
+    
+    .textbox-login i{
+        /*width: 10px;*/
+        display:none;
+    }
+    .textbox-login {
+        width: 65%;
+        font-size: 15px;
+    }
+
 /*******************************************************************************************************/
 /*Carrito*/
 
@@ -318,6 +471,7 @@ element.style {
 
 .img-ship {
     width: 50px;
+    margin-left: 2px;
 }
 
 .img-ship img {
@@ -573,13 +727,13 @@ h1, h2{
 
 
 .btn-login {
-    width: 20%;
-    height: 50px;
+    width: 30%;
+    height: 40px;
     background: none;
     border: 2px solid; 
     border-radius: 5px;
     padding: 5px;
-    font-size: 18px;
+    font-size: 12px;
     cursor: pointer;
     margin: 12px 0;
     color: var(--white);
@@ -705,21 +859,6 @@ h1, h2{
         width: 200px;
     }
 
-    
-    .btn-login {
-        width: 20%;
-        height: 50px;
-        background: none;
-        border: 2px solid; 
-        border-radius: 5px;
-        color: white; 
-        padding: 5px;
-        font-size: 18px;
-        cursor: pointer;
-        margin: 12px 0;
-        color: var(--white);
-        background-color:var(--blue);
-    }
 }
 
 @media (min-width: 576px) {
@@ -840,22 +979,6 @@ main section .chart-item div {
         padding:2%;
         border:yellow 2px solid;
         }
-
-        .btn-login {
-                width: 20%;
-                height: 50px;
-                background: none;
-                border: 2px solid; 
-                border-radius: 5px;
-                color: white; 
-                padding: 5px;
-                font-size: 18px;
-                cursor: pointer;
-                margin: 12px 0;
-                color: var(--white);
-                background-color:var(--blue);
-        }
-
 }
 
 /*  Agregar para que muestre dos columnas los botones comp perifericos gabinetes*/

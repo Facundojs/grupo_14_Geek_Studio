@@ -17,7 +17,7 @@ app.set('views', viewsPath);
 
 app.listen(process.env.PORT || 3000, () => {
     console.log('|==============================================================================|');
-    console.log('|--------------⭐⭐ Servidor corriendo en el puerto 3000 ⭐⭐------------------|');
+    console.log('|---------------⭐⭐ Servidor corriendo en el puerto 3000 ⭐⭐-----------------|');
     console.log('|==============================================================================|');
 });
 
