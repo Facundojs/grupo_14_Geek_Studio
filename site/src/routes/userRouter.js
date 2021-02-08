@@ -2,6 +2,11 @@ const express = require('express');
 const router = express.Router();
 
 const userController = require('../controllers/userController');
+
+//Middlewares
+const uploadFile = require('../middlewares/multerMiddleware');
+const validations = require('../middlewares/validateCreateProductMiddleware');
+
 router.get('/index', userController.index);
 router.get('/login', userController.login);
 router.get('/crear',userController.crear); //router.get('/register',userController.register);
