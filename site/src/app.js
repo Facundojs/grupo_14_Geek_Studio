@@ -4,7 +4,17 @@ const path = require('path');
 const methodOverride = require('method-override');
 const publicPath = path.resolve(__dirname, '../public');
 const viewsPath = path.resolve(__dirname, "./views");
-const multer = require('multer');
+const session = require('express-session');
+const cookies = require('cookie-parser');
+
+
+app.use(session({
+    secret: "Secret",
+    resave: false,
+    saveUninitialized: true
+}));
+
+app.use(cookies());
 
 app.use(express.static(publicPath));
 

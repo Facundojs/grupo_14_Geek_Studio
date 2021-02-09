@@ -67,7 +67,6 @@ module.exports = {
         res.redirect('/productos/' + productId);
     },
     destroy: (req, res) => {
-        let products = productsTable.all()
 
         productsTable.delete(req.params.id);
 
