@@ -38,7 +38,7 @@ module.exports = {
         let product = productsTable.find(req.params.id)
         
         if (product) {
-            res.render('detalle', { product });
+            res.render('detail', { product });
         } else {
             res.send('No se encontró el producto')
         }
@@ -67,13 +67,13 @@ module.exports = {
         res.redirect('/productos/' + productId);
     },
     destroy: (req, res) => {
-        let products = productsTable.all()
 
         productsTable.delete(req.params.id);
 
         res.redirect('/productos');
     },
     chart: (req, res) => {
-        res.render('carro', {products})
+        let products = productsTable.all();
+        res.render('carro', {productos: products})
     },
 }

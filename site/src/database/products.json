@@ -19,12 +19,7 @@
  },
  {
   "id": 3,
-  "name": "Asrock Radeon RX 6900",
-  "price": "188210",
-  "img": "Asrock Radeon RX 6900.jpg",
-  "discount": false,
-  "features": "General Modelo Micro AMD APU A6-7480 3.8 Ghz Familia AMD A Series Nucleos 2 Hilos 2 Frecuencia 3.5 GHz Frecuencia Turbo 3.8 GHz Proceso De Fabricacion 28 Nm Grafica Integrada AMD Radeon R5 Socket FM2+",
-  "category": "componentes"
+  "img": "Asrock Radeon RX 6900.jpg"
  },
  {
   "id": 4,
@@ -136,7 +131,7 @@
   "discount": "10",
   "category": "Perifericos",
   "anything else": "PruebaPrueba",
-  "img": "/img/products/product-1612711996717.jpg",
+  "img": "product-1612711996717.jpg",
   "id": 15
  },
  {
@@ -150,13 +145,13 @@
   "id": 16
  },
  {
-  "name": "facutest",
-  "features": "facutest",
-  "price": "10",
-  "discount": "10",
-  "category": "silla",
-  "anythingElse": "facutestfacutest",
-  "img": "product-1612823087361.jpg",
-  "id": 17
+  "product-name": "PRUEBA LANDO",
+  "features": "PRUEBA LANDO",
+  "price": "120000",
+  "discount": "",
+  "category": "Oficina",
+  "anythingElse": "PRUEBA",
+  "id": 17,
+  "img": "product-1612831662516.jpg"
  }
 ]

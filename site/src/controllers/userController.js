@@ -1,9 +1,10 @@
-const express = require('express');
 const fs = require('fs');
 const path = require('path');
-const multer = require('multer');
-const { callbackify } = require('util');
+const bcrypt = require('bcryptjs');
+const { validationResult } = require('express-validator');
 const User = require('../models/User');
+
+
 
 module.exports = {
     index: (req,res) => {
@@ -17,26 +18,42 @@ module.exports = {
         res.render('users/create');
     },
     processRegister: (req,res) => {
-        //valido si el mail esta registrado
-        let userInDb = User.findField('email', req.body.email);
+        const resultValidation = validationResult(req)
 
-        /* --Agregar tema de validaciones primero
-        if (userInDb) {
-            return res.render('userRegisterForm', {
-                errors: {
-                    email: {
-                        msg: 'Este email ya esta registrado'}
-                }, 
-                //oldData = req.body
+        if(resultValidation.errors.length > 0) {
+            return res.render('register', {
+                errors: resultValidation.mapped(),
+                oldData: req.body
             });
-            
         }
-        */
+        //valido si el mail esta registrado
+        let userInDB = User.findField('email', req.body.email);
 
+        if (userInDB) {
+			return res.render('register', { 
+				errors: {
+					email: {
+						msg: 'Este email ya está registrado'
+					}
+				},
+				oldData: req.body
+			});
+		}
+
+        
+		// let userToCreate = {
+		// 	...req.body,
+		// 	password: bcryptjs.hashSync(req.body.password, 10),
+		// 	avatar: req.file.filename
+		// }
+
+		// let userCreated = User.create(userToCreate);
+        // res.redirect('/users/login');
+        
         User.create(req.body);
         users = User.findAll();
         //res.redirect('users/index/', {users} );
-        res.redirect('login'); //res.redirect('index');
+        res.redirect('/users/login');
     },
     destroy: (req,res) => {
         let userDelete = req.params.id;

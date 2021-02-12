@@ -32,7 +32,7 @@
                                     <img src="../../img/detalle/icono-ahora-12.png">
                                 </div> 
                                 <div class="ship-text">
-                                    <p>12 cuotas sin interés de $<%= Number(product.price) / 12 %></p> 
+                                    <p>12 cuotas sin interés de $<%= Math.round(Number(product.price) / 12 * 100, 2)/100 %></p> 
                                     <div>
                                         <a class="links-ship" href="">Ver cuotas</a>
                                     </div>
