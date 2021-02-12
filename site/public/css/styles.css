@@ -38,6 +38,12 @@ header .aligner-container{
     border: black 2px solid;
 }
 
+.logo-ref {
+    /* Tamaño del logo 3366 x 3952 px */
+    width: 134.64px; 
+    height: 158.08px;
+}
+
 header a {
     color:var(--white);
     text-decoration: none;
@@ -1170,6 +1176,12 @@ main section .chart-item div {
     header .aligner-container .nav-1 .logo{
         order: 0;
         width: 30%;
+    }
+
+    .logo-ref {
+        /* Tamaño del logo 3366 x 3952 px */
+        width: 187px; 
+        height: 219.56px;
     }
 
     .browser-bar{

@@ -38,7 +38,7 @@ module.exports = {
         let product = productsTable.find(req.params.id)
         
         if (product) {
-            res.render('detalle', { product });
+            res.render('detail', { product });
         } else {
             res.send('No se encontró el producto')
         }
