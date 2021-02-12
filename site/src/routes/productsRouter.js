@@ -9,7 +9,7 @@ const uploadFile = require('../middlewares/multerMiddleware');
 const validations = require('../middlewares/validateCreateProductMiddleware');
 
 //Otras
-router.get('/chart', productController.chart);
+router.get('/carro', productController.chart);
 
 //Crud
 router.get('/', productController.index);//Done
