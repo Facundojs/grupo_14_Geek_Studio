@@ -8,10 +8,13 @@
         <div class= "login-container"> 
             <form class="form-login" action="/users/create" method="POST" >
                 <h1> Registrarse </h1>
+                <% if(locals.errors){%> 
+                    <p>Hay errores</p>
+                <%} %>
                 <div class="textbox-login">
                     <input type="text" placeholder="Nombre" name="first_name" />*
                 </div>
-                
+                 
                 <div class="textbox-login">
                     <input type="text" placeholder="Apellido" name="surname"  />*
                 </div>

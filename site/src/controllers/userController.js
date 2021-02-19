@@ -21,7 +21,7 @@ module.exports = {
         const resultValidation = validationResult(req)
 
         if(resultValidation.errors.length > 0) {
-            return res.render('register', {
+            return res.render('users/create', {
                 errors: resultValidation.mapped(),
                 oldData: req.body
             });
@@ -30,7 +30,7 @@ module.exports = {
         let userInDB = User.findField('email', req.body.email);
 
         if (userInDB) {
-			return res.render('register', { 
+			return res.render('users/create', { 
 				errors: {
 					email: {
 						msg: 'Este email ya está registrado'
