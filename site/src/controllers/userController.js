@@ -12,6 +12,16 @@ module.exports = {
   login: (req, res) => {
     res.render("users/login");
   },
+  loginProcess: (req, res) => {
+    //en el login.ejs agregue esta linea para indicar que va por POST
+    //<form class="form-login" action="/users/login" method="POST" enctype="multipart/form-data">
+    //pero no logro capturar para ver que esta enviando y verlo con:
+    return res.send(req.body);
+
+    //let userToLogin = User.findField("email", req.body.email);
+
+    //return res.send(userToLogin);
+  },
   create: (req, res) => {
     res.render("users/create");
   },

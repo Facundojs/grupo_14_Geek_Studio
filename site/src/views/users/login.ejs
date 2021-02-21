@@ -6,11 +6,11 @@
     <main>
     <div class="aligner-container">
         <div class= "login-container"> 
-            <form class="form-login" action="/users/login">
+            <form class="form-login" action="/users/login" method="POST" enctype="multipart/form-data">
                 <h1>Login </h1>
                 <div class="textbox-login">
                     <i class="fa fa-user" aria-hidden="true"></i>
-                    <input type="email" placeholder="E-Mail" name="" required />
+                    <input type="email" placeholder="E-Mail" name="email" required />
                 </div>
             
                 <div class="textbox-login">
