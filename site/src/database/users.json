@@ -7,7 +7,8 @@
   "telephone": "112233444",
   "password": "1234",
   "password2": "1234",
-  "category": "vendedor"
+  "category": "vendedor",
+  "img": "default.jpg"
  },
  {
   "id": 2,
@@ -16,6 +17,56 @@
   "email": "facu_serrano@gmail.com",
   "telephone": "1234",
   "pass-1": "1234",
+  "pass-2": "1234",
+  "category": "vendedor",
+  "img": "default.jpg"
+ },
+ {
+  "id": 3,
+  "first_name": "Freyja",
+  "surname": "Martel",
+  "email": "fremartel@gmail.com",
+  "telephone": "1123222",
+  "pass-1": "1234",
+  "pass-2": "1234",
+  "category": "vendedor",
+  "img": "default.jpg"
+ },
+ {
+  "id": 4,
+  "first_name": "Kari",
+  "surname": "ar3",
+  "email": "lucy@gmail.com",
+  "telephone": "ka",
+  "password": "111",
+  "pass-2": "111"
+ },
+ {
+  "id": 5,
+  "first_name": "fruta",
+  "surname": "fruta",
+  "email": "fruta@gm.com",
+  "telephone": "12",
+  "password": "1234",
   "pass-2": "1234"
+ },
+ {
+  "id": 6,
+  "first_name": "karina",
+  "surname": "escobar",
+  "email": "ka1@a.com",
+  "telephone": "1",
+  "password": "1111",
+  "pass-2": "1111"
+ },
+ {
+  "id": 7,
+  "first_name": "Lucy",
+  "surname": "Escobar",
+  "email": "lucya@gmail.com",
+  "telephone": "11",
+  "password": "123",
+  "pass-2": "123",
+  "userImg": "default.jpg"
  }
 ]

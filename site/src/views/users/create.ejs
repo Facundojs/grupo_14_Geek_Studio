@@ -5,35 +5,88 @@
     <%- include('../partials/header.ejs') %>
     <main>
     <div class="aligner-container">
-        <div class= "login-container"> 
-            <form class="form-login" action="/users/create" method="POST" >
+       
+            <div class= "login-container"> 
+            <form class="form-login" novalidate action="/users/create" method="POST" enctype="multipart/form-data">
                 <h1> Registrarse </h1>
                 <div class="textbox-login">
-                    <input type="text" placeholder="Nombre" name="first_name" />*
+                    <input type ="text" 
+                    placeholder ="Nombre" 
+                    name ="first_name" 
+                    class ="form-control <% locals.errors && errors.first_name ? 'is-invalid' : null %>"
+                    value="<%= locals.oldData ? oldData.first_name : null %>"
+                    >*
                 </div>
+                <% if (locals.errors && errors.first_name) { %>
+                    <div class="text-danger centrar">
+                        <%= errors.first_name.msg %>
+                    </div>
+                    <% } %>
                 
                 <div class="textbox-login">
-                    <input type="text" placeholder="Apellido" name="surname"  />*
+                    <input type="text" placeholder="Apellido" 
+                    name="surname"  
+                    class ="form-control <% locals.errors && errors.surname ? 'is-invalid' : null %>"
+                    value="<%= locals.oldData ? oldData.surname : null %>"
+                    />*
                 </div>
+                <% if (locals.errors && errors.surname) { %>
+                    <div class="text-danger centrar">
+                        <%= errors.surname.msg %>
+                    </div>
+                    <% } %>
                 
                 <div class="textbox-login">
-                    <input type="email" placeholder="E-Mail" name="email"  />*
+                    <input type="email" placeholder="E-Mail" 
+                    name="email"  
+                    class ="form-control <% locals.errors && errors.email ? 'is-invalid' : null %>"
+                    value="<%= locals.oldData ? oldData.email : null %>"
+                    />*
                 </div>
+                <% if (locals.errors && errors.email) { %>
+                    <div class="text-danger centrar">
+                        <%= errors.email.msg %>
+                    </div>
+                    <% } %>
 
                 <div class="textbox-login">
-                    <input type="text" placeholder="Telefono" name="telephone" />
+                    <input type="text" placeholder="Telefono" name="telephone" 
+                    value="<%= locals.oldData ? oldData.telephone : null %>"/>
+                </div>
+
+                <div class="btn-login">
+                    <label for="user-img">Seleccionar Imagen Perfil</label>
+                    <input type="file" class="file" 
+                    name="userImg" 
+                    id="user-img" 
+                    placeholder="Imagen" 
+                    
+                    value="<%= locals.oldData ? oldData.userImg : null %>">
                 </div>
 
                 <div class="textbox-login">
                     <i class="fa fa-lock" aria-hidden="true"></i>
-                    <input type="password" placeholder="Contraseña" name="pass-1" />*
+                    <input type="password" placeholder="Contraseña" 
+                    name="password" 
+                    class ="form-control <% locals.errors && errors.password ? 'is-invalid' : null %>"
+                    value="<%= locals.oldData ? oldData.password : null %>"
+                    />*
                 </div>
+                <% if (locals.errors && errors.password) { %>
+                    <div class="text-danger centrar">
+                        <%= errors.password.msg %>
+                    </div>
+                    <% } %>
 
                 <div class="textbox-login">
                     <i class="fa fa-lock" aria-hidden="true"></i>
-                    <input type="password" placeholder="Repetir Contraseña" name="pass-2" />*
+                    <input type="password" placeholder="Repetir Contraseña" 
+                    name="pass-2" 
+                    class ="form-control <% locals.errors && errors.pass-2 ? 'is-invalid' : null %>"
+                    value="<%= locals.oldData ? oldData.pass2 : null %>"
+                    />*
                 </div>
-            
+                
                 <input class="btn-login" type="submit" value="Registrarse" >
 
             </form>
