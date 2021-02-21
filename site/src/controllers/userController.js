@@ -13,15 +13,26 @@ module.exports = {
     res.render("users/login");
   },
   loginProcess: (req, res) => {
-    //en el login.ejs agregue esta linea para indicar que va por POST
-    //<form class="form-login" action="/users/login" method="POST" enctype="multipart/form-data">
-    //pero no logro capturar para ver que esta enviando y verlo con:
-    //return res.send(req.body);
-
     let userToLogin = User.findField("email", req.body.email);
-
     if (userToLogin) {
-      return res.send(userToLogin);
+      let okPassword = bcryptjs.compareSync(
+        req.body.password,
+        userToLogin.password
+      );
+      if (okPassword) {
+        req.session.userLogged = userToLogin;
+        delete userToLogin.password; //por seguridad borro esta propiedad
+
+        return res.redirect("/users/profile");
+      }
+      return res.render("users/login", {
+        errors: {
+          password: {
+            msg: "La contraseña es incorrecta",
+          },
+        },
+        oldData: req.body,
+      });
     }
 
     return res.render("users/login", {
@@ -32,6 +43,9 @@ module.exports = {
       },
       oldData: req.body,
     });
+  },
+  profile: (req, res) => {
+    res.render("users/profile", { user: req.session.userLogged });
   },
   create: (req, res) => {
     res.render("users/create");
@@ -72,7 +86,7 @@ module.exports = {
   },
   destroy: (req, res) => {
     let userDelete = req.params.id;
-    console.log(userDelete);
+    //console.log(userDelete);
     User.delete(userDelete);
     res.redirect("/users/index");
   },
@@ -111,5 +125,10 @@ module.exports = {
   },
   recoverPass: (req, res) => {
     res.render("/users/recover-pass");
+  },
+  logout: (req, res) => {
+    //Borro la sesion
+    req.session.destroy;
+    return res.redirect("/");
   },
 };

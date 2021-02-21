@@ -5,12 +5,21 @@
             <div class="bvar-container">
                 <input type="search" class="browser-bar" placeholder="Buscar productos, marcas...">
             </div>
-            <nav class="user-options">
-                <span><a href="/users/login" class="log"><i class="fas fa-user-circle"></i></a></span>
-                    <!--<i class="fas fa-user-circle"></i></a><a href="/registro"> --KE - Esto lo voy a llamar dentro del login para registrarse !-->
-                <span><a href="/productos/favoritos"><i class="far fa-heart"></i></a></span>
-                <span><a href="/productos/carro"><i class="fas fa-shopping-cart"></i></a></span>
-            </nav>
+            <% if (locals.isLogged) { %>
+                <nav class="user-options">
+                    <img src = "/img/users/<%= locals.userLogged.userImg %>"  width="40" style="border-radius: 100%"> 
+                    <span><a href="/users/login" class="log"><i class="fas fa-user-circle"></i></a></span>
+                    <span><a href="/productos/favoritos"><i class="far fa-heart"></i></a></span>
+                    <span><a href="/productos/carro"><i class="fas fa-shopping-cart"></i></a></span>
+                </nav>
+            <% } else { %>
+                    <nav class="user-options">
+                    <span><a href="/users/login" class="log"><i class="fas fa-user-circle"></i></a></span>
+                    <span><a href="/productos/favoritos"><i class="far fa-heart"></i></a></span>
+                    <span><a href="/productos/carro"><i class="fas fa-shopping-cart"></i></a></span>
+                </nav>
+            <% } %>
+
             <i id="burger" class="fa fa-bars burger"></i>
         </nav>
         <nav class="nav-2">

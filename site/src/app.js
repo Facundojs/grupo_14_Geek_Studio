@@ -6,6 +6,7 @@ const publicPath = path.resolve(__dirname, "../public");
 const viewsPath = path.resolve(__dirname, "./views");
 const session = require("express-session");
 const cookies = require("cookie-parser");
+const userLoggedMiddleware = require("./middlewares/userLoggedMiddleware");
 
 app.use(
   session({
@@ -14,6 +15,8 @@ app.use(
     saveUninitialized: true,
   })
 );
+
+app.use(userLoggedMiddleware);
 
 app.use(cookies());
 

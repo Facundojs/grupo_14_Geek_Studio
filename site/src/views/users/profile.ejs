@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('../partials/head.ejs') %>
+<body>
+    <%- include('../partials/header.ejs') %>
+    <main>
+    <div class="aligner-container" style="margin-top: 40px">
+        <div class= "login-container"> 
+            <h1>Perfil de Usuario </h1>   
+            <div class="row centrar">    
+                <div class="col-md-3">
+                    <h2> <%= user.first_name %> </h2>
+                    <img src="/img/users/<%= user.userImg %> ">
+                    <br>
+                    <br>
+                    <div class="alert alert-success"><%= user.email %> </div>
+                </div>
+            </div>
+	    </div>
+	    <!-- //Container -->
+    </div>
+
+    <%- include('../partials/footer.ejs') %>
+</body>
+</html>

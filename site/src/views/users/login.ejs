@@ -24,8 +24,15 @@
             
                 <div class="textbox-login">
                     <i class="fa fa-lock" aria-hidden="true"></i>
-                    <input type="password" placeholder="Contraseña" name="password" required/>
+                    <input type="password" placeholder="Contraseña" name="password" 
+                    class ="form-control <%= locals.errors && errors.password ? 'is-invalid' : null %>"
+                    required/>
                 </div>
+                <% if (locals.errors && errors.password) { %>
+                    <div class="text-danger centrar">
+                        <%= errors.password.msg %>
+                    </div>
+                    <% } %>
             
                 <!--  <input class="btn-login" type="button" name="" value="Ingresar" />   !-->
                 <input class="btn-login" type="submit" value="Ingresar" >

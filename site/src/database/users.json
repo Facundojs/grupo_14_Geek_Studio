@@ -44,5 +44,25 @@
   "password": "$2a$10$XExUw.L4YBK7AX6ZcUeDf.d7r3K3mCnNkB16T2wSeD5ibH4YeiVnS",
   "pass-2": "11",
   "userImg": "User-1613891775274.jpg"
+ },
+ {
+  "id": 6,
+  "first_name": "Lando1",
+  "surname": "Lando1",
+  "email": "lando1@gmail.com",
+  "telephone": "111",
+  "password": "$2a$10$KfBWjG0YdKIw7mVa1408WueVQf5BsgaKLK/uuFpsngK.hDwmi7pXi",
+  "pass-2": "1234",
+  "userImg": "User-1613927292405.jpg"
+ },
+ {
+  "id": 7,
+  "first_name": "Karee",
+  "surname": "Karee",
+  "email": "kareee@puma.com",
+  "telephone": "",
+  "password": "$2a$10$kAMMn61wPorFyqUF3d/FC.O4y4cc1XNC4olhC3IO2pqueoGarCm5S",
+  "pass-2": "1234",
+  "userImg": "User-1613927436668.jpg"
  }
 ]
