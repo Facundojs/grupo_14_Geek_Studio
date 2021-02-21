@@ -5,6 +5,7 @@ const { validationResult } = require("express-validator");
 const User = require("../models/User");
 
 module.exports = {
+<<<<<<< HEAD
   index: (req, res) => {
     let users = User.findAll();
     res.render("users/index", { users });
@@ -17,6 +18,40 @@ module.exports = {
   },
   processRegister: (req, res) => {
     const resultValidation = validationResult(req);
+=======
+    index: (req,res) => {
+        let users = User.findAll();
+        res.render('users/index', {users})
+    },
+    login: (req, res) => {
+        res.render('users/login');
+    },
+    create: (req, res) => {
+        res.render('users/create');
+    },
+    processRegister: (req,res) => {
+        const resultValidation = validationResult(req)
+
+        if(resultValidation.errors.length > 0) {
+            return res.render('users/create', {
+                errors: resultValidation.mapped(),
+                oldData: req.body
+            });
+        }
+        //valido si el mail esta registrado
+        let userInDB = User.findField('email', req.body.email);
+
+        if (userInDB) {
+			return res.render('users/create', { 
+				errors: {
+					email: {
+						msg: 'Este email ya está registrado'
+					}
+				},
+				oldData: req.body
+			});
+		}
+>>>>>>> d589fb1ff1a2b0f58cba2cbf81c52acca26409aa
 
     if (resultValidation.errors.length > 0) {
       //return res.render("register", {

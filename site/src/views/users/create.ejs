@@ -9,6 +9,9 @@
             <div class= "login-container"> 
             <form class="form-login" novalidate action="/users/create" method="POST" enctype="multipart/form-data">
                 <h1> Registrarse </h1>
+                <% if(locals.errors){%> 
+                    <p>Hay errores</p>
+                <%} %>
                 <div class="textbox-login">
                     <input type ="text" 
                     placeholder ="Nombre" 
@@ -17,12 +20,16 @@
                     value="<%= locals.oldData ? oldData.first_name : null %>"
                     >*
                 </div>
+<<<<<<< HEAD
                 <% if (locals.errors && errors.first_name) { %>
                     <div class="text-danger centrar">
                         <%= errors.first_name.msg %>
                     </div>
                     <% } %>
                 
+=======
+                 
+>>>>>>> d589fb1ff1a2b0f58cba2cbf81c52acca26409aa
                 <div class="textbox-login">
                     <input type="text" placeholder="Apellido" 
                     name="surname"  
