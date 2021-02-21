@@ -78,4 +78,4 @@ const User = {
 
 //console.log(User.findByPk(7));
 //console.log(User.delete(6));
-//module.exports = User; //exporto la funcionalidad de mi modelo
+module.exports = User; //exporto la funcionalidad de mi modelo

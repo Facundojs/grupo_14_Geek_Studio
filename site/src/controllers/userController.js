@@ -1,11 +1,10 @@
 const fs = require("fs");
 const path = require("path");
-const bcrypt = require("bcryptjs");
+const bcryptjs = require("bcryptjs");
 const { validationResult } = require("express-validator");
 const User = require("../models/User");
 
 module.exports = {
-<<<<<<< HEAD
   index: (req, res) => {
     let users = User.findAll();
     res.render("users/index", { users });
@@ -18,49 +17,7 @@ module.exports = {
   },
   processRegister: (req, res) => {
     const resultValidation = validationResult(req);
-=======
-    index: (req,res) => {
-        let users = User.findAll();
-        res.render('users/index', {users})
-    },
-    login: (req, res) => {
-        res.render('users/login');
-    },
-    create: (req, res) => {
-        res.render('users/create');
-    },
-    processRegister: (req,res) => {
-        const resultValidation = validationResult(req)
 
-        if(resultValidation.errors.length > 0) {
-            return res.render('users/create', {
-                errors: resultValidation.mapped(),
-                oldData: req.body
-            });
-        }
-        //valido si el mail esta registrado
-        let userInDB = User.findField('email', req.body.email);
-
-        if (userInDB) {
-			return res.render('users/create', { 
-				errors: {
-					email: {
-						msg: 'Este email ya está registrado'
-					}
-				},
-				oldData: req.body
-			});
-		}
->>>>>>> d589fb1ff1a2b0f58cba2cbf81c52acca26409aa
-
-    if (resultValidation.errors.length > 0) {
-      //return res.render("register", {
-      return res.render("users/create", {
-        errors: resultValidation.mapped(),
-        oldData: req.body,
-      });
-    }
-    //valido si el mail esta registrado
     let userInDB = User.findField("email", req.body.email);
 
     if (userInDB) {
@@ -74,16 +31,20 @@ module.exports = {
       });
     }
 
-    // let userToCreate = {
-    // 	...req.body,
-    // 	password: bcryptjs.hashSync(req.body.password, 10),
-    // 	avatar: req.file.filename
-    // }
+    if (resultValidation.errors.length > 0) {
+      return res.render("users/create", {
+        errors: resultValidation.mapped(),
+        oldData: req.body,
+      });
+    }
 
-    // let userCreated = User.create(userToCreate);
-    // res.redirect('/users/login');
+    let userToCreate = {
+      ...req.body,
+      password: bcryptjs.hashSync(req.body.password, 10),
+      userImg: req.file.filename,
+    };
 
-    User.create(req.body);
+    let userCreated = User.create(userToCreate);
     users = User.findAll();
     //res.redirect('users/index/', {users} );
     res.redirect("/users/login");

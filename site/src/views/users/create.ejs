@@ -20,16 +20,12 @@
                     value="<%= locals.oldData ? oldData.first_name : null %>"
                     >*
                 </div>
-<<<<<<< HEAD
                 <% if (locals.errors && errors.first_name) { %>
                     <div class="text-danger centrar">
                         <%= errors.first_name.msg %>
                     </div>
                     <% } %>
                 
-=======
-                 
->>>>>>> d589fb1ff1a2b0f58cba2cbf81c52acca26409aa
                 <div class="textbox-login">
                     <input type="text" placeholder="Apellido" 
                     name="surname"  
@@ -62,10 +58,10 @@
                 </div>
 
                 <div class="btn-login">
-                    <label for="user-img">Seleccionar Imagen Perfil</label>
+                    <label for="userImg">Seleccionar Imagen Perfil</label>
                     <input type="file" class="file" 
                     name="userImg" 
-                    id="user-img" 
+                    id="userImg" 
                     placeholder="Imagen" 
                     
                     value="<%= locals.oldData ? oldData.userImg : null %>">

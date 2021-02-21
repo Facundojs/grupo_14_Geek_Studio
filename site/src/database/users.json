@@ -6,67 +6,43 @@
   "surname": "Escobar",
   "telephone": "112233444",
   "password": "1234",
-  "password2": "1234",
-  "category": "vendedor",
-  "img": "default.jpg"
+  "password2": "1234"
  },
  {
   "id": 2,
-  "first_name": "Facu",
-  "surname": "Serrano",
   "email": "facu_serrano@gmail.com",
-  "telephone": "1234",
-  "pass-1": "1234",
-  "pass-2": "1234",
-  "category": "vendedor",
-  "img": "default.jpg"
+  "first_name": "Facundo",
+  "surname": "Serrano",
+  "telephone": "112233444",
+  "password": "1234",
+  "password2": "1234"
  },
  {
   "id": 3,
-  "first_name": "Freyja",
-  "surname": "Martel",
-  "email": "fremartel@gmail.com",
-  "telephone": "1123222",
-  "pass-1": "1234",
-  "pass-2": "1234",
-  "category": "vendedor",
-  "img": "default.jpg"
+  "email": "mauro_pedrozo@gmail.com",
+  "first_name": "Mauro",
+  "surname": "Pedrozo",
+  "telephone": "112233444",
+  "password": "1234",
+  "password2": "1234"
  },
  {
   "id": 4,
-  "first_name": "Kari",
-  "surname": "ar3",
-  "email": "lucy@gmail.com",
-  "telephone": "ka",
-  "password": "111",
-  "pass-2": "111"
+  "email": "lando@codelando.com",
+  "first_name": "Ezequiel",
+  "surname": "Cortés",
+  "telephone": "112233444",
+  "password": "1234",
+  "password2": "1234"
  },
  {
   "id": 5,
-  "first_name": "fruta",
-  "surname": "fruta",
-  "email": "fruta@gm.com",
-  "telephone": "12",
-  "password": "1234",
-  "pass-2": "1234"
- },
- {
-  "id": 6,
-  "first_name": "karina",
-  "surname": "escobar",
-  "email": "ka1@a.com",
-  "telephone": "1",
-  "password": "1111",
-  "pass-2": "1111"
- },
- {
-  "id": 7,
-  "first_name": "Lucy",
-  "surname": "Escobar",
-  "email": "lucya@gmail.com",
-  "telephone": "11",
-  "password": "123",
-  "pass-2": "123",
-  "userImg": "default.jpg"
+  "first_name": "Pepe",
+  "surname": "Pepe",
+  "email": "pepe@yahoo.com",
+  "telephone": "123",
+  "password": "$2a$10$XExUw.L4YBK7AX6ZcUeDf.d7r3K3mCnNkB16T2wSeD5ibH4YeiVnS",
+  "pass-2": "11",
+  "userImg": "User-1613891775274.jpg"
  }
 ]
