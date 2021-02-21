@@ -14,7 +14,7 @@
                     <input type ="text" 
                     placeholder ="Nombre" 
                     name ="first_name" 
-                    class ="form-control <% locals.errors && errors.first_name ? 'is-invalid' : null %>"
+                    class ="form-control <%= locals.errors && errors.first_name ? 'is-invalid' : null %>"
                     value="<%= locals.oldData ? oldData.first_name : null %>"
                     >*
                 </div>
@@ -27,7 +27,7 @@
                 <div class="textbox-login">
                     <input type="text" placeholder="Apellido" 
                     name="surname"  
-                    class ="form-control <% locals.errors && errors.surname ? 'is-invalid' : null %>"
+                    class ="form-control <%= locals.errors && errors.surname ? 'is-invalid' : null %>"
                     value="<%= locals.oldData ? oldData.surname : null %>"
                     />*
                 </div>
@@ -40,7 +40,7 @@
                 <div class="textbox-login">
                     <input type="email" placeholder="E-Mail" 
                     name="email"  
-                    class ="form-control <% locals.errors && errors.email ? 'is-invalid' : null %>"
+                    class ="form-control <%= locals.errors && errors.email ? 'is-invalid' : null %>"
                     value="<%= locals.oldData ? oldData.email : null %>"
                     />*
                 </div>
@@ -69,7 +69,7 @@
                     <i class="fa fa-lock" aria-hidden="true"></i>
                     <input type="password" placeholder="Contraseña" 
                     name="password" 
-                    class ="form-control <% locals.errors && errors.password ? 'is-invalid' : null %>"
+                    class ="form-control <%= locals.errors && errors.password ? 'is-invalid' : null %>"
                     value="<%= locals.oldData ? oldData.password : null %>"
                     />*
                 </div>
@@ -83,7 +83,7 @@
                     <i class="fa fa-lock" aria-hidden="true"></i>
                     <input type="password" placeholder="Repetir Contraseña" 
                     name="pass-2" 
-                    class ="form-control <% locals.errors && errors.pass-2 ? 'is-invalid' : null %>"
+                    class ="form-control <%= locals.errors && errors.pass-2 ? 'is-invalid' : null %>"
                     value="<%= locals.oldData ? oldData.pass2 : null %>"
                     />*
                 </div>
