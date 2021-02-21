@@ -16,11 +16,22 @@ module.exports = {
     //en el login.ejs agregue esta linea para indicar que va por POST
     //<form class="form-login" action="/users/login" method="POST" enctype="multipart/form-data">
     //pero no logro capturar para ver que esta enviando y verlo con:
-    return res.send(req.body);
+    //return res.send(req.body);
 
-    //let userToLogin = User.findField("email", req.body.email);
+    let userToLogin = User.findField("email", req.body.email);
 
-    //return res.send(userToLogin);
+    if (userToLogin) {
+      return res.send(userToLogin);
+    }
+
+    return res.render("users/login", {
+      errors: {
+        email: {
+          msg: "El email no se encuentra registrado en nuestra base de datos",
+        },
+        oldData: req.body,
+      },
+    });
   },
   create: (req, res) => {
     res.render("users/create");

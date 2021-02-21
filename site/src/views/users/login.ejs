@@ -6,16 +6,20 @@
     <main>
     <div class="aligner-container">
         <div class= "login-container"> 
-            <form class="form-login" action="/users/login" method="POST" enctype="multipart/form-data">
+            <form class="form-login" action="/users/login" method="POST" >
                 <h1>Login </h1>
+               
                 <div class="textbox-login">
                     <i class="fa fa-user" aria-hidden="true"></i>
-                    <input type="email" placeholder="E-Mail" name="email" required />
+                    <input type="email" placeholder="E-Mail" name="email" 
+                    class ="form-control <% locals.errors && errors.email ? 'is-invalid' : null %>"
+                    value="<%= locals.oldData ? oldData.email : null %>"
+                    required />
                 </div>
             
                 <div class="textbox-login">
                     <i class="fa fa-lock" aria-hidden="true"></i>
-                    <input type="password" placeholder="Contraseña" name="" required/>
+                    <input type="password" placeholder="Contraseña" name="password" required/>
                 </div>
             
                 <!--  <input class="btn-login" type="button" name="" value="Ingresar" />   !-->
