@@ -14,7 +14,7 @@
                     <input type="email" placeholder="E-Mail" name="email" 
                     class ="form-control <%= locals.errors && errors.email ? 'is-invalid' : null %>"
                     value="<%= locals.oldData ? oldData.email : null %>"
-                    required />                    
+                     />                    
                 </div>
                 <% if (locals.errors && errors.email) { %>
                     <div class="text-danger centrar">

@@ -29,8 +29,8 @@ module.exports = {
         email: {
           msg: "El email no se encuentra registrado en nuestra base de datos",
         },
-        oldData: req.body,
       },
+      oldData: req.body,
     });
   },
   create: (req, res) => {
