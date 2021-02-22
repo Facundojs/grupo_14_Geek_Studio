@@ -64,5 +64,15 @@
   "password": "$2a$10$kAMMn61wPorFyqUF3d/FC.O4y4cc1XNC4olhC3IO2pqueoGarCm5S",
   "pass-2": "1234",
   "userImg": "User-1613927436668.jpg"
+ },
+ {
+  "id": 8,
+  "first_name": "Mauro",
+  "surname": "Pedrozo",
+  "email": "mauropedrozo1@gmail.com",
+  "telephone": "",
+  "password": "$2a$10$dp0yQo2qyQ.6Q7IBD92ZOu02Xl3RDlY3OWxI72phC5KxFxeDajusu",
+  "pass-2": "123456",
+  "userImg": "User-1613934922187.jpg"
  }
 ]
