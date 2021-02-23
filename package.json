@@ -25,6 +25,7 @@
     "express-validator": "^6.9.2",
     "g": "^2.0.1",
     "heroku": "^7.47.11",
+    "lodash.shuffle": "^4.2.0",
     "method-override": "^3.0.0",
     "multer": "^1.4.2",
     "path": "^0.12.7"
