@@ -64,5 +64,35 @@
   "password": "$2a$10$kAMMn61wPorFyqUF3d/FC.O4y4cc1XNC4olhC3IO2pqueoGarCm5S",
   "pass-2": "1234",
   "userImg": "User-1613927436668.jpg"
+ },
+ {
+  "id": 8,
+  "first_name": "Ezequiel",
+  "surname": "Chiquito",
+  "email": "ezechico@gmail.com",
+  "telephone": "11",
+  "password": "$2a$10$szyqB9Dd6H7OTLQJKGkI8.pa2qix/KCvdAKUROQczPMZghyVGV01e",
+  "pass-2": "1234",
+  "userImg": "User-1613934481887.jpg"
+ },
+ {
+  "id": 9,
+  "first_name": "Eze",
+  "surname": "Eze",
+  "email": "eze@aaaa.com",
+  "telephone": "",
+  "password": "$2a$10$W6DaHAKSWxYkcRTDnVs9lOq8udQ0S4LAQfnvGa9gwD4lIDJwJm9Mu",
+  "pass-2": "1234",
+  "userImg": "User-1613934794562.jpg"
+ },
+ {
+  "id": 10,
+  "first_name": "EZE",
+  "surname": "EZE",
+  "email": "eze@pibe.com",
+  "telephone": "111",
+  "password": "$2a$10$P95gnA1/8fxchR3fq3dWP.s.3fip1HFcekfrJEaWj67tlzuL8s3WG",
+  "pass-2": "1234",
+  "userImg": "User-1613934978390.jpg"
  }
 ]
