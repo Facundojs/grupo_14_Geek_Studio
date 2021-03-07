@@ -70,11 +70,9 @@
                     <h2>Ofertas destacadas</h2>
                     <section class="articles">
                         <ul>
-                            <li><img class="product" src="/img/product-1.jpg" alt=""><span class="product-info"><h4>Producto X</h4>100$</span></li>
-                            <li><img class="product" src="/img/product-2.jpg" alt=""><span class="product-info"><h4>Producto X</h4>100$</span></li>
-                            <li><img class="product" src="/img/product-3.jpg" alt=""><span class="product-info"><h4>Producto X</h4>100$</span></li>
-                            <li><img class="product" src="/img/product-4.jpg" alt=""><span class="product-info"><h4>Producto X</h4>100$</span></li>
-                            <li><img class="product" src="/img/product-5.jpg" alt=""><span class="product-info"><h4>Producto X</h4>100$</span></li>
+                            <% for(let i = 0; i<5; i++) {%>
+                                <li><img class="product" src="/img/products/<%= products[i].img %> " alt=""><span class="product-info"><h4><a href="/productos/<%= products[i].id %> "><%= products[i].name %></a></h4><%= products[i].price %></span></li>
+                            <%}%> 
                         </ul>
                     </section>
                 </section>

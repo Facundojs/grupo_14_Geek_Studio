@@ -16,7 +16,7 @@
 .aligner-container {
   /*border: #2D3142 solid .2rem;*/
   border: var(--oscuro) solid 0.2rem;
-  max-width: 1400px;
+  max-width: 1300px;
   margin: 0 auto;
   padding: 1rem;
   border-radius: 1.5rem;
