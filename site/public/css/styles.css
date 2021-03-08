@@ -224,7 +224,10 @@ header a:hover {
 .titulo-circle {
   font-size: 25px;
   width: 100%;
-  color: white; /*var(--orange);*/
+  color: white;/*var(--orange);*/
+  /* -webkit-text-fill-color: white; */
+  /* -webkit-text-stroke: .0000001px white; */
+  text-shadow: -2px -2px 1px #000, 2px 2px 1px #000, -2px 2px 1px #000, 2px -2px 1px #000;
   overflow: hidden;
   text-align: center;
   margin-top: -90px;
@@ -563,7 +566,7 @@ element.style {
 
 .img-ship {
   width: 50px;
-  margin-left: 2px;
+  margin-left: 1.5px;
 }
 
 .img-ship img {
@@ -753,14 +756,18 @@ footer {
 }
 
 footer .aligner-container {
-  background-color: var(--white);
-  color: #2a3446;
+  background-color: var(--oscuro);
+  color: white;
 }
 
 .footer-info span ul li a {
   list-style: none;
   text-decoration: none;
-  color: #000000;
+  color: ghostwhite;
+}
+
+.footer-info a:hover {
+  color: var(--orange);
 }
 
 footer nav {
@@ -770,6 +777,10 @@ footer nav {
 
 footer span ul {
   padding-left: 0;
+}
+
+footer h2 {
+  font-weight: bolder;
 }
 
 .about-us,
@@ -788,7 +799,11 @@ footer span ul {
 .social-networks-icons {
   font-size: 1.5rem;
   padding: 4px;
-  color: var(--oscuro);
+  color: white;
+}
+
+.social-networks-icons:hover {
+  color: var(--orange);
 }
 
 .rigths {
@@ -995,6 +1010,13 @@ h2 {
 }
 
 /*Media queries*/
+@media (min-width: 363px) {
+  .img-ship {
+    width: 50px;
+    margin-left: 2px;
+  }
+}
+
 
 @media (min-width: 403px) {
   main section button {
@@ -1029,6 +1051,20 @@ h2 {
     width: 46%;
     margin: 0 10px;
   }
+
+  /* K.E. - Para mostrar los botones circulares del head */
+
+.titulo-circle {
+  font-size: 25px;
+  width: 80%;
+  color: white;
+  text-shadow: -2px -2px 1px #000, 2px 2px 1px #000, -2px 2px 1px #000, 2px -2px 1px #000;
+  overflow: hidden;
+  text-align: center;
+  margin-top: -90px;
+  font-weight: 800;
+}
+
 
   /********************CARRITO*********************/
 
@@ -1173,6 +1209,21 @@ h2 {
     font-size: 0.8rem;
   }
 
+  /* K.E. - Para mostrar los botones circulares del head */
+
+.titulo-circle {
+  font-size: 20px;
+  width: 100%;
+  color: white;/*var(--orange);*/
+  /* -webkit-text-fill-color: white; */
+  /* -webkit-text-stroke: .0000001px white; */
+  text-shadow: -2px -2px 1px #000, 2px 2px 1px #000, -2px 2px 1px #000, 2px -2px 1px #000;
+  overflow: hidden;
+  text-align: center;
+  margin-top: -90px;
+  font-weight: 800;
+}
+
   /********************CARRITO*********************/
 
   /*   
@@ -1236,7 +1287,6 @@ main section .chart-item div {
   .social-networks-icons {
     font-size: 1rem;
     padding: 4px;
-    color: var(--oscuro);
   }
 
   footer span h2 {
@@ -1254,7 +1304,6 @@ main section .chart-item div {
   .social-networks-icons {
     font-size: 1.3rem;
     padding: 4px;
-    color: var(--oscuro);
   }
 
   /*KBE 280121*/
@@ -1549,7 +1598,6 @@ main section .chart-item div {
   .social-networks-icons {
     font-size: 1.7rem;
     padding: 4px;
-    color: var(--oscuro);
   }
 
   .rigths {
