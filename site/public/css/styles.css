@@ -224,7 +224,10 @@ header a:hover {
 .titulo-circle {
   font-size: 25px;
   width: 100%;
-  color: white; /*var(--orange);*/
+  color: white;/*var(--orange);*/
+  /* -webkit-text-fill-color: white; */
+  /* -webkit-text-stroke: .0000001px white; */
+  text-shadow: -2px -2px 1px #000, 2px 2px 1px #000, -2px 2px 1px #000, 2px -2px 1px #000;
   overflow: hidden;
   text-align: center;
   margin-top: -90px;
@@ -563,7 +566,7 @@ element.style {
 
 .img-ship {
   width: 50px;
-  margin-left: 2px;
+  margin-left: 1.5px;
 }
 
 .img-ship img {
@@ -995,6 +998,13 @@ h2 {
 }
 
 /*Media queries*/
+@media (min-width: 363px) {
+  .img-ship {
+    width: 50px;
+    margin-left: 2px;
+  }
+}
+
 
 @media (min-width: 403px) {
   main section button {
@@ -1029,6 +1039,20 @@ h2 {
     width: 46%;
     margin: 0 10px;
   }
+
+  /* K.E. - Para mostrar los botones circulares del head */
+
+.titulo-circle {
+  font-size: 25px;
+  width: 80%;
+  color: white;
+  text-shadow: -2px -2px 1px #000, 2px 2px 1px #000, -2px 2px 1px #000, 2px -2px 1px #000;
+  overflow: hidden;
+  text-align: center;
+  margin-top: -90px;
+  font-weight: 800;
+}
+
 
   /********************CARRITO*********************/
 
@@ -1172,6 +1196,21 @@ h2 {
   main section .product-recomended span {
     font-size: 0.8rem;
   }
+
+  /* K.E. - Para mostrar los botones circulares del head */
+
+.titulo-circle {
+  font-size: 20px;
+  width: 100%;
+  color: white;/*var(--orange);*/
+  /* -webkit-text-fill-color: white; */
+  /* -webkit-text-stroke: .0000001px white; */
+  text-shadow: -2px -2px 1px #000, 2px 2px 1px #000, -2px 2px 1px #000, 2px -2px 1px #000;
+  overflow: hidden;
+  text-align: center;
+  margin-top: -90px;
+  font-weight: 800;
+}
 
   /********************CARRITO*********************/
 
