@@ -138,6 +138,69 @@ header a:hover {
   text-align: center;
 }
 
+/* HOME */
+.sections-navbar {
+  justify-content: center;
+}
+
+.sections-navbar ul li {
+  font-size: 1rem;
+  padding: 1rem;
+  background-color: white;
+  margin: 2rem;
+}
+
+.sections-hrefs {
+  text-decoration: none;
+  color: brown;
+  font-weight: bolder;
+  
+}
+
+.home-banner {
+  width: 96%;
+  margin: 2%;
+}
+
+.sections-navbar ul{
+  padding-left: 0 ;
+  display: flex ;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+}
+
+.for-sale{
+  margin-top: 3rem;
+  text-align: center;
+  font-style: italic;
+  text-decoration: underline;
+}
+
+.for-sale .articles ul {
+  text-align: center;
+  padding: 10%;
+  border: black solid 2px;
+}
+
+.for-sale .articles ul li {
+  padding-top: 5%;
+  padding-bottom: 5%;
+  border: white solid 2px;
+  margin-top: 5%;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  align-items: center;
+}
+
+.for-sale .articles .product {
+  padding-left: 0 ;
+  width: 80%;
+  justify-content: space-between;
+}
+
 /*
 LOGIN, REGISTER Y RECOVER PASS
 */
@@ -823,6 +886,38 @@ h2 {
     margin: auto;
   }
 
+  /* HOME */
+  .sections-navbar{
+    padding: 3rem ;
+}
+
+.sections-navbar nav ul{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.sections-navbar ul li{
+    font-size: 2rem;
+    padding: 2rem;
+    background-color: white;
+    border-radius: 3rem;
+    margin: 2;
+    width: 40%;
+}
+
+.for-sale .articles ul{
+    display: flex;
+    flex-direction: row ;
+    flex-wrap: wrap;
+}
+
+.for-sale .articles ul li {
+    width: 46%;
+    margin: 2%;
+}
+
   /* KBE 280121 */
 
   .product-category {
@@ -844,6 +939,29 @@ h2 {
     width: 30%;
     margin: auto;
   }
+
+  /* HOME */
+  .sections-navbar ul li{
+    font-size: 1.6rem;
+    padding: 2rem;
+    background-color: white;
+    border-radius: 3rem;
+    margin: 2rem;
+    width: 14%
+}
+.for-sale .articles ul{
+    padding: 0;
+}
+.for-sale .articles ul li {
+    width: 16%;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.for-sale .articles ul li img {
+    width: 80%;
+    height: 50%;
+}
 }
 
 /*Media queries*/
