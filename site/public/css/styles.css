@@ -756,14 +756,18 @@ footer {
 }
 
 footer .aligner-container {
-  background-color: var(--white);
-  color: #2a3446;
+  background-color: var(--oscuro);
+  color: white;
 }
 
 .footer-info span ul li a {
   list-style: none;
   text-decoration: none;
-  color: #000000;
+  color: ghostwhite;
+}
+
+.footer-info a:hover {
+  color: var(--orange);
 }
 
 footer nav {
@@ -773,6 +777,10 @@ footer nav {
 
 footer span ul {
   padding-left: 0;
+}
+
+footer h2 {
+  font-weight: bolder;
 }
 
 .about-us,
@@ -791,7 +799,11 @@ footer span ul {
 .social-networks-icons {
   font-size: 1.5rem;
   padding: 4px;
-  color: var(--oscuro);
+  color: white;
+}
+
+.social-networks-icons:hover {
+  color: var(--orange);
 }
 
 .rigths {
@@ -1275,7 +1287,6 @@ main section .chart-item div {
   .social-networks-icons {
     font-size: 1rem;
     padding: 4px;
-    color: var(--oscuro);
   }
 
   footer span h2 {
@@ -1293,7 +1304,6 @@ main section .chart-item div {
   .social-networks-icons {
     font-size: 1.3rem;
     padding: 4px;
-    color: var(--oscuro);
   }
 
   /*KBE 280121*/
@@ -1588,7 +1598,6 @@ main section .chart-item div {
   .social-networks-icons {
     font-size: 1.7rem;
     padding: 4px;
-    color: var(--oscuro);
   }
 
   .rigths {
