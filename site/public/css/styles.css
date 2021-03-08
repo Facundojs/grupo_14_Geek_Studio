@@ -154,7 +154,6 @@ header a:hover {
   text-decoration: none;
   color: brown;
   font-weight: bolder;
-  
 }
 
 .home-banner {
@@ -162,16 +161,16 @@ header a:hover {
   margin: 2%;
 }
 
-.sections-navbar ul{
-  padding-left: 0 ;
-  display: flex ;
+.sections-navbar ul {
+  padding-left: 0;
+  display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
   text-align: center;
 }
 
-.for-sale{
+.for-sale {
   margin-top: 3rem;
   text-align: center;
   font-style: italic;
@@ -196,9 +195,40 @@ header a:hover {
 }
 
 .for-sale .articles .product {
-  padding-left: 0 ;
+  padding-left: 0;
   width: 80%;
   justify-content: space-between;
+}
+
+/* K.E. - Para mostrar los botones circulares del head */
+.item-home {
+  border-radius: 50%;
+  padding: 10px;
+  width: 180px;
+  height: 180px;
+  margin: 10px;
+}
+
+.pic {
+  width: 300px;
+  border-radius: 50%;
+  border: solid 1px #f4f4f4;
+  transition: all 0.4s ease;
+}
+
+.pic:hover {
+  -webkit-filter: grayscale(100%);
+  filter: grayscale(100%);
+}
+
+.titulo-circle {
+  font-size: 25px;
+  width: 100%;
+  color: white; /*var(--orange);*/
+  overflow: hidden;
+  text-align: center;
+  margin-top: -90px;
+  font-weight: 800;
 }
 
 /*
@@ -887,36 +917,36 @@ h2 {
   }
 
   /* HOME */
-  .sections-navbar{
-    padding: 3rem ;
-}
+  .sections-navbar {
+    padding: 3rem;
+  }
 
-.sections-navbar nav ul{
+  .sections-navbar nav ul {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-around;
-}
+  }
 
-.sections-navbar ul li{
+  .sections-navbar ul li {
     font-size: 2rem;
     padding: 2rem;
     background-color: white;
     border-radius: 3rem;
     margin: 2;
     width: 40%;
-}
+  }
 
-.for-sale .articles ul{
+  .for-sale .articles ul {
     display: flex;
-    flex-direction: row ;
+    flex-direction: row;
     flex-wrap: wrap;
-}
+  }
 
-.for-sale .articles ul li {
+  .for-sale .articles ul li {
     width: 46%;
     margin: 2%;
-}
+  }
 
   /* KBE 280121 */
 
@@ -941,27 +971,27 @@ h2 {
   }
 
   /* HOME */
-  .sections-navbar ul li{
+  .sections-navbar ul li {
     font-size: 1.6rem;
     padding: 2rem;
     background-color: white;
     border-radius: 3rem;
     margin: 2rem;
-    width: 14%
-}
-.for-sale .articles ul{
+    width: 14%;
+  }
+  .for-sale .articles ul {
     padding: 0;
-}
-.for-sale .articles ul li {
+  }
+  .for-sale .articles ul li {
     width: 16%;
     padding-top: 0;
     padding-bottom: 0;
-}
+  }
 
-.for-sale .articles ul li img {
+  .for-sale .articles ul li img {
     width: 80%;
     height: 50%;
-}
+  }
 }
 
 /*Media queries*/
