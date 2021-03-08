@@ -124,7 +124,7 @@ module.exports = {
     res.redirect("/users/index");
   },
   recoverPass: (req, res) => {
-    res.render("/users/recover-pass");
+    res.render("users/recover-pass");
   },
   logout: (req, res) => {
     //Borro la sesion
