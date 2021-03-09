@@ -128,7 +128,7 @@ module.exports = {
   },
   logout: (req, res) => {
     //Borro la sesion
-    req.session.destroy;
+    req.session.destroy();
     return res.redirect("/");
   },
 };

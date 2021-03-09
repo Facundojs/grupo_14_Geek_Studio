@@ -94,5 +94,15 @@
   "password": "$2a$10$P95gnA1/8fxchR3fq3dWP.s.3fip1HFcekfrJEaWj67tlzuL8s3WG",
   "pass-2": "1234",
   "userImg": "User-1613934978390.jpg"
+ },
+ {
+  "id": 11,
+  "first_name": "Facu",
+  "surname": "Facu",
+  "email": "facu@gmail.com",
+  "telephone": "1234",
+  "password": "$2a$10$i5AsJtmDWuvxZb3N2PoM7OOdPI4MbEVSultU5LhPqBrzxmrfED1Cq",
+  "pass-2": "1234",
+  "userImg": "User-1615242174611.jpg"
  }
 ]
