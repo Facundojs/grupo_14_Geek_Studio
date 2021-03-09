@@ -19,7 +19,7 @@ Principalmente componentes como motherboards, microprocesadores, módulos de mem
 
 * **Facundo Serrano:** Tengo 18 años. Actualmente estudio en la UNSAM la carrera Ing. Electrónica. Me gustan mucho los deportes (rugby, tenis/paddle y volleyball principalmente). También siempre me llamo la atención la programación y la informática, por eso decidí estudiar en DH.
 
-* **Mauro Pedrozo:** Tengo 30 años. Soy Técnico Superior en Marketing de la F.A.E.C.C. Si bien no conocía nada sobre programación, encontré una carrera muy interesante que me dio ganas de aprender. Disfruto de juntadas con amigos y hacer deporte, pero recuerden, cuando empiecen a programar eso va a empezar a disminuir :joy:
+* **Mauro Pedrozo:** Tengo 30 años. Soy Técnico Superior en Marketing de la F.A.E.C.C. Si bien no conocía nada sobre programación, encontré una carrera muy interesante que me dio ganas de aprender. Disfruto de juntadas con amigos y hacer deporte, pero recuerden, cuando empiecen a programar eso se va a empezar a cortar :joy:
 
 * **Karina Escobar:** Tengo 33 años. Soy progradora de la old school con muchas granas de aprender
 nuevas cositas. Memeadicta y nerd. Quiero dar un giro a mi carrera profesional con este curso :) so let's Go!
