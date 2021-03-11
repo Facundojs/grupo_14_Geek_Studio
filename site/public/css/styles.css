@@ -180,7 +180,6 @@ header a:hover {
 .for-sale .articles ul {
   text-align: center;
   padding: 10%;
-  border: black solid 2px;
 }
 
 .for-sale .articles ul li {
@@ -224,14 +223,16 @@ header a:hover {
 .titulo-circle {
   font-size: 25px;
   width: 100%;
-  color: white;/*var(--orange);*/
+  color: white; /*var(--orange);*/
   /* -webkit-text-fill-color: white; */
   /* -webkit-text-stroke: .0000001px white; */
-  text-shadow: -2px -2px 1px #000, 2px 2px 1px #000, -2px 2px 1px #000, 2px -2px 1px #000;
+  text-shadow: -2px -2px 1px #000, 2px 2px 1px #000, -2px 2px 1px #000,
+    2px -2px 1px #000;
   overflow: hidden;
   text-align: center;
   margin-top: -90px;
   font-weight: 800;
+  position: relative;
 }
 
 /*
@@ -315,6 +316,12 @@ LOGIN, REGISTER Y RECOVER PASS
 .btn-login:hover {
   background-color: #394a96;
 }
+
+/* PROFILE */
+.img-profile {
+  width: 300px;
+}
+/* PROFILE */
 
 /* MIDDLEWARE NOTFOUND */
 
@@ -1017,7 +1024,6 @@ h2 {
   }
 }
 
-
 @media (min-width: 403px) {
   main section button {
     width: 200px;
@@ -1054,17 +1060,17 @@ h2 {
 
   /* K.E. - Para mostrar los botones circulares del head */
 
-.titulo-circle {
-  font-size: 25px;
-  width: 80%;
-  color: white;
-  text-shadow: -2px -2px 1px #000, 2px 2px 1px #000, -2px 2px 1px #000, 2px -2px 1px #000;
-  overflow: hidden;
-  text-align: center;
-  margin-top: -90px;
-  font-weight: 800;
-}
-
+  .titulo-circle {
+    font-size: 25px;
+    width: 80%;
+    color: white;
+    text-shadow: -2px -2px 1px #000, 2px 2px 1px #000, -2px 2px 1px #000,
+      2px -2px 1px #000;
+    overflow: hidden;
+    text-align: center;
+    margin-top: -90px;
+    font-weight: 800;
+  }
 
   /********************CARRITO*********************/
 
@@ -1211,18 +1217,19 @@ h2 {
 
   /* K.E. - Para mostrar los botones circulares del head */
 
-.titulo-circle {
-  font-size: 20px;
-  width: 100%;
-  color: white;/*var(--orange);*/
-  /* -webkit-text-fill-color: white; */
-  /* -webkit-text-stroke: .0000001px white; */
-  text-shadow: -2px -2px 1px #000, 2px 2px 1px #000, -2px 2px 1px #000, 2px -2px 1px #000;
-  overflow: hidden;
-  text-align: center;
-  margin-top: -90px;
-  font-weight: 800;
-}
+  .titulo-circle {
+    font-size: 20px;
+    width: 100%;
+    color: white; /*var(--orange);*/
+    /* -webkit-text-fill-color: white; */
+    /* -webkit-text-stroke: .0000001px white; */
+    text-shadow: -2px -2px 1px #000, 2px 2px 1px #000, -2px 2px 1px #000,
+      2px -2px 1px #000;
+    overflow: hidden;
+    text-align: center;
+    margin-top: -90px;
+    font-weight: 800;
+  }
 
   /********************CARRITO*********************/
 
