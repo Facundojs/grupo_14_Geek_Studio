@@ -23,7 +23,7 @@ CREATE TABLE `user_type` (
 CREATE TABLE `products` (
 	`id` INT NOT NULL AUTO_INCREMENT,
 	`name` VARCHAR(255) NOT NULL,
-	`id_category` INT NOT NULL,
+	`category_id` INT NOT NULL,
 	`price` DECIMAL NOT NULL,
 	`image` VARCHAR(255) NOT NULL,
 	`description` TEXT NOT NULL,
@@ -31,6 +31,12 @@ CREATE TABLE `products` (
 );
 
 CREATE TABLE `categories` (
+	`id` INT NOT NULL AUTO_INCREMENT,
+	`name` VARCHAR(255) NOT NULL,
+	PRIMARY KEY (`id`)
+);
+
+CREATE TABLE `product_category` (
 	`id` INT NOT NULL AUTO_INCREMENT,
 	`name` VARCHAR(255) NOT NULL,
 	PRIMARY KEY (`id`)

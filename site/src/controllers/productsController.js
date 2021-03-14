@@ -2,6 +2,7 @@ const jsonTable = require("../database/jsonTable");
 //const model = require('../database/jsonTable');
 const productsTable = jsonTable("products");
 const { validationResult } = require("express-validator");
+const db = require("../../../database/models")
 
 module.exports = {
   index: (req, res) => {
@@ -36,6 +37,10 @@ module.exports = {
       });
     }
     // console.table(product); //para ver que se creo por consola
+
+    // Hecho con Sequelize 
+    
+    
   },
   show: (req, res) => {
     let product = productsTable.find(req.params.id);

@@ -16,13 +16,17 @@ module.exports = function (sequelize, dataTypes) {
             allowNull: false
     
         },
-        telephone: {
-            type: dataTypes.NUMBER,
-            allowNull: false,
-            unique: true
+        password: {
+            type: dataTypes.STRING,
+            allowNull: false
         },
         email: {
             type: dataTypes.STRING,
+            allowNull: false,
+            unique: true
+        },
+        telephone: {
+            type: dataTypes.NUMBER,
             allowNull: false,
             unique: true
         },
@@ -32,13 +36,14 @@ module.exports = function (sequelize, dataTypes) {
     };
     let config = {
         tableName: 'users',
-        timestamps: false
+        timestamps: true,
+        paranoid: true
     };
     let User = sequelize.define(alias, cols, config);
     User.associate = function (models) {
         User.hasOne(models.userType, {
             as: 'userType',
-            foreignKey: 'id_user_type'
+            foreignKey: 'user_type_id'
         })
     }
     return User;
