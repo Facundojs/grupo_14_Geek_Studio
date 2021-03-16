@@ -14,8 +14,7 @@ module.exports = function (sequelize, dataTypes) {
     };
     let config = {
         tableName: 'product_category',
-        timestamps: true,
-        paranoid: true
+        timestamps: false
     };
     let Product_category = sequelize.define(alias, cols, config);
     Product_category.associate = function (models) {

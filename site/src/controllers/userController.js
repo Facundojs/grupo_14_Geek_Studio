@@ -3,6 +3,8 @@ const path = require("path");
 const bcryptjs = require("bcryptjs");
 const { validationResult } = require("express-validator");
 const User = require("../models/User");
+const db = require('../../../database/models') 
+
 
 module.exports = {
   index: (req, res) => {

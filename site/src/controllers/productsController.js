@@ -14,20 +14,27 @@ module.exports = {
     res.render("products/create");
   },
   store: (req, res) => {
-    // Valido los campos
+    console.clear();
     let errors = validationResult(req);
-
-    // Me fijo si no hay errores
     if (errors.isEmpty()) {
-      // Genero el nuevo producto
-      let product = req.body;
+      let producto = req.body;
       if (req.file) {
-        product.img = req.file.filename;
+        producto.image = req.file.filename;
       }
-
-      let productId = productsTable.create(product);
-
-      res.redirect("/productos/" + productId);
+      //const { name, image, price, description } = req.body;
+      // let productId = productsTable.create(product); 
+      db.Products.create({
+        name: req.body.name,
+        price: req.body.price,
+        category_id: parseInt(req.body.category)
+      })
+        .then((product) => {
+          console.log(product.id)
+          return res.redirect(`/productos/${product.id}`);
+      })
+        .catch((errors) => {
+          console.log(errors);
+        })
       // Si hay errores
     } else {
       // Renderizo el formulario nuevamente con los errors y los datos completados
@@ -36,11 +43,7 @@ module.exports = {
         old: req.body,
       });
     }
-    // console.table(product); //para ver que se creo por consola
-
-    // Hecho con Sequelize 
-    
-    
+    //console.table(product); //para ver que se creo por consola
   },
   show: (req, res) => {
     let product = productsTable.find(req.params.id);

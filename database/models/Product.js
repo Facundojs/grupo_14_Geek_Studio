@@ -9,29 +9,35 @@ module.exports = function (sequelize, dataTypes) {
         },
         name: {
             type: dataTypes.STRING,
-            allowNull: false
-        },
+            },
         id_category: {
             type: dataTypes.INTEGER,
-            allowNull: false
-    
+                
         },
         price: {
             type: dataTypes.DECIMAL,
-            allowNull: false
-        },
+            },
         image: {
             type: dataTypes.STRING,
-            allowNull: false,
+            
         },
         description: {
             type: dataTypes.TEXT,
-            allowNull: false,
-        }
+            
+        },
+        // createdAt: {
+        //     type: dataTypes.DATE
+        // },
+        // updatedAt: {
+        //     type: dataTypes.DATE
+        // },
+        // deletedAt: {
+        //     type: dataTypes.DATE
+        // }
     };
     let config = {
         tableName: 'products',
-        timestamps: true,
+        timestamps: false,
         paranoid: true
     };
     let Product = sequelize.define(alias, cols, config);
