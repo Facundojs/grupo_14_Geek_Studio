@@ -194,8 +194,7 @@ header a:hover {
 }
 
 .for-sale .articles .product {
-  padding-left: 0;
-  width: 80%;
+  width: 90%;
   justify-content: space-between;
 }
 
@@ -580,15 +579,15 @@ element.style {
   width: 100%;
 }
 
-.img-store {
-  width: 30px;
-  height: 30px;
-  margin-left: 5px;
-}
-
 .icons-ship {
   font-size: 42px;
   margin-left: 5px;
+}
+
+.icon-store {
+  font-size: 28px;
+  margin-left: 5px;
+  color: rgb(112, 112, 112);
 }
 
 .truck-ship {
