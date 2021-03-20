@@ -17,7 +17,7 @@
                         <p class="feedback is-danger"><%= errors.name.msg %></p>
                     <% } %>
                     <div class="description">
-                        <input value="<%= locals.oldData ? oldData.features : null %>" type="text-area" name="features" id="features" placeholder="Características" >
+                        <input value="<%= locals.oldData ? oldData.description : null %>" type="text-area" name="features" id="features" placeholder="Características" >
                     </div>
                     <% if (locals.errors && errors.features) { %>
                         <p class="feedback is-danger"><%= errors.features.msg %></p>
