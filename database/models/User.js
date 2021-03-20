@@ -49,9 +49,9 @@ module.exports = function (sequelize, dataTypes) {
         paranoid: true
     };
     let User = sequelize.define(alias, cols, config);
-    User.associate = function (models) {
+    User.associate = models => {
         User.belongsTo(models.User_type, {
-            as: 'userType',
+            as: 'user_type',
             foreignKey: 'user_type_id'
         })
     }

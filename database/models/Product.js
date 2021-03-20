@@ -1,5 +1,5 @@
 module.exports = function (sequelize, dataTypes) {
-    let alias = 'Products';
+    let alias = 'Product';
     let cols = {
         id: {
             type: dataTypes.INTEGER,
@@ -9,42 +9,35 @@ module.exports = function (sequelize, dataTypes) {
         },
         name: {
             type: dataTypes.STRING,
+            allowNull: false,
             },
-        id_category: {
+        category_id: {
             type: dataTypes.INTEGER,
-                
+            allowNull: false,
         },
         price: {
             type: dataTypes.DECIMAL,
+            allowNull: false,
             },
         image: {
             type: dataTypes.STRING,
-            
+            allowNull: false,
         },
         description: {
             type: dataTypes.TEXT,
-            
+            allowNull: false,
         },
-        // createdAt: {
-        //     type: dataTypes.DATE
-        // },
-        // updatedAt: {
-        //     type: dataTypes.DATE
-        // },
-        // deletedAt: {
-        //     type: dataTypes.DATE
-        // }
     };
     let config = {
         tableName: 'products',
-        timestamps: false,
+        timestamps: true,
         paranoid: true
     };
     let Product = sequelize.define(alias, cols, config);
-    Product.associate = function (models) {
-        Product.belongsTo(models.Product_category, {
-            as: 'product_category',
-            foreignKey: 'product_category_id'
+    Product.associate = models => {
+        Product.belongsTo(models.Category, {
+            as: 'category',
+            foreignKey: 'category_id'
         });
     }
     return Product;

@@ -4,6 +4,8 @@ const productsTable = jsonTable("products");
 const { validationResult } = require("express-validator");
 const db = require("../../../database/models")
 
+// const { Product, Category } = require('../database/models')
+
 module.exports = {
   index: (req, res) => {
     let products = productsTable.all();
@@ -49,7 +51,7 @@ module.exports = {
     let product = productsTable.find(req.params.id);
 
     if (product) {
-      res.render("detail", { product });
+      res.render("products/detail", { product });
     } else {
       res.send("No se encontró el producto");
     }
