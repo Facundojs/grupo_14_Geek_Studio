@@ -8,31 +8,41 @@ const db = require("../../../database/models")
 
 module.exports = {
   index: (req, res) => {
-    let products = productsTable.all();
+    db.Product.findAll()
+      .then(products => {
+        // console.log(products)
+        res.render("products", { products });
+      })
 
-    res.render("products", { products: products });
   },
   create: (req, res) => {
-    res.render("products/create");
+    db.Category.findAll()
+      .then(categories => {  
+        res.render("products/create", { categories });
+      })
   },
   store: (req, res) => {
-    console.clear();
+     // Crea producto por post
     let errors = validationResult(req);
     if (errors.isEmpty()) {
       let producto = req.body;
       if (req.file) {
         producto.image = req.file.filename;
       }
-      //const { name, image, price, description } = req.body;
-      // let productId = productsTable.create(product); 
-      db.Products.create({
-        name: req.body.name,
-        price: req.body.price,
+      
+      const { name, price, description } = req.body
+
+      db.Product.create({
+        
+        name,
+        price,
+        description,
+        image: producto.image,
         category_id: parseInt(req.body.category)
       })
         .then((product) => {
           console.log(product.id)
-          return res.redirect(`/productos/${product.id}`);
+          return res.redirect(`/productos/${product.id}`)
       })
         .catch((errors) => {
           console.log(errors);
@@ -42,50 +52,118 @@ module.exports = {
       // Renderizo el formulario nuevamente con los errors y los datos completados
       return res.render("products/create", {
         errors: errors.mapped(),
-        old: req.body,
+        oldData: req.body,
       });
     }
     //console.table(product); //para ver que se creo por consola
   },
   show: (req, res) => {
-    let product = productsTable.find(req.params.id);
+    db.Product.findByPk(req.params.id) 
+      .then(product => {
+        if (product) {
+          res.render("products/detail", { product });
+        } else {
+          res.send("No se encontró el producto");
+        }        
+      })
+      .catch(error => {
+        console.log(error)
+        res.send('Ha ocurrido un error')
+      })
 
-    if (product) {
-      res.render("products/detail", { product });
-    } else {
-      res.send("No se encontró el producto");
-    }
   },
   edit: (req, res) => {
-    let productToEdit = productsTable.find(req.params.id);
-
-    console.log(productToEdit);
-    res.render("products/edit", { productToEdit });
+    db.Product.findByPk(req.params.id)
+      .then(product => {
+        if(product) {
+          db.Category.findAll() 
+            .then(categories => {
+              console.log(categories, product)
+              res.render("products/edit", { categories, productToEdit: product })
+            })
+            .catch(error => {
+              console.log(error)
+            })
+        }
+      })
   },
   update: (req, res) => {
-    let product = req.body;
-    product.id = Number(req.params.id);
+    let errors = validationResult(req);
+    if (errors.isEmpty()) {
+      let producto = req.body;
+      if (req.file) {
+        producto.image = req.file.filename;
+      } 
 
-    // Si viene una imagen nueva la guardo
-    if (req.file) {
-      product.img = req.file.filename;
-      // Si no viene una imagen nueva, busco en base la que ya había
-    } else {
-      oldProduct = productsTable.find(product.id);
-      product.img = oldProduct.img;
+    const { id } = req.params
+    const { name, price, description, category_id } = req.body 
+    db.Product.findByPk(id)
+      .then(product => {
+        const originalImage = product.image
+
+        db.Product.update({
+          name,
+          price,
+          description,
+          category_id,
+          image: req.file ? req.file.filename : originalImage
+        }, {
+        where: {
+          id
+        }
+          
+        })
+          .then(() => {
+              res.redirect(`/productos/${id}`)
+          })
+      })
+    
+    // let product = req.body;
+    // product.id = Number(req.params.id);
+
+    // // Si viene una imagen nueva la guardo
+    // if (req.file) {
+    //   product.image = req.file.filename;
+    //   // Si no viene una imagen nueva, busco en base la que ya había
+    // } else {
+    //   db.Product.findByPk(product.id)
+    //     .then(productOld => {
+
+    //     })
+    //   product.image = oldProduct.image;
+    //   console.log(oldProduct)
+    // }
+
+    // let productId = productsTable.update(product);
+
+    // res.redirect("/productos/" + productId);
+    }  else {
+      // Renderizo el formulario nuevamente con los errors y los datos completados
+      return res.render("products/create", {
+        errors: errors.mapped(),
+        old: req.body,
+      })
     }
-
-    let productId = productsTable.update(product);
-
-    res.redirect("/productos/" + productId);
   },
   destroy: (req, res) => {
-    productsTable.delete(req.params.id);
-
-    res.redirect("/productos");
+   db.Product.destroy({
+     where: {
+       id: req.params.id
+     }
+   })
+    .then( () => {
+      res.redirect("/productos");
+    })
   },
   chart: (req, res) => {
-    let products = productsTable.all();
-    res.render("carro", { productos: products });
+    db.Product.findAll()
+    .then( () => {
+
+      res.render("carro", { productos: products });
+    })
+    .catch(error => {
+      console.log(error)
+      res.send('Ha ocurrido un error')
+    })
   },
 };

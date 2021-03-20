@@ -6,7 +6,7 @@ module.exports = [
     body('features').notEmpty().withMessage('Debes poner las características del producto'),
 	body('price').notEmpty().withMessage('Debes poner un precio'),
 	body('category').notEmpty().withMessage('Debes elegir una categoría'),
-    body('img').custom((value, { req }) => {
+    body('image').custom((value, { req }) => {
 		let file = req.file;
 		let acceptedExtensions = ['.jpg', 'jpeg', '.png', '.gif'];
 

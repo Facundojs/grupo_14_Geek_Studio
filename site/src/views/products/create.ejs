@@ -11,19 +11,19 @@
                 <form action="/productos/crear"  method="POST" class ="form-product" enctype="multipart/form-data">
                     <!-- Aca voy a tener que poner un nuevo div que encierre tanto el div del input como el error, y así para cada campo (field) -->
                     <div class="productName">
-                        <input type="text" name="name" id="name" placeholder="Nombre del producto" >
+                        <input value="<%= locals.oldData ? oldData.name : null %>" type="text" name="name" id="name" placeholder="Nombre del producto" >
                     </div>
                     <% if (locals.errors && errors.name) { %>
                         <p class="feedback is-danger"><%= errors.name.msg %></p>
                     <% } %>
                     <div class="description">
-                        <input type="text-area" name="features" id="features" placeholder="Características" >
+                        <input value="<%= locals.oldData ? oldData.features : null %>" type="text-area" name="features" id="features" placeholder="Características" >
                     </div>
                     <% if (locals.errors && errors.features) { %>
                         <p class="feedback is-danger"><%= errors.features.msg %></p>
                     <% } %>
                     <div>
-                        <input type="number" name="price" id="price" placeholder="Precio" >
+                        <input value="<%= locals.oldData ? oldData.price : null %>" type="number" name="price" id="price" placeholder="Precio" >
                     </div>
                     <% if (locals.errors && errors.price) { %>
                         <p class="feedback is-danger"><%= errors.price.msg %></p>
@@ -44,11 +44,11 @@
                             <!-- <% for (const oneCategory of categories) { %> 
                                 <option value="<%= oneCategory %>"><%= oneCategory %></option>
                             <% } %>  -->
-                                <option value="1">silla</option>
-                                <option value="2">perifericos</option>
-                                <option value="3">gabinete</option>
-                                <option value="4">componentes</option>
-                                <option value="5">combos</option>
+                                <option value="1">Componentes</option>
+                                <option value="2">Perifericos</option>
+                                <option value="3">Gabinetes</option>
+                                <option value="4">Sillas</option>
+                                <option value="5">Combos</option>
                         </select>
                         
                     </div>

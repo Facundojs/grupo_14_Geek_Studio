@@ -16,7 +16,7 @@ router.get("/crear", authMiddleware, productController.create); // Formulario de
 router.get("/:id", productController.show); // Detalle del producto (Terminado)
 router.post("/crear", uploadFile.single("image"), validations, productController.store); //Proceso de Formulario (Terminado)
 router.get("/:id/editar", productController.edit); // Formulario de edición
-router.put("/:id", uploadFile.single("image"), productController.update); // Proceso de edición (Terminado)
+router.put("/:id", uploadFile.single("image"), validations, productController.update); // Proceso de edición (Terminado)
 router.delete("/:id", productController.destroy); // Proceso de eliminar un producto
 
 module.exports = router;

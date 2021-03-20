@@ -25,13 +25,12 @@ module.exports = function (sequelize, dataTypes) {
         },
         description: {
             type: dataTypes.TEXT,
-            allowNull: false,
         },
     };
     let config = {
         tableName: 'products',
-        timestamps: true,
-        paranoid: true
+        timestamps: false,
+        paranoid: false
     };
     let Product = sequelize.define(alias, cols, config);
     Product.associate = models => {

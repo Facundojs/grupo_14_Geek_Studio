@@ -8,10 +8,13 @@
             <div class="create-form">
                 <form action="/productos/<%= productToEdit.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
                     <div class="productName">
-                        <input value="<%= productToEdit.name %>" type="text" name="product-name" id="product-name" placeholder="Nombre del producto" >
+                        <input value="<%= productToEdit.name %>" type="text" name="name" id="name" placeholder="Nombre del producto" >
                     </div>
+                    <% if (locals.errors && errors.name) { %>
+                        <p class="feedback is-danger"><%= errors.name.msg %></p>
+                    <% } %>
                     <div class="description">
-                        <input value="<%= productToEdit.features %>" type="text-area" name="features" id="features" placeholder="Descripción">
+                        <input value="<%= productToEdit.description %>" type="text-area" name="features" id="features" placeholder="Descripción">
                     </div>
                     <div>
                         <input value="<%= productToEdit.price %>" type="number" name="price" id="price" placeholder="Precio">
@@ -22,18 +25,16 @@
                     <div class="product-category">
                         <select name="category" id="category" placeholder="Categoría">
                         <option>Seleccione una categoría</option>
-                        <% 
-                            let categories = ['Motherboards', 'Memorias', 'Procesadores', 'Almacenamiento', 'Perifericos', 'Pantallas', 'Placas de video', 'Gabinetes', 'Oficina']
-                        %> 
+                        
                         <% for (const oneCategory of categories) { %> 
-                            <option value="<%= oneCategory %>"><%= oneCategory %></option>
+                            <option value=<%= oneCategory %><%= oneCategory %>></option>
                         <% } %> 
 
                         </select>
                     </div>
                     <div class="file-div">
                         <label for="image">Seleccionar imagen/es</label>
-                        <input value="" type="file" class="file" name="image" id="image" placeholder="Imagen/es">
+                        <input type="file" class="file" name="image" id="image" placeholder="Imagen/es">
                     </div>
                     <div class="extra">
                         <input value="<%= productToEdit.anythingElse %>" type="text-area" name="anythingElse" id="anythingElse" placeholder="Otras consideraciones">

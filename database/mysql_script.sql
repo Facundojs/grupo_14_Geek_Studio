@@ -16,7 +16,8 @@ CREATE TABLE `products` (
 	`price` DECIMAL NOT NULL,
 	`image` VARCHAR(255) NOT NULL,
 	`description` TEXT NOT NULL,
-	PRIMARY KEY (`id`)
+	PRIMARY KEY (`id`),
+    FOREIGN KEY (category_id) REFERENCES categories (id)
 );
 
 CREATE TABLE `users` (
@@ -37,8 +38,12 @@ CREATE TABLE `user_type` (
 );
 
 
-## ALTER TABLE `users` ADD CONSTRAINT `users_fk0` FOREIGN KEY (`id_user_type`) REFERENCES `user_type`(`id`);
+## ALTER TABLE `users` ADD CONSTRAINT `users_fk0` FOREIGN KEY (`user_type_id`) REFERENCES `user_type`(`id`);
 
-## ALTER TABLE `products` ADD CONSTRAINT `products_fk0` FOREIGN KEY (`id_category`) REFERENCES `categories`(`id`);
+## ALTER TABLE `products` ADD CONSTRAINT `products_fk0` FOREIGN KEY (`category_id`) REFERENCES `categories`(`id`);
+
+
+
+
 
 
