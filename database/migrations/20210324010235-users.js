@@ -29,8 +29,10 @@ module.exports = {
         type: Sequelize.DataTypes.STRING,
         allowNull: false,
       },
+      avatar: Sequelize.DataTypes.STRING,
       createdAt: Sequelize.DataTypes.DATE,
       updatedAt: Sequelize.DataTypes.DATE,
+      deletedAt: Sequelize.DataTypes.DATE,
 
       user_type_id: {
         type: Sequelize.DataTypes.INTEGER,

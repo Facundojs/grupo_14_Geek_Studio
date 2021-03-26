@@ -76,6 +76,9 @@ const User = {
   },
 }; //fin User
 
+const bcryptjs = require("bcryptjs");
+let password = bcryptjs.hashSync("1234", 10);
+console.log("bcryptjs: ", password);
 //console.log(User.findByPk(7));
 //console.log(User.delete(6));
 module.exports = User; //exporto la funcionalidad de mi modelo

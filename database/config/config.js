@@ -2,7 +2,7 @@ module.exports = {
   development: {
     username: "root",
     password: null,
-    database: "geek_db" /* dbschema con nuevos campos geekdb  */,
+    database: "geekdb" /* dbschema con nuevos campos geekdb  */,
     host: "127.0.0.1",
     dialect: "mysql",
   },

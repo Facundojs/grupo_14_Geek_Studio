@@ -6,18 +6,20 @@
     <main>
     <div class="aligner-container" style="margin-top: 40px">
         <div class= "login-container"> 
-            <h1>Perfil de Usuario </h1>   
+            <h1>Bienvenido <i class="fas fa-user-circle"></i></h1> 
+            
             <div class="row centrar">    
                 <div class="col-md-3">
-                    <h2> <%= user.first_name %> </h2>
-                    <img src="/img/users/<%= user.userImg %>" class ="img-profile"> <div ><%= user.email %> </div>
+                    <h2> <%= user.first_name %>  <%= user.last_name %>  </h2> 
+                    <div ><%= user.email %> </div>
+                    <img src="/img/users/<%= user.avatar %>" class ="img-profile"> 
                     <br>
                     <br>
                     
                 </div>
             </div>
 	    </div>
-	    <!-- //Container -->
+	    
     </div>
 
     <%- include('../partials/footer.ejs') %>

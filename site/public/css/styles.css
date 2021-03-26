@@ -318,7 +318,10 @@ LOGIN, REGISTER Y RECOVER PASS
 
 /* PROFILE */
 .img-profile {
-  width: 300px;
+  width: 230px;
+  height: 300px;
+  margin: auto;
+  /*border-radius: 100%;*/
 }
 /* PROFILE */
 
