@@ -130,6 +130,7 @@ module.exports = {
 
     let userToCreate = {
       ...req.body,
+     
       password: bcryptjs.hashSync(req.body.password, 10),
       userImg: req.file.filename,
     };
