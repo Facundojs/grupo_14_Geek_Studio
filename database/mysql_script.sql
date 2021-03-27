@@ -39,6 +39,7 @@ CREATE TABLE `users` (
 	`password` VARCHAR(255) NOT NULL,
 	`email` VARCHAR(255) NOT NULL UNIQUE,
 	`telephone` INT NOT NULL,
+	`country` VARCHAR(255),
 	`avatar` VARCHAR(255),
 	`user_type_id` INT NOT NULL,
 	`createdAt` DATE,

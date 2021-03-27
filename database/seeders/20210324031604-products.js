@@ -230,7 +230,7 @@ module.exports = {
         image: "gabinete-corsair-carbide-spec-delta-rgb-3-fun-0.jpg",
         features: "GABINETE CORSAIR CARBIDE SPEC DELTA RGB",
         createdAt: new Date(),
-        UpdatedAt: new Date(),
+        updatedAt: new Date(),
       },
 
       {
