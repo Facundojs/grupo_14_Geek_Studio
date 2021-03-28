@@ -14,7 +14,7 @@
                         <p class="feedback is-danger"><%= errors.name.msg %></p>
                     <% } %>
                     <div class="description">
-                        <input value="<%= productToEdit.description %>" type="text-area" name="features" id="features" placeholder="Descripción">
+                        <input value="<%= productToEdit.features %>" type="text-area" name="features" id="features" placeholder="Descripción">
                     </div>
                     <div>
                         <input value="<%= productToEdit.price %>" type="number" name="price" id="price" placeholder="Precio">
@@ -36,9 +36,7 @@
                         <label for="image">Seleccionar imagen/es</label>
                         <input type="file" class="file" name="image" id="image" placeholder="Imagen/es">
                     </div>
-                    <div class="extra">
-                        <input value="<%= productToEdit.anythingElse %>" type="text-area" name="anythingElse" id="anythingElse" placeholder="Otras consideraciones">
-                    </div>
+                    
                     <input value="Editar" class="btn-login" type="submit">
                 </form>
                 <form action="/productos/<%= productToEdit.id %>?_method=DELETE" method="POST" >

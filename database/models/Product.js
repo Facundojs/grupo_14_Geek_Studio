@@ -19,6 +19,9 @@ module.exports = function (sequelize, dataTypes) {
       type: dataTypes.DECIMAL,
       allowNull: false,
     },
+    discount: {
+      type: dataTypes.INTEGER,
+    },
     image: {
       type: dataTypes.STRING,
       allowNull: false,
@@ -31,7 +34,7 @@ module.exports = function (sequelize, dataTypes) {
   let config = {
     tableName: "products",
     timestamps: true,
-    paranoid: true,
+    paranoid: false,
   };
   let Product = sequelize.define(alias, cols, config);
   Product.associate = (models) => {

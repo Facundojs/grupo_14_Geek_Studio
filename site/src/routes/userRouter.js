@@ -19,23 +19,23 @@ router.get("/login", guestMiddleware, userController2.login);
 router.post("/login", userController2.loginProcess); //Proceso el login
 
 //Paso middleware para validar si la sesion esta iniciada no permita volver a registrarse
-router.get("/create", guestMiddleware, userController.create); //router.get('/register',userController.register);
+router.get("/create", guestMiddleware, userController2.create); //router.get('/register',userController.register);
 
 router.post(
   "/create",
   uploadFile.single("userImg"),
-  validations,
-  userController.processRegister
+  //validations,   KBE - AGREGAR
+  userController2.processRegister
 );
 
 router.get("/profile", authMiddleware, userController2.profile);
 
-router.get("/:id/edit", userController.edit); //get para mostrar
-router.put("/:id", userController.update); //post para editar
-router.delete("/:id", userController.destroy); // Eliminar un usuario
+router.get("/:id/edit", userController2.edit); //get para mostrar
+router.put("/:id", validations, userController2.update); //post para editar
+router.delete("/:id", userController2.destroy); // Eliminar un usuario
 
 router.get("/recover-pass", userController.recoverPass);
 
-router.get("/logout", userController.logout);
+router.get("/logout", userController2.logout);
 
 module.exports = router;

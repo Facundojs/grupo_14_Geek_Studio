@@ -6,7 +6,7 @@ module.exports = [
     .notEmpty()
     .withMessage("Tienes que escribir tu nombre")
     .bail(),
-  body("surname")
+  body("last_name")
     .notEmpty()
     .withMessage("Tienes que escribir tu apellido")
     .bail(),
@@ -20,7 +20,7 @@ module.exports = [
     .notEmpty()
     .withMessage("Tienes que escribir tu Clave")
     .bail(),
-  body("user-img").custom((value, { req }) => {
+  body("avatar").custom((value, { req }) => {
     //console.log("entrre middleware", req);
     let file = req.file;
     let acceptedExtensions = [".jpg", ".png", ".gif"];

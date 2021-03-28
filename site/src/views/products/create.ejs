@@ -16,8 +16,8 @@
                     <% if (locals.errors && errors.name) { %>
                         <p class="feedback is-danger"><%= errors.name.msg %></p>
                     <% } %>
-                    <div class="description">
-                        <input value="<%= locals.oldData ? oldData.description : null %>" type="text-area" name="features" id="features" placeholder="Características" >
+                    <div class="features">
+                        <input value="<%= locals.oldData ? oldData.features : null %>" type="text-area" name="features" id="features" placeholder="Características" >
                     </div>
                     <% if (locals.errors && errors.features) { %>
                         <p class="feedback is-danger"><%= errors.features.msg %></p>
@@ -56,9 +56,7 @@
                         <label for="image">Seleccionar imagen/es</label>
                         <input type="file" class="file" name="image" id="image" placeholder="Imagen/es" >
                     </div>
-                    <div class="extra">
-                        <input type="text-area" name="anythingElse" id="anythingElse" placeholder="Otras consideraciones" >
-                    </div>
+                    
                     <input class="btn-login" type="submit" value="Crear">
                     <input class="btn-login" type="reset" value="Borrar">
                 </form>

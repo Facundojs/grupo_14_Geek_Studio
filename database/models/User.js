@@ -32,6 +32,12 @@ module.exports = function (sequelize, dataTypes) {
 
     avatar: dataTypes.STRING,
 
+    country: {
+      type: dataTypes.STRING,
+      allowNull: false,
+      unique: true,
+    },
+
     createdAt: {
       type: dataTypes.DATE,
     },

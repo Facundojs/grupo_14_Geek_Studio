@@ -104,5 +104,25 @@
   "password": "$2a$10$i5AsJtmDWuvxZb3N2PoM7OOdPI4MbEVSultU5LhPqBrzxmrfED1Cq",
   "pass-2": "1234",
   "userImg": "User-1615242174611.jpg"
+ },
+ {
+  "id": 12,
+  "first_name": "Pepito",
+  "surname": "Pepito",
+  "email": "PEPITO@GMAIL.COM",
+  "telephone": "12345",
+  "password": "$2a$10$PffQpK3H0M4IRrO9T3rb1.pSsVmSpHVec8CtWGBGlGW68tzWz3Ovi",
+  "country": "Argentina",
+  "userImg": "User-1616878399015.jpg"
+ },
+ {
+  "id": 13,
+  "first_name": "pepito",
+  "surname": "pepito",
+  "email": "pepito1@gmail.com",
+  "telephone": "1234",
+  "password": "$2a$10$yHxf09MqmekP4JWuJWcR1eVghtg3uUngt.Uw1OGrhC2uz5t6h0IVy",
+  "country": "Argentina",
+  "userImg": "User-1616878461606.jpg"
  }
 ]

@@ -26,14 +26,14 @@
                 
                 <div class="textbox-login">
                     <input type="text" placeholder="Apellido" 
-                    name="surname"  
-                    class ="form-control <%= locals.errors && errors.surname ? 'is-invalid' : null %>"
-                    value="<%= locals.oldData ? oldData.surname : null %>"
+                    name="last_name"  
+                    class ="form-control <%= locals.errors && errors.last_name ? 'is-invalid' : null %>"
+                    value="<%= locals.oldData ? oldData.last_name : null %>"
                     />*
                 </div>
-                <% if (locals.errors && errors.surname) { %>
+                <% if (locals.errors && errors.last_name) { %>
                     <div class="text-danger centrar">
-                        <%= errors.surname.msg %>
+                        <%= errors.last_name.msg %>
                     </div>
                     <% } %>
                 

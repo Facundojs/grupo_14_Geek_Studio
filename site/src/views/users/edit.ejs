@@ -6,19 +6,21 @@
     <main>
     <div class="aligner-container">
         <div class= "login-container"> 
-            <form class="form-login" action="/users/<% user.id %>/edit?_method=PUT" method="POST" >
+            
+            <form  action="/users/<%= user.id %>?_method=PUT" method="POST" class="form-login">
                 <h1> Editar Usuario </h1>
 
                 <div class="textbox-login">
-                    <input type="email" placeholder="E-Mail" name ="email" value="<%= user.email%>" required />
+                    <input type="email" placeholder="E-Mail" name ="email" value="<%= user.email%>"  />
                 </div>
 
+
                 <div class="textbox-login">
-                    <input type="text" placeholder="Nombre" name="first_name" value="<%= user.first_name%>" required />
+                    <input type="text" placeholder="Nombre" name="first_name" value="<%= user.first_name%>"  />
                 </div>
                 
                 <div class="textbox-login">
-                    <input type="text" placeholder="Apellido" name="surname" value="<%= user.surname %>" required />
+                    <input type="text" placeholder="Apellido" name="last_name" value="<%= user.last_name %>"  />
                 </div>
 
                 <div class="textbox-login">
@@ -27,15 +29,14 @@
 
                 <div class="textbox-login">
                     <i class="fa fa-lock" aria-hidden="true"></i>
-                    <input type="password" placeholder="Contraseña" name="password" value="<%=user.password %>" required/>
+                    <input type="password" placeholder="Contraseña" name="password" value="" />
                 </div>
 
                 <div class="textbox-login">
                     <i class="fa fa-lock" aria-hidden="true"></i>
-                    <input type="password" placeholder="Repetir Contraseña" name="password2" value="<%= user.password2 %>" required/>
+                    <input type="text" placeholder="Pais" name="country" value="<%= user.country %>" />
                 </div>
-            
-                
+                            
                 <input class="btn-login" type="submit" value="Modificar" >
 
             </form>
