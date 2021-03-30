@@ -23,15 +23,20 @@ router.get("/create", guestMiddleware, userController2.create); //router.get('/r
 
 router.post(
   "/create",
-  uploadFile.single("userImg"),
-  //validations,   KBE - AGREGAR
+  uploadFile.single("userImg"), //uploadFile.single("userImg"),
+  validations, // KBE - AGREGAR
   userController2.processRegister
 );
 
 router.get("/profile", authMiddleware, userController2.profile);
 
 router.get("/:id/edit", userController2.edit); //get para mostrar
-router.put("/:id", validations, userController2.update); //post para editar
+router.put(
+  "/:id",
+  uploadFile.single("userImg"),
+  validations,
+  userController2.update
+); //post para editar
 router.delete("/:id", userController2.destroy); // Eliminar un usuario
 
 router.get("/recover-pass", userController.recoverPass);

@@ -7,7 +7,7 @@
     <div class="aligner-container">
         <div class= "login-container"> 
             
-            <form  action="/users/<%= user.id %>?_method=PUT" method="POST" class="form-login">
+            <form  action="/users/<%= user.id %>?_method=PUT" method="POST" class="form-login" enctype="multipart/form-data">
                 <h1> Editar Usuario </h1>
 
                 <div class="textbox-login">
@@ -29,13 +29,23 @@
 
                 <div class="textbox-login">
                     <i class="fa fa-lock" aria-hidden="true"></i>
-                    <input type="password" placeholder="Contraseña" name="password" value="" />
+                    <input type="password" placeholder="Contraseña" name="<%= user.password %>" value="password" />
                 </div>
 
                 <div class="textbox-login">
                     <i class="fa fa-lock" aria-hidden="true"></i>
                     <input type="text" placeholder="Pais" name="country" value="<%= user.country %>" />
                 </div>
+
+                <div class="btn-login">
+                    <label for="userImg">Seleccionar Imagen Perfil</label>
+                    <input type="file" class="file" 
+                    name="userImg" 
+                    id="userImg" 
+                    placeholder="Imagen" 
+                    >
+                </div>
+                            
                             
                 <input class="btn-login" type="submit" value="Modificar" >
 

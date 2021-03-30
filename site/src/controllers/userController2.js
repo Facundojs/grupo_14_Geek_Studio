@@ -12,24 +12,12 @@ module.exports = {
     let users = await db.User.findAll();
 
     console.clear();
-    console.log(users);
-
     res.render("users/index", { users });
-
-    // DB.Genre.findAll().then((genres) => {
-    //   return res.status(200).json({
-    //     total: genres.length,
-    //     data: genres,
-    //     status: 200,
-    //   });
-    // });
   },
   login: (req, res) => {
     res.render("users/login");
   },
   loginProcess: (req, res) => {
-    //let userToLogin = db.User.findField("email", req.body.email);
-    //KBE
     db.User.findOne({
       where: {
         email: req.body.email,
@@ -38,12 +26,10 @@ module.exports = {
       .then((userToLogin) => {
         console.log("USER -->", userToLogin);
         if (userToLogin) {
-          //console.log("muestro usuario x consola: ", user);
           let okPassword = bcryptjs.compareSync(
             req.body.password,
             userToLogin.password
           );
-          //console.log("OKPASS: ", okPassword);
 
           if (okPassword) {
             req.session.userLogged = userToLogin;
@@ -60,7 +46,6 @@ module.exports = {
             oldData: req.body,
           });
         }
-        //res.render("users/login", { error: "Usuario no encontrado" });
       })
       .catch((error) => {
         console.log("ERROR CATCH ", error);
@@ -73,8 +58,8 @@ module.exports = {
     res.render("users/create");
   },
   processRegister: async (req, res) => {
-    const resultValidation = validationResult(req);
-
+    let resultValidation = validationResult(req);
+    console.log(resultValidation);
     let userInDB = await db.User.findOne({
       where: { email: req.body.email },
     });
@@ -126,8 +111,6 @@ module.exports = {
   },
   destroy: async (req, res) => {
     let userDelete = req.params.id;
-    console.log("ID A ELIMINAR: ", userDelete);
-
     await db.User.destroy({
       where: { id: userDelete },
     });
@@ -135,8 +118,6 @@ module.exports = {
     res.redirect("/users/index");
   },
   show: async (req, res) => {
-    //busco el usuario en el json
-    //let user = await db.User.findOne(req.params.id);
     let user = await db.User.findOne({
       where: { email: req.body.email },
     });
@@ -170,7 +151,6 @@ module.exports = {
     //     oldData: req.body,
     //   });
     // }
-    console.log("REQ", req.params.id);
 
     const { id } = req.params;
     const {
@@ -186,10 +166,11 @@ module.exports = {
       {
         first_name,
         last_name,
-        password,
+        password: bcryptjs.hashSync(req.body.password, 10),
         email,
         telephone,
         country,
+        avatar: req.file.filename,
       },
       {
         where: { id: id },
