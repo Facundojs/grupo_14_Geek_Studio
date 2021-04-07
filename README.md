@@ -4,6 +4,19 @@
 - Nuestro sitio ofrecerá todo tipo de productos del rubro tecnológico relacionados al mundo del gaming en computadoras. 
 Principalmente componentes como motherboards, microprocesadores, módulos de memoria tanto RAM SSD y HDD, tarjetas gráficas y fuentes de poder en donde trabajaremos con marcas como Asus, SkullCandy, MSI, Gigabyte, Kingston, Intel, Nvidia, AMD, entre otras.
 
+# **Instrucciones**
+### Dependencias
+    npm i
+    sequelize db:seed:all
+    sequelize db:migrate
+<br>
+<br>
+
+### Arranque
+    npm run startdev
+<br>
+<br>
+
 <dl>
   <dt>¿Quién será nuestra audiencia objetivo?</dt>
   <dd>El público objetivo serán aquellas personas interesadas en actualizar su ordenador o adquirir los primeros componentes del mismo.</dd>

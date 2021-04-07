@@ -316,6 +316,9 @@ LOGIN, REGISTER Y RECOVER PASS
   background-color: #394a96;
 }
 
+.checkbox-login{
+  margin: auto;
+}
 /* PROFILE */
 .img-profile {
   width: 230px;

@@ -1,8 +1,8 @@
 const fs = require("fs");
 const path = require("path");
+const User = require("../models/User");
 const bcryptjs = require("bcryptjs");
 const { validationResult } = require("express-validator");
-const User = require("../models/User");
 const db = require("../../../database/models");
 
 module.exports = {
@@ -11,7 +11,7 @@ module.exports = {
     //res.render("users/index", { users });
     let users = await db.User.findAll();
 
-    console.clear();
+    //console.clear();
     res.render("users/index", { users });
   },
   login: (req, res) => {
@@ -24,7 +24,7 @@ module.exports = {
       },
     })
       .then((userToLogin) => {
-        console.log("USER -->", userToLogin);
+        //console.log("USER -->", userToLogin);
         if (userToLogin) {
           let okPassword = bcryptjs.compareSync(
             req.body.password,
@@ -34,7 +34,11 @@ module.exports = {
           if (okPassword) {
             req.session.userLogged = userToLogin;
             delete userToLogin.password; //por seguridad borro esta propiedad
-
+            //
+            if (req.body.remember) {
+              res.cookie('mailDeUsuario', req.body.email,{maxAge: (60*1000)*10})
+            }
+            //
             return res.redirect("/users/profile");
           }
           return res.render("users/login", {
@@ -48,10 +52,11 @@ module.exports = {
         }
       })
       .catch((error) => {
-        console.log("ERROR CATCH ", error);
+        console.log("ERROR CATCHED ", error);
       });
   },
   profile: (req, res) => {
+    //console.log(req.cookies.mailDeUsuario);
     res.render("users/profile", { user: req.session.userLogged });
   },
   create: (req, res) => {
@@ -184,6 +189,9 @@ module.exports = {
   },
   logout: (req, res) => {
     //Borro la sesion
+    console.log('¡CHAU!');
+    res.clearCookie('mailDeUsuario');
+    // console.log('Cookie limpiada!');
     req.session.destroy();
     return res.redirect("/");
   },

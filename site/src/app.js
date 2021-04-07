@@ -7,7 +7,7 @@ const viewsPath = path.resolve(__dirname, "./views");
 const session = require("express-session");
 const cookies = require("cookie-parser");
 const userLoggedMiddleware = require("./middlewares/userLoggedMiddleware");
-
+const rememberMiddleware = require("./middlewares/rememberMiddleware")
 app.use(
   session({
     secret: "Secret",
@@ -16,9 +16,9 @@ app.use(
   })
 );
 
-app.use(userLoggedMiddleware);
-
 app.use(cookies());
+app.use(userLoggedMiddleware);
+// app.use(rememberMiddleware)
 
 app.use(express.static(publicPath));
 
@@ -56,7 +56,7 @@ const productsRouter = require("./routes/productsRouter");
 app.use("/productos", productsRouter);
 /************************************************************************************/
 
-//Login
+//Users
 const userRouter = require("./routes/userRouter");
 app.use("/users", userRouter);
 
