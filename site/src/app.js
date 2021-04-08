@@ -7,7 +7,7 @@ const viewsPath = path.resolve(__dirname, "./views");
 const session = require("express-session");
 const cookies = require("cookie-parser");
 const userLoggedMiddleware = require("./middlewares/userLoggedMiddleware");
-const rememberMiddleware = require("./middlewares/rememberMiddleware")
+
 app.use(
   session({
     secret: "Secret",

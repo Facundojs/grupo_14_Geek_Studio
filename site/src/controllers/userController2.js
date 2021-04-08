@@ -24,7 +24,7 @@ module.exports = {
       },
     })
       .then((userToLogin) => {
-        //console.log("USER -->", userToLogin);
+
         if (userToLogin) {
           let okPassword = bcryptjs.compareSync(
             req.body.password,
@@ -49,9 +49,19 @@ module.exports = {
             },
             oldData: req.body,
           });
-        }
+        } else {//////////////
+          return res.render("users/login", {
+            errors: {
+              email: {
+                msg: "No se encontró el mail",
+              },
+            },
+            oldData: req.body,
+          });
+        }///////////////
       })
       .catch((error) => {
+        res.send('No existe el user')
         console.log("ERROR CATCHED ", error);
       });
   },
