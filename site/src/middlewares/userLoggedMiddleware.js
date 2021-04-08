@@ -24,7 +24,7 @@ async function userLoggedMiddleware(req, res, next) {
     delete dataValues.password;
     userData = dataValues
   }
-  console.log(userData);
+  // console.log(userData);
   if (req.session && req.session.userLogged) {
     res.locals.isLogged = true;
     res.locals.userLogged = req.session.userLogged;

@@ -11,8 +11,12 @@ const uploadFile = require("../middlewares/multerUserMiddleware");
 const validations = require("../middlewares/validateRegisterMiddleware");
 const guestMiddleware = require("../middlewares/guestMiddleware");
 const authMiddleware = require("../middlewares/authMiddleware");
+const isAdminMiddleware = require("../middlewares/isAdminMiddleware")
 
-router.get("/index", userController2.index);
+
+
+//Rutas
+router.get("/index", isAdminMiddleware, userController2.index);
 
 //Paso middleware para validar si la sesion esta iniciada no permita volver a loguarse
 router.get("/login", guestMiddleware, userController2.login);
