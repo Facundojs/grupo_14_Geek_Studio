@@ -8,9 +8,12 @@ const db = require("../../../database/models");
 
 module.exports = {
   index: async (req, res) => {
-    let products = await db.Product.findAll();
+    let products = await db.Product.findAll(); 
     let categories = await db.Category.findAll();
-    console.log("PRO ", products);
+    
+    console.log(products);
+    console.log('=================================================================================');
+    console.log(categories);
 
     res.render("products", { products, categories });
   },
@@ -153,8 +156,8 @@ module.exports = {
   },
   chart: (req, res) => {
     db.Product.findAll()
-      .then(() => {
-        res.render("carro", { productos: products });
+      .then((productos) => {
+        res.render("carro", {productos});
       })
       .catch((error) => {
         console.log(error);
