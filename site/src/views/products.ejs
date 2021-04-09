@@ -4,16 +4,15 @@
 <body>
     <%- include('./partials/header.ejs') %>
     <main>
-        <div class="aligner-container">
-            <% for (let i = 0; i < categories.length; i++) { %>
-                <h3> <%= categories[i].dataValues.name %></h3> 
-                <% for (let i = 0; i < products.length; i++) { %>
-                    <h3> <%= products[i].dataValues.name %> </h3>  <img src ="/img/products/<%= products[i].dataValues.image %>">
-                <% } %> 
+        <div class="aligner-container"> 
+            <% categories.forEach(element => { %>
+                <%= element.dataValues.name %>
                 
-            <% } %> 
 
-                    
+
+
+
+                <% }); %> 
 
         </div>
     </main>

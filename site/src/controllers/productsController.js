@@ -1,6 +1,3 @@
-const jsonTable = require("../database/jsonTable");
-//const model = require('../database/jsonTable');
-const productsTable = jsonTable("products");
 const { validationResult } = require("express-validator");
 const db = require("../../../database/models");
 
@@ -8,14 +5,10 @@ const db = require("../../../database/models");
 
 module.exports = {
   index: async (req, res) => {
-    let products = await db.Product.findAll(); 
-    let categories = await db.Category.findAll();
-    
-    console.log(products);
-    console.log('=================================================================================');
-    console.log(categories);
-
-    res.render("products", { products, categories });
+     
+    let categories = await db.Category.findAll({include: 'products', as: 'products'});
+    console.clear();
+    res.render("products", { categories });
   },
   create: (req, res) => {
     db.Category.findAll().then((categories) => {
