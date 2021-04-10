@@ -1,26 +1,22 @@
-<% let componentes = products.filter(element => element.category === 'combos')%>
-<% componentes.forEach(elemento => {%>
     <li>
         <article>
             <span class="article-image">
-                <img class="article-image" src="/img/products/<%= elemento.img %>" alt="<%=elemento.name %>">
-                <div class="article-description"><%=elemento.name %></div>
+                <img class="article-image" src="/img/products/<%= product.dataValues.img %>" alt="<%=product.dataValues.name %>">
+                <div class="article-description"><%=product.dataValues.name %></div>
             </span>
             <span>
                 <div>
                     Precio
                 </div>
                 <div>
-                    <%=elemento.price %> 
+                    <%=product.dataValues.price %> 
                 </div>
             </span>
-            <a href="/productos/<%= elemento.id %>">Detalle del producto</a>
+            <a href="/productos/<%= product.dataValues.id %>">Detalle del producto</a>
             <form action="" method="" >
-                <button type="submit">
+                <button id="#<%=product.dataValues.id%>" type="submit">
                     Agregar al carro
                 </button>
             </form>
         </article>
-    </li>  
-<% })%>
-    
+    </li>      

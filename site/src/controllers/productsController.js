@@ -5,10 +5,13 @@ const db = require("../../../database/models");
 
 module.exports = {
   index: async (req, res) => {
-     
-    let categories = await db.Category.findAll({include: 'products', as: 'products'});
-    console.clear();
-    res.render("products", { categories });
+    let products = await db.Product.findAll({ include: 'category' });
+    let categories = await db.Category.findAll({ include: 'products'});
+    
+    
+
+
+    res.render("products", { products, categories });
   },
   create: (req, res) => {
     db.Category.findAll().then((categories) => {

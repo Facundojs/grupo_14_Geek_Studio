@@ -5,14 +5,41 @@
     <%- include('./partials/header.ejs') %>
     <main>
         <div class="aligner-container"> 
-            <% categories.forEach(element => { %>
-                <%= element.dataValues.name %>
-                
+            <% categories.forEach(element => {%>
+                <% if (element.dataValues.products.length > 0) {%> 
+                    <hr>
+                    <h2><%= element.dataValues.name %> </h2>
+                    <%} %>
+                <% products.forEach((product)=>{ %>
+                    <ul>
+                        <% if(product.dataValues.category_id == element.dataValues.id){ %>
+                            <li>
+                                <article>
+                                    <span >
+                                        <img class="article-image" src="/img/products/<%= product.dataValues.image%>" alt="<%=product.dataValues.name %>">
+                                            <div class="article-description"><%=product.dataValues.name %></div>
+                                        </span>
+                                        <span>
+                                        <div>
+                                            Precio
+                                        </div>
+                                        <div>
+                                            <%=product.dataValues.price %> 
+                                        </div>
+                                    </span>
+                                        <a href="/productos/<%= product.dataValues.id %>">Detalle del producto</a>
+                                    <form action="" method="" >
+                                        <button id="#<%=product.dataValues.id%>" type="submit">
+                                            Agregar al carro
+                                        </button>
+                                    </form>
+                                </article>
+                            </li>
+                        <% } %> 
+                    </ul>
+                <%}) %> 
 
-
-
-
-                <% }); %> 
+            <%}); %> 
 
         </div>
     </main>
