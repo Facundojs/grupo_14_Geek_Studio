@@ -8,8 +8,6 @@ module.exports = {
     let products = await db.Product.findAll({ include: 'category' });
     let categories = await db.Category.findAll({ include: 'products'});
     
-    
-
 
     res.render("products", { products, categories });
   },

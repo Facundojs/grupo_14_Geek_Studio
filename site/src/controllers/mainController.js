@@ -1,10 +1,10 @@
 const jsonTable = require("../database/jsonTable");
-const productsTable = jsonTable("products");
+// const productsTable = jsonTable("products");
 const shuffle = require("lodash.shuffle");
 const db = require('../../../database/models') 
 
 module.exports = {
-  index: (req, res) => {
+  index: async (req, res) => {
     
     // db.Products.findAll()
     // .then((products)=> shuffle(products))
@@ -14,9 +14,10 @@ module.exports = {
     // .catch((error)=>{
     //   console.log(error)
     // })
-    
-    let products = shuffle(productsTable.all());
-    //let revueltos = shuffle(products)
-    res.render("home", {products});
+    let categories = await db.Category.findAll();
+    let products = await db.Product.findAll();
+
+      res.render("home", { categories, products })
+
   },
 };

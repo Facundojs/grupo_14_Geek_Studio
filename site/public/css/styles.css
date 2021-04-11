@@ -219,8 +219,8 @@ header a:hover {
   filter: grayscale(100%);
 }
 
-.titulo-circle {
-  font-size: 25px;
+.circle-title {
+  font-size: 20px;
   width: 100%;
   color: white; /*var(--orange);*/
   /* -webkit-text-fill-color: white; */
@@ -229,7 +229,7 @@ header a:hover {
     2px -2px 1px #000;
   overflow: hidden;
   text-align: center;
-  margin-top: -90px;
+  margin-top: -100px;
   font-weight: 800;
   position: relative;
 }
@@ -272,6 +272,7 @@ header a:hover {
   box-shadow: 4px;
   text-decoration: none;
   transition: all 0.1s;
+  background-color: gainsboro;
 }
 .col-4 a:hover{
   transform: scale(1.03);
@@ -300,11 +301,14 @@ header a:hover {
   margin-block-end: 0;
   color: var(--oscuro) ;
 }
+
+
 .col-4 a .prod-description p{
   width: 100%;
   font-size: 30px;
   text-align: center;
   font-weight: bolder;
+  margin-bottom: 2px;
   color: var(--orange);
 }
 
@@ -1159,7 +1163,7 @@ h2 {
 
   /* K.E. - Para mostrar los botones circulares del head */
 
-  .titulo-circle {
+  .circle-title {
     font-size: 25px;
     width: 80%;
     color: white;
@@ -1167,7 +1171,7 @@ h2 {
       2px -2px 1px #000;
     overflow: hidden;
     text-align: center;
-    margin-top: -90px;
+    margin-top: -100px;
     font-weight: 800;
   }
 
@@ -1316,8 +1320,8 @@ h2 {
 
   /* K.E. - Para mostrar los botones circulares del head */
 
-  .titulo-circle {
-    font-size: 20px;
+  .circle-title {
+    font-size: 16px;
     width: 100%;
     color: white; /*var(--orange);*/
     /* -webkit-text-fill-color: white; */
@@ -1326,7 +1330,7 @@ h2 {
       2px -2px 1px #000;
     overflow: hidden;
     text-align: center;
-    margin-top: -90px;
+    margin-top: -75px;
     font-weight: 800;
   }
 
@@ -1470,6 +1474,22 @@ main section .chart-item div {
   .browser-bar {
     font-size: 1.1rem;
     width: 500px;
+  }
+  
+  /* K.E. - Para mostrar los botones circulares del head */
+
+  .circle-title {
+    font-size: 20px;
+    width: 100%;
+    color: white; /*var(--orange);*/
+    /* -webkit-text-fill-color: white; */
+    /* -webkit-text-stroke: .0000001px white; */
+    text-shadow: -2px -2px 1px #000, 2px 2px 1px #000, -2px 2px 1px #000,
+      2px -2px 1px #000;
+    overflow: hidden;
+    text-align: center;
+    margin-top: -100px;
+    font-weight: 800;
   }
 
   /***********************************************************************************************/

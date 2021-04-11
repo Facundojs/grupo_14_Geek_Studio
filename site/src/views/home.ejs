@@ -6,12 +6,7 @@
     <%- include('./partials/header.ejs') %>
     <main>
         <div class="aligner-container">
-            <!--
-            <div >
 
-                <img class="home-banner" src="/img/hero2.jpg" alt="">
-            </div> 
-            -->
             <div >
               <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
                   <div class="carousel-indicators">
@@ -40,53 +35,21 @@
                   </button>
                 </div>
 
-                <div class="row">
-                  <div class="col-12">
-                    <div class="row justify-content-center">
-                      <div class="col-7 my-5 col-md-2">
-                        <div className="item-home">
-                          <a href="/productos#componentes" class="sections-hrefs">
-                            <img src="/img/sections/componentes.jpg" alt="" class="pic img-fluid rounded-circle"></img>
-                            <p class="titulo-circle">Componentes</p>
-                          </a>
+                      <div class="row-all">
+                        <% categories.forEach((category)=>{ %>
+                        <div class="col-7 my-5 col-md-2">
+                          <div className="item-home">
+                            <a href="/productos#<%= category.dataValues.name %>" class="sections-hrefs">
+                              <div>
+                                <img src="/img/sections/<%= category.dataValues.image %>" alt="" class="pic img-fluid rounded-circle"></img>
+                                <p class="circle-title"><%= category.dataValues.name %></p>
+                              </div>
+                            </a>
+                          </div>
                         </div>
+                        <% }) %> 
                       </div>
 
-                      <div class="col-7 my-5 col-md-2">
-                        <div className="item-home">
-                          <a href="/productos#perifericos" class="sections-hrefs">
-                            <img src="/img/sections/perifericos.png" alt="" class="pic img-fluid rounded-circle"></img>
-                            <p class="titulo-circle">Periféricos</p>
-                          </a>
-                        </div>
-                      </div>
-
-                      <div class="col-7 my-5 col-md-2">
-                        <div className="item-home">
-                          <a href="/productos#gabinetes" class="sections-hrefs">
-                            <img src="/img/sections/gabinetes.jpg" alt="" class="pic img-fluid rounded-circle"></img>
-                            <p class="titulo-circle">Gabinetes</p>
-                          </a>
-                        </div>
-                      </div>
-
-                      <div class="col-7 my-5 col-md-2">
-                        <div className="item-home">
-                          <a href="/productos#sillasgamer" class="sections-hrefs">
-                              <img src="/img/sections/sillaGamer.png" alt="" class="pic img-fluid rounded-circle"></img>
-                              <p class="titulo-circle">Sillas Gamer</p>
-                          </a>
-                        </div>
-                      </div>
-
-                      <div class="col-7 my-5 col-md-2">
-                        <div className="item-home">
-                          <a href="/productos#combos" class="sections-hrefs">
-                            <img src="/img/sections/combos.jpg" alt="" class="pic img-fluid rounded-circle"></img>
-                            <p class="titulo-circle">Combos</p>
-                          </a>
-                        </div>
-                      </div>
 
                     </div>
                   </div>
@@ -94,14 +57,34 @@
 
                 <section class="for-sale">
                     <h2 class="categories">Ofertas destacadas</h2>
-                    <section class="articles">
-                        <ul>
-                            <% for(let i = 0; i<5; i++) {%>
-                                <li><img class="product" src="/img/products/<%= products[i].img %> " alt=""><span class="product-info"><h4><a href="/productos/<%= products[i].id %> "><%= products[i].name %></a></h4><%= products[i].price %></span></li>
-                            <%}%> 
-                        </ul>
-                    </section>
-                </section>
+
+                <% products.forEach((product)=>{ %>
+                <div class="row-all">
+                      <div class="col-4">
+                              <a href="/productos/<%= product.dataValues.id %>">
+                                  <div class="image">
+                                  <img src="/img/products/<%= product.dataValues.image %>" alt="<%=product.dataValues.name %>">
+                                  </div>
+                                  
+                                  <div class="prod-description">
+                                      <h4>
+                                      <%=product.dataValues.name %>
+                                      </h4> <!-- tienen que ser máximo 25 letras-->
+                                  
+                                      <p>
+                                          $<%=product.dataValues.price %> 
+                                      </p>
+                                  </div>
+  
+                                  <div class="chart-button">
+                                  <button id="#<%=product.dataValues.id %>"  type="submit">
+                                      Agregar al carro <i class="fas fa-shopping-cart"></i>
+                                  </button>
+                                  </div>
+  
+                          <% }); %> 
+                              </a>
+                      </div>
             </div>
         </div>
     </main>

@@ -15,8 +15,8 @@
                     
                 <div class="row-all">
                 <% products.forEach((product)=>{ %>
-                    <div class="col-4">
-                        <% if(product.dataValues.category_id == category.dataValues.id){ %>
+                    <% if(product.dataValues.category_id == category.dataValues.id){ %>
+                        <div class="col-4">
                             <a href="/productos/<%= product.dataValues.id %>">
                                 <div class="image">
                                 <img src="/img/products/<%= product.dataValues.image%>" alt="<%=product.dataValues.name %>">
@@ -33,14 +33,16 @@
                                 </div>
 
                                 <div class="chart-button">
-                                <button id="#<%=product.dataValues.id%>"  type="submit">
+                                <button id="#<%=product.dataValues.id %>"  type="submit">
                                     Agregar al carro <i class="fas fa-shopping-cart"></i>
                                 </button>
                                 </div>
 
-                        <% } %> 
                             </a>
-                    </div>
+                        </div>
+                    <% } %> 
+
+
                 <%}) %> 
 
             <%}); %> 

@@ -178,17 +178,6 @@ module.exports = {
       },
 
       {
-        name: "TECLADO Y MOUSE GAMER TRUST AZOR ES GXT 838",
-        price: 3800,
-        discount: 0,
-        category_id: 2,
-        image: "teclado-y-mouse-gamer-trust-azor-es-gxt-838-2.jpg",
-        features: "-",
-        createdAt: new Date(),
-        updatedAt: new Date(),
-      },
-
-      {
         name: "TECLADO Y MOUSE LOGITECH G213 + G203",
         price: 10408,
         discount: 0,

@@ -52,8 +52,3 @@ ALTER TABLE `users` ADD CONSTRAINT `users_fk0` FOREIGN KEY (`user_type_id`) REFE
 
 ALTER TABLE `products` ADD CONSTRAINT `products_fk0` FOREIGN KEY (`category_id`) REFERENCES `categories`(`id`);
 
--- INSERT INTO categories values (1, "Componentes");
--- INSERT INTO categories values (2, "Perifericos");
--- INSERT INTO categories values (3, "Gabinetes");
--- INSERT INTO categories values (4, "Sillas");
--- INSERT INTO categories values (5, "Combos");
