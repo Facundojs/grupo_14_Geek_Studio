@@ -28,7 +28,12 @@
             <li><a href="/productos">Componentes</a></li>
             <li><a href="/productos">Periféricos</a></li>
             <li><a href="/productos">PC Armadas</a></li>
-            <li><a href="/productos/crear">Vender</a></li>
+            <% if ( locals.userLogged && locals.userLogged.user_type_id == 1)  { %>
+            
+                <li><a href="/productos/crear">Vender</a></li>
+            <%  } %>
+                      
+            
             <li><a href="/productos">Soporte</a></li>
             </ul>
         </nav>

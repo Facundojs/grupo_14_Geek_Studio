@@ -24,7 +24,6 @@ module.exports = {
       },
     })
       .then((userToLogin) => {
-
         if (userToLogin) {
           let okPassword = bcryptjs.compareSync(
             req.body.password,
@@ -34,9 +33,11 @@ module.exports = {
           if (okPassword) {
             req.session.userLogged = userToLogin;
             delete userToLogin.password; //por seguridad borro esta propiedad
-            //
+
             if (req.body.remember) {
-              res.cookie('mailDeUsuario', req.body.email,{maxAge: (60*1000)*10})
+              res.cookie("mailDeUsuario", req.body.email, {
+                maxAge: 60 * 1000 * 10,
+              });
             }
             //
             return res.redirect("/users/profile");
@@ -49,7 +50,8 @@ module.exports = {
             },
             oldData: req.body,
           });
-        } else {//////////////
+        } else {
+          //////////////
           return res.render("users/login", {
             errors: {
               email: {
@@ -58,10 +60,10 @@ module.exports = {
             },
             oldData: req.body,
           });
-        }///////////////
+        } ///////////////
       })
       .catch((error) => {
-        res.send('No existe el user')
+        res.send("No existe el user");
         console.log("ERROR CATCHED ", error);
       });
   },
@@ -199,8 +201,8 @@ module.exports = {
   },
   logout: (req, res) => {
     //Borro la sesion
-    console.log('¡CHAU!');
-    res.clearCookie('mailDeUsuario');
+    console.log("¡CHAU!");
+    res.clearCookie("mailDeUsuario");
     // console.log('Cookie limpiada!');
     req.session.destroy();
     return res.redirect("/");
