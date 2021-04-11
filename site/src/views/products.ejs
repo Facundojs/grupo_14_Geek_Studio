@@ -5,41 +5,47 @@
     <%- include('./partials/header.ejs') %>
     <main>
         <div class="aligner-container"> 
-            <% categories.forEach(element => {%>
-                <% if (element.dataValues.products.length > 0) {%> 
-                    <hr>
-                    <h2><%= element.dataValues.name %> </h2>
-                    <%} %>
+
+            <% categories.forEach(category => {%>
+                <% if (category.dataValues.products.length > 0) {%> 
+
+                    <h2 class="categories"><%= category.dataValues.name %> </h2>
+                <%} %>
+                    
+                    
+                <div class="row-all">
                 <% products.forEach((product)=>{ %>
-                    <ul>
-                        <% if(product.dataValues.category_id == element.dataValues.id){ %>
-                            <li>
-                                <article>
-                                    <span >
-                                        <img class="article-image" src="/img/products/<%= product.dataValues.image%>" alt="<%=product.dataValues.name %>">
-                                            <div class="article-description"><%=product.dataValues.name %></div>
-                                        </span>
-                                        <span>
-                                        <div>
-                                            Precio
-                                        </div>
-                                        <div>
-                                            <%=product.dataValues.price %> 
-                                        </div>
-                                    </span>
-                                        <a href="/productos/<%= product.dataValues.id %>">Detalle del producto</a>
-                                    <form action="" method="" >
-                                        <button id="#<%=product.dataValues.id%>" type="submit">
-                                            Agregar al carro
-                                        </button>
-                                    </form>
-                                </article>
-                            </li>
+                    <div class="col-4">
+                        <% if(product.dataValues.category_id == category.dataValues.id){ %>
+                            <a href="/productos/<%= product.dataValues.id %>">
+                                <div class="image">
+                                <img src="/img/products/<%= product.dataValues.image%>" alt="<%=product.dataValues.name %>">
+                                </div>
+                                
+                                <div class="prod-description">
+                                    <h4>
+                                    <%=product.dataValues.name %>
+                                    </h4> <!-- tienen que ser máximo 25 letras-->
+                                
+                                    <p>
+                                        $<%=product.dataValues.price %> 
+                                    </p>
+                                </div>
+
+                                <div class="chart-button">
+                                <button id="#<%=product.dataValues.id%>"  type="submit">
+                                    Agregar al carro <i class="fas fa-shopping-cart"></i>
+                                </button>
+                                </div>
+
                         <% } %> 
-                    </ul>
+                            </a>
+                    </div>
                 <%}) %> 
 
             <%}); %> 
+
+            </div>
 
         </div>
     </main>

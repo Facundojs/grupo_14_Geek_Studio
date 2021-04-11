@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 
-const userController = require("../controllers/userController");
+// const userController = require("../controllers/userController");
 const userController2 = require("../controllers/userController2");
 
 const multer = require("multer");
@@ -43,7 +43,7 @@ router.put(
 ); //post para editar
 router.delete("/:id", userController2.destroy); // Eliminar un usuario
 
-router.get("/recover-pass", userController.recoverPass);
+router.get("/recover-pass", userController2.recoverPass);
 
 router.get("/logout", userController2.logout);
 
