@@ -7,7 +7,6 @@
     <main>
         <div class="aligner-container">
 
-            <div >
               <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
                   <div class="carousel-indicators">
                     <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -35,58 +34,50 @@
                   </button>
                 </div>
 
-                      <div class="row-all">
+                      <div class="row-category">
                         <% categories.forEach((category)=>{ %>
-                        <div class="col-7 my-5 col-md-2">
-                          <div className="item-home">
+                        <div class="col-12">
                             <a href="/productos#<%= category.dataValues.name %>" class="sections-hrefs">
                               <div>
                                 <img src="/img/sections/<%= category.dataValues.image %>" alt="" class="pic img-fluid rounded-circle"></img>
                                 <p class="circle-title"><%= category.dataValues.name %></p>
                               </div>
                             </a>
-                          </div>
                         </div>
                         <% }) %> 
                       </div>
 
-
-                    </div>
-                  </div>
-                </div>    
-
-                <section class="for-sale">
-                    <h2 class="categories">Ofertas destacadas</h2>
-
-                <% products.forEach((product)=>{ %>
-                <div class="row-all">
+                      <h2 class="categories">Ofertas destacadas</h2>
+    
+                      <div class="row-all">
+                      <% products.forEach((product)=>{ %>
                       <div class="col-4">
-                              <a href="/productos/<%= product.dataValues.id %>">
-                                  <div class="image">
-                                  <img src="/img/products/<%= product.dataValues.image %>" alt="<%=product.dataValues.name %>">
-                                  </div>
-                                  
-                                  <div class="prod-description">
-                                      <h4>
-                                      <%=product.dataValues.name %>
-                                      </h4> <!-- tienen que ser máximo 25 letras-->
-                                  
-                                      <p>
-                                          $<%=product.dataValues.price %> 
-                                      </p>
-                                  </div>
-  
-                                  <div class="chart-button">
-                                  <button id="#<%=product.dataValues.id %>"  type="submit">
-                                      Agregar al carro <i class="fas fa-shopping-cart"></i>
-                                  </button>
-                                  </div>
-  
-                          <% }); %> 
-                              </a>
-                      </div>
-            </div>
-        </div>
+                                <a href="/productos/<%= product.dataValues.id %>">
+                                    <div class="image">
+                                    <img src="/img/products/<%= product.dataValues.image %>" alt="<%=product.dataValues.name %>">
+                                    </div>
+                                    
+                                    <div class="prod-description">
+                                        <h4>
+                                        <%=product.dataValues.name %>
+                                        </h4> <!-- tienen que ser máximo 25 letras-->
+                                    
+                                        <p>
+                                            $<%=product.dataValues.price %> 
+                                        </p>
+                                    </div>
+    
+                                    <div class="chart-button">
+                                    <button id="#<%=product.dataValues.id %>"  type="submit">
+                                        Agregar al carro <i class="fas fa-shopping-cart"></i>
+                                    </button>
+                                    </div>
+    
+                                  </a>
+                                </div>
+                            <% }); %> 
+                  </div>
+          </div>
     </main>
     <!-- Bootstrap JS -->
     <!-- para que funcionen las acciones de next y previos del carrusel-->
