@@ -339,9 +339,43 @@ header a:hover {
   text-decoration: none;
 }
 
-/*
-LOGIN, REGISTER Y RECOVER PASS
-*/
+/* CREATE PRODUCTS */
+
+.aligner-container.create-product .create-form form {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 1rem;
+  border: 1PX solid green;
+}
+
+
+.row-create {
+  position: relative;
+}
+
+.row-create {
+  width: 70%;
+  padding: 5px 0;
+}
+
+
+
+
+.row-features {
+  width: 70%;
+  height: 30%;
+}
+
+
+
+
+
+
+
+/* LOGIN, REGISTER Y RECOVER PASS */
+
 .login-container .form-login {
   width: 100%;
   padding: 15px;

@@ -11,10 +11,9 @@ module.exports = {
 
     res.render("products", { products, categories });
   },
-  create: (req, res) => {
-    db.Category.findAll().then((categories) => {
+  create: async (req, res) => {
+    let categories = await db.Category.findAll()
       res.render("products/create", { categories });
-    });
   },
   store: (req, res) => {
     // Crea producto por post

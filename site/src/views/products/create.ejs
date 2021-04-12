@@ -8,42 +8,40 @@
     <main> 
         <div class="aligner-container create-product">
             <div class="create-form">
-                <form action="/productos/crear"  method="POST" class ="form-product" enctype="multipart/form-data">
+                <form action="/productos/crear"  method="POST" enctype="multipart/form-data">
                     <!-- Aca voy a tener que poner un nuevo div que encierre tanto el div del input como el error, y así para cada campo (field) -->
-                    <div class="productName">
-                        <input value="<%= locals.oldData ? oldData.name : null %>" type="text" name="name" id="name" placeholder="Nombre del producto" >
+                    <div class="row-create">
+                        <input class="input-effect" value="<%= locals.oldData ? oldData.name : null %>" type="text" name="name" id="name" placeholder="Nombre del Producto" >
+                        <label class="lbl-nombre">Nombre del Producto</label>
+                        <span class="focus-border"></span>
                     </div>
                     <% if (locals.errors && errors.name) { %>
                         <p class="feedback is-danger"><%= errors.name.msg %></p>
                     <% } %>
-                    <div class="features">
+
+                    <div class="row-create">
+                        <input value="<%= locals.oldData ? oldData.price : null %>" type="number" name="price" id="price" placeholder="Precio" >
+                    </div>
+                    <% if (locals.errors && errors.price) { %>
+                        <p class="feedback is-danger"><%= errors.price.msg %></p>
+                        <% } %>
+                    
+                    <div class="row-create">
+                        <input type="number" name="discount" id="discount" placeholder="Descuento" max=50>
+                    </div>
+
+                    <div class="row-features">
                         <input value="<%= locals.oldData ? oldData.features : null %>" type="text-area" name="features" id="features" placeholder="Características" >
                     </div>
                     <% if (locals.errors && errors.features) { %>
                         <p class="feedback is-danger"><%= errors.features.msg %></p>
                     <% } %>
-                    <div>
-                        <input value="<%= locals.oldData ? oldData.price : null %>" type="number" name="price" id="price" placeholder="Precio" >
-                    </div>
-                    <% if (locals.errors && errors.price) { %>
-                        <p class="feedback is-danger"><%= errors.price.msg %></p>
-                    <% } %>
-                    <div>
-                        <input type="number" name="discount" id="discount" placeholder="Descuento" max=50>
-                    </div>
-                    <div class="product-category">
-                        
-                        <select name="category" id="category" placeholder="Categoría" >
-                            <option>Seleccione una categoría</option>
-                            <% 
-                                let categories = [
-                                    'silla', 'perifericos', 'gabinete', 'componentes','combos',
-                                    'Motherboards', 'Memorias', 'Procesadores', 'Almacenamiento', 'Pantallas', 'Placas de video', 'Oficina'
-                                ]
-                            %> 
-                            <!-- <% for (const oneCategory of categories) { %> 
-                                <option value="<%= oneCategory %>"><%= oneCategory %></option>
-                            <% } %>  -->
+
+                    <div class="row-create">
+                            
+                            <select name="category" id="category" placeholder="Categoría" >
+                                <option>Seleccione una categoría</option>
+                                
                                 <option value="1">Componentes</option>
                                 <option value="2">Perifericos</option>
                                 <option value="3">Gabinetes</option>
@@ -52,7 +50,7 @@
                         </select>
                         
                     </div>
-                    <div class="file-div">
+                    <div class="row-create">
                         <label for="image">Seleccionar imagen/es</label>
                         <input type="file" class="file" name="image" id="image" placeholder="Imagen/es" >
                     </div>
