@@ -340,7 +340,9 @@ header a:hover {
 }
 
 /* CREATE PRODUCTS */
-
+.feedback.is-danger{
+  color: red;
+}
 .aligner-container.create-product .create-form form {
   display: flex;
   align-items: center;

@@ -40,15 +40,16 @@
                     <div class="row-create">
                             
                             <select name="category" id="category" placeholder="Categoría" >
-                                <option>Seleccione una categoría</option>
-                                
+                                <option>Seleccione una categoría</option>   
                                 <option value="1">Componentes</option>
                                 <option value="2">Perifericos</option>
                                 <option value="3">Gabinetes</option>
                                 <option value="4">Sillas</option>
                                 <option value="5">Combos</option>
                         </select>
-                        
+                        <% if (locals.errors && errors.category) { %>
+                            <p class="feedback is-danger"><%= errors.category.msg %></p>
+                        <% } %>
                     </div>
                     <div class="row-create">
                         <label for="image">Seleccionar imagen/es</label>

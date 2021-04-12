@@ -66,7 +66,7 @@ Para llevar a cabo este proyecto, tomamos como páginas referentes a las mas gra
 <details>
 <summary>Click to Link</summary>
   
-  #### [grupo_14_Geek_Studio](https://github.com/Facundojs/grupo_14_Geek_Studio)
+  #### [grupo_14_Geek_Studio](https://grupo-14-geek-studio.herokuapp.com/)
 
   #### [DH-PROYECTO-INTEGRADOR-TRELLO](https://trello.com/b/Asbk5uKV/dh-proyecto-integrador)
   

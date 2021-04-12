@@ -141,6 +141,13 @@
                                     <strong>L3</strong> <span>No</span>
                     </div>
                 </div>
+                <% if ( locals.userLogged && locals.userLogged.user_type_id == 1)  { %>
+                    <div class="adminOptions">
+                        <div class="div-button">
+                            <a href="/productos/<%= product.id %>/editar">editar</a>
+                        </div>
+                    </div>
+                <%  } %>
                 <div class="recomended-container">
                     <h3>Productos <strong>Recomendados</strong></h3>
                     <br>
