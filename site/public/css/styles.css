@@ -343,6 +343,13 @@ header a:hover {
 .feedback.is-danger{
   color: red;
 }
+
+.form-success{
+  color: green;
+}
+.form-error{
+  color: red;
+}
 .aligner-container.create-product .create-form form {
   display: flex;
   align-items: center;

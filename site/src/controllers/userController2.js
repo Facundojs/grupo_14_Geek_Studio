@@ -37,7 +37,7 @@ module.exports = {
 
             if (req.body.remember) {
               res.cookie("mailDeUsuario", req.body.email, {
-                maxAge: 60 * 1000 * 10,
+                maxAge: 60 * 1000 * 60,
               });
             }
             //
@@ -197,6 +197,22 @@ module.exports = {
       }
       
     );
+    
+    res.locals.userLogged = {first_name,
+        last_name,
+        password: bcryptjs.hashSync(req.body.password, 10),
+        email,
+        telephone,
+        country,
+        avatar: req.file.filename};
+    
+    req.session.userLogged = {first_name,
+        last_name,
+        password: bcryptjs.hashSync(req.body.password, 10),
+        email,
+        telephone,
+        country,
+        avatar: req.file.filename};
     //Reemplazar locals y session
     res.redirect("/users/profile");
   },
