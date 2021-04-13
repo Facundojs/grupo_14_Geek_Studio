@@ -15,8 +15,24 @@
                     <img src="/img/users/<%= user.avatar %>" class ="img-profile"> 
                     <br>
                     <br>
-                    
                 </div>
+                <% if ( locals.userLogged && locals.userLogged.user_type_id == 1)  { %>
+                    <div class="adminOptions">
+                        <a href="/users/index"></a>
+                    </div>
+                <%  } %>
+                <% if(locals.isLogged){ %>
+                    <form action="/users/<%= user.id%>?_method=DELETE" method="POST">
+                            <div class="div-button">
+                                <button type="submit">Borrar</button>
+                            </div>
+                    </form>
+                    <form action="/users/<%= user.id %>/edit" method="get">
+                        <div class="div-button">
+                            <a href="/users/<%= user.id %>/edit">editar</a>
+                    </div>
+                </form>
+                <%} %> 
             </div>
 	    </div>
 	    

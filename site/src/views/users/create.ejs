@@ -22,7 +22,7 @@
                     <div class="text-danger centrar">
                         <%= errors.first_name.msg %>
                     </div>
-                    <% } %>
+                <% } %>
                 
                 <div class="textbox-login">
                     <input type="text" placeholder="Apellido" 
@@ -56,13 +56,12 @@
                 </div>
 
                 <div class="btn-login">
-                    <label for="userImg">Seleccionar Imagen Perfil</label>
+                    <label for="avatar">Seleccionar Imagen Perfil</label>
                     <input type="file" class="file" 
-                    name="userImg" 
-                    id="userImg" 
+                    name="avatar" 
+                    id="avatar" 
                     placeholder="Imagen" 
-                    
-                    value="<%= locals.oldData ? oldData.userImg : null %>">
+                    value="<%= locals.oldData ? oldData.avatar : null %>">
                 </div>
 
                 <div class="textbox-login">

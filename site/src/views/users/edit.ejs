@@ -18,6 +18,11 @@
                 <div class="textbox-login">
                     <input type="text" placeholder="Nombre" name="first_name" value="<%= user.first_name%>"  />
                 </div>
+                <% if (locals.errors && errors.first_name) { %>
+                    <div class="text-danger centrar">
+                        <%= errors.first_name.msg %>
+                    </div>
+                <% }%>
                 
                 <div class="textbox-login">
                     <input type="text" placeholder="Apellido" name="last_name" value="<%= user.last_name %>"  />
@@ -29,7 +34,7 @@
 
                 <div class="textbox-login">
                     <i class="fa fa-lock" aria-hidden="true"></i>
-                    <input type="password" placeholder="Contraseña" name="<%= user.password %>" value="password" />
+                    <input type="password" placeholder="Contraseña" name="password"/>
                 </div>
 
                 <div class="textbox-login">
@@ -38,10 +43,11 @@
                 </div>
 
                 <div class="btn-login">
-                    <label for="userImg">Seleccionar Imagen Perfil</label>
+                    <label for="avatar">Seleccionar Imagen Perfil</label>
                     <input type="file" class="file" 
-                    name="userImg" 
-                    id="userImg" 
+                    value="<%= user.avatar %>"
+                    name="avatar" 
+                    id="avatar" 
                     placeholder="Imagen" 
                     >
                 </div>

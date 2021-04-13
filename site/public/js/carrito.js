@@ -1,0 +1,1 @@
+let botonCarrito = document.querySelectorAll('#button-chart')

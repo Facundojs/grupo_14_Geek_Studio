@@ -4,6 +4,7 @@ const path = require("path");
 const bcryptjs = require("bcryptjs");
 const { validationResult } = require("express-validator");
 const db = require("../../../database/models");
+const { localsName } = require("ejs");
 
 module.exports = {
   index: async (req, res) => {
@@ -91,14 +92,12 @@ module.exports = {
         oldData: req.body,
       });
     }
-
     if (resultValidation.errors.length > 0) {
       return res.render("users/create", {
         errors: resultValidation.mapped(),
         oldData: req.body,
       });
     }
-
     const {
       first_name,
       last_name,
@@ -108,7 +107,6 @@ module.exports = {
       country,
       user_type_id,
     } = req.body;
-
     db.User.create({
       first_name,
       last_name,
@@ -117,7 +115,7 @@ module.exports = {
       telephone,
       avatar: req.file.filename,
       country,
-      user_type_id: 1,
+      user_type_id: 2,
     });
 
     let users = await db.User.findOne({
@@ -126,13 +124,19 @@ module.exports = {
 
     res.redirect("/users/login");
   },
-  destroy: async (req, res) => {
+  destroy: (req, res) => {
     let userDelete = req.params.id;
-    await db.User.destroy({
+    db.User.destroy({
       where: { id: userDelete },
-    });
+    }).then((respuesta) => {
+      console.log(req.session.userLogged);
+      if (req.session.userLogged.id != userDelete) {
+        res.redirect('/users/index')
+      } else {
+        res.redirect('/users/logout')
+      }
+    })
 
-    res.redirect("/users/index");
   },
   show: async (req, res) => {
     let user = await db.User.findOne({
@@ -149,9 +153,7 @@ module.exports = {
     }
   },
   edit: async (req, res) => {
-    let userUpdate = req.params.id;
-
-    let updatedUser = await db.User.findOne({
+      let updatedUser = await db.User.findOne({
       where: {
         id: req.params.id,
       },
@@ -168,17 +170,18 @@ module.exports = {
     //     oldData: req.body,
     //   });
     // }
-
+    console.log('UPDATE');
     const { id } = req.params;
+
     const {
       first_name,
       last_name,
-      password,
       email,
       telephone,
       country,
     } = req.body;
 
+    console.log(req.body);
     await db.User.update(
       {
         first_name,
@@ -192,8 +195,9 @@ module.exports = {
       {
         where: { id: id },
       }
+      
     );
-
+    //Reemplazar locals y session
     res.redirect("/users/profile");
   },
   recoverPass: (req, res) => {
