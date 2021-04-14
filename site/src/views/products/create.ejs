@@ -6,39 +6,52 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.min.js" integrity="sha384-nsg8ua9HAw1y0W1btsyWgBklPnCUAFLuTMS2G72MMONqmOymq585AcH49TLBQObG" crossorigin="anonymous"></script>
     <%- include('../partials/header.ejs') %>
     <main> 
-        <div class="aligner-container create-product">
-            <div class="create-form">
-                <form action="/productos/crear"  method="POST" enctype="multipart/form-data">
-                    <!-- Aca voy a tener que poner un nuevo div que encierre tanto el div del input como el error, y así para cada campo (field) -->
-                    <div class="row-create">
-                        <input class="input-effect" value="<%= locals.oldData ? oldData.name : null %>" type="text" name="name" id="name" placeholder="Nombre del Producto" >
-                        <label class="lbl-nombre">Nombre del Producto</label>
-                        <span class="focus-border"></span>
-                    </div>
-                    <% if (locals.errors && errors.name) { %>
-                        <p class="feedback is-danger"><%= errors.name.msg %></p>
-                    <% } %>
+        <div class="create-prod">
 
-                    <div class="row-create">
-                        <input value="<%= locals.oldData ? oldData.price : null %>" type="number" name="price" id="price" placeholder="Precio" >
+            <!-- Aca voy a tener que poner un nuevo div que encierre tanto el div del input como el error, y así para cada campo (field) -->
+            <form action="/productos/crear"  method="POST" enctype="multipart/form-data">
+                <div class="create-form">
+                
+                    <div class="form-row">
+                        <input type="text" value="<%= locals.oldData ? oldData.name : null %>" type="text" name="name" id="name" required>
+                        <label class="lbl-name">
+                            <span class="text-name">Nombre del Producto</span>
+                        </label>
                     </div>
-                    <% if (locals.errors && errors.price) { %>
-                        <p class="feedback is-danger"><%= errors.price.msg %></p>
+                        <% if (locals.errors && errors.name) { %>
+                            <p class="feedback is-danger"><%= errors.name.msg %></p>
+                            <% } %>
+            
+                        <div class="form-row">
+                            <input value="<%= locals.oldData ? oldData.price : null %>" type="text" name="price" id="price" required>
+                            <label class="lbl-name">
+                                <span class="text-name">Precio</span>
+                            </label>
+                        </div>
+                            <% if (locals.errors && errors.price) { %>
+                            <p class="feedback is-danger"><%= errors.price.msg %></p>
+                            <% } %>
+
+
+                        <div class="form-row">
+                            <input value="<%= locals.oldData ? oldData.discount : null %>" type="text" name="discount" id="discount" required>
+                            <label class="lbl-name">
+                                <span class="text-name">Descuento</span>
+                            </label>
+                        </div>
+
+                        <div class="form-row">
+                            <input value="<%= locals.oldData ? oldData.features : null %>" type="text-area" name="features" id="features" required>
+                            <label class="lbl-name">
+                                <span class="text-name">Características</span>
+                            </label>
+                        </div>
+                        <% if (locals.errors && errors.features) { %>
+                            <p class="feedback is-danger"><%= errors.features.msg %></p>
                         <% } %>
-                    
-                    <div class="row-create">
-                        <input type="number" name="discount" id="discount" placeholder="Descuento" max=50>
-                    </div>
 
-                    <div class="row-features">
-                        <input value="<%= locals.oldData ? oldData.features : null %>" type="text-area" name="features" id="features" placeholder="Características" >
-                    </div>
-                    <% if (locals.errors && errors.features) { %>
-                        <p class="feedback is-danger"><%= errors.features.msg %></p>
-                    <% } %>
-
-                    <div class="row-create">
-                            
+                        <br>
+                        <div class="form-row">
                             <select name="category" id="category" placeholder="Categoría" >
                                 <option>Seleccione una categoría</option>   
                                 <option value="1">Componentes</option>
@@ -46,23 +59,51 @@
                                 <option value="3">Gabinetes</option>
                                 <option value="4">Sillas</option>
                                 <option value="5">Combos</option>
-                        </select>
+                            </select>
+                        </div>
                         <% if (locals.errors && errors.category) { %>
                             <p class="feedback is-danger"><%= errors.category.msg %></p>
                         <% } %>
-                    </div>
-                    <div class="row-create">
-                        <label for="image">Seleccionar imagen/es</label>
-                        <input type="file" class="file" name="image" id="image" placeholder="Imagen/es" >
-                    </div>
+
+                        <div class="prod-img">
+                            <label for="image"></label>
+                            <input type="file" class="file" name="image" id="image" required>
+                        </div>
+
+                        <div class="form-row">
+                            <input type="text" value="<%= locals.oldData ? oldData.name : null %>" type="text" name="name" id="name" required>
+                            <label class="lbl-name">
+                                <span class="text-name">Marca</span>
+                            </label>
+                        </div>
+
+                        <div class="form-row">
+                            <input type="text" value="<%= locals.oldData ? oldData.name : null %>" type="text" name="name" id="name" required>
+                            <label class="lbl-name">
+                                <span class="text-name">Modelo</span>
+                            </label>
+                        </div>
+
+                        <div class="form-row">
+                            <input type="text" value="<%= locals.oldData ? oldData.name : null %>" type="text" name="name" id="name" required>
+                            <label class="lbl-name">
+                                <span class="text-name">Color</span>
+                            </label>
+                        </div>
+
+
+                </div>
+            </form>
+        </div>
+
                     
-                    <input class="btn-login" type="submit" value="Crear">
-                    <input class="btn-login" type="reset" value="Borrar">
+
                 </form>
             </div>
         </div>
         <script src="/js/validations.js"></script>
     </main>
+
     <%- include('../partials/footer.ejs') %> >
 </body>
 </html>
