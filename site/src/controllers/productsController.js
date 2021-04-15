@@ -69,7 +69,7 @@ module.exports = {
     db.Product.findByPk(req.params.id).then((product) => {
       if (product) {
         db.Category.findAll()
-          .then((categories) => {
+        .then((categories) => {
             res.render("products/edit", { categories, productToEdit: product });
           })
           .catch((error) => {
@@ -87,7 +87,7 @@ module.exports = {
       }
 
       const { id } = req.params;
-      const { name, price, discount, features, category_id } = req.body;
+      const { name, price, discount, features } = req.body;
       db.Product.findByPk(id).then((product) => {
         const originalImage = product.image;
 
@@ -97,13 +97,11 @@ module.exports = {
             price,
             discount,
             features,
-            category_id,
+            category_id: parseInt(req.body.category),
             image: req.file.filename,
           },
           {
-            where: {
-              id,
-            },
+            where: { id },
           }
         ).then(() => {
           res.redirect(`/productos/${id}`);

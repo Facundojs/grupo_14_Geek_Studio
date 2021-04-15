@@ -4,46 +4,70 @@
 <body>
     <%- include('../partials/header.ejs') %>
     <main> 
-        <div class="aligner-container create-product">
+        <div class="create-prod">
             <div class="create-form">
+                <h1 class="h1-create">Editar Producto</h1>
+
                 <form action="/productos/<%= productToEdit.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
-                    <div class="productName">
-                        <input value="<%= productToEdit.name %>" type="text" name="name" id="name" placeholder="Nombre del producto" >
+
+                    <div class="form-row">
+                        <input value="<%= productToEdit.name %>" type="text" name="name" id="name" required>
+                        <label class="lbl-name">
+                            <span class="text-name">Nombre del Producto</span>
+                        </label>
                     </div>
                     <% if (locals.errors && errors.name) { %>
                         <p class="feedback is-danger"><%= errors.name.msg %></p>
                     <% } %>
-                    <div class="description">
-                        <input value="<%= productToEdit.features %>" type="text-area" name="features" id="features" placeholder="Descripción">
-                    </div>
-                    <div>
-                        <input value="<%= productToEdit.price %>" type="number" name="price" id="price" placeholder="Precio">
-                    </div>
-                    <div>
-                        <input value="<%= productToEdit.discount %>" type="number" name="discount" id="discount" placeholder="Descuento" max=50>
-                    </div>
-                    <div class="product-category">
-                        <select name="category" id="category" placeholder="Categoría">
-                        <option>Seleccione una categoría</option>
-                        
-                        <% for (const oneCategory of categories) { %> 
-                            <option value=<%= oneCategory.dataValues.id %>> 
-                                <%= oneCategory.dataValues.name %>
-                            </option>
-                        <% } %> 
 
+                    <div class="form-row">
+                        <input value="<%= productToEdit.price %>" type="number" name="price" id="price" required>
+                        <label class="lbl-name">
+                            <span class="text-name">Precio</span>
+                        </label>
+                    </div>
+
+                    <div class="form-row">
+                        <input value="<%= productToEdit.discount %>" type="number" name="discount" id="discount" max=100 required>
+                        <label class="lbl-name">
+                            <span class="text-name">Descuento</span>
+                        </label>
+                    </div>
+
+                    <div class="form-row">
+                        <input value="<%= productToEdit.features %>" type="text-area" name="features" id="features" required>
+                        <label class="lbl-name">
+                            <span class="text-name">Características</span>
+                        </label>
+                    </div>
+
+                    <div class="form-row">
+                        <select name="category" id="category">
+                            <option>Seleccione una categoría</option>   
+                            <% categories.forEach((category)=>{ %>
+                                <option value="<%= category.dataValues.id %>"><%= category.dataValues.name %></option>
+                            <% }) %>
                         </select>
                     </div>
-                    <div class="file-div">
-                        <label for="image">Seleccionar imagen/es</label>
-                        <input type="file" class="file" name="image" id="image" placeholder="Imagen/es">
+                    <% if (locals.errors && errors.category) { %>
+                        <p class="feedback is-danger"><%= errors.category.msg %></p>
+                    <% } %>
+
+                    <div class="prod-img">
+                        <label for="image"></label>
+                        <input type="file" class="file" name="image" id="image" >
+                    </div>
+
+                    <div>
+                        <input class="btn-create" type="submit" value="Editar">
                     </div>
                     
-                    <input value="Editar" class="btn-login" type="submit">
+                    <form action="/productos/<%= productToEdit.id %>?_method=DELETE" method="POST" >
+                        <input class="btn-delete" type="submit" name="delete" id="delete" value="Eliminar producto">
+                    </form>
+
                 </form>
-                <form action="/productos/<%= productToEdit.id %>?_method=DELETE" method="POST" >
-                    <input type="submit" name="delete" id="delete" class="btn-danger" value="Eliminar producto">
-                </form>
+
             </div>
         </div>
     </main>
