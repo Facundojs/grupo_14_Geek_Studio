@@ -1110,8 +1110,8 @@ footer h2 {
 
 .social-networks-icons:hover {
   color: var(--orange);
-  transform: scale(1.1);
-  box-shadow: rgb(0 0 0 / 70%) 0 2px 10px;
+  transform: scale(1.5);
+
 }
 
 .rigths {
@@ -1754,6 +1754,17 @@ LOGIN, REGISTER Y RECOVER PASS
     float: left;
     margin: 0 10px;
     color: var(--oscuro);
+  }
+
+  .textbox-login select {
+    height: 40px;
+  }
+
+  .btn-avatar input{
+    width: 80%;
+    font-size: 20px;
+    color: var(--oscuro);
+    /* background-color: green; */
   }
 
   .btn-login {

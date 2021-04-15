@@ -73,15 +73,22 @@ module.exports = {
     //console.log(req.cookies.mailDeUsuario);
     res.render("users/profile", { user: req.session.userLogged });
   },
-  create: (req, res) => {
-    fetch('https://restcountries.eu/rest/v2/all')
-      .then((respuesta) => {
-        respuesta.json()
+  create: async (req, res) => {
+    // API COUNTRIES
+    try {
+      const response = await fetch('https://restcountries.eu/rest/v2/all')
+      const countries = await response.json()
+
+      const nameCountries = []
+
+      countries.forEach(country => {
+        nameCountries.push(country.name)
       })
-      .then((countries) => {
-        console.log(countries);
-        res.render("users/create", {countries});
-      })
+
+        res.render("users/create", {countries: nameCountries});
+      } catch(err) {
+        res.send(err)
+      }
   },
   processRegister: async (req, res) => {
     let resultValidation = validationResult(req);
