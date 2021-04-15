@@ -2,6 +2,7 @@ const jsonTable = require("../database/jsonTable");
 // const productsTable = jsonTable("products");
 const shuffle = require("lodash.shuffle");
 const db = require('../../../database/models') 
+const { sequelize } = require("../../../database/models");
 
 module.exports = {
   index: async (req, res) => {
@@ -15,7 +16,12 @@ module.exports = {
     //   console.log(error)
     // })
     let categories = await db.Category.findAll();
-    let products = await db.Product.findAll();
+    let products = await db.Product.findAll({
+      limit: 4,
+      order: [
+        [sequelize.literal('price'), 'DESC']
+    ]
+    });
 
       res.render("home", { categories, products })
 

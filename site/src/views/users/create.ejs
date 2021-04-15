@@ -85,6 +85,11 @@
                     class ="form-control <%= locals.errors && errors.country ? 'is-invalid' : null %>"
                     value="<%= locals.oldData ? oldData.country : null %>"
                     />*
+                    <select name="" id="">
+                       <% for (countrie in countries) {%>
+                        <option value=""><%= countrie.name %> </option>
+                       <%}%> 
+                    </select>
                 </div>
                 
                 <input class="btn-login" type="submit" value="Registrarse" >
@@ -92,7 +97,6 @@
             </form>
         </div>
     </div>
-
     <%- include('../partials/footer.ejs') %>
 </body>
 </html>

@@ -1,7 +1,6 @@
 const db = require("../../../database/models");
 
 async function userLoggedMiddleware(req, res, next) {
-  console.clear()
   res.locals.isLogged = false;
 
   let userCookie = '';

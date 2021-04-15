@@ -1,6 +1,7 @@
-const fs = require("fs");
-const path = require("path");
+// const fs = require("fs");
+// const path = require("path");
 // const User = require("../models/User");
+const fetch = require('node-fetch');
 const bcryptjs = require("bcryptjs");
 const { validationResult } = require("express-validator");
 const db = require("../../../database/models");
@@ -73,7 +74,14 @@ module.exports = {
     res.render("users/profile", { user: req.session.userLogged });
   },
   create: (req, res) => {
-    res.render("users/create");
+    fetch('https://restcountries.eu/rest/v2/all')
+      .then((respuesta) => {
+        respuesta.json()
+      })
+      .then((countries) => {
+        console.log(countries);
+        res.render("users/create", {countries});
+      })
   },
   processRegister: async (req, res) => {
     let resultValidation = validationResult(req);

@@ -7,8 +7,10 @@ let features = document.querySelector('#features');
 let category = document.querySelector('#category');
 let image = document.querySelector('#image');
 
-productName.addEventListener('keyup', function(e){
+productName.addEventListener('keyup', function (e) {
     if (this.value >= 3) {
+        console.log(this);
+        console.log(111);
         
     }
 })
