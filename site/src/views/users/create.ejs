@@ -76,9 +76,9 @@
 
                 <div class="textbox-login">
                     <i class="fa fa-lock" aria-hidden="true"></i>
-                    <input type="text" name="country" class ="form-control <%= locals.errors && errors.country ? 'is-invalid' : null %>" value="<%= locals.oldData ? oldData.country : null %>"
+                    <input type="text" class ="form-control <%= locals.errors && errors.country ? 'is-invalid' : null %>" value="<%= locals.oldData ? oldData.country : null %>"
                     />*
-                    <select name="country" id="country" required>
+                    <select name="country" id="country">
                         <% countries.forEach(country => {%>
                             <option><%= country %></option>
                         <%})%>
