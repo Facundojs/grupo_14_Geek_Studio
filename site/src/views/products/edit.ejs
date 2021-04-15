@@ -27,7 +27,9 @@
                         <option>Seleccione una categoría</option>
                         
                         <% for (const oneCategory of categories) { %> 
-                            <option value=<%= oneCategory %><%= oneCategory %>></option>
+                            <option value=<%= oneCategory.dataValues.id %>> 
+                                <%= oneCategory.dataValues.name %>
+                            </option>
                         <% } %> 
 
                         </select>

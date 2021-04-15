@@ -70,7 +70,6 @@ module.exports = {
       if (product) {
         db.Category.findAll()
           .then((categories) => {
-            console.log(categories, product);
             res.render("products/edit", { categories, productToEdit: product });
           })
           .catch((error) => {
@@ -99,7 +98,7 @@ module.exports = {
             discount,
             features,
             category_id,
-            image: req.file ? req.file.filename : originalImage,
+            image: req.file.filename,
           },
           {
             where: {

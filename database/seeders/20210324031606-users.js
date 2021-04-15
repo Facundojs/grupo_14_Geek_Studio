@@ -92,7 +92,7 @@ module.exports = {
         avatar: "profile_testing.jpg",
         createdAt: new Date(),
         updatedAt: new Date(),
-        user_type_id: 2,
+        user_type_id: 1,
       },
     ]);
   },

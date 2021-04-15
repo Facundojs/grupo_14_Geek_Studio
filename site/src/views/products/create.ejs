@@ -9,8 +9,8 @@
         <div class="create-prod">
 
             <!-- Aca voy a tener que poner un nuevo div que encierre tanto el div del input como el error, y así para cada campo (field) -->
+            <div class="create-form">
             <form action="/productos/crear"  method="POST" enctype="multipart/form-data">
-                <div class="create-form">
                 
                     <div class="form-row">
                         <input type="text" value="<%= locals.oldData ? oldData.name : null %>" type="text" name="name" id="name" required>
@@ -23,7 +23,7 @@
                             <% } %>
             
                         <div class="form-row">
-                            <input value="<%= locals.oldData ? oldData.price : null %>" type="text" name="price" id="price" required>
+                            <input value="<%= locals.oldData ? oldData.price : null %>" type="number" name="price" id="price" required>
                             <label class="lbl-name">
                                 <span class="text-name">Precio</span>
                             </label>
@@ -70,37 +70,15 @@
                             <input type="file" class="file" name="image" id="image" required>
                         </div>
 
-                        <div class="form-row">
-                            <input type="text" value="<%= locals.oldData ? oldData.name : null %>" type="text" name="name" id="name" required>
-                            <label class="lbl-name">
-                                <span class="text-name">Marca</span>
-                            </label>
-                        </div>
 
-                        <div class="form-row">
-                            <input type="text" value="<%= locals.oldData ? oldData.name : null %>" type="text" name="name" id="name" required>
-                            <label class="lbl-name">
-                                <span class="text-name">Modelo</span>
-                            </label>
-                        </div>
-
-                        <div class="form-row">
-                            <input type="text" value="<%= locals.oldData ? oldData.name : null %>" type="text" name="name" id="name" required>
-                            <label class="lbl-name">
-                                <span class="text-name">Color</span>
-                            </label>
-                        </div>
+                        <input class="btn-login" type="submit" value="Crear">
+                        <input class="btn-login" type="reset" value="Borrar">
 
 
+                    </form>
                 </div>
-            </form>
         </div>
 
-                    
-
-                </form>
-            </div>
-        </div>
         <script src="/js/validations.js"></script>
     </main>
 

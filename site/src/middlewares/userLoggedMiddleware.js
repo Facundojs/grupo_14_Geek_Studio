@@ -4,11 +4,6 @@ async function userLoggedMiddleware(req, res, next) {
   console.clear()
   res.locals.isLogged = false;
 
-  // if (req.session && req.session.userLogged) {
-  //   res.locals.isLogged = true;
-  //   res.locals.userLogged = req.session.userLogged;
-  // }
-
   let userCookie = '';
   let userData = '';
 
@@ -16,11 +11,14 @@ async function userLoggedMiddleware(req, res, next) {
     
     userCookie = req.cookies;
 
-    let {dataValues} = await db.User.findOne({
+    const {dataValues} = await db.User.findOne({
       where: {
         email: userCookie.mailDeUsuario
       },
     })
+    console.log('======================================================================');
+    console.log(dataValues);
+    console.log('======================================================================');
     delete dataValues.password;
     userData = dataValues
   }

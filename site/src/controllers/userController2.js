@@ -125,15 +125,16 @@ module.exports = {
     res.redirect("/users/login");
   },
   destroy: (req, res) => {
-    let userDelete = req.params.id;
+    let userDelete = par(req.params.id);
     db.User.destroy({
       where: { id: userDelete },
-    }).then((respuesta) => {
+    }).then(() => {
       console.log(req.session.userLogged);
       if (req.session.userLogged.id != userDelete) {
         res.redirect('/users/index')
       } else {
         res.redirect('/users/logout')
+        res.clearCookie("mailDeUsuario");
       }
     })
 
@@ -170,9 +171,7 @@ module.exports = {
     //     oldData: req.body,
     //   });
     // }
-    console.log('UPDATE');
     const { id } = req.params;
-
     const {
       first_name,
       last_name,
@@ -181,9 +180,12 @@ module.exports = {
       country,
     } = req.body;
 
+    let userToEdit = await db.User.findOne({ where: { id: id } });
+    let userCategoryId = parseInt(userToEdit.dataValues.user_type_id )
     console.log(req.body);
     await db.User.update(
       {
+        user_type_id: userCategoryId,
         first_name,
         last_name,
         password: bcryptjs.hashSync(req.body.password, 10),
@@ -198,23 +200,32 @@ module.exports = {
       
     );
     
-    res.locals.userLogged = {first_name,
+    res.locals.userLogged = {
+        id,
+        first_name,
         last_name,
         password: bcryptjs.hashSync(req.body.password, 10),
         email,
         telephone,
         country,
-        avatar: req.file.filename};
+        avatar: req.file.filename,
+        user_type_id: userCategoryId,
+      };
     
-    req.session.userLogged = {first_name,
+    req.session.userLogged = {
+        id,
+        first_name,
         last_name,
         password: bcryptjs.hashSync(req.body.password, 10),
         email,
         telephone,
         country,
-        avatar: req.file.filename};
+        avatar: req.file.filename,
+        user_type_id: userCategoryId,        
+      };
     //Reemplazar locals y session
-    res.redirect("/users/profile");
+      res.redirect("/users/profile")
+    
   },
   recoverPass: (req, res) => {
     res.render("users/recover-pass");
