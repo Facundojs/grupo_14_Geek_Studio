@@ -13,7 +13,11 @@
                 <div class="textbox-login">
                     <input type="email" placeholder="E-Mail" name ="email" value="<%= user.email%>"  />
                 </div>
-
+                <% if (locals.errors && errors.email) { %>
+                    <div class="text-danger centrar">
+                        <%= errors.email.msg %>
+                    </div>
+                <% }%>
 
                 <div class="textbox-login">
                     <input type="text" placeholder="Nombre" name="first_name" value="<%= user.first_name%>"  />
@@ -27,20 +31,30 @@
                 <div class="textbox-login">
                     <input type="text" placeholder="Apellido" name="last_name" value="<%= user.last_name %>"  />
                 </div>
+                <% if (locals.errors && errors.last_name) { %>
+                    <div class="text-danger centrar">
+                        <%= errors.last_name.msg %>
+                    </div>
+                <% }%>
 
                 <div class="textbox-login">
                     <input type="text" placeholder="Telefono" name="telephone" value="<%= user.telephone %>" />
                 </div>
+                <% if (locals.errors && errors.telephone) { %>
+                    <div class="text-danger centrar">
+                        <%= errors.telephone.msg %>
+                    </div>
+                <% }%>
 
                 <div class="textbox-login">
                     <i class="fa fa-lock" aria-hidden="true"></i>
                     <input type="password" placeholder="Contraseña" name="password"/>
                 </div>
-
-                <div class="textbox-login">
-                    <i class="fa fa-lock" aria-hidden="true"></i>
-                    <input type="text" placeholder="Pais" name="country" value="<%= user.country %>" />
-                </div>
+                <% if (locals.errors && errors.password) { %>
+                    <div class="text-danger centrar">
+                        <%= errors.password.msg %>
+                    </div>
+                <% }%>
 
                 <div class="btn-login">
                     <label for="avatar">Seleccionar Imagen Perfil</label>
@@ -52,7 +66,23 @@
                     >
                 </div>
                             
-                            
+                <div class="textbox-login">
+                    <i class="fa fa-lock" aria-hidden="true"></i>
+                    <select name="country" id="country">
+                        <% if(locals.errors && locals.oldData.country && locals.oldData.country != 'Selecciona un país' ) {%>
+                            <option><%= locals.oldData.country %> </option>
+                            <% } %>  
+                        <option>Selecciona un país</option>
+                        <% countries.forEach(country => {%>
+                            <option> <%= country %> </option>
+                        <%})%>
+                    </select>
+                </div>
+                <% if (locals.errors && errors.country) { %>
+                    <div class="text-danger centrar">
+                        <%= errors.country.msg %>
+                    </div>
+                <% } %>      
                 <input class="btn-login" type="submit" value="Modificar" >
 
             </form>

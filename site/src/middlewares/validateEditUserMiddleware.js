@@ -1,5 +1,7 @@
 const path = require("path");
 const { body } = require("express-validator");
+const db = require("../../../database/models");
+const bcryptjs = require("bcryptjs");
 
 module.exports = [
     body("first_name")
@@ -17,9 +19,33 @@ module.exports = [
       .isEmail()
       .withMessage("Tienes que escribir un formato de correo válido"),
     body("password")
+        .custom(async (value, { req }) => {
+            let id = parseInt(req.params.id);
+            let {dataValues} = await db.User.findOne({
+                where:{id: id}
+            })
+            let okPassword = bcryptjs.compareSync(
+                req.body.password,
+                dataValues.password
+            )
+            if (!okPassword) {
+                throw new Error("La contraseña es incorrecta");
+            } else {
+                return true
+            }
+
+        })    
+
+
+
+
+
+        
+        
+        /*
       .notEmpty()
       .withMessage("Tienes que escribir tu Clave")
-      .bail(),
+      .bail()*/,
     body("country").not().contains('Selecciona un país').withMessage('Selecciona un país').bail(),
     body("avatar").custom((value, { req }) => {
       let file = req.file;

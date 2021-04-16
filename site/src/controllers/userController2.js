@@ -179,25 +179,51 @@ module.exports = {
     }
   },
   edit: async (req, res) => {
-    let resultValidation = validationResult(req);
-    console.log(resultValidation);
-      let updatedUser = await db.User.findOne({
-      where: {
-        id: req.params.id,
-      },
-    });
-
+    try {
+        let updatedUser = await db.User.findOne({
+        where: {
+          id: req.params.id,
+        },
+      });
+      const response = await fetch('https://restcountries.eu/rest/v2/all')
+      const countries = await response.json()
+      const nameCountries = []
+      countries.forEach(country => {
+        nameCountries.push(country.name)
+      })
+      res.render("users/edit", { user: updatedUser, countries: nameCountries });
+    } catch(err) {
+      res.send(err)
+    }
     res.render("users/edit", { user: updatedUser });
   },
   update: async (req, res) => {
-    //KBE Tengo que incluir validaciones aca Y en el ejs
-    // const resultValidation = validationResult(req);
-    // if (resultValidation.errors.length > 0) {
-    //   return res.render("users/edit", {
-    //     errors: resultValidation.mapped(),
-    //     oldData: req.body,
-    //   });
-    // }
+    const response = await fetch('https://restcountries.eu/rest/v2/all')
+    const countries = await response.json()
+    const nameCountries = []
+    countries.forEach(country => {
+      nameCountries.push(country.name)
+    })
+
+    let resultValidation = validationResult(req);
+    if (resultValidation.errors.length > 0) {
+      
+      let updatedUser = await db.User.findOne({
+        where: {
+          id: req.params.id,
+        }
+      })
+
+
+      return res.render("users/edit", {
+        user: updatedUser,
+        errors: resultValidation.mapped(),
+        oldData: req.body,
+        countries: nameCountries
+      })
+    }
+
+
     const { id } = req.params;
     const {
       first_name,
