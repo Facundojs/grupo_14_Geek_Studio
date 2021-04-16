@@ -1,5 +1,3 @@
-const jsonTable = require("../database/jsonTable");
-// const productsTable = jsonTable("products");
 const shuffle = require("lodash.shuffle");
 const db = require('../../../database/models') 
 const { sequelize } = require("../../../database/models");

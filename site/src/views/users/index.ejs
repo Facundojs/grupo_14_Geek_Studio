@@ -21,13 +21,23 @@
                     <div class="table__item"><%= user.last_name %>  </div>
                     <div class="table__item"><%= user.email %>  </div>
                     <div class="table__item"><%= user.telephone %>  </div>
-                    <div class="table__item"><%= user.category %> </div>
+                    <% if(user.user_type_id == 1) {%>  
+                        <div class="table__item admin"><%= user.user_type.dataValues.type_name %></div>
+                    <% }else{ %>
+                        <div class="table__item"><%= user.user_type.dataValues.type_name %></div>
+                    <% } %> 
                     <div class="table__item"> <a class="button" href="/users/<%= user.id %>/edit"><i class="fas fa-pen"></i> </a>         
                     <a class="button" href="/users/<%= user.id %>/edit"><i class="fas fa-trash"></i></i> </a> 
                     </div>
                     
                     
                 <% }) %>
+                <style>
+                    .table__item.admin{
+                        background-color: lightgreen;
+                    }
+                    /*Te dejo esto para que veas nomás, después estilalo como quieras*/
+                </style>
             </div>
     </div>
 

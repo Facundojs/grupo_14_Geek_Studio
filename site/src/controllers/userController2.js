@@ -1,19 +1,22 @@
 // const fs = require("fs");
 // const path = require("path");
 // const User = require("../models/User");
+// const { localsName } = require("ejs");
+
 const fetch = require('node-fetch');
 const bcryptjs = require("bcryptjs");
 const { validationResult } = require("express-validator");
 const db = require("../../../database/models");
-const { localsName } = require("ejs");
 
 module.exports = {
   index: async (req, res) => {
-    //let users = User.findAll();
-    //res.render("users/index", { users });
-    let users = await db.User.findAll();
 
-    //console.clear();
+    let users = await db.User.findAll({
+      include: "user_type",
+      order:['user_type_id']
+    });
+    console.log(users[1].dataValues);
+
     res.render("users/index", { users });
   },
   login: (req, res) => {
@@ -74,7 +77,6 @@ module.exports = {
     res.render("users/profile", { user: req.session.userLogged });
   },
   create: async (req, res) => {
-    // API COUNTRIES
     try {
       const response = await fetch('https://restcountries.eu/rest/v2/all')
       const countries = await response.json()
@@ -92,7 +94,14 @@ module.exports = {
   },
   processRegister: async (req, res) => {
     let resultValidation = validationResult(req);
-    console.log(resultValidation);
+    ////////////////////////
+    const response = await fetch('https://restcountries.eu/rest/v2/all')
+      const countries = await response.json()
+      const nameCountries = []
+      countries.forEach(country => {
+        nameCountries.push(country.name)
+      })
+    ///////////////////////
     let userInDB = await db.User.findOne({
       where: { email: req.body.email },
     });
@@ -105,12 +114,14 @@ module.exports = {
           },
         },
         oldData: req.body,
+        countries: nameCountries
       });
     }
     if (resultValidation.errors.length > 0) {
       return res.render("users/create", {
         errors: resultValidation.mapped(),
         oldData: req.body,
+        countries: nameCountries
       });
     }
     const {
@@ -140,16 +151,15 @@ module.exports = {
     res.redirect("/users/login");
   },
   destroy: (req, res) => {
-    let userDelete = par(req.params.id);
+    let userDelete = parseInt(req.params.id);
     db.User.destroy({
       where: { id: userDelete },
     }).then(() => {
-      console.log(req.session.userLogged);
-      if (req.session.userLogged.id != userDelete) {
+      if (req.session .userLogged.id != userDelete) {
         res.redirect('/users/index')
       } else {
-        res.redirect('/users/logout')
         res.clearCookie("mailDeUsuario");
+        res.redirect('/users/logout')
       }
     })
 
@@ -215,31 +225,35 @@ module.exports = {
       
     );
     
-    res.locals.userLogged = {
-        id,
-        first_name,
-        last_name,
-        password: bcryptjs.hashSync(req.body.password, 10),
-        email,
-        telephone,
-        country,
-        avatar: req.file.filename,
-        user_type_id: userCategoryId,
-      };
-    
-    req.session.userLogged = {
-        id,
-        first_name,
-        last_name,
-        password: bcryptjs.hashSync(req.body.password, 10),
-        email,
-        telephone,
-        country,
-        avatar: req.file.filename,
-        user_type_id: userCategoryId,        
-      };
-    //Reemplazar locals y session
-      res.redirect("/users/profile")
+    if (req.session.userLogged.id != userToEdit.dataValues.id) {
+      //Si el que lo modifico es el admin solo lo redirecciono
+      res.redirect('/users/index')
+    } else {
+      //Si el que lo modifico fue el propio user actualizo 
+      res.locals.userLogged = {
+          id,
+          first_name,
+          last_name,
+          password: bcryptjs.hashSync(req.body.password, 10),
+          email,
+          telephone,
+          country,
+          avatar: req.file.filename,
+          user_type_id: userCategoryId,
+        };
+      req.session.userLogged = {
+          id,
+          first_name,
+          last_name,
+          password: bcryptjs.hashSync(req.body.password, 10),
+          email,
+          telephone,
+          country,
+          avatar: req.file.filename,
+          user_type_id: userCategoryId,        
+        };
+        res.redirect("/users/profile")
+    }
     
   },
   recoverPass: (req, res) => {

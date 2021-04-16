@@ -20,6 +20,7 @@ module.exports = [
     .notEmpty()
     .withMessage("Tienes que escribir tu Clave")
     .bail(),
+  body("country").not().contains('Selecciona un país').withMessage('Selecciona un país').bail(),
   body("avatar").custom((value, { req }) => {
     //console.log("entrre middleware", req);
     let file = req.file;

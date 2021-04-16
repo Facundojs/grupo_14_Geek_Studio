@@ -72,18 +72,25 @@
                     <div class="text-danger centrar">
                         <%= errors.password.msg %>
                     </div>
-                    <% } %>
+                <% } %>
 
                 <div class="textbox-login">
                     <i class="fa fa-lock" aria-hidden="true"></i>
-                    <input type="text" class ="form-control <%= locals.errors && errors.country ? 'is-invalid' : null %>" value="<%= locals.oldData ? oldData.country : null %>"
-                    />*
                     <select name="country" id="country">
+                        <% if(locals.errors && locals.oldData.country) {%>
+                            <option><%= locals.oldData.country %> </option>
+                            <% } %>  
+                        <option>Selecciona un país</option>
                         <% countries.forEach(country => {%>
-                            <option><%= country %></option>
+                            <option> <%= country %> </option>
                         <%})%>
                     </select>
                 </div>
+                <% if (locals.errors && errors.country) { %>
+                    <div class="text-danger centrar">
+                        <%= errors.country.msg %>
+                    </div>
+                <% } %>
                 
                 <input class="btn-login" type="submit" value="Registrarse" >
 
@@ -93,3 +100,7 @@
     <%- include('../partials/footer.ejs') %>
 </body>
 </html>
+
+
+<input type="text" class ="form-control <%= locals.errors && errors.country ? 'is-invalid' : null %>" value="<%= locals.oldData ? oldData.country : null %>"
+                    />*

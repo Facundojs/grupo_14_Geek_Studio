@@ -1238,11 +1238,11 @@ h2 {
 
 /********************************** USO GRID LISTADO DE USUARIOS ********************************************************/
 .container-table {
+  overflow:scroll;
   width: 93%;
   background: white;
   margin: 50px auto;
   box-shadow: 0 0 20px #333;
-  
   display: grid;
   grid-template-columns: repeat(7, 14.28%);
   grid-auto-rows: 50px; /*alto de filas*/

@@ -10,16 +10,16 @@ async function userLoggedMiddleware(req, res, next) {
     
     userCookie = req.cookies;
 
-    const {dataValues} = await db.User.findOne({
+    const usuario = await db.User.findOne({
       where: {
         email: userCookie.mailDeUsuario
       },
     })
-    console.log('======================================================================');
-    console.log(dataValues);
-    console.log('======================================================================');
-    delete dataValues.password;
-    userData = dataValues
+    const dataValues =  usuario ? usuario.dataValues : ''
+    if (dataValues) {
+      delete dataValues.password;
+      userData = dataValues
+    }
   }
   // console.log(userData);
   if (req.session && req.session.userLogged) {
