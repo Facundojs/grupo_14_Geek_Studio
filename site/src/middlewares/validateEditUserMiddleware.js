@@ -34,14 +34,7 @@ module.exports = [
                 return true
             }
 
-        })    
-
-
-
-
-
-        
-        
+        })
         /*
       .notEmpty()
       .withMessage("Tienes que escribir tu Clave")
