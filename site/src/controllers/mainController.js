@@ -17,7 +17,7 @@ module.exports = {
     // })
     let categories = await db.Category.findAll();
     let products = await db.Product.findAll({
-      limit: 4,
+      limit: 8,
       order: [
         [sequelize.literal('price'), 'DESC']
     ]

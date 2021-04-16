@@ -14,7 +14,7 @@
                 <form action="/productos/crear"  method="POST" enctype="multipart/form-data">
                     
                         <div class="form-row">
-                            <input type="text" value="<%= locals.oldData ? oldData.name : null %>" type="text" name="name" id="name" >
+                            <input type="text" value="<%= locals.oldData ? oldData.name : null %>" type="text" name="name" id="name" required>
                             <label class="lbl-name">
                                 <span class="text-name">Nombre del Producto</span>
                             </label>
@@ -24,7 +24,7 @@
                             <% } %>
                 
                         <div class="form-row">
-                            <input value="<%= locals.oldData ? oldData.price : null %>" type="number" name="price" id="price" >
+                            <input value="<%= locals.oldData ? oldData.price : null %>" type="number" name="price" id="price" required>
                             <label class="lbl-name">
                                 <span class="text-name">Precio</span>
                             </label>
@@ -35,14 +35,14 @@
 
 
                         <div class="form-row">
-                            <input value="<%= locals.oldData ? oldData.discount : null %>" type="text" name="discount" id="discount" max="100">
+                            <input value="<%= locals.oldData ? oldData.discount : null %>" type="text" name="discount" id="discount" max="100" required>
                             <label class="lbl-name">
                                 <span class="text-name">Descuento</span>
                             </label>
                         </div>
 
                         <div class="form-row">
-                            <input value="<%= locals.oldData ? oldData.features : null %>" type="text-area" name="features" id="features" >
+                            <input value="<%= locals.oldData ? oldData.features : null %>" type="text-area" name="features" id="features" required>
                             <label class="lbl-name">
                                 <span class="text-name">Características</span>
                             </label>

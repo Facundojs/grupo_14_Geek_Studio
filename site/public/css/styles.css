@@ -108,9 +108,9 @@ header a:hover {
 }
 
 .browser-bar {
-  width: 65%;
+  width: 70%;
   height: 2rem;
-  max-width: 300px;
+  max-width: 400px;
   border-radius: 0.5rem;
   font-size: 0.8rem;
   padding-left: 0.5rem;
@@ -122,10 +122,9 @@ header a:hover {
   width: 30%;
   padding: 0.5rem;
   display: flex;
-  /**/
   flex: wrap;
   justify-content: space-around;
-  align-items: baseline;
+  align-items: center;
 }
 
 .user-options a,
@@ -451,7 +450,7 @@ header a:hover {
 }
 
 .btn-create {
-  width: 60%;
+  width: 40%;
 
   /* width: 100px; */
   height: 50px;
@@ -612,14 +611,79 @@ header a:hover {
   color: var(--oscuro);
 }
 
-/* PROFILE */
+/* PROFILE LOGIN */
+
+.container-profile {
+  width: 100%;
+  justify-content: center;
+  text-align: center;
+  flex-wrap: wrap;
+  text-align: center;
+}
+
+.container-profile-2 {
+  width: 100%;
+  justify-content: center;
+  text-align: center;
+  flex-wrap: wrap;
+  text-align: center;
+}
+
 .img-profile {
   width: 230px;
   height: 300px;
   margin: auto;
   /*border-radius: 100%;*/
 }
-/* PROFILE */
+
+.container-btn {
+  width: 100%;
+  align-items: center;
+  align-self: center ;
+  padding: 10px;
+}
+
+.btn-profile {
+  align-items: center;
+  width: 60px;
+  height: 40px;
+  margin: 16px;
+  padding: 8px;
+  border: 1px solid;
+  border-radius: 5px;
+  text-decoration: none;
+
+  font-size: 14px;
+
+  color: var(--white);
+  background-color: var(--blue);
+}
+
+.btn-profile:hover {
+  background-color: #394a96;
+  color: white;
+}
+
+.btn-profile-delete {
+  align-items: center;
+  /* width: 100px; */
+  height: 40px;
+  margin: 20px;
+  padding: 5px;
+  border: 1px solid;
+  border-radius: 5px;
+  text-decoration: none;
+
+  font-size: 14px;
+
+  color: var(--white);
+  background-color: red;
+}
+
+.btn-profile-delete:hover {
+  background-color: rgb(209, 1, 1);
+  color: white;
+}
 
 /* MIDDLEWARE NOTFOUND */
 
@@ -1285,6 +1349,41 @@ h2 {
     height: 50px;
     font-size: 16px;
   }
+  
+  /* PROFILE LOGIN */
+
+  .btn-profile {
+    align-items: center;
+    width: 70px;
+    height: 40px;
+    margin: 16px;
+    padding: 10px;
+    border: 1px solid;
+    border-radius: 5px;
+    text-decoration: none;
+  
+    font-size: 16px;
+  
+    color: var(--white);
+    background-color: var(--blue);
+  }
+
+  .btn-profile-delete {
+    align-items: center;
+    width: 15%;
+    height: 50px;
+    margin: 20px;
+    padding: 5px;
+    border: 1px solid;
+    border-radius: 5px;
+    text-decoration: none;
+  
+    font-size: 16px;
+  
+    color: var(--white);
+    background-color: red;
+  }
+
 }
 
 @media (min-width: 1200px) {
@@ -1614,6 +1713,32 @@ main section .chart-item div {
     padding: 4px;
   }
 
+    /* PROFILE LOGIN */
+
+    .container-profile {
+      width: 100%;
+      /* display: flex; */
+      /* justify-content: center; */
+      align-items: center;
+      flex-wrap: wrap;
+      /* flex-direction: column; */
+      text-align: center;
+    }
+
+    .container-profile-2 {
+      width: 100%;
+      /* display: flex; */
+      justify-content: center;
+      /* align-items: center; */
+      flex-wrap: wrap;
+      /* flex-direction: row; */
+      text-align: center;
+    }
+
+    .profile-user {
+      font-size: 1.5rem;
+    }
+
   /*KBE 280121*/
   .product-category {
     background-color: var(--white);
@@ -1671,7 +1796,7 @@ main section .chart-item div {
 
   .browser-bar {
     font-size: 1.1rem;
-    width: 500px;
+    width: 350px;
   }
   
   /* K.E. - Para mostrar los botones circulares del head */
@@ -1891,15 +2016,13 @@ main section .chart-item div {
     max-height: 420px;
   }
 
-  .user-options {
-    flex: wrap;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-  }
-
   .user-options span {
     align-content: center;
+  }
+
+  .browser-bar {
+    font-size: 1.1rem;
+    width: 400px;
   }
 
   header .aligner-container,
