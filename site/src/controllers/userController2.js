@@ -139,7 +139,7 @@ module.exports = {
       password: bcryptjs.hashSync(req.body.password, 10),
       email,
       telephone,
-      avatar: req.file.filename,
+      avatar: req.file ? req.file.filename : 'default.jpg',
       country,
       user_type_id: 2,
     });
@@ -179,6 +179,8 @@ module.exports = {
     }
   },
   edit: async (req, res) => {
+    let resultValidation = validationResult(req);
+    console.log(resultValidation);
       let updatedUser = await db.User.findOne({
       where: {
         id: req.params.id,
@@ -217,7 +219,7 @@ module.exports = {
         email,
         telephone,
         country,
-        avatar: req.file.filename,
+        avatar: req.file ? req.file.filename : 'default.jpg'
       },
       {
         where: { id: id },
@@ -238,7 +240,7 @@ module.exports = {
           email,
           telephone,
           country,
-          avatar: req.file.filename,
+          avatar: req.file ? req.file.filename : 'default.jpg',
           user_type_id: userCategoryId,
         };
       req.session.userLogged = {
@@ -249,7 +251,7 @@ module.exports = {
           email,
           telephone,
           country,
-          avatar: req.file.filename,
+          avatar: req.file ? req.file.filename : 'default.jpg',
           user_type_id: userCategoryId,        
         };
         res.redirect("/users/profile")

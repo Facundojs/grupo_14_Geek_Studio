@@ -3,7 +3,7 @@ const router = express.Router();
 
 // const userController = require("../controllers/userController");
 const userController2 = require("../controllers/userController2");
-
+const validateEditUserMiddleware = require("../middlewares/validateEditUserMiddleware")
 const multer = require("multer");
 
 //Middlewares
@@ -39,7 +39,7 @@ router.get("/:id/edit", userController2.edit); //get para mostrar
 router.put(
   "/:id",
   uploadFile.single("avatar"),
-  validations,
+  validateEditUserMiddleware,
   userController2.update
 ); //post para editar
 
