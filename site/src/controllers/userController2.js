@@ -15,7 +15,6 @@ module.exports = {
       include: "user_type",
       order:['user_type_id']
     });
-    console.log(users[1].dataValues);
 
     res.render("users/index", { users });
   },
@@ -73,7 +72,6 @@ module.exports = {
       });
   },
   profile: (req, res) => {
-    //console.log(req.cookies.mailDeUsuario);
     res.render("users/profile", { user: req.session.userLogged });
   },
   create: async (req, res) => {
@@ -184,14 +182,16 @@ module.exports = {
         where: {
           id: req.params.id,
         },
-      });
+        });
+      
+      const hidePassword = updatedUser.dataValues.id != req.session.userLogged.id
       const response = await fetch('https://restcountries.eu/rest/v2/all')
       const countries = await response.json()
       const nameCountries = []
       countries.forEach(country => {
         nameCountries.push(country.name)
       })
-      res.render("users/edit", { user: updatedUser, countries: nameCountries });
+      res.render("users/edit", { user: updatedUser, countries: nameCountries, hidePassword });
     } catch(err) {
       res.send(err)
     }
@@ -204,7 +204,6 @@ module.exports = {
     countries.forEach(country => {
       nameCountries.push(country.name)
     })
-
     let resultValidation = validationResult(req);
     if (resultValidation.errors.length > 0) {
       
@@ -213,13 +212,14 @@ module.exports = {
           id: req.params.id,
         }
       })
-
-
+      const hidePassword = updatedUser.dataValues.id != req.session.userLogged.id;
+      console.log(hidePassword);
       return res.render("users/edit", {
         user: updatedUser,
         errors: resultValidation.mapped(),
         oldData: req.body,
-        countries: nameCountries
+        countries: nameCountries,
+        hidePassword
       })
     }
 
@@ -241,7 +241,7 @@ module.exports = {
         user_type_id: userCategoryId,
         first_name,
         last_name,
-        password: bcryptjs.hashSync(req.body.password, 10),
+        //password: bcryptjs.hashSync(req.body.password, 10), La pass no se cambia desde ahí
         email,
         telephone,
         country,
@@ -289,9 +289,7 @@ module.exports = {
   },
   logout: (req, res) => {
     //Borro la sesion
-    console.log("¡CHAU!");
     res.clearCookie("mailDeUsuario");
-    // console.log('Cookie limpiada!');
     req.session.destroy();
     return res.redirect("/");
   },

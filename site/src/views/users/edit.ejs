@@ -45,16 +45,28 @@
                         <%= errors.telephone.msg %>
                     </div>
                 <% }%>
+                
+                <% if(!hidePassword){ %>
 
-                <div class="textbox-login">
-                    <i class="fa fa-lock" aria-hidden="true"></i>
-                    <input type="password" placeholder="Contraseña" name="password"/>
-                </div>
-                <% if (locals.errors && errors.password) { %>
-                    <div class="text-danger centrar">
-                        <%= errors.password.msg %>
+                    <!-- Si el usuario que va a modificar esto no es el mismo que el usuario a modificar se asume que es administrador y considero que no tiene que tener acceso a la password -->
+
+                    <div class="textbox-login">
+                        <i class="fa fa-lock" aria-hidden="true"></i>
+                        <input type="password" placeholder="Contraseña" name="password"/>
                     </div>
-                <% }%>
+                    <% if (locals.errors && errors.password) { %>
+                        <div class="text-danger centrar">
+                            <%= errors.password.msg %>
+                        </div>
+                    <% }%>
+                
+
+
+                    <%} %> 
+
+
+
+
 
                 <div class="btn-login">
                     <label for="avatar">Seleccionar Imagen Perfil</label>

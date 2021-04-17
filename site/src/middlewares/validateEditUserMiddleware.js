@@ -19,22 +19,33 @@ module.exports = [
       .isEmail()
       .withMessage("Tienes que escribir un formato de correo válido"),
     body("password")
-        .custom(async (value, { req }) => {
-            let id = parseInt(req.params.id);
-            let {dataValues} = await db.User.findOne({
-                where:{id: id}
-            })
-            let okPassword = bcryptjs.compareSync(
-                req.body.password,
-                dataValues.password
-            )
-            if (!okPassword) {
-                throw new Error("La contraseña es incorrecta");
-            } else {
-                return true
-            }
-
+      .custom(async (value, { req }) => {
+        let updatedUser = await db.User.findOne({
+          where: {
+            id: req.params.id,
+          }
         })
+        const ignorePassword = updatedUser.dataValues.id != req.session.userLogged.id;
+        if (ignorePassword) {
+          console.log('Diferentes usuarios');
+          return true  
+        } else {
+          console.log('Son el mismo usuario');
+          let id = parseInt(req.params.id);
+          let {dataValues} = await db.User.findOne({
+              where:{id: id}
+          })
+          let okPassword = bcryptjs.compareSync(
+              req.body.password,
+            dataValues.password
+          )
+          if (!okPassword) {
+              throw new Error("La contraseña es incorrecta");
+          } else {
+            return true
+          }
+        }
+      })
         /*
       .notEmpty()
       .withMessage("Tienes que escribir tu Clave")
