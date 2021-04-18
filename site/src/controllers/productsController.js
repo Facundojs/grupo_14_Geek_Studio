@@ -6,16 +6,16 @@ const db = require("../../../database/models");
 module.exports = {
   index: async (req, res) => {
     let products = await db.Product.findAll({ include: 'category' });
-    let categories = await db.Category.findAll({ include: 'products'});
+    let categories = await db.Category.findAll({ include: 'products' });
     
 
     res.render("products", { products, categories });
   },
   create: async (req, res) => {
     let categories = await db.Category.findAll();
-      res.render("products/create", { categories });
+    res.render("products/create", { categories });
   },
-  store: async(req, res) => {
+  store: async (req, res) => {
     // Crea producto por post
     let errors = validationResult(req);
     if (errors.isEmpty()) {
@@ -67,32 +67,27 @@ module.exports = {
         res.send("Ha ocurrido un error");
       });
   },
-  edit: (req, res) => {
-    db.Product.findByPk(req.params.id).then((product) => {
-      if (product) {
-        db.Category.findAll()
-        .then((categories) => {
-            res.render("products/edit", { categories, productToEdit: product });
-          })
-          .catch((error) => {
-            console.log(error);
-          });
-      }
-    });
+  edit: async (req, res) => {
+    let productToEdit = await db.Product.findByPk(req.params.id);
+    if (productToEdit != undefined) {
+      let categories = await db.Category.findAll()
+      res.render("products/edit", { categories, productToEdit })
+    } else {
+      res.status(400)
+      res.render('badRequest')
+    }
   },
-  update: (req, res) => {
+  update: async (req, res) => {
     let errors = validationResult(req);
     if (errors.isEmpty()) {
       let producto = req.body;
       if (req.file) {
         producto.image = req.file.filename;
       }
-
       const { id } = req.params;
       const { name, price, discount, features } = req.body;
       db.Product.findByPk(id).then((product) => {
         const originalImage = product.image;
-
         db.Product.update(
           {
             name,
@@ -110,30 +105,15 @@ module.exports = {
         });
       });
 
-      // let product = req.body;
-      // product.id = Number(req.params.id);
-
-      // // Si viene una imagen nueva la guardo
-      // if (req.file) {
-      //   product.image = req.file.filename;
-      //   // Si no viene una imagen nueva, busco en base la que ya había
-      // } else {
-      //   db.Product.findByPk(product.id)
-      //     .then(productOld => {
-
-      //     })
-      //   product.image = oldProduct.image;
-      //   console.log(oldProduct)
-      // }
-
-      // let productId = productsTable.update(product);
-
-      // res.redirect("/productos/" + productId);
     } else {
       // Renderizo el formulario nuevamente con los errors y los datos completados
-      return res.render("products/create", {
+      let categories = await db.Category.findAll();
+      let productToEdit = await db.Product.findByPk(req.params.id);
+      return res.render("products/edit", {
         errors: errors.mapped(),
         old: req.body,
+        categories,
+        productToEdit
       });
     }
   },

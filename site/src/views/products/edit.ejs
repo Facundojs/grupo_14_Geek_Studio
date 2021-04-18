@@ -11,7 +11,7 @@
                 <form action="/productos/<%= productToEdit.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
 
                     <div class="form-row">
-                        <input value="<%= productToEdit.name %>" type="text" name="name" id="name" required>
+                        <input value="<%= productToEdit.name %>" type="text" name="name" id="name">
                         <label class="lbl-name">
                             <span class="text-name">Nombre del Producto</span>
                         </label>
@@ -21,29 +21,38 @@
                     <% } %>
 
                     <div class="form-row">
-                        <input value="<%= productToEdit.price %>" type="number" name="price" id="price" required>
+                        <input value="<%= productToEdit.price %>" type="number" name="price" id="price">
                         <label class="lbl-name">
                             <span class="text-name">Precio</span>
                         </label>
                     </div>
+                    <% if (locals.errors && errors.price) { %>
+                        <p class="feedback is-danger"><%= errors.price.msg %></p>
+                    <% } %>
 
                     <div class="form-row">
-                        <input value="<%= productToEdit.discount %>" type="number" name="discount" id="discount" max=100 required>
+                        <input value="<%= productToEdit.discount %>" type="number" name="discount" id="discount">
                         <label class="lbl-name">
                             <span class="text-name">Descuento</span>
                         </label>
                     </div>
+                    <% if (locals.errors && errors.discount) { %>
+                        <p class="feedback is-danger"><%= errors.discount.msg %></p>
+                    <% } %>
 
                     <div class="form-row">
-                        <input value="<%= productToEdit.features %>" type="text-area" name="features" id="features" required>
+                        <input value="<%= productToEdit.features %>" type="text-area" name="features" id="features">
                         <label class="lbl-name">
                             <span class="text-name">Características</span>
                         </label>
                     </div>
+                    <% if (locals.errors && errors.features) { %>
+                        <p class="feedback is-danger"><%= errors.features.msg %></p>
+                    <% } %>
 
                     <div class="form-row">
                         <select name="category" id="category">
-                            <option>Seleccione una categoría</option>   
+                            <option value="0">Seleccione una categoría</option>   
                             <% categories.forEach((category)=>{ %>
                                 <option value="<%= category.dataValues.id %>"><%= category.dataValues.name %></option>
                             <% }) %>
@@ -57,6 +66,9 @@
                         <label for="image"></label>
                         <input type="file" class="file" name="image" id="image" >
                     </div>
+                    <% if (locals.errors && errors.image) { %>
+                        <p class="feedback is-danger"><%= errors.image.msg %></p>
+                    <% } %>
 
                     <div>
                         <input class="btn-create" type="submit" value="Editar">
