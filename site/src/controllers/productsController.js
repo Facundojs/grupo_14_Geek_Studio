@@ -59,12 +59,13 @@ module.exports = {
         if (product) {
           res.render("products/detail", { product });
         } else {
-          res.send("No se encontró el producto");
+          res.status(400)
+          res.render('badRequest')
         }
       })
       .catch((error) => {
-        console.log(error);
-        res.send("Ha ocurrido un error");
+        res.status(400)
+        res.render('badRequest')
       });
   },
   edit: async (req, res) => {
