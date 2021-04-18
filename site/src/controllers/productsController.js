@@ -12,10 +12,10 @@ module.exports = {
     res.render("products", { products, categories });
   },
   create: async (req, res) => {
-    let categories = await db.Category.findAll()
+    let categories = await db.Category.findAll();
       res.render("products/create", { categories });
   },
-  store: (req, res) => {
+  store: async(req, res) => {
     // Crea producto por post
     let errors = validationResult(req);
     if (errors.isEmpty()) {
@@ -44,9 +44,11 @@ module.exports = {
       // Si hay errores
     } else {
       // Renderizo el formulario nuevamente con los errors y los datos completados
+      let categories = await db.Category.findAll();
       return res.render("products/create", {
         errors: errors.mapped(),
         oldData: req.body,
+        categories
       });
     }
     //console.table(product); //para ver que se creo por consola

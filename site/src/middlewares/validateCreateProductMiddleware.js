@@ -10,13 +10,23 @@ const db = require('../../../database/models')
 module.exports = [
 	body('name').notEmpty().withMessage('Tienes que escribir un nombre de producto').bail(),
     body('features').notEmpty().withMessage('Debes poner las características del producto'),
-	body('price').notEmpty().withMessage('Debes poner un precio'),
+	body('price')
+		.notEmpty().withMessage('Debes poner un precio')
+		.isNumeric().withMessage('Solo puedes introducir números').bail(),
+	body('discount')
+		.custom(value => {
+			if (body('discount').isNumeric && value >= 0 && value <= 100 || !value) {
+				return true
+			} else {
+				throw new Error('Solo puede ser un número entre 0 y 100')
+			}
+		}).bail()
+	,
 	body('category')
 		.notEmpty().withMessage('Debes elegir una categoría').bail()
 		.custom(async(value, { req }) => {
 			let exist = await db.Category.findOne({where:{id: parseInt(req.body.category)}}) 
 			if (exist) { return true } else { throw new Error('Debes elegir una categoría válida')
-				
 			}
 		}).withMessage('Debes elegir una categoría válida').bail()
 	,
