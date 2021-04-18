@@ -70,7 +70,9 @@
                             <label for="image"></label>
                             <input type="file" class="file" name="image" id="image" >
                         </div>
-
+                        <% if (locals.errors && errors.image) { %>
+                            <p class="feedback is-danger"><%= errors.image.msg %></p>
+                        <% } %>
 
                         
                         <!-- SI AGREGAMOS CAMPOS AL CREATE PRODUCT -->
