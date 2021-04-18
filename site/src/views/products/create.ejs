@@ -56,7 +56,7 @@
 
                             <div class="form-row">
                                 <select name="category" id="category" placeholder="Categoría" >
-                                    <option>Seleccione una categoría</option>   
+                                    <option value="0">Seleccione una categoría</option>   
                                     <% categories.forEach((category)=>{ %>
                                         <option value="<%= category.dataValues.id %>"><%= category.dataValues.name %></option>
                                     <% }) %>
