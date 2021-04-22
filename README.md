@@ -5,21 +5,23 @@
 Principalmente componentes como motherboards, microprocesadores, módulos de memoria tanto RAM SSD y HDD, tarjetas gráficas y fuentes de poder en donde trabajaremos con marcas como Asus, SkullCandy, MSI, Gigabyte, Kingston, Intel, Nvidia, AMD, entre otras.
 
 # **Instrucciones**
-### SQL DB
-    CREATE database geekdb2;
-    USE geekdb2;
+
+### Dependencias y DB
+    npm i
+    npm run create-db
+    npm run migrate-db
+    npm run seed-db
 <br>
 <br>
 
-### Dependencias
-    npm i
-    sequelize db:seed:all
-    sequelize db:migrate
+### Delete DB
+    npm run drop-db
 <br>
 <br>
+
 
 ### Run proyect
-    npm run startdev
+    npm run start
 <br>
 <br>
 
