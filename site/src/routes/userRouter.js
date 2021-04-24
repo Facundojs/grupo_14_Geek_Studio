@@ -3,7 +3,7 @@ const router = express.Router();
 
 // const userController = require("../controllers/userController");
 const userController2 = require("../controllers/userController2");
-const validateEditUserMiddleware = require("../middlewares/validateEditUserMiddleware")
+const validateEditUserMiddleware = require("../middlewares/validateEditUserMiddleware");
 const multer = require("multer");
 
 //Middlewares
@@ -11,9 +11,7 @@ const uploadFile = require("../middlewares/multerUserMiddleware");
 const validations = require("../middlewares/validateRegisterMiddleware");
 const guestMiddleware = require("../middlewares/guestMiddleware");
 const authMiddleware = require("../middlewares/authMiddleware");
-const isAdminMiddleware = require("../middlewares/isAdminMiddleware")
-
-
+const isAdminMiddleware = require("../middlewares/isAdminMiddleware");
 
 //Rutas
 router.get("/index", isAdminMiddleware, userController2.index);
@@ -48,5 +46,6 @@ router.delete("/:id", userController2.destroy); // Eliminar un usuario
 router.get("/recover-pass", userController2.recoverPass);
 
 router.get("/logout", userController2.logout);
+
 
 module.exports = router;

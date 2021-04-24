@@ -3,17 +3,16 @@
 // const User = require("../models/User");
 // const { localsName } = require("ejs");
 
-const fetch = require('node-fetch');
+const fetch = require("node-fetch");
 const bcryptjs = require("bcryptjs");
 const { validationResult } = require("express-validator");
 const db = require("../../../database/models");
 
 module.exports = {
   index: async (req, res) => {
-
     let users = await db.User.findAll({
       include: "user_type",
-      order:['user_type_id']
+      order: ["user_type_id"],
     });
 
     res.render("users/index", { users });
@@ -76,29 +75,29 @@ module.exports = {
   },
   create: async (req, res) => {
     try {
-      const response = await fetch('https://restcountries.eu/rest/v2/all')
-      const countries = await response.json()
+      const response = await fetch("https://restcountries.eu/rest/v2/all");
+      const countries = await response.json();
 
-      const nameCountries = []
+      const nameCountries = [];
 
-      countries.forEach(country => {
-        nameCountries.push(country.name)
-      })
+      countries.forEach((country) => {
+        nameCountries.push(country.name);
+      });
 
-        res.render("users/create", {countries: nameCountries});
-      } catch(err) {
-        res.send(err)
-      }
+      res.render("users/create", { countries: nameCountries });
+    } catch (err) {
+      res.send(err);
+    }
   },
   processRegister: async (req, res) => {
     let resultValidation = validationResult(req);
     ////////////////////////
-    const response = await fetch('https://restcountries.eu/rest/v2/all')
-      const countries = await response.json()
-      const nameCountries = []
-      countries.forEach(country => {
-        nameCountries.push(country.name)
-      })
+    const response = await fetch("https://restcountries.eu/rest/v2/all");
+    const countries = await response.json();
+    const nameCountries = [];
+    countries.forEach((country) => {
+      nameCountries.push(country.name);
+    });
     ///////////////////////
     let userInDB = await db.User.findOne({
       where: { email: req.body.email },
@@ -112,14 +111,14 @@ module.exports = {
           },
         },
         oldData: req.body,
-        countries: nameCountries
+        countries: nameCountries,
       });
     }
     if (resultValidation.errors.length > 0) {
       return res.render("users/create", {
         errors: resultValidation.mapped(),
         oldData: req.body,
-        countries: nameCountries
+        countries: nameCountries,
       });
     }
     const {
@@ -137,7 +136,7 @@ module.exports = {
       password: bcryptjs.hashSync(req.body.password, 10),
       email,
       telephone,
-      avatar: req.file ? req.file.filename : 'default.jpg',
+      avatar: req.file ? req.file.filename : "default.jpg",
       country,
       user_type_id: 2,
     });
@@ -153,14 +152,13 @@ module.exports = {
     db.User.destroy({
       where: { id: userDelete },
     }).then(() => {
-      if (req.session .userLogged.id != userDelete) {
-        res.redirect('/users/index')
+      if (req.session.userLogged.id != userDelete) {
+        res.redirect("/users/index");
       } else {
         res.clearCookie("mailDeUsuario");
-        res.redirect('/users/logout')
+        res.redirect("/users/logout");
       }
-    })
-
+    });
   },
   show: async (req, res) => {
     let user = await db.User.findOne({
@@ -178,63 +176,61 @@ module.exports = {
   },
   edit: async (req, res) => {
     try {
-        let updatedUser = await db.User.findOne({
+      let updatedUser = await db.User.findOne({
         where: {
           id: req.params.id,
         },
-        });
-      
-      const hidePassword = updatedUser.dataValues.id != req.session.userLogged.id
-      const response = await fetch('https://restcountries.eu/rest/v2/all')
-      const countries = await response.json()
-      const nameCountries = []
-      countries.forEach(country => {
-        nameCountries.push(country.name)
-      })
-      res.render("users/edit", { user: updatedUser, countries: nameCountries, hidePassword });
-    } catch(err) {
-      res.send(err)
+      });
+
+      const hidePassword =
+        updatedUser.dataValues.id != req.session.userLogged.id;
+      const response = await fetch("https://restcountries.eu/rest/v2/all");
+      const countries = await response.json();
+      const nameCountries = [];
+      countries.forEach((country) => {
+        nameCountries.push(country.name);
+      });
+      res.render("users/edit", {
+        user: updatedUser,
+        countries: nameCountries,
+        hidePassword,
+      });
+    } catch (err) {
+      res.send(err);
     }
     res.render("users/edit", { user: updatedUser });
   },
   update: async (req, res) => {
-    const response = await fetch('https://restcountries.eu/rest/v2/all')
-    const countries = await response.json()
-    const nameCountries = []
-    countries.forEach(country => {
-      nameCountries.push(country.name)
-    })
+    const response = await fetch("https://restcountries.eu/rest/v2/all");
+    const countries = await response.json();
+    const nameCountries = [];
+    countries.forEach((country) => {
+      nameCountries.push(country.name);
+    });
     let resultValidation = validationResult(req);
     if (resultValidation.errors.length > 0) {
-      
       let updatedUser = await db.User.findOne({
         where: {
           id: req.params.id,
-        }
-      })
-      const hidePassword = updatedUser.dataValues.id != req.session.userLogged.id;
+        },
+      });
+      const hidePassword =
+        updatedUser.dataValues.id != req.session.userLogged.id;
       console.log(hidePassword);
       return res.render("users/edit", {
         user: updatedUser,
         errors: resultValidation.mapped(),
         oldData: req.body,
         countries: nameCountries,
-        hidePassword
-      })
+        hidePassword,
+      });
     }
 
-
     const { id } = req.params;
-    const {
-      first_name,
-      last_name,
-      email,
-      telephone,
-      country,
-    } = req.body;
+    const { first_name, last_name, email, telephone, country } = req.body;
 
     let userToEdit = await db.User.findOne({ where: { id: id } });
-    let userCategoryId = parseInt(userToEdit.dataValues.user_type_id )
+    let userCategoryId = parseInt(userToEdit.dataValues.user_type_id);
     console.log(req.body);
     await db.User.update(
       {
@@ -245,44 +241,42 @@ module.exports = {
         email,
         telephone,
         country,
-        avatar: req.file ? req.file.filename : 'default.jpg'
+        avatar: req.file ? req.file.filename : "default.jpg",
       },
       {
         where: { id: id },
       }
-      
     );
-    
+
     if (req.session.userLogged.id != userToEdit.dataValues.id) {
       //Si el que lo modifico es el admin solo lo redirecciono
-      res.redirect('/users/index')
+      res.redirect("/users/index");
     } else {
-      //Si el que lo modifico fue el propio user actualizo 
+      //Si el que lo modifico fue el propio user actualizo
       res.locals.userLogged = {
-          id,
-          first_name,
-          last_name,
-          password: bcryptjs.hashSync(req.body.password, 10),
-          email,
-          telephone,
-          country,
-          avatar: req.file ? req.file.filename : 'default.jpg',
-          user_type_id: userCategoryId,
-        };
+        id,
+        first_name,
+        last_name,
+        password: bcryptjs.hashSync(req.body.password, 10),
+        email,
+        telephone,
+        country,
+        avatar: req.file ? req.file.filename : "default.jpg",
+        user_type_id: userCategoryId,
+      };
       req.session.userLogged = {
-          id,
-          first_name,
-          last_name,
-          password: bcryptjs.hashSync(req.body.password, 10),
-          email,
-          telephone,
-          country,
-          avatar: req.file ? req.file.filename : 'default.jpg',
-          user_type_id: userCategoryId,        
-        };
-        res.redirect("/users/profile")
+        id,
+        first_name,
+        last_name,
+        password: bcryptjs.hashSync(req.body.password, 10),
+        email,
+        telephone,
+        country,
+        avatar: req.file ? req.file.filename : "default.jpg",
+        user_type_id: userCategoryId,
+      };
+      res.redirect("/users/profile");
     }
-    
   },
   recoverPass: (req, res) => {
     res.render("users/recover-pass");
