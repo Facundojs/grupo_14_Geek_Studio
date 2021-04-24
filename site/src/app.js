@@ -60,6 +60,11 @@ app.use("/productos", productsRouter);
 const userRouter = require("./routes/userRouter");
 app.use("/users", userRouter);
 
+//API
+
+const ApiRouter = require("./routes/api/userRouter");
+app.use("/api/users", ApiRouter);
+
 /************************************************************************************/
 //Middleware Not-Found
 app.use(notFoundMiddleware);
