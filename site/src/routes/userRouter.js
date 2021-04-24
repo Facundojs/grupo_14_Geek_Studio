@@ -27,8 +27,8 @@ router.get("/create", guestMiddleware, userController2.create); //router.get('/r
 
 router.post(
   "/create",
-  uploadFile.single("avatar"), //uploadFile.single("avatar"),
   validations, // KBE - AGREGAR
+  uploadFile.single("avatar"), //uploadFile.single("avatar"),
   userController2.processRegister
 );
 
