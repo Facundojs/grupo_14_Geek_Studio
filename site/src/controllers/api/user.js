@@ -96,7 +96,7 @@ module.exports = {
   search: (req, res) => {
     const users = db.User.findAll({
       where: {
-        first_name: { [Op.like]: "%" + req.body.keyword + "%" },
+        first_name: { [Op.like]: "%" + req.query.keyword + "%" },
       },
     }).then((users) => {
       if (users.length > 0) {
