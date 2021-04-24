@@ -1,5 +1,6 @@
 const { validationResult } = require("express-validator");
 const db = require("../../../database/models");
+const { sequelize } = require("../../../database/models");
 
 // const { Product, Category } = require('../database/models')
 
@@ -53,11 +54,22 @@ module.exports = {
     }
     //console.table(product); //para ver que se creo por consola
   },
-  show: (req, res) => {
+  show: async (req, res) => {
+    
+    let categories = await db.Category.findAll();
+    let products = await db.Product.findAll({
+      limit: 4,
+      order: [
+        [sequelize.literal('price'), 'DESC']
+    ]
+  });
+
     db.Product.findByPk(req.params.id)
       .then((product) => {
         if (product) {
-          res.render("products/detail", { product });
+
+
+          res.render("products/detail", { product, products, categories });
         } else {
           res.status(400)
           res.render('badRequest')

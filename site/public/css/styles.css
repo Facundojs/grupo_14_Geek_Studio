@@ -11,34 +11,23 @@
   padding-inline-start: 0;
 }
 
-/* Container General */
-
-.aligner-container {
-  /*border: #2D3142 solid .2rem;*/
-  border: var(--oscuro) solid 0.2rem;
-  max-width: 1300px;
-  margin: 0 auto;
-  padding: 1rem;
-  border-radius: 1.5rem;
-}
-
 body {
   background-color: var(--body-color);
   font-family: "Roboto", "Lato", "Yanone", sans-serif;
+  padding: .8rem;
 }
 
 /*Header-section*/
+
 header {
-  padding: 1rem 0;
-}
-
-header .aligner-container {
-  background-color: var(--oscuro);
+  max-width: 1300px;
+  margin: 0 auto;
   padding: 1rem;
-  border: black 2px solid;
+  border-radius: 1.5rem 1.5rem 0 0;
+  background-color: var(--oscuro);
 }
 
-.logo-ref {
+.logo-img {
   /* Tamaño del logo 3366 x 3952 px */
   width: 134.64px;
   height: 158.08px;
@@ -49,12 +38,18 @@ header a {
   text-decoration: none;
 }
 
-header .aligner-container .nav-1 .user-options {
+header .nav-1 .user-options {
   display: flex;
   margin: auto;
-  max-width: 60%;
+  max-width: 50%;
   justify-content: space-around;
-  padding: 2rem;
+  padding: 1rem;
+  font-size: 30px;
+}
+
+.user-options span {
+  padding: 16px;
+  align-content: center;
 }
 
 ul li {
@@ -117,15 +112,7 @@ header a:hover {
   order: 1;
   margin: 1rem auto;
 }
-.user-options {
-  order: 2;
-  width: 30%;
-  padding: 0.5rem;
-  display: flex;
-  flex: wrap;
-  justify-content: space-around;
-  align-items: center;
-}
+
 
 .user-options a,
 .user-options a span {
@@ -135,6 +122,14 @@ header a:hover {
   display: flex;
   flex-wrap: wrap;
   text-align: center;
+} */
+
+main {
+  padding: 2rem;
+}
+
+.main-container {
+  padding: 1.5rem 0;
 }
 
 /* HOME */
@@ -232,7 +227,7 @@ header a:hover {
 }
 
 
-/* PRODUCTS */
+/* /////////////////////////////////// PRODUCTS ///////////////////////////////////////// */
 
 .row-category {
   display: flex;
@@ -339,7 +334,7 @@ header a:hover {
   text-decoration: none;
 }
 
-/* CREATE PRODUCTS */
+/* ///////////////////////////////// CREATE PRODUCTS ///////////////////////////// */
 
 .h1-create {
   width: 100%;
@@ -419,6 +414,20 @@ header a:hover {
   transform: translateX(-100%);
   transition: all 0.3s ease;
 }
+
+.form-row input:-webkit-autofill,
+.form-row input:-webkit-autofill:hover, 
+.form-row input:-webkit-autofill:focus, 
+.form-row input:-webkit-autofill:active
+{
+ -webkit-box-shadow: 0 0 0 30px #0b1721 inset !important;
+}
+
+input:-webkit-autofill
+{
+ -webkit-text-fill-color: white !important;
+}
+
 
 .text-name{
   font-size: 18px;
@@ -502,7 +511,7 @@ header a:hover {
   color: red;
 }
 
-/* LOGIN, REGISTER Y RECOVER PASS */
+/* //////////////////////// LOGIN, REGISTER Y RECOVER PASS ////////////////////////// */
 
 .login-container .form-login {
   width: 80%;
@@ -611,7 +620,7 @@ header a:hover {
   color: var(--oscuro);
 }
 
-/* PROFILE LOGIN */
+/* /////////////////////////////////// PROFILE LOGIN /////////////////////////////////// */
 
 .container-profile {
   width: 100%;
@@ -685,7 +694,7 @@ header a:hover {
   color: white;
 }
 
-/* MIDDLEWARE NOTFOUND */
+/* /////////////////////////////////// MIDDLEWARE NOTFOUND ///////////////////////////// */
 
 .img-center {
   display: block;
@@ -754,14 +763,14 @@ header a:hover {
 /*******************************************************************************************************/
 /*Carrito*/
 
-main .aligner-container section .chart-list {
+main section .chart-list {
   background-color: blanchedalmond;
   display: flex;
   flex-wrap: wrap;
   padding: 1rem;
 }
 
-main .aligner-container section .chart-list li {
+main section .chart-list li {
   border: black solid 0.5rem;
   width: 100%;
   margin: auto;
@@ -859,15 +868,20 @@ main section .chart-item div {
   width: 40%;
   margin: auto;
 }
-/* Detalle del Producto */
+/* ///////////////////////// Detalle del Producto ////////////////////////////// */
 
 section .product {
   background-color: white;
   padding: 1rem;
+  align-items: center;
 }
 
 section .product product-price-and-shipping {
   margin-bottom: 0.2rem;
+}
+
+.img-div {
+  padding: 0 20px;
 }
 
 main section .img-main {
@@ -877,6 +891,39 @@ main section .img-main {
   display: block;
 }
 
+.title-heart {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.title-detail {
+  width: 90%;
+  text-align: center;
+  padding: 20px;
+}
+
+.title-detail h2{
+  font-size: 35px;
+  font-weight: bolder;
+  border-radius: 10px;
+  /* background-color: var(--blue);
+  color: white;
+  background-image: linear-gradient(to right, var(--oscuro) 0%, var(--blue)  51%, var(--oscuro)  100%); */
+}
+
+.favorite-heart {
+  text-align: center;
+  font-size: 35px;
+  padding: 10px 10px;
+  color: var(--orange)
+}
+
+.favorite-heart p{
+  font-size: 12px;
+  color: var(--orange)
+}
+
 /* Precio y Descuento */
 .price-discount {
   /* border: yellow 2px solid; */
@@ -884,15 +931,24 @@ main section .img-main {
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
+  padding: 15px;
+}
+
+.price-detail {
+  color: black;
+  font-weight: bolder;
+}
+
+.price-detail p{
+  font-size: 2.5rem;
 }
 
 .discount-detail {
   color: var(--orange);
 }
 
-.price-detail {
-  color: black;
-  font-weight: bolder;
+.discount-detail p{
+  font-size: 2.5rem;
 }
 
 main section div .discount-detail,
@@ -1017,15 +1073,11 @@ main section .product .product-features {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  padding: 30px;
 }
 
 .feature {
   padding: 5px 0;
-}
-
-.title-detail {
-  width: 100%;
-  text-align: center;
 }
 
 main section .product .product-features .feature {
@@ -1060,9 +1112,34 @@ main section .product .div-button {
   margin: 0.5rem 1rem;
 }
 
-main section button:hover {
+main section .div-button:hover {
   background-color: #394a96;
 }
+
+
+.adminOptions {
+  width: 100%;
+  margin: 10px;
+  text-align: center;
+}
+
+.prod-edit .div-button{ 
+  text-decoration: none;
+  font-size: 30px;
+}
+
+.prod-recomended {
+  /* background-color: var(--oscuro); */
+  text-align: center;
+  padding-top: 40px;
+}
+
+.prod-recomended h1{
+  /* background-color: var(--oscuro); */
+  text-align: center;
+  padding-top: 40px;
+}
+
 
 main section .recomended-container {
   display: flex;
@@ -1119,13 +1196,13 @@ main section .recomended-container img {
   color: rgb(3, 199, 3);
 }
 
-/*Footer*/
+/* //////////////////////////////// Footer /////////////////////////////////////// */
 
 footer {
-  padding: 1rem 0;
-}
-
-footer .aligner-container {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 1rem;
+  border-radius: 0 0 1.5rem 1.5rem;
   background-color: var(--oscuro);
   color: white;
 }
@@ -1236,7 +1313,7 @@ h2 {
   background-color: red;
 }
 
-/********************************** USO GRID LISTADO DE USUARIOS ********************************************************/
+/************************* USO GRID LISTADO DE USUARIOS ****************************/
 .container-table {
   overflow:scroll;
   width: 93%;
@@ -1308,6 +1385,10 @@ h2 {
   section ul li {
     width: 40%;
     margin: auto;
+  }
+
+  header .nav-1 .user-options {
+    max-width: 30%;
   }
 
   /* HOME */
@@ -1480,7 +1561,7 @@ h2 {
     font-weight: 800;
   }
 
-  /********************CARRITO*********************/
+  /**********************************CARRITO************************************/
 
   main section .chart-item {
     display: flex;
@@ -1570,6 +1651,8 @@ h2 {
   }
 }
 
+/* ////////////////////////////////  MEDIA QUERIES /////////////////////////////////// */
+
 /*  Agregar para que muestre dos columnas los botones comp perifericos gabinetes*/
 
 @media (min-width: 768px) {
@@ -1582,6 +1665,24 @@ h2 {
   }
 
   /* Detalle del Producto */
+
+  section .product {
+    background-color: white;
+    padding: .5rem;
+    align-items: flex-start
+  }
+  
+.img-div {
+  padding: 20px;
+}
+
+main section .img-main {
+  width: 100%;
+  border: black 1px solid;
+  padding: 20px;
+  display: block;
+}
+
   main section .product .product-features .feature {
     width: 33%;
     padding: 0 1rem;
@@ -1681,7 +1782,7 @@ main section .chart-item div {
   }
 
   /*Carrito*/
-  main .aligner-container section .chart-list {
+  main section .chart-list {
     justify-content: space-between;
   }
   .user-buttons {
@@ -1779,7 +1880,7 @@ main section .chart-item div {
     font-size: 1.4rem;
   }
 
-  header .aligner-container {
+  header {
     display: flex;
     flex-wrap: wrap;
   }
@@ -1791,12 +1892,12 @@ main section .chart-item div {
     align-items: center;
     width: 100%;
   }
-  header .aligner-container .nav-1 .logo {
+  header .nav-1 .logo {
     order: 0;
     width: 30%;
   }
 
-  .logo-ref {
+  .logo-img {
     /* Tamaño del logo 3366 x 3952 px */
     width: 187px;
     height: 219.56px;
@@ -2024,18 +2125,15 @@ main section .chart-item div {
     max-height: 420px;
   }
 
-  .user-options span {
-    align-content: center;
-  }
-
   .browser-bar {
     font-size: 1.1rem;
     width: 400px;
   }
 
-  header .aligner-container,
-  main .aligner-container,
-  footer .aligner-container {
+
+  /* De aca saque el header y footer para que no tengan max width */ 
+
+  main {
     display: block;
     margin: auto;
     max-width: 1300px;

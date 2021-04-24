@@ -6,22 +6,33 @@
     <main>
         <section class="aligner-container">
             <div class="product">
-                <div class="title-detail">
-                    <h2><%= product.name %></h2>
+
+                <div class="title-heart">
+                    <div class="title-detail">
+                        <h2><%= product.name %></h2>
+                    </div>
+
+                    <div class="favorite-heart">
+                        <i class="far fa-heart"></i> <p>Añadir a Favoritos</p> <!-- Corazón vacio -->
+                       <!-- <i class="fas fa-heart"></i> Corazon Lleno-->
+                    </div>
                 </div>
+
+                
+
                 <div class="product-detail">
-                    <div>
+                    <div class="img-div">
                         <img class="img-main" src="/img/products/<%= product.image %>" alt="Imagen del producto">
                     </div>
                 </div>
                 <div class="product-price-and-shipping">
                     <div class="price-discount">
                         <div class="price-detail">
-                            $<%= product.price %>
+                           <p>$<%= product.price %></p> 
                         </div> 
                         <div class="discount-detail">
                             <% if (product.discount) { %>
-                                <%= product.discount %>
+                               <p><%= product.discount %>%</p>
                            <% } %>
                         </div>
                     </div> 
@@ -100,6 +111,9 @@
                         <button  class="div-button">Añadir al carrito</button>
                     </div>
                 </div>
+
+                
+
                 <div class="product-features">
                     <div class="feature">
                         <h3>General</h3>
@@ -141,14 +155,57 @@
                                     <strong>L3</strong> <span>No</span>
                     </div>
                 </div>
+                
                 <% if ( locals.userLogged && locals.userLogged.user_type_id == 1)  { %>
                     <div class="adminOptions">
-                        <div class="div-button">
-                            <a href="/productos/<%= product.id %>/editar">editar</a>
+
+                        <div class="prod-edit">                 
+                            <div>
+                                <a class="div-button" href="/productos/<%= product.id %>/editar">Editar Producto</a>
+                            </div>
                         </div>
+                        
+                        
                     </div>
                 <%  } %>
-                <div class="recomended-container">
+                
+                <div class="prod-recomended">
+                    <h1>Productos <strong>Recomendados</strong></h1>
+                           
+                    <div class="row-all">
+                    <% products.forEach((product)=>{ %>
+                            <div class="col-4">
+                                <a href="/productos/<%= product.dataValues.id %>">
+                                    <div class="image">
+                                    <img src="/img/products/<%= product.dataValues.image%>" alt="<%=product.dataValues.name %>">
+                                    </div>
+                                    
+                                    <div class="prod-description">
+                                        <h4>
+                                        <%=product.dataValues.name %>
+                                        </h4> <!-- tienen que ser máximo 25 letras-->
+                                    
+                                        <p>
+                                            $<%=product.dataValues.price %> 
+                                        </p>
+                                    </div>
+    
+                                    <div class="chart-button">
+                                    <button id="#<%=product.dataValues.id %>"  type="submit">
+                                        Agregar al carro <i class="fas fa-shopping-cart"></i>
+                                    </button>
+                                    </div>
+    
+                                </a>
+                            </div>
+    
+    
+                    <%}) %> 
+                    </div>
+                </div>
+
+
+                <!-- <div class="recomended-container">
                     <h3>Productos <strong>Recomendados</strong></h3>
                     <br>
                         <div class="product-recomended">
@@ -219,7 +276,8 @@
                                 <button class="rec-button">Ver producto</button>
                             </div>
                         </div>
-                </div>
+                </div> -->
+
             </div>
         </section>
     </main>
