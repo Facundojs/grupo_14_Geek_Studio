@@ -12,9 +12,10 @@
                         <h2><%= product.name %></h2>
                     </div>
 
-                    <div class="favorite-heart">
-                        <i class="far fa-heart"></i> <p>Añadir a Favoritos</p> <!-- Corazón vacio -->
-                       <!-- <i class="fas fa-heart"></i> Corazon Lleno-->
+                    <div class="favorite-heart" id="heart">
+                        <i class="far fa-heart heart-empty" ></i> 
+                        <i class="fas fa-heart heart-full"></i>  <!--Corazon Lleno--> 
+                        <p>Añadir a Favoritos</p> <!-- Corazón vacio -->
                     </div>
                 </div>
 
@@ -45,10 +46,59 @@
                                 <div class="ship-text">
                                     <p>12 cuotas sin interés de $<%= Math.round(Number(product.price) / 12 * 100, 2)/100 %></p> 
                                     <div>
-                                        <a class="links-ship" href="">Ver cuotas</a>
+                                        <a class="links-ship" id="dues-see">Ver cuotas</a>
                                     </div>
                                 </div>
                         </div>
+
+                        <div id="dues">
+                            <div class="modal-wrapper">
+                                <div class="modal-content">
+                                    <h3>Pagá en cuotas con Mercado Pago</h3>
+
+                                    <div class="info-ficha-detail top-file">
+                                        <div class="img-ship-detail">
+                                            <img src="../../img/detalle/icono-ahora-12.png">
+                                        </div> 
+                                        <div class="ship-text-detail">
+                                            <p>3 cuotas sin interés de $<%= Math.round(Number(product.price) / 3 * 100, 2)/100 %></p> 
+                                        </div>
+                                    </div>
+                                    <div class="info-ficha-detail top-file">
+                                        <div class="img-ship-detail">
+                                            <img src="../../img/detalle/icono-ahora-12.png">
+                                        </div> 
+                                        <div class="ship-text-detail">
+                                            <p>6 cuotas sin interés de $<%= Math.round(Number(product.price) / 6 * 100, 2)/100 %></p> 
+                                        </div>
+                                    </div>
+                                    <div class="info-ficha-detail top-file">
+                                        <div class="img-ship-detail">
+                                            <img src="../../img/detalle/icono-ahora-12.png">
+                                        </div> 
+                                        <div class="ship-text-detail">
+                                            <p>9 cuotas sin interés de $<%= Math.round(Number(product.price) / 9 * 100, 2)/100 %></p> 
+                                        </div>
+                                    </div>
+
+                                    <div class="info-ficha-detail top-file">
+                                        <div class="img-ship-detail">
+                                            <img src="../../img/detalle/icono-ahora-12.png">
+                                        </div> 
+                                        <div class="ship-text-detail">
+                                            <p>12 cuotas sin interés de $<%= Math.round(Number(product.price) / 12 * 100, 2)/100 %></p> 
+                                        </div>
+                                    </div>
+
+                                
+                                    <div class="div-button-detail">
+                                        <button class="button-detail" id="cerrar-modal">Salir</button>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
                         <div class="info-ficha stock">
                             <div class="icons-ship">
                                 <i class="far fa-check-circle green"></i>
@@ -86,10 +136,59 @@
                             <div class="retiro-text">
                                 <span>Envios a todo el país</span>
                                 <div>
-                                    <a class="links-ship" href="">Ver costos de envío</a>
+                                    <a class="links-ship" id="shipping-see">Ver costos de envío</a>
                                 </div>
                             </div>
                         </div>
+
+                        <div id="shipping">
+                            <div class="modal-wrapper-shipping">
+                                <div class="modal-content">
+                                    <h3>Envíos a todo el país</h3>
+
+                                    <div class="info-ficha-detail top-file">
+                                        <div class="img-ship-detail">
+                                            <i class="fas fa-truck"></i>
+                                        </div> 
+                                        <div class="ship-text-detail">
+                                            <p>3 cuotas sin interés de $<%= Math.round(Number(product.price) / 3 * 100, 2)/100 %></p> 
+                                        </div>
+                                    </div>
+                                    <div class="info-ficha-detail top-file">
+                                        <div class="img-ship-detail">
+                                            <i class="fas fa-truck"></i>
+                                        </div> 
+                                        <div class="ship-text-detail">
+                                            <p>6 cuotas sin interés de $<%= Math.round(Number(product.price) / 6 * 100, 2)/100 %></p> 
+                                        </div>
+                                    </div>
+                                    <div class="info-ficha-detail top-file">
+                                        <div class="img-ship-detail">
+                                            <i class="fas fa-truck"></i>
+                                        </div> 
+                                        <div class="ship-text-detail">
+                                            <p>9 cuotas sin interés de $<%= Math.round(Number(product.price) / 9 * 100, 2)/100 %></p> 
+                                        </div>
+                                    </div>
+
+                                    <div class="info-ficha-detail top-file">
+                                        <div class="img-ship-detail">
+                                            <i class="fas fa-truck"></i>
+                                        </div> 
+                                        <div class="ship-text-detail">
+                                            <p>12 cuotas sin interés de $<%= Math.round(Number(product.price) / 12 * 100, 2)/100 %></p> 
+                                        </div>
+                                    </div>
+
+                                
+                                    <div class="div-button-detail">
+                                        <button class="button-detail" id="cerrar-modal-envios">Salir</button>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
                         <div class="info-ficha">
                             <div class="warranty">
                                 <i class="fas fa-shield-alt"></i>
@@ -108,7 +207,7 @@
                         <input min="1" max="10" type="number" value="1" id="prodcantidad"> 
                     </div>
                     <div>
-                        <button  class="div-button">Añadir al carrito</button>
+                        <button  class="div-button">Agregar al carro <i class="fas fa-shopping-cart"></i></button>
                     </div>
                 </div>
 
@@ -174,7 +273,7 @@
                            
                     <div class="row-all">
                     <% products.forEach((product)=>{ %>
-                            <div class="col-4">
+                            <div class="col-4 col-detail">
                                 <a href="/productos/<%= product.dataValues.id %>">
                                     <div class="image">
                                     <img src="/img/products/<%= product.dataValues.image%>" alt="<%=product.dataValues.name %>">
@@ -282,5 +381,11 @@
         </section>
     </main>
     <%- include('../partials/footer.ejs') %>
+
+    <script src="/js/favorite.js"></script>
+    <script src="/js/dues-detail.js"></script>
+    <script src="/js/shipping-detail.js"></script>
+
+
 </body>
 </html>
