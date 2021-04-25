@@ -805,7 +805,7 @@ main section .chart-item div {
 }
 
 .chart-description {
-  margin: 0 2.5rem;
+  margin: 0 2rem;
 }
 .free-ship {
   font-size: 0.8rem;
@@ -1746,7 +1746,7 @@ p {
   }
 
   .chart-article {
-    width: 20%;
+    width: 15%;
     margin: 20px 20px;
     text-align: left;
   }
@@ -1782,10 +1782,17 @@ p {
     font-weight: bolder;
   }
 
+  .chart-item div form {
+    width: 100%;
+    align-items: center;
+  }
+
   .chart-item div .trash {
     width: 100%;
     font-size: 1.3rem;
     text-align: center;
+    align-items: center;
+    /* padding: 10px; */
     /*Este falta centar */
   }
 
@@ -2050,7 +2057,9 @@ main section .chart-item div {
     margin-top: 2rem;
   }
   .purchase-option {
+    padding-top: 30px;
     height: 20rem;
+    color: white;
   }
 
   .purchase-optionbutton {
