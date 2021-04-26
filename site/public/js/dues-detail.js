@@ -10,6 +10,6 @@ botonOcultar.addEventListener('click', function() {
     mostrarCuotas.style.display = 'none'
 })
 
-window.addEventListener('keyup', function() {
-    e.key == 'Escape' ? aMostrar.style.display = 'none' : ''
+window.addEventListener('keyup', function(e) {
+    e.key == 'Escape' ? mostrarCuotas.style.display = 'none' : ''
 })
