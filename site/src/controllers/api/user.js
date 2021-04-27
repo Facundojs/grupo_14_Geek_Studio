@@ -69,7 +69,11 @@ module.exports = {
         });
       }
     } catch (error) {
-      console.log(error);
+      return res.status(400).json({
+        status: 400,
+        created: "No se pudo crear el usuario",
+        error: error,
+      });
     }
   },
 
@@ -103,7 +107,7 @@ module.exports = {
         return res.status(200).json(users);
       }
 
-      return res.status(200).json("No existen usuarios");
+      return res.status(200).json("No se encontraron coincidencias");
     });
   },
 };
