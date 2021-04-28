@@ -71,9 +71,11 @@
                         <label for="image"></label>
                         <input type="file" class="file" name="image" id="image" >
                     </div>
+                    <p id="feedback-category" class="hidden feedback is-danger">Las extensiones permitidas son: .jpg, .jpeg, .png y .gif</p>
                     <% if (locals.errors && errors.image) { %>
                         <p class="feedback is-danger"><%= errors.image.msg %></p>
                     <% } %>
+
 
                     <div>
                         <input class="btn-create" type="submit" value="Editar">

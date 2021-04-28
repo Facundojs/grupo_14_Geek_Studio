@@ -48,9 +48,8 @@ image.addEventListener('change', function (e) {
     let filePath = this.value;
     let allowedExtensions = /(.jpg|.jpeg|.png|.gif)$/i;
     if (!allowedExtensions.exec(filePath)) {
-        alert('Please upload file having extensions .jpeg/.jpg/.png/.gif only.');
         this.value = '';
-        return validacionIncorrecta(this);
+        validacionIncorrecta(this);
     }
 })
 
