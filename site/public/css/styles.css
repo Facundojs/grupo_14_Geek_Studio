@@ -1928,10 +1928,10 @@ main section .img-main {
     background-image: linear-gradient(to right, var(--oscuro) 0%, var(--blue)  51%, var(--oscuro)  100%);
   }
 
-  .col-detail a{
+  /* .col-detail a{
     /* background-color: gainsboro; */
-    /* border: 1px solid var(--silver); */
-  }
+    /* border: 1px solid var(--silver);} */
+   
   
   .col-detail a:hover, .col-5 a:hover{
     transform: scale(1.03);
