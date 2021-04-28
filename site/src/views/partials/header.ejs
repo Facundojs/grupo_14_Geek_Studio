@@ -12,6 +12,11 @@
                     <span><a href="/productos/favoritos"><i class="far fa-heart"></i></a></span>
                     <span><a href="/productos/carro"><i class="fas fa-shopping-cart"></i></a></span>
                 </nav>
+
+                <div style="display: none;" class="welcome">
+                    <%= locals.userLogged.frst_name %>
+                </div>
+
             <% } else { %>
                     <nav class="user-options">
                     <span><a href="/users/login" class="log"><i class="fas fa-user-circle"></i></a></span>
@@ -36,5 +41,7 @@
             <li><a href="/productos">Soporte</a></li>
             </ul>
         </nav>
+
+        <script src="/js/user-login.js"></script>
 </header>
 

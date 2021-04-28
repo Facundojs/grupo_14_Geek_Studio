@@ -423,7 +423,7 @@ main {
  -webkit-box-shadow: 0 0 0 30px #0b1721 inset !important;
 }
 
-input:-webkit-autofill
+.form-row input:-webkit-autofill
 {
  -webkit-text-fill-color: white !important;
 }
@@ -763,6 +763,12 @@ input:-webkit-autofill
 /*******************************************************************************************************/
 /*Carrito*/
 
+main .chart-title {
+  color: gainsboro;
+  text-align: center;
+  padding: 20px;
+}
+
 main section .chart-list {
   background-color: blanchedalmond;
   display: flex;
@@ -993,7 +999,7 @@ element.style {
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  padding: 10px 0;
+  padding: 16px 0;
   border-bottom: 2px solid rgba(126, 126, 131, 0.15);
 }
 

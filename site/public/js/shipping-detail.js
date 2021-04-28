@@ -11,6 +11,6 @@ botonOcultarEnvios.addEventListener('click', function() {
     mostrarEnvios.style.display = 'none'
 })
 
-window.addEventListener('keyup', function() {
-    e.key == 'Escape' ? aMostrar.style.display = 'none' : ''
+window.addEventListener('keyup', function(e) {
+    e.key == 'Escape' ? mostrarEnvios.style.display = 'none' : ''
 })
