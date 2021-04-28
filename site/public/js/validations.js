@@ -1,5 +1,4 @@
 // Create form
-
 let productName = document.querySelector('#name');
 let price = document.querySelector('#price');
 let discount = document.querySelector('#discount');
@@ -8,33 +7,68 @@ let category = document.querySelector('#category');
 let image = document.querySelector('#image');
 
 productName.addEventListener('keyup', function (e) {
-    if (this.value >= 3) {
-        console.log(this);
-        console.log(111);
-        
+    if (this.value.length <= 3 && this.value.length > 0) {
+        validacionIncorrecta(this)
+    } else if (this.value.length > 3) {
+        validacionCorrecta(this)
     }
 })
 price.addEventListener('keyup', function (e) {
-    if (this.value > 99 && this.value != 0) {
-        price.classList.add('form-error');
-        price.classList.remove('form-success');
+    if (parseInt(this.value) && parseInt(this.value) != 0) {
+        validacionCorrecta(this)
     } else {
-        price.classList.add('form-success');
-        price.classList.remove('form-error');
+        validacionIncorrecta(this)
     }
-    if (this.value.length < 1) {
-        price.classList.remove('form-success');
-        price.classList.remove('form-error');
-    }
-    // if (typeof this.value != Number && this.value != 0) {
-    //     price.classList.add('form-error')
-    // } else {
-    //     price.classList.add('form-success')
-    // }   
 })
-discount.addEventListener('keyup', function(e){
-    console.log(e);
+discount.addEventListener('keyup', function (e) {
+    let correctKeys = ['1','2','3','4','5','6','7','8','9','0']
+    if(parseInt(this.value) && parseInt(this.value) > 0 && parseInt(this.value) < 100){
+        validacionCorrecta(this)
+    } else {
+        validacionIncorrecta(this)
+    }
+    (this.value.length == 0 && limpiarValidaciones(this))
 })
 features.addEventListener('keyup', function(e){
-    console.log(e);
+    if (this.value.length < 1) {
+        validacionIncorrecta(this)
+    } else {
+        validacionCorrecta(this)
+    }
 })
+category.addEventListener('change', function (e) {
+    if (this.value != 0) {
+        validacionCorrecta(this)
+    } else {
+        validacionIncorrecta(this)
+    }
+})
+image.addEventListener('change', function (e) {
+    console.log(this.value);
+    let filePath = this.value;
+    let allowedExtensions = /(.jpg|.jpeg|.png|.gif)$/i;
+    if (!allowedExtensions.exec(filePath)) {
+        alert('Please upload file having extensions .jpeg/.jpg/.png/.gif only.');
+        this.value = '';
+        return validacionIncorrecta(this);
+    }
+})
+
+
+
+let validacionCorrecta = (elemento) => {
+    elemento.classList.remove("validation-bad")
+    elemento.classList.add("validation-success")
+    let feedbackDiv = document.querySelector(`#feedback-${elemento.id}`)
+    feedbackDiv.classList.add("hidden")
+}
+let validacionIncorrecta = (elemento) => {
+    elemento.classList.add("validation-bad")
+    elemento.classList.remove("validation-success")
+    let feedbackDiv = document.querySelector(`#feedback-${elemento.id}`)
+    feedbackDiv.classList.remove("hidden")
+}
+let limpiarValidaciones = (elemento) => {
+    let feedbackDiv = document.querySelector(`#feedback-${elemento.id}`)
+    feedbackDiv.classList.add("hidden")
+}

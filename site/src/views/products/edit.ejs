@@ -16,6 +16,7 @@
                             <span class="text-name">Nombre del Producto</span>
                         </label>
                     </div>
+                    <p id="feedback-name" class="hidden feedback is-danger">Coloca nombre mayor a 3 caractéres</p>
                     <% if (locals.errors && errors.name) { %>
                         <p class="feedback is-danger"><%= errors.name.msg %></p>
                     <% } %>
@@ -26,6 +27,7 @@
                             <span class="text-name">Precio</span>
                         </label>
                     </div>
+                    <p id="feedback-price" class="hidden feedback is-danger">Coloca un precio numérico</p>
                     <% if (locals.errors && errors.price) { %>
                         <p class="feedback is-danger"><%= errors.price.msg %></p>
                     <% } %>
@@ -36,6 +38,7 @@
                             <span class="text-name">Descuento</span>
                         </label>
                     </div>
+                    <p id="feedback-discount" class="hidden feedback is-danger">El descuento debe ser un número menor que 100</p>
                     <% if (locals.errors && errors.discount) { %>
                         <p class="feedback is-danger"><%= errors.discount.msg %></p>
                     <% } %>
@@ -46,6 +49,7 @@
                             <span class="text-name">Características</span>
                         </label>
                     </div>
+                    <p id="feedback-features" class="hidden feedback is-danger">Ingresa las características del producto</p>
                     <% if (locals.errors && errors.features) { %>
                         <p class="feedback is-danger"><%= errors.features.msg %></p>
                     <% } %>
@@ -58,6 +62,7 @@
                             <% }) %>
                         </select>
                     </div>
+                    <p id="feedback-category" class="hidden feedback is-danger">Selecciona una categoría</p>
                     <% if (locals.errors && errors.category) { %>
                         <p class="feedback is-danger"><%= errors.category.msg %></p>
                     <% } %>
@@ -82,6 +87,7 @@
 
             </div>
         </div>
+        <script src="/js/validations.js"></script>
     </main>
     <%- include('../partials/footer.ejs') %> >
 </body>
