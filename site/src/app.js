@@ -34,7 +34,7 @@ app.listen(process.env.PORT || 3000, () => {
     "|==============================================================================|"
   );
   console.log(
-    "|---------------⭐⭐ Servidor corriendo en el puerto 3000 ⭐⭐-----------------|"
+    `|---------------⭐⭐ Servidor corriendo en el puerto ${process.env.PORT||3000} ⭐⭐-----------------|`
   );
   console.log(
     "|==============================================================================|"
@@ -65,7 +65,9 @@ app.use("/users", userRouter);
 
 const ApiUsersRouter = require("./routes/api/userRouter");
 const ApiProductsRouter = require("./routes/api/productsRouter");
+const ApiCategoriesRouter = require("./routes/api/categoriesRouter");
 app.use("/api/users", ApiUsersRouter);
+app.use("/api/categories", ApiCategoriesRouter);
 app.use("/api/products", ApiProductsRouter);
 
 /************************************************************************************/
