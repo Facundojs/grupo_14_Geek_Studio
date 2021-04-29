@@ -44,10 +44,12 @@
                         <div class="table__item">
                             <a class="button" href="/users/<%= user.id %>/edit">
                                 <i class="fas fa-pen"></i>
-                            </a>         
-                            <a class="button" href="/users/<%= user.id %>/edit">
-                                <i class="fas fa-trash"></i>
-                            </a> 
+                            </a>   
+                            <form action="/users/<%= user.id %>?_method=DELETE" method="POST" >
+                                <button class="button" type="submit">
+                                    <i class="fas fa-trash"></i> 
+                                </button>
+                            </form>   
                         </div>
                     <% } %> 
 

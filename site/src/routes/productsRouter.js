@@ -18,6 +18,8 @@ router.get(
   isAdminMiddleware,
   productController.create
 ); // Formulario de creación
+
+router.get("/favoritos", productController.favorite) // Página de Favoritos
 router.get("/:id", productController.show); // Detalle del producto (Terminado)
 router.post(
   "/crear",
