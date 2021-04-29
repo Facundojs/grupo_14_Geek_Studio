@@ -54,6 +54,9 @@ module.exports = {
     }
     //console.table(product); //para ver que se creo por consola
   },
+  favorite: (req, res) => {
+    res.send("Página de Favoritos")
+  },
   show: async (req, res) => {
     
     let categories = await db.Category.findAll();
