@@ -12,8 +12,14 @@
     "seed-db": "sequelize db:seed:all",
     "drop-db": "sequelize db:drop",
     "reset-db": "npm-run-all drop-db create-db migrate-db seed-db",
+<<<<<<< HEAD
     "use-project": "npm-run-all create-db migrate-db seed-db start",
     "test-project": "npm-run-all reset-db startdev"
+=======
+    "use-proyect": "npm-run-all create-db migrate-db seed-db start",
+    "test-proyect": "npm-run-all reset-db startdev",
+    "init":"npm-run-all create-db migrate-db seed-db startdev"
+>>>>>>> 46f4c2f004edd913107f192c3e5f250c6c92e30e
   },
   "repository": {
     "type": "git",

@@ -10,7 +10,9 @@
   box-sizing: border-box;
   padding-inline-start: 0;
 }
-
+.hidden{
+  display: none;
+}
 body {
   background-color: var(--body-color);
   font-family: "Roboto", "Lato", "Yanone", sans-serif;
@@ -421,6 +423,7 @@ main {
 .form-row input:-webkit-autofill:active
 {
  -webkit-box-shadow: 0 0 0 30px #0b1721 inset !important;
+ box-shadow: none; /* Le agregue esto porque tiraba error*/
 }
 
 .form-row input:-webkit-autofill
@@ -1927,10 +1930,10 @@ main section .img-main {
     background-image: linear-gradient(to right, var(--oscuro) 0%, var(--blue)  51%, var(--oscuro)  100%);
   }
 
-  .col-detail a{
+  /* .col-detail a{
     /* background-color: gainsboro; */
-    /* border: 1px solid var(--silver); */
-  }
+    /* border: 1px solid var(--silver);} */
+   
   
   .col-detail a:hover, .col-5 a:hover{
     transform: scale(1.03);
