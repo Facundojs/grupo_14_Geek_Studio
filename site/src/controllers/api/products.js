@@ -1,11 +1,19 @@
 const db = require("../../../../database/models");
 const { Op } = require("sequelize");
-
+const { QueryTypes } = require('sequelize');
+class prod{
+  constructor(id, name, precio, categoria, descuento) {
+    this.id = id,
+    this.name = name,
+    this.precio = precio,
+    this.categoria = categoria,
+    this.descuento = descuento != 0 ? `${descuento}%` : 'No hay descuento'
+  }
+}
 module.exports = {
   list: async (req, res) => {
-    try {
-      const products = await db.Product.findAll();
-
+    try {     
+      const products = await db.Product.findAll({include: 'category'});
       if (products.length > 0) {
         return res.status(200).json({
           total: products.length,
@@ -49,6 +57,36 @@ module.exports = {
       res
         .json({
           mensaje: "No se encontro el producto en la DB. ",
+          status: 400,
+          error: error,
+        })
+        .status(400);
+    }
+  },
+  dashboardList: async (req, res) => {
+    try {     
+      const products = await db.Product.findAll({include: 'category'});
+      if (products.length > 0) {
+        let finalProds = products.map((element) => {
+          return new prod(element.id, element.name, element.price, element.category.name, element.discount)
+        })
+        return res.status(200).json({
+          total: products.length,
+          data: finalProds,
+          status: 200,
+        });
+      } else {
+        res
+          .json({
+            mensaje: "No se encontraron productos en la DB.",
+            status: 400,
+          })
+          .status(400);
+      }
+    } catch (error) {
+      res
+        .json({
+          mensaje: "No se encontraron productos en la DB.",
           status: 400,
           error: error,
         })

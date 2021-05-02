@@ -1,6 +1,15 @@
 const db = require("../../../../database/models");
 const { Op } = require("sequelize");
-
+class us{
+  constructor(id, nombre, apellido, email, telefono, pais, tipoDeUsuario) {
+    this.id = id,
+    this.nombre_completo = `${nombre} ${apellido}`,
+    this.email = email,
+    this.telefono = telefono,
+    this.pais = pais,
+    this.tipoDeUsuario = tipoDeUsuario
+  }
+}
 module.exports = {
   list: async (req, res) => {
     try {
@@ -55,7 +64,43 @@ module.exports = {
         .status(400);
     }
   },
-
+  dashboardList: async (req, res) => {
+    try {
+      const users = await db.User.findAll({include: 'user_type'});
+      const finalUsers = users.map((elemento) => {
+        return new us(elemento.id,
+          elemento.first_name,
+          elemento.last_name,
+          elemento.email,
+          elemento.telephone,
+          elemento.country,
+          elemento.user_type.type_name)
+      })
+      // id, nombre, apellido, email, telefono, pais, tipoDeUsuario
+      if (users.length > 0) {
+        return res.status(200).json({
+          total: users.length,
+          data: finalUsers,
+          status: 200,
+        });
+      } else {
+        res
+          .json({
+            mensaje: "No se encontraron usuarios en la DB.",
+            status: 400,
+          })
+          .status(400);
+      }
+    } catch (error) {
+      res
+        .json({
+          mensaje: "No se encontraron usuarios en la DB.",
+          status: 400,
+          error: error,
+        })
+        .status(400);
+    }
+  },
   store: async (req, res) => {
     try {
       const user = await db.User.create(req.body);
