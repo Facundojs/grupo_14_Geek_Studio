@@ -20,8 +20,6 @@ module.exports = {
         [sequelize.literal('price'), 'DESC']
     ]
     });
-
-      res.render("home", { categories, products })
-
+    res.render("home", { categories, products })
   },
 };

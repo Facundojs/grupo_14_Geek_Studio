@@ -2,7 +2,7 @@ module.exports = {
   development: {
     username: "freedbtech_Facundo",
     password: "Julian10",
-    database: "freedbtech_geekdbfacu" /* dbschema con nuevos campos geekdb  */,
+    database: "freedbtech_geekdbfacu",
     host: "freedb.tech",
     dialect: "mysql",
   },
@@ -13,7 +13,7 @@ module.exports = {
     host: "127.0.0.1",
     dialect: "mysql",
   },
-  development: {
+  production: {
     username: "freedbtech_Facundo",
     password: "Julian10",
     database: "freedbtech_geekdbfacu" /* dbschema con nuevos campos geekdb  */,
