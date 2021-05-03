@@ -1,9 +1,9 @@
 module.exports = {
   development: {
-    username: "root",
-    password: null,
-    database: "geekdb2" /* dbschema con nuevos campos geekdb  */,
-    host: "127.0.0.1",
+    username: "freedbtech_Facundo",
+    password: "Julian10",
+    database: "freedbtech_geekdbfacu" /* dbschema con nuevos campos geekdb  */,
+    host: "freedb.tech",
     dialect: "mysql",
   },
   test: {
@@ -13,11 +13,20 @@ module.exports = {
     host: "127.0.0.1",
     dialect: "mysql",
   },
-  production: {
-    username: "root",
-    password: null,
-    database: "database_production",
-    host: "127.0.0.1",
+  development: {
+    username: "freedbtech_Facundo",
+    password: "Julian10",
+    database: "freedbtech_geekdbfacu" /* dbschema con nuevos campos geekdb  */,
+    host: "freedb.tech",
     dialect: "mysql",
   },
 };
+
+//"127.0.0.1"
+// production: {
+//   username: "root",
+//   password: null,
+//   database: "database_production",
+//   host: "127.0.0.1",
+//   dialect: "mysql",
+// },
