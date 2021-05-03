@@ -93,10 +93,35 @@ module.exports = {
         .status(400);
     }
   },
+  dashboardLastproduct: async (req, res) => {
+    try {     
+      const products = await db.Product.findAll({include: 'category'});
+      if (products.length > 0) {
+        return res.status(200).json({
+          data: products.pop(),
+          status: 200,
+        });
+      } else {
+        res
+          .json({
+            mensaje: "No se encontraron productos en la DB.",
+            status: 400,
+          })
+          .status(400);
+      }
+    } catch (error) {
+      res
+        .json({
+          mensaje: "No se encontraron productos en la DB.",
+          status: 400,
+          error: error,
+        })
+        .status(400);
+    }
+  },
   store: async (req, res) => {
     try {
       const product = await db.Product.create(req.body);
-      console.log("Valor product: ", product);
       if (product) {
         return res
           .status(200)

@@ -5,6 +5,7 @@ const productsController = require("../../controllers/api/products");
 //API
 router.get("/", productsController.list);
 router.get("/dashboardList", productsController.dashboardList);
+router.get("/dashboardLastproduct", productsController.dashboardLastproduct);
 // router.get("/search", productsController.search);
 router.get("/:id", productsController.show);
 router.post("/", productsController.store);
