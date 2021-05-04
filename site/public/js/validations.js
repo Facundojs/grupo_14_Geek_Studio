@@ -6,30 +6,29 @@ let features = document.querySelector('#features');
 let category = document.querySelector('#category');
 let image = document.querySelector('#image');
 
-productName.addEventListener('keyup', function (e) {
+productName.addEventListener('blur', function (e) {
     if (this.value.length <= 3 && this.value.length > 0) {
         validacionIncorrecta(this)
     } else if (this.value.length > 3) {
         validacionCorrecta(this)
     }
 })
-price.addEventListener('keyup', function (e) {
+price.addEventListener('blur', function (e) {
     if (parseInt(this.value) && parseInt(this.value) != 0) {
         validacionCorrecta(this)
     } else {
         validacionIncorrecta(this)
     }
 })
-discount.addEventListener('keyup', function (e) {
-    let correctKeys = ['1','2','3','4','5','6','7','8','9','0']
-    if(parseInt(this.value) && parseInt(this.value) > 0 && parseInt(this.value) < 100){
+discount.addEventListener('blur', function (e) {
+    if(parseInt(this.value) && parseInt(this.value) >= 0 && parseInt(this.value) < 100){
         validacionCorrecta(this)
     } else {
         validacionIncorrecta(this)
     }
     (this.value.length == 0 && limpiarValidaciones(this))
 })
-features.addEventListener('keyup', function(e){
+features.addEventListener('blur', function(e){
     if (this.value.length < 1) {
         validacionIncorrecta(this)
     } else {

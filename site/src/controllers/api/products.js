@@ -1,6 +1,4 @@
 const db = require("../../../../database/models");
-const { Op } = require("sequelize");
-const { QueryTypes } = require('sequelize');
 class prod{
   constructor(id, name, precio, categoria, descuento) {
     this.id = id,

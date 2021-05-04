@@ -379,7 +379,7 @@ main {
   max-width: 400px;
   position: relative;
   overflow: hidden;
-  margin: 30px 20px;
+  margin: 12px 20px;
 }
 
 .form-row input{
@@ -505,6 +505,8 @@ main {
 
 .feedback.is-danger{
   color: red;
+  font-size: 0.8rem;
+  margin-top: 0;
 }
 
 .form-success{
