@@ -22,22 +22,22 @@ module.exports = [
     .bail(),
   body("country").not().contains('Selecciona un país').withMessage('Selecciona un país').bail(),
   body("avatar").custom((value, { req }) => {
-    //console.log("entrre middleware", req);
-    let file = req.file;
+    // let file = req.file;
     let acceptedExtensions = [".jpg", ".png", ".gif"];
-    let fileExtension = path.extname(file.originalname);
-
-    if (!file) {
+    
+    if (!req.file) {
       throw new Error("Tienes que subir una imagen ");
     } else {
+      let fileExtension = path.extname(req.file.originalname);
       if (!acceptedExtensions.includes(fileExtension)) {
         throw new Error(
           `Las extensiones de archivos permitidas son ${acceptedExtensions.join(
             ", "
           )}`
         );
+      } else {
+        return true;
       }
     }
-    return true;
   }),
 ];

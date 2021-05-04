@@ -91,6 +91,7 @@ module.exports = {
   },
   processRegister: async (req, res) => {
     let resultValidation = validationResult(req);
+    console.log(resultValidation);
     ////////////////////////
     const response = await fetch("https://restcountries.eu/rest/v2/all");
     const countries = await response.json();
@@ -124,11 +125,9 @@ module.exports = {
     const {
       first_name,
       last_name,
-      password,
       email,
       telephone,
       country,
-      user_type_id,
     } = req.body;
     db.User.create({
       first_name,
@@ -231,7 +230,6 @@ module.exports = {
 
     let userToEdit = await db.User.findOne({ where: { id: id } });
     let userCategoryId = parseInt(userToEdit.dataValues.user_type_id);
-    console.log(req.body);
     await db.User.update(
       {
         user_type_id: userCategoryId,

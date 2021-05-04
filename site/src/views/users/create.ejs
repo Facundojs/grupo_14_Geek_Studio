@@ -9,7 +9,6 @@
             <div class= "login-container"> 
             <form class="form-login"  action="/users/create" method="POST" enctype="multipart/form-data">
                 <h1> Registrarse </h1>
-                
                 <div class="textbox-login">
                     <input type ="text" 
                     placeholder ="Nombre" 
@@ -60,6 +59,11 @@
                     <input type="file" class="file" name="avatar" id="avatar" 
                     value="<%= locals.oldData ? oldData.avatar : null %>">
                 </div>
+                <% if (locals.errors && errors.avatar) { %>
+                    <div class="text-danger centrar">
+                        <%= errors.avatar.msg %>
+                    </div>
+                <% } %>
 
                 <div class="textbox-login">
                     <i class="fa fa-lock" aria-hidden="true"></i>
