@@ -14,7 +14,7 @@
     "reset-db": "npm-run-all drop-db create-db migrate-db seed-db",
     "use-project": "npm-run-all create-db migrate-db seed-db start",
     "test-project": "npm-run-all reset-db startdev",
-    "init":"npm-run-all create-db migrate-db seed-db startdev"
+    "init": "npm-run-all create-db migrate-db seed-db startdev"
   },
   "repository": {
     "type": "git",

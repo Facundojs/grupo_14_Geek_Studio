@@ -9,8 +9,8 @@
         <div class="aligner-container chart">
             <h1 class="chart-title">Carrito de compras</h1>
             <section>
-                <ul class="chart-list">
-                    <%- include('./partials/productoEnCarro.ejs') %> 
+                <ul class="chart-list lista-carrito " id="lista-carrito">
+                  
                 </ul>
                 <div class="user-buttons">
                     <article class="purchase-option">
@@ -29,7 +29,9 @@
                 </div>
             </section>
         </div>
+        <!-- <script src="/js/carrito.js"></script> -->
     </main>
     <%- include('./partials/footer.ejs') %>
+    <script src="/js/show-carrito.js"></script>
 </body>
 </html>

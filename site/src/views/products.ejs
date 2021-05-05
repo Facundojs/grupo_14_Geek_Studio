@@ -13,10 +13,10 @@
                 <%} %>
                     
                     
-                <div class="row-all">
+                <div class="row-all products-list">
                 <% products.forEach((product)=>{ %>
                     <% if(product.dataValues.category_id == category.dataValues.id){ %>
-                        <div class="col-4">
+                        <div class="col-4 ">
                             <a href="/productos/<%= product.dataValues.id %>">
                                 <div class="image">
                                 <img src="/img/products/<%= product.dataValues.image%>" alt="<%=product.dataValues.name %>">
@@ -31,15 +31,16 @@
                                         $<%=product.dataValues.price %> 
                                     </p>
                                 </div>
-
-                                <div class="chart-button">
-                                <button id="#<%=product.dataValues.id %>"  type="submit">
-                                    Agregar al carro <i class="fas fa-shopping-cart"></i>
-                                </button>
-                                </div>
-
+                                
                             </a>
+                            <div class="chart-button">
+                                <button data-id="<%=product.dataValues.id %>" id="#<%=product.dataValues.id %>" class="button-chart agregar-carrito pepito" type="submit">
+                                    Agregar al carro <i class="fas fa-shopping-cart "></i>
+                                </button>
+                            </div>                            
                         </div>
+                        
+
                     <% } %> 
 
 
@@ -50,6 +51,7 @@
             </div>
 
         </div>
+        <script src="/js/carrito.js"></script>
     </main>
     <%- include('./partials/footer.ejs') %>
 </body>

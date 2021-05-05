@@ -1,10 +1,15 @@
-<li>
+let productosEnCarro = JSON.parse(localStorage.getItem("articulosCarrito"));
+let listaCarrito = document.querySelector("#lista-carrito");
+
+productosEnCarro.forEach((producto) => {
+  listaCarrito.innerHTML += `
+  <li>
     <article class="chart-item lista-carrito">
         <div class="chart-article">
-            <img class="chart-article-image img-chart"src="/img/products/<%= elemento.image %>" >
+            <img class="chart-article-image img-chart"src=${producto.imagen} >
         </div>
         <div class="chart-description">
-            <h3 class="article-description title-chart"><%= elemento.name %></h3>
+            <h3 class="article-description title-chart">${producto.titulo}</h3>
                 <p class="free-ship">Envío gratis</p>
                 <!-- Aca deberíamos poner un if de si tiene envío gratis que le figure y sino no -->
         </div>
@@ -19,7 +24,7 @@
             </select>
         </div>
         <div class="chart-price">
-            $<%= elemento.price %> 
+        ${producto.precio}
         </div>
         <form action="">
             <div class="trash">
@@ -28,4 +33,7 @@
         </form>
     </article>
 </li>
+  `;
+});
 
+console.log(productosEnCarro);
