@@ -20,7 +20,7 @@ fetch('/api/products')
             <li>
               <article class="chart-item lista-carrito">
                   <div class="chart-article">
-                      <img class="chart-article-image img-chart"src="http://localhost:3000/img/products/${producto.image}" >
+                      <img class="chart-article-image img-chart"src="/img/products/${producto.image}" >
                   </div>
                   <div class="chart-description">
                       <h3 class="article-description title-chart">${producto.name}</h3>
