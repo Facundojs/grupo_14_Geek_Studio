@@ -1,3 +1,4 @@
+"use strict";
 module.exports = function (sequelize, dataTypes) {
     let alias = 'Category';
     let cols = {

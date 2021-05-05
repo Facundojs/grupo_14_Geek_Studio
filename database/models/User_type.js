@@ -1,3 +1,4 @@
+"use strict";
 module.exports = function (sequelize, dataTypes) {
   let alias = "User_type";
   let cols = {

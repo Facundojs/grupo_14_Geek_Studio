@@ -1,5 +1,3 @@
-
-
 ##DROP database geekdb2;
 CREATE database geekdb2;
 

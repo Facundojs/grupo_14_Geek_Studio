@@ -22,21 +22,19 @@ function agregarProducto(e) {
 
 function leerDatosProducto(producto) {
   const infoProducto = {
-    imagen: producto.querySelector("img").src,
-    titulo: producto.querySelector("h4").textContent,
-    precio: producto.querySelector("p").textContent,
-    id: producto.querySelector("button").getAttribute("data-id"),
-    cantidad: 1,
+    id: producto.querySelector("button").getAttribute("data-id")
   };
 
-  let oldLocalStorage;
-  if (localStorage.getItem("articulosCarrito").length > 0) {
-    oldLocalStorage = localStorage.getItem("articulosCarrito");
+  let recoveredData = localStorage.getItem('articulosCarrito')
+  if(recoveredData != null){
+    let data = JSON.parse(recoveredData)
+    console.log(data);
+    data.push(infoProducto)
+    console.log(data);
+    return localStorage.setItem('articulosCarrito', JSON.stringify(data)) 
+  } else {
+    articulosCarrito.push(infoProducto)
+    return localStorage.setItem("articulosCarrito", JSON.stringify(articulosCarrito));
   }
-
-  articulosCarrito = [...oldLocalStorage, ...articulosCarrito, infoProducto];
-
-  localStorage.setItem("articulosCarrito", JSON.stringify(articulosCarrito));
-
-  console.log(articulosCarrito);
 }
+
