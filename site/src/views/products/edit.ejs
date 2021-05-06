@@ -81,10 +81,10 @@
                         <input class="btn-create" type="submit" value="Editar">
                     </div>
                     
-                    <form action="/productos/<%= productToEdit.id %>?_method=DELETE" method="POST" >
-                        <input class="btn-delete" type="submit" name="delete" id="delete" value="Eliminar producto">
-                    </form>
-
+                    
+                </form>
+                <form action="/productos/<%= productToEdit.id %>?_method=DELETE" method="POST" >
+                    <input class="btn-delete" type="submit" name="delete" id="delete" value="Eliminar producto">
                 </form>
 
             </div>
