@@ -10,7 +10,7 @@ if (pathName === "/productos" || pathName === "/") {
     }
 
     function agregarProducto(e) {
-    e.preventDefault();
+    // e.preventDefault();
     if (e.target.classList.contains("agregar-carrito")) {
         //    console.log("agregando al carrito");
         const productoSeleccionado = e.target.parentElement.parentElement;
