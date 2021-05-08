@@ -261,7 +261,7 @@
                 <div class="prod-recomended">
                     <h1>Productos <strong>Recomendados</strong></h1>
                            
-                    <div class="row-all">
+                    <div class="row-all products-list">
                     <% products.forEach((product)=>{ %>
                             <div class="col-4 col-detail">
                                 <a href="/productos/<%= product.dataValues.id %>">
@@ -278,16 +278,14 @@
                                             $<%=product.dataValues.price %> 
                                         </p>
                                     </div>
-    
-                                    <div class="chart-button">
-                                    <button id="#<%=product.dataValues.id %>"  type="submit">
-                                        Agregar al carro <i class="fas fa-shopping-cart"></i>
-                                    </button>
-                                    </div>
-    
                                 </a>
+
+                                <div class="chart-button">
+                                    <button data-id="<%=product.dataValues.id %>" id="#<%=product.dataValues.id %>" class="button-chart agregar-carrito" type="submit">
+                                        Agregar al carro <i class="fas fa-shopping-cart "></i>
+                                    </button>
+                                </div>        
                             </div>
-    
     
                     <%}) %> 
                     </div>

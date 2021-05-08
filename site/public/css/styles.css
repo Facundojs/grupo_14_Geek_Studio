@@ -47,6 +47,7 @@ header .nav-1 .user-options {
   justify-content: space-around;
   padding: 1rem;
   font-size: 30px;
+  align-items: center;
 }
 
 .user-options span {
@@ -277,12 +278,13 @@ main {
   overflow: hidden;
   text-decoration: none;
   transition: all 0.1s;
+  padding-bottom: 20px;
   /* border: 1px solid gainsboro; */
   /* background-color: gainsboro; */
 }
 .col-4 a:hover, .col-5 a:hover{
   transform: scale(1.03);
-  box-shadow: rgb(255 255 255 / 70%) 0 -2px 20px;
+  box-shadow: rgb(255 255 255 / 70%) 0 -2px 14px;
 }
 /* .col-4 a .image, .col-5 a .image {
   position: relative;
@@ -322,8 +324,10 @@ main {
   border: none;
   width: 100%;
   padding: 10px 0px;
+  margin-top: 15px;
   font-weight: 500;
   font-size: 1.5rem;
+  border-radius: 10px;
   background-image: linear-gradient(to right, var(--oscuro) 0%, var(--blue)  51%, var(--oscuro)  100%);
   transition: .5s;
   background-size: 200% auto;
@@ -648,7 +652,7 @@ main {
   width: 230px;
   height: 300px;
   margin: auto;
-  /*border-radius: 100%;*/
+  border-radius: 50%;
 }
 
 .container-btn {
@@ -898,7 +902,7 @@ section .product product-price-and-shipping {
 }
 
 .img-div {
-  padding: 0 20px;
+  padding: 0 10px;
 }
 
 main section .img-main {
@@ -1863,7 +1867,7 @@ p {
 main section .img-main {
   width: 100%;
   border: black 1px solid;
-  padding: 20px;
+  padding: 5px;
   display: block;
 }
 
