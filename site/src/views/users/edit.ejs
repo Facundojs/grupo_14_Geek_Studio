@@ -20,22 +20,24 @@
                 <% }%>
 
                 <div class="textbox-login">
-                    <input type="text" placeholder="Nombre" name="first_name" value="<%= user.first_name%>"  />
+                    <input type="text" placeholder="Nombre" name="first_name" id="first_name" value="<%= user.first_name%>"  />
                 </div>
                 <% if (locals.errors && errors.first_name) { %>
                     <div class="text-danger centrar">
                         <%= errors.first_name.msg %>
                     </div>
                 <% }%>
+                <p id="feedback-first_name" class="hidden feedback is-danger">El nombre debe tener al menos 2 caractéres</p>
                 
                 <div class="textbox-login">
-                    <input type="text" placeholder="Apellido" name="last_name" value="<%= user.last_name %>"  />
+                    <input type="text" placeholder="Apellido" name="last_name" id="last_name" value="<%= user.last_name %>"  />
                 </div>
                 <% if (locals.errors && errors.last_name) { %>
                     <div class="text-danger centrar">
                         <%= errors.last_name.msg %>
                     </div>
                 <% }%>
+                <p id="feedback-last_name" class="hidden feedback is-danger">El apellido debe tener al menos 2 caractéres</p>
 
                 <div class="textbox-login">
                     <input type="text" placeholder="Telefono" name="telephone" value="<%= user.telephone %>" />
@@ -45,6 +47,8 @@
                         <%= errors.telephone.msg %>
                     </div>
                 <% }%>
+                <p id="feedback-telephone" class="hidden feedback is-danger">Debe ingresar un telefono correcto</p>
+
                 
                 <% if(!hidePassword){ %>
 
@@ -109,7 +113,7 @@
           <i class="fas fa-chevron-up"></i>
         </div>
       </div>
-
+    <script src="/js/user-validation.js"></script>
     <script src="/js/gotop.js"></script>
 
     <%- include('../partials/footer.ejs') %>

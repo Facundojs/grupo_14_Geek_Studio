@@ -13,6 +13,7 @@
                     <input type ="text" 
                     placeholder ="Nombre" 
                     name ="first_name" 
+                    id="first_name" 
                     class ="form-control <%= locals.errors && errors.first_name ? 'is-invalid' : null %>"
                     value="<%= locals.oldData ? oldData.first_name : null %>"
                     >*
@@ -22,10 +23,12 @@
                         <%= errors.first_name.msg %>
                     </div>
                 <% } %>
+                <p id="feedback-first_name" class="hidden feedback is-danger">El nombre debe tener al menos 2 caractéres</p>
                 
                 <div class="textbox-login">
                     <input type="text" placeholder="Apellido" 
                     name="last_name"  
+                    id="last_name"  
                     class ="form-control <%= locals.errors && errors.last_name ? 'is-invalid' : null %>"
                     value="<%= locals.oldData ? oldData.last_name : null %>"
                     />*
@@ -35,10 +38,12 @@
                         <%= errors.last_name.msg %>
                     </div>
                     <% } %>
-                
+                <p id="feedback-last_name" class="hidden feedback is-danger">El apellido debe tener al menos 2 caractéres</p>
+
                 <div class="textbox-login">
                     <input type="email" placeholder="E-Mail" 
                     name="email"  
+                    id="email"  
                     class ="form-control <%= locals.errors && errors.email ? 'is-invalid' : null %>"
                     value="<%= locals.oldData ? oldData.email : null %>"
                     />*
@@ -48,11 +53,13 @@
                         <%= errors.email.msg %>
                     </div>
                     <% } %>
+                <p id="feedback-email" class="hidden feedback is-danger">Ingresar un mail correcto</p>
 
                 <div class="textbox-login">
-                    <input type="text" placeholder="Telefono" name="telephone" 
+                    <input type="text" placeholder="Telefono" name="telephone" id ="telephone" 
                     value="<%= locals.oldData ? oldData.telephone : null %>"/>
                 </div>
+                <p id="feedback-telephone" class="hidden feedback is-danger">Debe ingresar un telefono correcto</p>
 
                 <div class="btn-avatar">
                     <!-- <label for="avatar">Seleccionar Imagen Perfil</label> -->
@@ -64,11 +71,13 @@
                         <%= errors.avatar.msg %>
                     </div>
                 <% } %>
+                <p id="feedback-avatar" class="hidden feedback is-danger">Debe ingresar una imagen correcta</p>
 
                 <div class="textbox-login">
                     <i class="fa fa-lock" aria-hidden="true"></i>
                     <input type="password" placeholder="Contraseña" 
                     name="password" 
+                    id="password" 
                     class ="form-control <%= locals.errors && errors.password ? 'is-invalid' : null %>"
                     value="<%= locals.oldData ? oldData.password : null %>"
                     />*
@@ -78,6 +87,7 @@
                         <%= errors.password.msg %>
                     </div>
                 <% } %>
+                <p id="feedback-password" class="hidden feedback is-danger">La clave debe tener al menos 8 carácteres</p>
 
                 <div class="textbox-login">
                     <i class="fa fa-lock" aria-hidden="true"></i>
@@ -108,7 +118,7 @@
           <i class="fas fa-chevron-up"></i>
         </div>
       </div>
-
+    <script src="/js/user-validation.js"></script>
     <script src="/js/gotop.js"></script>
 
     <%- include('../partials/footer.ejs') %>
