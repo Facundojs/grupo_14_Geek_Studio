@@ -419,10 +419,9 @@ main {
 
 .create-prod {
   display: flex;
-  border: var(--oscuro) solid 0.2rem;
   max-width: 1300px;
   margin: 0 auto;
-  padding: 1rem;
+  padding: 2rem;
   font-size: 1.2rem;
   border-radius: 1.5rem;
 }
@@ -430,6 +429,7 @@ main {
 .create-form{
   width: 100%;
   text-align: center;
+  flex-direction: column;
   /* display: block; */
   justify-content: center;
   align-items: center;
@@ -535,8 +535,21 @@ main {
 
 .btn-create {
   width: 40%;
+  height: 50px;
+  background: none;
+  border: 2px solid white;
+  border-radius: 5px;
+  padding: 5px;
+  font-size: 18px;
+  font-weight: 500;
+  margin: 12px;
+  cursor: pointer;
+  color: var(--white);
+  background-color: var(--blue);
+}
 
-  /* width: 100px; */
+.btn-reset-form {
+  width: 50%;
   height: 50px;
   background: none;
   border: 2px solid white;
@@ -545,29 +558,26 @@ main {
   font-size: 18px;
   font-weight: 500;
   cursor: pointer;
-  margin: 12px 0;
   color: var(--white);
   background-color: var(--blue);
 }
 
 .btn-delete {
-  width: 60%;
-
-  /* width: 100px; */
+  width: 100%;
   height: 50px;
   background: none;
   border: 2px solid white;
   border-radius: 5px;
-  padding: 5px;
+  padding: 10px;
   font-size: 18px;
   font-weight: 500;
   cursor: pointer;
-  margin: 12px 0;
   color: white;
   background-color: red;
 }
 
-.btn-create:hover {
+.btn-create:hover, 
+.btn-reset-form:hover {
   background-color: #394a96;
 }
 

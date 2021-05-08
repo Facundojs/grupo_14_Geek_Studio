@@ -1,4 +1,7 @@
 const db = require("../../../../database/models");
+const Sequelize = require('sequelize');
+
+
 class prod{
   constructor(id, name, precio, categoria, descuento) {
     this.id = id,
@@ -11,7 +14,7 @@ class prod{
 module.exports = {
   list: async (req, res) => {
     try {     
-      const products = await db.Product.findAll({include: 'category'});
+      const products = await db.Product.findAll({include: 'category', order: [['id']]});
       if (products.length > 0) {
         return res.status(200).json({
           total: products.length,
@@ -63,7 +66,7 @@ module.exports = {
   },
   dashboardList: async (req, res) => {
     try {     
-      const products = await db.Product.findAll({include: 'category'});
+      const products = await db.Product.findAll({include: 'category', order: [['id']]});
       if (products.length > 0) {
         let finalProds = products.map((element) => {
           return new prod(element.id, element.name, element.price, element.category.name, element.discount)
@@ -93,7 +96,9 @@ module.exports = {
   },
   dashboardLastproduct: async (req, res) => {
     try {     
-      const products = await db.Product.findAll({include: 'category'});
+      const products = await db.Product.findAll({ order:  [
+        Sequelize.fn('max', Sequelize.col('product.id'))
+       ]});
       if (products.length > 0) {
         return res.status(200).json({
           data: products.pop(),
