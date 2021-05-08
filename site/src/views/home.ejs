@@ -53,7 +53,7 @@
     
                       <div class="row-all products-list">
                       <% products.forEach((product)=>{ %>
-                      <div class="col-4">
+                        <div class="col-4">
                                 <a href="/productos/<%= product.dataValues.id %>">
                                     <div class="image">
                                     <img src="/img/products/<%= product.dataValues.image %>" alt="<%=product.dataValues.name %>">
@@ -76,7 +76,7 @@
                                     </button>
                                   </div>  
 
-                      </div>
+                        </div>
                       <% }); %> 
                   </div>
           </div>
@@ -93,6 +93,7 @@
     <!-- Bootstrap JS -->
     <!-- para que funcionen las acciones de next y previos del carrusel-->
     <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/fullChart.js"></script>
 
     <%- include('./partials/footer.ejs') %>
 </body>

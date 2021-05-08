@@ -201,6 +201,7 @@
                     </div>
                 </div>
 
+
                 
 
                 <div class="product-features">
@@ -262,113 +263,41 @@
                     <h1>Productos <strong>Recomendados</strong></h1>
                            
                     <div class="row-all products-list">
-                    <% products.forEach((product)=>{ %>
-                            <div class="col-4 col-detail">
-                                <a href="/productos/<%= product.dataValues.id %>">
-                                    <div class="image">
-                                    <img src="/img/products/<%= product.dataValues.image%>" alt="<%=product.dataValues.name %>">
-                                    </div>
-                                    
-                                    <div class="prod-description">
-                                        <h4>
-                                        <%=product.dataValues.name %>
-                                        </h4> <!-- tienen que ser máximo 25 letras-->
-                                    
-                                        <p>
-                                            $<%=product.dataValues.price %> 
-                                        </p>
-                                    </div>
-                                </a>
-
-                                <div class="chart-button">
-                                    <button data-id="<%=product.dataValues.id %>" id="#<%=product.dataValues.id %>" class="button-chart agregar-carrito" type="submit">
-                                        Agregar al carro <i class="fas fa-shopping-cart "></i>
-                                    </button>
-                                </div>        
-                            </div>
-    
-                    <%}) %> 
+                        <% products.forEach((product)=>{ %>
+                          <div class="col-4 col-detail">
+                                  <a href="/productos/<%= product.dataValues.id %>">
+                                      <div class="image">
+                                      <img src="/img/products/<%= product.dataValues.image %>" alt="<%=product.dataValues.name %>">
+                                      </div>
+                                      
+                                      <div class="prod-description">
+                                          <h4>
+                                          <%=product.dataValues.name %>
+                                          </h4> <!-- tienen que ser máximo 25 letras-->
+                                      
+                                          <p>
+                                              $<%=product.dataValues.price %> 
+                                          </p>
+                                      </div>
+                                    </a>
+  
+                                    <div class="chart-button">
+                                      <button data-id="<%=product.dataValues.id %>" id="#<%=product.dataValues.id %>" class="button-chart agregar-carrito" type="submit">
+                                          Agregar al carro <i class="fas fa-shopping-cart "></i>
+                                      </button>
+                                    </div>  
+  
+                          </div>
+                        <% }); %> 
                     </div>
                 </div>
-
-
-                <!-- <div class="recomended-container">
-                    <h3>Productos <strong>Recomendados</strong></h3>
-                    <br>
-                        <div class="product-recomended">
-                            <div class="item-recomended">
-                                <img class="img-main" src="../../img/detalle/mother-item-1.jpg" alt="Imagen del producto">
-                            </div>
-                            <div class="item-recomended">
-                                <p class="title-rec">Motherboard Gigabyte B550M H AM4</p>
-                            </div>
-                            <div class="item-recomended">
-                                <span>$12.582,86</span>
-                            </div>
-                            <div class="cuotas">
-                                <span>18 cuotas de $908,76<span>
-                            </div>
-                            <div class="cuotas">
-                                <button class="rec-button">Ver producto</button>
-                            </div>
-                        </div>
-                        <div class="product-recomended">
-                            <div class="item-recomended">
-                                <img class="img-main" src="../../img/detalle/mother-item-2.jpg" alt="Imagen del producto">
-                            </div>
-                            <div class="item-recomended">
-                                <p class="title-rec">Motherboard Asrock B550M PRO 4 AM4</p>
-                            </div>
-                            <div class="item-recomended">
-                                <span>$13.078,01</span>
-                            </div>
-                            <div class="cuotas">
-                                <span>18 cuotas de $944,52</span>
-                            </div>
-                            <div class="cuotas">
-                                <button class="rec-button">Ver producto</button>
-                            </div>
-                        </div>
-                        <div class="product-recomended">
-                            <div class="item-recomended">
-                                <img class="img-main" src="../../img/detalle/mother-item-3.jpg" alt="Imagen del producto">
-                            </div>
-                            <div class="item-recomended">
-                                <p class="title-rec">Motherboard Asrock B550M Steel Legend</p>
-                            </div>
-                            <div class="item-recomended">
-                                <span>$19.159,49</span>
-                            </div>
-                            <div class="cuotas">
-                                <span>18 cuotas de $1.383,74</span>
-                            </div>
-                            <div class="cuotas">
-                                <button class="rec-button">Ver producto</button>
-                            </div>
-                        </div>
-                        <div class="product-recomended">
-                            <div class="item-recomended">
-                                <img class="img-main" src="../../img/detalle/mother-item-4.jpg" alt="Imagen del producto">
-                            </div>
-                            <div class="item-recomended">
-                                <p class="title-rec">Motherboard Asus B450M TUF PLUS II</p>
-                            </div>
-                            <div class="item-recomended">
-                                <span>$12.294,78</span>
-                            </div>
-                            <div class="cuotas">
-                                <span>18 cuotas de $887,96</span>
-                            </div>
-                            <div class="cuotas">
-                                <button class="rec-button">Ver producto</button>
-                            </div>
-                        </div>
-                </div> -->
 
             </div>
         </section>
     </main>
     <%- include('../partials/footer.ejs') %>
+
+    <script src="/js/fullChart.js"></script>
 
     <script src="/js/favorite.js"></script>
     <script src="/js/dues-detail.js"></script>

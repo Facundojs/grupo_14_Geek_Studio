@@ -948,6 +948,7 @@ main section .chart-item div {
   color: black;
 }
 .purchase-option {
+  color: white;
   border: white 0.5rem solid;
   display: flex;
   flex-direction: column;
@@ -2144,12 +2145,6 @@ main section .img-main {
   .purchase-option {
     padding-top: 30px;
     height: 20rem;
-    color: white;
-  }
-
-  .purchase-optionbutton {
-    width: 60%;
-    margin: auto;
   }
 
   /* Footer */
