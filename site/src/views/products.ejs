@@ -9,7 +9,9 @@
             <% categories.forEach(category => {%>
                 <% if (category.dataValues.products.length > 0) {%> 
 
-                    <h2 class="categories"><%= category.dataValues.name %> </h2>
+                    <h2 class="categories" id="<%= category.dataValues.name %>">
+                        <%= category.dataValues.name %> 
+                    </h2>
                 <%} %>
                     
                     
@@ -40,12 +42,8 @@
                             </div>                            
                         </div>
                         
-
                     <% } %> 
-
-
                 <%}) %> 
-
             <%}); %> 
 
             </div>

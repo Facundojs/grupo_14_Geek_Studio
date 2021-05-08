@@ -96,9 +96,7 @@ module.exports = {
   },
   dashboardLastproduct: async (req, res) => {
     try {     
-      const products = await db.Product.findAll({ order:  [
-        Sequelize.fn('max', Sequelize.col('product.id'))
-       ]});
+      const products = await db.Product.findAll({order: [['id']]});
       if (products.length > 0) {
         return res.status(200).json({
           data: products.pop(),
