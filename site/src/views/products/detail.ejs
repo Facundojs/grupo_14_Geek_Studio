@@ -192,12 +192,18 @@
                         </div>
                     </div>
                 </div>
-                <div class="div-quantity">                 
+                <div class="div-quantity" data-id="<%= product.id %>"
+                    >                 
                     <div class="cantidad">
                         <input min="1" max="10" type="number" value="1" id="prodcantidad"> 
                     </div>
-                    <div>
-                        <button  class="div-button">Agregar al carro <i class="fas fa-shopping-cart"></i></button>
+                    <div >
+                        <button  
+                        class="div-button agregar-carrito" 
+                        id="<%= product.id %>"
+                        data-id="<%= product.id %>"
+                        >
+                            Agregar al carro <i class="fas fa-shopping-cart"></i></button>
                     </div>
                 </div>
 
@@ -251,7 +257,7 @@
 
                         <div class="prod-edit">                 
                             <div>
-                                <a class="div-button" href="/productos/<%= product.id %>/editar">Editar Producto</a>
+                                <a class="div-button"  href="/productos/<%= product.id %>/editar">Editar Producto</a>
                             </div>
                         </div>
                         
@@ -298,6 +304,7 @@
     <%- include('../partials/footer.ejs') %>
 
     <script src="/js/fullChart.js"></script>
+    <script src="/js/detailChart.js"></script>
 
     <script src="/js/favorite.js"></script>
     <script src="/js/dues-detail.js"></script>
