@@ -13,6 +13,9 @@
 .hidden{
   display: none;
 }
+.fas, .far{
+  cursor: pointer;
+}
 body {
   background-color: var(--body-color);
   font-family: "Roboto", "Lato", "Yanone", sans-serif;

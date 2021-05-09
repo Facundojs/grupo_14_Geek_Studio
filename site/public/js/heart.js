@@ -19,24 +19,33 @@ window.addEventListener("load", () => {
 
   let heartEmpty = document.querySelector("#empty-heart");
   let heartFull = document.querySelector("#full-heart");
-  console.log("coraa ", heartEmpty);
-  console.log("coraa ok", heartFull);
 
   /*  TEST */
-  heartEmpty.addEventListener("click", function (e) {
-    agregarFavorito();
-    heartEmpty.classList.remove("far");
-    heartEmpty.classList.remove("fa-heart");
+  if (heartEmpty) {    
+    heartEmpty.addEventListener("click", function () {
+      agregarFavorito();
+      heartEmpty.classList.remove("far");
+      heartEmpty.classList.remove("fa-heart");
+      
+      heartEmpty.classList.add("fas");
+      heartEmpty.classList.add("fa-heart");
+      heartEmpty.id = "full-heart"
+      location.reload();
+    });
+  } else if (heartFull) {
+    heartFull.addEventListener("click", function () {
+      heartFull.classList.remove("fas");
+      heartFull.classList.remove("fa-heart");
 
-    heartEmpty.classList.add("fas");
-    heartEmpty.classList.add("fa-heart");
-    location.reload();
-  });
+      heartFull.classList.add("far");
+      heartFull.classList.add("fa-heart");
+      heartFull.id = "empty-heart"
+      location.reload();
 
-  heartFull.addEventListener("click", function (e) {
-    alert("ALERTAAA");
-    eliminarFavorito();
-  });
+      eliminarFavorito();
+    });
+  }
+  
 
   function agregarFavorito() {
     let esFav = document.querySelector(".product");
@@ -70,18 +79,15 @@ window.addEventListener("load", () => {
   }
 
   function eliminarFavorito() {
-    let esFav = document.querySelector(".product");
-    const id = esFav.querySelector(".title-detail").getAttribute("data-id");
-
+    //let esFav = document.querySelector(".product");
+    const id = document.querySelector(".title-detail").getAttribute("data-id");
     let favExistentes = JSON.parse(localStorage.getItem("articulosFavoritos"));
-
+    console.log(favExistentes);
     let filtrado = favExistentes.filter((element) => {
-      element.id != id ? element : "";
+      return element != id
     });
-
-    console.log("Filtrados", filtrado);
-
-    //localStorage.removeItem("articulosFavorito", idFavorito);
+    localStorage.setItem("articulosFavoritos", JSON.stringify(filtrado))
+    location.reload()
   }
   /* FIN TEST */
 });

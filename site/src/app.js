@@ -7,7 +7,9 @@ const viewsPath = path.resolve(__dirname, "./views");
 const session = require("express-session");
 const cookies = require("cookie-parser");
 const userLoggedMiddleware = require("./middlewares/userLoggedMiddleware");
-
+const cors = require('cors')
+ 
+app.use(cors())
 require('dotenv').config()
 
 app.use(

@@ -55,7 +55,7 @@ module.exports = {
     //console.table(product); //para ver que se creo por consola
   },
   favorite: (req, res) => {
-    res.send("Página de Favoritos")
+    res.render("products/favourites")
   },
   show: async (req, res) => {
     

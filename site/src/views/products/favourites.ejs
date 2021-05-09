@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('../partials/head.ejs') %>
+    <script src="/js/html2pdf.bundle.min.js"></script>
+</head>
+<body>
+    <%- include('../partials/header.ejs') %>
+    <main>
+        <div class="aligner-container chart">
+            <h1 class="chart-title">Favoritos</h1>
+            <section id="chart-section">
+                <ul class="chart-list lista-favoritos " id="lista-favoritos">
+                  
+                </ul>
+            </section>
+        </div>
+        
+        <div class="go-top-container">
+            <div class="go-top-button">
+              <i class="fas fa-chevron-up"></i>
+            </div>
+          </div>
+
+          <script src="/js/gotop.js"></script>
+          <script src="/js/showFavoritos.js"></script>
+
+    </main>
+    <%- include('../partials/footer.ejs') %>
+</body>
+</html>
