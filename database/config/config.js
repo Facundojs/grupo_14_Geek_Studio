@@ -1,10 +1,10 @@
 module.exports = {
     development: {
-    username: "freedbtech_Facundo",
-    password: "Julian10",
-    database: "freedbtech_geekdbfacu",
-    host: "freedb.tech",
-    dialect: "mysql",
+    username:`${process.env.USERNAME_GEEK_DB}`,
+    password: `${process.env.PASSWORD_GEEK_DB}`,
+    database: `${process.env.DATABASE_GEEK_DB}`,
+    host: `${process.env.HOST_GEEK_DB}`,
+    dialect: `${process.env.DIALECT_GEEK_DB}`,
   },
   // development: {
   //   username: "root",
@@ -21,12 +21,12 @@ module.exports = {
     dialect: "mysql",
   },
   production: {
-    username: "freedbtech_Facundo",
-    password: "Julian10",
-    database: "freedbtech_geekdbfacu" /* dbschema con nuevos campos geekdb  */,
-    host: "freedb.tech",
-    dialect: "mysql",
-  },
+    username:`${process.env.USERNAME_GEEK_DB}`,
+    password: `${process.env.PASSWORD_GEEK_DB}`,
+    database: `${process.env.DATABASE_GEEK_DB}`,
+    host: `${process.env.HOST_GEEK_DB}`,
+    dialect: `${process.env.DIALECT_GEEK_DB}`,
+  }
 };
 
 //"127.0.0.1"

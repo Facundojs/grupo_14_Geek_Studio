@@ -5,7 +5,7 @@
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "startdev": "npx nodemon ./site/src/app.js -e js,ejs,json",
+    "startdev": "nodemon -r dotenv/config site/src/app.js -e js,ejs,json",
     "start": "npx nodemon ./site/src/app.js",
     "create-db": "sequelize db:create",
     "migrate-db": "sequelize db:migrate",
@@ -28,6 +28,7 @@
     "bootstrap": "^4.6.0",
     "cookie-parser": "^1.4.5",
     "cors": "^2.8.5",
+    "db": "^3.3.1",
     "dotenv": "^9.0.0",
     "ejs": "^3.1.5",
     "express": "^4.17.1",
