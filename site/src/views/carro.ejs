@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
     <%- include('./partials/head.ejs') %>
- 
+    <script src="/js/html2pdf.bundle.min.js"></script>
 </head>
 <body>
     <%- include('./partials/header.ejs') %>
     <main>
         <div class="aligner-container chart">
             <h1 class="chart-title">Carrito de compras</h1>
-            <section>
+            <section id="chart-section">
                 <ul class="chart-list lista-carrito " id="lista-carrito">
                   
                 </ul>
@@ -16,7 +16,7 @@
                     <article class="purchase-option">
                         <h2>Resumén de compra</h2>
                         <div>Importe total: <b id="final-price"></b></div>
-                        <button type="submit">Comprar</button>
+                        <button type="submit" id="presupuesto">Generar Presupuesto</button>
                     </article>
                     <div class="secondary-options">
                         <div>
@@ -37,6 +37,7 @@
           </div>
 
           <script src="/js/gotop.js"></script>
+          <script src="/js/budget.js"></script>
 
     </main>
     <%- include('./partials/footer.ejs') %>

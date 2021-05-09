@@ -26,13 +26,16 @@
                         <div class="table__item admin"><%= user.email %>  </div>
                         <div class="table__item admin"><%= user.telephone %>  </div>
                         <div class="table__item admin"><%= user.user_type.dataValues.type_name %></div>
-                        <div class="table__item admin">
+                        <div class="table__item-buttons admin">
                             <a class="button" href="/users/<%= user.id %>/edit">
                                 <i class="fas fa-pen"></i> 
                             </a>         
-                            <a class="button" href="/users/<%= user.id %>/edit">
-                                <i class="fas fa-trash"></i> 
-                            </a> 
+
+                            <form action="/users/<%= user.id %>?_method=DELETE" method="POST" >
+                                <button class="delete-user-index" type="submit">
+                                    <i class="fas fa-trash"></i> 
+                                </button>
+                            </form>   
                         </div>
                     <% }else{ %>
                         <div class="table__item"><%= user.id %>  </div>
@@ -41,12 +44,13 @@
                         <div class="table__item"><%= user.email %>  </div>
                         <div class="table__item"><%= user.telephone %>  </div>
                         <div class="table__item"><%= user.user_type.dataValues.type_name %></div>
-                        <div class="table__item">
+                        <div class="table__item-buttons">
                             <a class="button" href="/users/<%= user.id %>/edit">
                                 <i class="fas fa-pen"></i>
                             </a>   
+
                             <form action="/users/<%= user.id %>?_method=DELETE" method="POST" >
-                                <button class="button" type="submit">
+                                <button class="delete-user-index" type="submit">
                                     <i class="fas fa-trash"></i> 
                                 </button>
                             </form>   

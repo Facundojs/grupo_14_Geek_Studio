@@ -494,7 +494,7 @@ main {
 .form-row input:-webkit-autofill:focus, 
 .form-row input:-webkit-autofill:active
 {
- -webkit-box-shadow: 0 0 0 30px #0b1721 inset !important;
+ -webkit-box-shadow: 0 0 0 40px #0b1721 inset !important;
  box-shadow: none; /* Le agregue esto porque tiraba error*/
 }
 
@@ -601,10 +601,10 @@ main {
 /* //////////////////////// LOGIN, REGISTER Y RECOVER PASS ////////////////////////// */
 
 .login-container .form-login {
-  width: 80%;
+  width: 60%;
   margin: 0 auto;
   padding: 15px;
-  background: var(--white);
+  background: #0b1721;
   display: flex;
   flex-wrap: nowrap;
   flex-direction: column;
@@ -643,7 +643,7 @@ main {
 
 .form-login h1 {
   font-size: 24px;
-  color: var(--oscuro);
+  color: white;
   margin-bottom: 10px;
   padding: 13px 0;
   text-align: center;
@@ -655,7 +655,7 @@ main {
   font-size: 20px;
   padding: 8px 0;
   margin: 8px 0 30px 0;
-  border-bottom: 2px solid var(--oscuro);
+
 }
 
 .textbox-login i {
@@ -675,7 +675,7 @@ main {
   width: 80%;
   float: left;
   margin: 0 10px;
-  color: var(--oscuro);
+  color: white;
 }
 
 .btn-login {
@@ -704,7 +704,7 @@ main {
 .checkbox-login label {
   font-size: 16px;
   padding-right: 16px;
-  color: var(--oscuro);
+  color: #fff;
 }
 
 /* /////////////////////////////////// PROFILE LOGIN /////////////////////////////////// */
@@ -808,12 +808,12 @@ main {
 
 .link-login {
   text-decoration: none;
-  color: black;
-  font-weight: 600;
+  color: #2ecece;
+  font-weight: 400;
 }
 
 .link-login:hover {
-  color: blue;
+  color: #128b8b;
 }
 
 .centrado {
@@ -845,6 +845,20 @@ main {
 .textbox-login {
   width: 65%;
   font-size: 15px;
+}
+
+.textbox-login input:-webkit-autofill,
+.textbox-login input:-webkit-autofill:hover, 
+.textbox-login input:-webkit-autofill:focus, 
+.textbox-login input:-webkit-autofill:active
+{
+ -webkit-box-shadow: 0 0 0 30px #0b1721 inset !important;
+ box-shadow: none; /* Le agregue esto porque tiraba error*/
+}
+
+.textbox-login input:-webkit-autofill
+{
+ -webkit-text-fill-color: white !important;
 }
 
 /*******************************************************************************************************/
@@ -1554,7 +1568,6 @@ h2 {
 }
 
 .btn-login {
-  width: 30%;
   height: 40px;
   background: none;
   border: 2px solid;
@@ -1587,7 +1600,7 @@ h2 {
   overflow:scroll;
   width: 93%;
   background: white;
-  margin: 50px auto;
+  margin: 30px auto;
   box-shadow: 0 0 20px #333;
   display: grid;
   grid-template-columns: repeat(7, 14.28%);
@@ -1620,7 +1633,8 @@ h2 {
 }
 
 .table__header-title {
-  color: var(--silver);
+  padding-top: 20px;
+  color: #fff;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1630,6 +1644,17 @@ h2 {
   padding: 12px;
   font-size: .9rem;
   text-align: center;
+}
+
+.table__item-buttons {
+  width: 100%;
+  font-size: 1rem;
+  text-align: center;
+  text-decoration: none;
+}
+
+.delete-user-index i{
+  text-decoration: none;
 }
 
 /********************************** FIN USO GRID LISTADO DE USUARIOS ********************************************************/
@@ -1692,13 +1717,6 @@ h2 {
     margin: 2%;
   }
 
-  /* KBE 280121 */
-
-  .btn-login {
-    width: 40%;
-    height: 50px;
-    font-size: 16px;
-  }
   
   /* PROFILE LOGIN */
 
@@ -2214,7 +2232,7 @@ main section .img-main {
     border-radius: 5px;
     color: white;
     padding: 5px;
-    font-size: 18px;
+    font-size: 16px;
     cursor: pointer;
     margin: 12px 0;
     color: var(--white);
@@ -2253,7 +2271,7 @@ main section .img-main {
 
   .browser-bar {
     font-size: 1.1rem;
-    width: 350px;
+    width: 300px;
   }
   
   /* K.E. - Para mostrar los botones circulares del head */
@@ -2280,7 +2298,7 @@ LOGIN, REGISTER Y RECOVER PASS
     width: 50%;
     margin: 0 auto;
     padding: 15px;
-    background: var(--white);
+    background: #0b1721;
     display: flex;
     flex-wrap: nowrap;
     flex-direction: column;
@@ -2303,10 +2321,6 @@ LOGIN, REGISTER Y RECOVER PASS
 
   .form-login h1 {
     font-size: 36px;
-    color: #2a3446;
-    margin-bottom: 10px;
-    padding: 13px 0;
-    text-align: center;
   }
 
   .textbox-login {
@@ -2315,7 +2329,7 @@ LOGIN, REGISTER Y RECOVER PASS
     font-size: 20px;
     padding: 8px 0;
     margin: 8px 0 30px 0;
-    border-bottom: 2px solid var(--oscuro);
+    border-bottom: 2px solid #2ecece;
   }
 
   .textbox-login i {
@@ -2335,7 +2349,7 @@ LOGIN, REGISTER Y RECOVER PASS
     width: 80%;
     float: left;
     margin: 0 10px;
-    color: var(--oscuro);
+    color: white;
   }
 
   .textbox-login select {
@@ -2347,25 +2361,6 @@ LOGIN, REGISTER Y RECOVER PASS
     font-size: 20px;
     color: var(--oscuro);
     /* background-color: green; */
-  }
-
-  .btn-login {
-    width: 20%;
-    height: 50px;
-    background: none;
-    border: 2px solid;
-    border-radius: 5px;
-    color: white;
-    padding: 5px;
-    font-size: 18px;
-    cursor: pointer;
-    margin: 12px 0;
-    color: var(--white);
-    background-color: var(--blue);
-  }
-
-  .btn-login:hover {
-    background-color: #394a96;
   }
 
   /* MIDDLEWARE NOTFOUND */
@@ -2389,22 +2384,6 @@ LOGIN, REGISTER Y RECOVER PASS
     align-content: center;
   }
 
-  .link-login {
-    text-decoration: none;
-    color: black;
-    font-weight: 600;
-  }
-
-  .link-login:hover {
-    color: blue;
-  }
-
-  .centrado {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
   .div-robot {
     width: 200px;
     height: 5px;
@@ -2417,18 +2396,12 @@ LOGIN, REGISTER Y RECOVER PASS
     margin-right: auto;
   }
 
-  .btn-login {
-    width: 40%;
-    height: 50px;
-    font-size: 16px;
-  }
-
   .textbox-login i {
     /*width: 10px;*/
     display: none;
   }
   .textbox-login {
-    width: 65%;
+    width: 70%;
     font-size: 15px;
   }
 
