@@ -22,6 +22,7 @@ function renderizarProductos(productosFavoritos) {
                         <div class="chart-description">
                             <h3 class="article-description title-chart">${producto.name}</h3>
                                 <p class="free-ship">Envío gratis</p>
+                                <p class="free-ship"><a href="/productos/${producto.id}">Ver detalle</a></p>
                         </div>
                         <div class="chart-price">$
                         ${producto.price}

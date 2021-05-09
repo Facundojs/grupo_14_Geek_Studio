@@ -21,6 +21,9 @@ window.addEventListener("load", () => {
   let heartFull = document.querySelector("#full-heart");
 
   /*  TEST */
+
+  /* Aca se podría optimizar usando un callback que llame una función que englobe todo el if*/
+
   if (heartEmpty) {    
     heartEmpty.addEventListener("click", function () {
       agregarFavorito();
