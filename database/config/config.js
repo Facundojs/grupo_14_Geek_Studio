@@ -1,5 +1,5 @@
 module.exports = {
-  development: {
+    development: {
     username: "freedbtech_Facundo",
     password: "Julian10",
     database: "freedbtech_geekdbfacu",
