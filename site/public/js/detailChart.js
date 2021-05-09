@@ -1,5 +1,5 @@
-let boton = document.querySelector(".div-button")
-boton.addEventListener('click', function(e) {
-    agregarProducto(e)
-    console.log(localStorage.getItem('articulosCarrito'));
-})
+let boton = document.querySelector(".div-button");
+boton.addEventListener("click", function (e) {
+  agregarProducto(e);
+  console.log(localStorage.getItem("articulosCarrito"));
+});

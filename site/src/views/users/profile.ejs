@@ -36,7 +36,7 @@
                     
                     <form action="/users/<%= user.id%>?_method=DELETE" method="POST">
                         <div>
-                            <button class="btn-profile-delete" type="submit">Borrar usuario</button>
+                            <button class="btn-profile-delete" type="submit" id="eliminar-usuario">Borrar usuario</button>
                         </div>
                     </form>
                     <%} %> 
@@ -47,7 +47,7 @@
 	    </div>
 	    
     </div>
-
+    <script src="/js/confirm.js"></script>
     <%- include('../partials/footer.ejs') %>
 </body>
 </html>
