@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "startdev": "nodemon -r dotenv/config site/src/app.js -e js,ejs,json",
-    "start": "npx nodemon ./site/src/app.js",
+    "start": "npx nodemon -r dotenv/config ./site/src/app.js",
     "create-db": "sequelize db:create",
     "migrate-db": "sequelize db:migrate",
     "seed-db": "sequelize db:seed:all",
