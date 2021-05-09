@@ -1,24 +1,18 @@
 window.addEventListener("DOMContentLoaded", () => {
-  console.log(document.querySelector(".fas.fa-heart"));
-  console.log(document.querySelector(".far.fa-heart"));
+  let heartEmpty = document.querySelector(".far.fas-heart");
+  //let heartFull = document.querySelector(".fa-heart");
 
-  const heartEmpty = document.querySelector("favorite-heart"); //.far.fa-heart");
-  //const heartFull = document.querySelector(".fas.fa-heart");
-
-  //const heartEmpty = document.querySelector(".far.fa-heart");
-  console.log("hearEmpty", heartEmpty);
-  console.log("hearFull", heartFull);
+  console.log("heartEmpty ", heartEmpty);
+  console.log(document.querySelector("#heart").children);
 
   heartEmpty.addEventListener("click", function (e) {
-    //   heartEmpty.style.display = "none";
-    //   heartFull.style.display = "block";
+    console.log(this);
     alert("click");
     agregarFavorito();
   });
 
   heartFull.addEventListener("click", function (e) {
-    //   heartEmpty.style.display = "block";
-    //   heartFull.style.display = "none";
+    console.log(this);
     alert("click full");
     eliminarFavorito();
   });
