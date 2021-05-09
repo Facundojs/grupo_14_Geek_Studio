@@ -4,17 +4,20 @@
 <body>
     <%- include('../partials/header.ejs') %>
     <main>
+        <script src="/js/heart.js"> </script>
         <section class="aligner-container">
             <div class="product">
 
                 <div class="title-heart">
-                    <div class="title-detail">
+                    <!-- <div class="title-detail"> -->
+                    <div class="title-detail" data-id="<%= product.id %>"> 
                         <h2><%= product.name %></h2>
                     </div>
 
-                    <div class="favorite-heart" id="heart">
-                        <i class="far fa-heart heart-empty" ></i> 
-                        <i class="fas fa-heart heart-full"></i>  <!--Corazon Lleno--> 
+                    <div class="favorite-heart" id="heart" data-id="<%= product.id %>" >
+                        <!-- <i class="far fa-heart"></i> -->
+                        <!-- <i class="far fa-heart heart-empty" ></i> 
+                        <i class="fas fa-heart heart-full"></i>  Corazon Lleno  -->
                         <p>Añadir a Favoritos</p> <!-- Corazón vacio -->
                     </div>
                 </div>
@@ -306,7 +309,7 @@
     <script src="/js/fullChart.js"></script>
     <script src="/js/detailChart.js"></script>
 
-    <script src="/js/favorite.js"></script>
+    <!-- <script src="/js/favorite.js"></script> -->
     <script src="/js/dues-detail.js"></script>
     <script src="/js/shipping-detail.js"></script>
 

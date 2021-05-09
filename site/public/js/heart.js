@@ -1,24 +1,44 @@
-window.addEventListener("DOMContentLoaded", () => {
-  let heartEmpty = document.querySelector(".far.fas-heart");
-  //let heartFull = document.querySelector(".fa-heart");
+window.addEventListener("load", () => {
+  const heart = document.querySelector(".favorite-heart");
+  const idFavorito = document.querySelector("#heart").getAttribute("data-id");
 
-  console.log("heartEmpty ", heartEmpty);
-  console.log(document.querySelector("#heart").children);
+  totalFavoritos = JSON.parse(localStorage.getItem("articulosFavoritos"));
+  if (totalFavoritos != null) {
+    let verificarSiExiste = totalFavoritos.find((element) => {
+      return element == idFavorito;
+    });
 
+    if (verificarSiExiste == undefined) {
+      heart.innerHTML = `<i class="far fa-heart" id="empty-heart" ></i>`;
+    } else {
+      heart.innerHTML = `<i class="fas fa-heart" id="full-heart" ></i>`;
+    }
+  } else {
+    heart.innerHTML = `<i class="far fa-heart" id="empty-heart"></i>`;
+  }
+
+  let heartEmpty = document.querySelector("#empty-heart");
+  let heartFull = document.querySelector("#full-heart");
+  console.log("coraa ", heartEmpty);
+  console.log("coraa ok", heartFull);
+
+  /*  TEST */
   heartEmpty.addEventListener("click", function (e) {
-    console.log(this);
-    alert("click");
     agregarFavorito();
+    heartEmpty.classList.remove("far");
+    heartEmpty.classList.remove("fa-heart");
+
+    heartEmpty.classList.add("fas");
+    heartEmpty.classList.add("fa-heart");
+    location.reload();
   });
 
   heartFull.addEventListener("click", function (e) {
-    console.log(this);
-    alert("click full");
+    alert("ALERTAAA");
     eliminarFavorito();
   });
 
   function agregarFavorito() {
-    alert("click agregar");
     let esFav = document.querySelector(".product");
     let articulosFavoritos = [];
 
@@ -63,4 +83,5 @@ window.addEventListener("DOMContentLoaded", () => {
 
     //localStorage.removeItem("articulosFavorito", idFavorito);
   }
+  /* FIN TEST */
 });
