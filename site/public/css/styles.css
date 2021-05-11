@@ -51,7 +51,7 @@ header .nav-1 .user-options {
 }
 
 .user-options span {
-  padding: 16px;
+  padding: 14px;
   align-content: center;
 }
 
@@ -118,13 +118,19 @@ header a:hover {
 
 .user-options a,
 .user-options a span {
-  padding: 1rem;
+  padding: .5rem;
   align-items: flex-end;
   right: 30px;
   display: flex;
   flex-wrap: wrap;
   text-align: center;
 }
+
+.img-userLogged {
+  width: 50%;
+  border-radius: 50%;
+}
+
 */ main {
   padding: 2rem;
 }
@@ -203,7 +209,7 @@ header a:hover {
   width: 300px;
   border-radius: 50%;
   border: solid 1px #f4f4f4;
-  transition: all 0.4s ease;
+  transition: all 0.3s ease;
 }
 
 .pic:hover {
@@ -591,7 +597,7 @@ header a:hover {
   font-weight: 500;
   cursor: pointer;
   color: white;
-  background-color: red;
+  background-color: rgb(173, 24, 24);
 }
 
 .btn-create:hover,
@@ -771,44 +777,50 @@ header a:hover {
   background-color: var(--blue);
 }
 
-.btn-profile:hover {
-  background-color: #394a96;
+.btn-profile:hover,
+.btn-profile-a:hover {
+  background-color: #3c4a88;
   color: white;
 }
 
-.btn-profile-delete {
-  align-items: center;
-  /* width: 100px; */
-  height: 40px;
-  margin: 20px;
-  padding: 5px;
-  border: 1px solid;
-  border-radius: 5px;
-  text-decoration: none;
-
-  font-size: 14px;
-
-  color: var(--white);
-  background-color: red;
+/*/////////////////// NUEVA VERSION PROFILE  /////////////////////////*/
+.container-profile {
+  margin-top: 30px;
+  justify-content: center;
 }
 
-.btn-profile-delete:hover {
-  background-color: rgb(209, 1, 1);
+.row {
+  text-align: center;
+}
+
+.prof-us-title {
   color: white;
+  text-align: center;
+  font-size: 3rem;
+  font-weight: bolder;
 }
 
-/*///////////////////NUEVA VERSION PROFILE  /////////////////////////*/
+.prof-us-container {
+  padding: 1rem 2.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 400px;
+}
+
+.img-prof-us {
+  width: 50%;
+  height: 50%;
+  max-width: 200px;
+  max-height: 300px;
+  border-style: inset;
+}
+
 .prof-us {
   color: white;
   text-align: left;
-  font-size: 1.5rem;
-  padding: 1.5%;
-}
-h1.prof-us {
-  color: white;
-  text-align: left;
-  font-size: 2rem;
-  font-weight: bolder;
+  font-size: 1rem;
+  padding: 1rem 2rem;
 }
 
 .span-prof-us {
@@ -816,45 +828,45 @@ h1.prof-us {
 }
 
 .btn-profile.prof-us {
-  margin: 2%;
   width: 20%;
   text-align: center;
 }
 
-.img-prof-us {
-  margin-left: 5%;
-  width: 50%;
-  height: 50%;
-  /* border-radius: 40%; */
-  border-style: inset;
-}
-
-.col-md-8.prof-us {
-  margin-top: -2%;
-  margin-left: -10%;
-}
-
-.container-btn.prof-us {
-  margin-top: -2%;
-  margin-left: -4%;
-  padding-top: 5%;
+.container-btn-prof {
+  text-align: center;
+  margin: 10px 0;
 }
 
 .btn-profile-a {
-  align-items: center;
-  width: auto; /*70px;*/
   height: 40px;
-  margin: 16px;
-  margin-left: 2%;
+  padding: 10px;
+  border: 1px solid;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 16px;
+  color: var(--white);
+  background-color: var(--blue);
+}
+
+.btn-profile-delete {
+  align-items: center;
+  /* width: 100px; */
+  height: 40px;
+  margin-top: 16px;
   padding: 10px;
   border: 1px solid;
   border-radius: 5px;
   text-decoration: none;
 
-  font-size: 16px;
+  font-size: 14px;
 
   color: var(--white);
-  background-color: var(--blue);
+  background-color: rgb(173, 24, 24);
+}
+
+.btn-profile-delete:hover {
+  background-color: rgb(150, 14, 14);
+  color: white;
 }
 
 /**************************************PRESUPUESTO PDF **********************************/
@@ -1676,7 +1688,7 @@ h2 {
   font-weight: bolder;
   cursor: pointer;
   margin: 12px 0;
-  background-color: red;
+  background-color: rgb(173, 24, 24);
 }
 
 /************************* USO GRID LISTADO DE USUARIOS ****************************/
@@ -1731,13 +1743,28 @@ h2 {
 }
 
 .table__item-buttons {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
   width: 100%;
   font-size: 1rem;
   text-align: center;
   text-decoration: none;
 }
 
-.delete-user-index i {
+.table__item-buttons a {
+  color: rgba(0, 0, 255, 0.658);
+  align-items: center;
+  padding-left: 40px;
+}
+
+.delete-user-index {
+  color: rgba(0, 0, 255, 0.658);
+  align-items: center;
+  background-color: white;
+  border: white 1px solid;
+  padding: 5px;
 }
 
 /********************************** FIN USO GRID LISTADO DE USUARIOS ********************************************************/
@@ -1800,39 +1827,6 @@ h2 {
     margin: 2%;
   }
 
-  /* PROFILE LOGIN */
-
-  .btn-profile {
-    align-items: center;
-    width: 70px;
-    height: 40px;
-    margin: 16px;
-    padding: 10px;
-    border: 1px solid;
-    border-radius: 5px;
-    text-decoration: none;
-
-    font-size: 16px;
-
-    color: var(--white);
-    background-color: var(--blue);
-  }
-
-  .btn-profile-delete {
-    align-items: center;
-    width: 15%;
-    height: 50px;
-    margin: 20px;
-    padding: 5px;
-    border: 1px solid;
-    border-radius: 5px;
-    text-decoration: none;
-
-    font-size: 16px;
-
-    color: var(--white);
-    background-color: red;
-  }
 }
 
 @media (min-width: 1200px) {
@@ -2028,6 +2022,59 @@ p {
   .nav-2 ul a {
     font-size: 1.2rem;
   }
+
+  /*/////////////////// NUEVA VERSION PROFILE  /////////////////////////*/
+
+.container-profile {
+  margin-top: 30px;
+  justify-content: left;
+}
+
+.row {
+  text-align: center;
+}
+
+.prof-us-title {
+  color: white;
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: bolder;
+}
+
+.prof-us-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  max-width: 400px;
+}
+
+.img-prof-us {
+  width: 50%;
+  height: 50%;
+  max-width: 200px;
+  max-height: 300px;
+  border-style: inset;
+}
+
+.img-avatar {
+  margin-top: 30px;
+}
+
+.prof-us {
+  color: white;
+  text-align: left;
+  font-size: 1rem;
+  padding: 1rem 2rem;
+}
+
+.span-prof-us {
+  font-weight: bolder;
+}
+
+.container-btn-prof {
+  text-align: center;
+  margin: 10px 0;
+}
 
   /* //////////////////////////////////// Detalle del Producto /////////////////////////// */
 
@@ -2283,32 +2330,6 @@ p {
   .social-networks-icons {
     font-size: 1.3rem;
     padding: 4px;
-  }
-
-  /* PROFILE LOGIN */
-
-  .container-profile {
-    width: 100%;
-    /* display: flex; */
-    /* justify-content: center; */
-    align-items: center;
-    flex-wrap: wrap;
-    /* flex-direction: column; */
-    text-align: center;
-  }
-
-  .container-profile-2 {
-    width: 100%;
-    /* display: flex; */
-    justify-content: center;
-    /* align-items: center; */
-    flex-wrap: wrap;
-    /* flex-direction: row; */
-    text-align: center;
-  }
-
-  .profile-user {
-    font-size: 1.5rem;
   }
 
   /*KBE 280121*/
