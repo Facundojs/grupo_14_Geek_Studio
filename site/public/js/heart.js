@@ -9,12 +9,15 @@ window.addEventListener("load", () => {
     });
 
     if (verificarSiExiste == undefined) {
-      heart.innerHTML = `<i class="far fa-heart" id="empty-heart" ></i>`;
+      heart.innerHTML = `<i class="far fa-heart" id="empty-heart" ></i> 
+      <p>Añadir a Favoritos</p>`;
     } else {
-      heart.innerHTML = `<i class="fas fa-heart" id="full-heart" ></i>`;
+      heart.innerHTML = `<i class="fas fa-heart" id="full-heart" ></i> 
+      <p>Quitar de Favoritos</p>`;
     }
   } else {
-    heart.innerHTML = `<i class="far fa-heart" id="empty-heart"></i>`;
+    heart.innerHTML = `<i class="far fa-heart" id="empty-heart"></i> 
+    <p>Añadir a Favoritos</p>`;
   }
 
   let heartEmpty = document.querySelector("#empty-heart");
