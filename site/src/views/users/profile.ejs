@@ -4,49 +4,48 @@
 <body>
     <%- include('../partials/header.ejs') %>
     <main>
-    <div class="aligner-container" style="margin-top: 40px">
-        <div class= "login-container"> 
-            <h1>Bienvenido <i class="fas fa-user-circle"></i></h1> 
-            
-            <div class="container-profile">    
-                    <h2 class="profile-user"> <%= user.first_name %>  <%= user.last_name %>  </h2> 
-                    <div class="user-email"><%= user.email %> </div>
-                    <img src="/img/users/<%= user.avatar %>" class ="img-profile"> 
-                    <br>
-                    <br>
+    <div class="container" style="margin-top: 40px">
+
+    <div class="container">
+        <h1 class="prof-us"><i class="fas fa-user-circle" aria-hidden="true"></i>  Datos Personales</h1>
+        <br>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="imgAbt">
+                    <img class="img-prof-us" src="/img/users/<%= user.avatar %>" />
+                </div>
             </div>
-
-            <div class="container-profile-2"> 
-
-                <div class="container-btn">
-                    <% if ( locals.userLogged && locals.userLogged.user_type_id == 1)  { %>
-                        <div>
-                            <a class="btn-profile" href="/users/index">Index de usuarios</a>
-                        </div>
+            <div class="col-md-8 prof-us " >
+                <div class="profile-user prof-us"> <span class="span-prof-us">Nombre: </span> <%= user.first_name %>  <%= user.last_name %>  </div> 
+                <div class="user-email prof-us"> <span class="span-prof-us">E-mail: </span><%= user.email %> </div>
+                <div class="telephone prof-us"> <span class="span-prof-us">Telefono: </span> <%= user.telephone %> </div>
+                <div class="country prof-us"> <span class="span-prof-us">Pais: </span><%= user.country %> </div>
+                <div class="container-btn prof-us">
+                    <% if ( locals.userLogged && locals.userLogged.user_type_id == 1)  { %>    
+                        <div>               
+                        <a class="btn-profile-a" href="/users/index">Listado de usuarios</a>    
+                        <br>
+                        <br>
+                        
                     <%  } %>
                     <% if(locals.isLogged){ %>
+                        <form action="/users/<%= user.id %>/edit" method="GET">
+                            <div> 
+                                <a class="btn-profile prof-us-a" href="/users/<%= user.id %>/edit">Editar</a>
+                                <br>
+                            </div>
+                        </form>
+                        <!-- <br> -->
+                        <form action="/users/<%= user.id%>?_method=DELETE" method="POST">
+                            <div>
+                            </div>
+                        </form>
+                    <%} %>                         
                 </div>
-                
-                <div class="container-btn">
-                    <form action="/users/<%= user.id %>/edit" method="GET">
-                        <div>
-                            <a class="btn-profile" href="/users/<%= user.id %>/edit">Editar</a>
-                        </div>
-                    </form>
-                    
-                    <form action="/users/<%= user.id%>?_method=DELETE" method="POST">
-                        <div>
-                            <button class="btn-profile-delete" type="submit" id="eliminar-usuario">Borrar usuario</button>
-                        </div>
-                    </form>
-                    <%} %> 
-                </div>
-
-            </div>
-
-	    </div>
-	    
-    </div>
+                <br>
+            </div>      
+        </div>
+    </div>	    
     <script src="/js/confirm.js"></script>
     <%- include('../partials/footer.ejs') %>
 </body>

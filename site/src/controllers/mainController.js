@@ -21,6 +21,8 @@ module.exports = {
   },
   faqs: (req, res) => {
     res.render("faqs");
-    //res.send("FAAAQSS");
+  },
+  carroPdf: (req, res) => {
+    res.render("carroPdf");
   },
 };

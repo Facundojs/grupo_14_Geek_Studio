@@ -7,4 +7,6 @@ router.get("/", mainController.index);
 router.get("/home", mainController.index);
 router.get("/faqs", mainController.faqs);
 
+router.get("/carroPdf", mainController.carroPdf);
+
 module.exports = router;
