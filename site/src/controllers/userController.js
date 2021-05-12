@@ -207,15 +207,14 @@ module.exports = {
       nameCountries.push(country.name);
     });
     let resultValidation = validationResult(req);
+    
     if (resultValidation.errors.length > 0) {
       let updatedUser = await db.User.findOne({
         where: {
           id: req.params.id,
         },
       });
-      const hidePassword =
-        updatedUser.dataValues.id != req.session.userLogged.id;
-      console.log(hidePassword);
+      const hidePassword = updatedUser.dataValues.id != req.session.userLogged.id;
       return res.render("users/edit", {
         user: updatedUser,
         errors: resultValidation.mapped(),
