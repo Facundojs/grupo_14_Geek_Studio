@@ -66,7 +66,7 @@
                                     </div>
                                     <div class="info-ficha-detail top-file">
                                         <div class="img-ship-detail">
-                                            <img src="../../img/detalle/icono-ahora-12.png">
+                                            <img src="../../img/detalle/m-pago.jpg">
                                         </div> 
                                         <div class="ship-text-detail">
                                             <p>6 cuotas sin interés de $<%= Math.round(Number(product.price) / 6 * 100, 2)/100 %></p> 
@@ -74,7 +74,7 @@
                                     </div>
                                     <div class="info-ficha-detail top-file">
                                         <div class="img-ship-detail">
-                                            <img src="../../img/detalle/icono-ahora-12.png">
+                                            <img src="../../img/detalle/m-pago.jpg">
                                         </div> 
                                         <div class="ship-text-detail">
                                             <p>9 cuotas sin interés de $<%= Math.round(Number(product.price) / 9 * 100, 2)/100 %></p> 
@@ -83,7 +83,7 @@
 
                                     <div class="info-ficha-detail top-file">
                                         <div class="img-ship-detail">
-                                            <img src="../../img/detalle/icono-ahora-12.png">
+                                            <img src="../../img/detalle/m-pago.jpg">
                                         </div> 
                                         <div class="ship-text-detail">
                                             <p>12 cuotas sin interés de $<%= Math.round(Number(product.price) / 12 * 100, 2)/100 %></p> 
@@ -101,7 +101,7 @@
 
                         <div class="info-ficha stock">
                             <div class="icons-ship">
-                                <i class="far fa-check-circle green"></i>
+                                <i class="far fa-check-circle check"></i>
                             </div> 
                             <div class="ship-text">
                                 <p class="stock">STOCK DISPONIBLE</p> 
@@ -207,48 +207,10 @@
                     </div>
                 </div>
 
-
-                
-
                 <div class="product-features">
-                    <div class="feature">
-                        <h3>General</h3>
-                        <hr color="#BFC0C0" size=2 width="99%">                
-                            <strong>Modelo</strong>   <span>Micro AMD APU A6-7480 3.8 Ghz</span> 
-                            <br>
-                            <strong>Familia</strong> <span>AMD A Series</span>
-                            <br>
-                            <strong>Nucleos</strong> <span>2</span>
-                            <br>
-                            <strong>Hilos</strong> <span>2</span>
-                            <br>
-                            <strong>Frecuencia</strong> <span>3.5 GHz</span>
-                            <br>
-                            <strong>Frecuencia Turbo</strong>  <span>3.8 GHz</span>
-                            <br>
-                            <strong>Proceso De Fabricacion</strong> <span>28 Nm</span>
-                            <br>
-                            <strong>Grafica Integrada</strong> <span>AMD Radeon R5</span>
-                            <br>
-                            <strong>Socket</strong> <span>FM2+</span>
-                    </div>
-                    <div class="feature">                 
-                        <h3>Coolers Y Disipadores</h3>
-                        <hr color="#BFC0C0" size=2 width="100%">
-                            <strong>Incluye Cooler CPU</strong>   <span>Si</span> 
-                            <br>
-                            <strong>TDP</strong> <span>65W</span>
-                            <br>
-                            <strong>Desbloqueado - Overclockeable</strong> <span>No</span>
-                    </div>
-                    <div class="feature">
-                            <h3>Memoria</h3>
-                                <hr color="#BFC0C0" size=2 width="100%">            
-                                    <strong>L1</strong>   <span>256 KB</span> 
-                                    <br>
-                                    <strong>L2</strong> <span>1 MB</span>
-                                    <br>
-                                    <strong>L3</strong> <span>No</span>
+                    <div class="feature" data-id="<%= product.id %>"> 
+                        <h2>Características del producto</h2>
+                        <h4><%= product.features %></h4>
                     </div>
                 </div>
                 
@@ -260,8 +222,7 @@
                                 <a class="div-button"  href="/productos/<%= product.id %>/editar">Editar Producto</a>
                             </div>
                         </div>
-                        
-                        
+                
                     </div>
                 <%  } %>
                 

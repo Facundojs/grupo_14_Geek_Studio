@@ -5,7 +5,7 @@ budget.addEventListener("click", function (e) {
   html2pdf()
     .set({
       margin: 1,
-      filename: "presupuesto.pdf",
+      filename: "presupuesto-geek-studio.pdf",
       image: {
         type: "jpeg",
         quality: 0.98,

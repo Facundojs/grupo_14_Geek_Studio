@@ -869,7 +869,7 @@ header a:hover {
   color: white;
 }
 
-/**************************************PRESUPUESTO PDF **********************************/
+/************************************** PRESUPUESTO PDF **********************************/
 .carro-pdf {
   list-style: none;
 }
@@ -884,6 +884,17 @@ td,
 tbody {
   border: 1px solid black;
 }
+
+/******************************************** FAQS *************************************/
+.faq {
+  color: gainsboro;
+  padding: 0 5%;
+}
+
+.faq p {
+  font-size: 1rem;
+}
+
 /* /////////////////////////////////// MIDDLEWARE NOTFOUND ///////////////////////////// */
 
 .img-center {
@@ -1081,7 +1092,9 @@ main section .chart-item div {
 .purchase-option button {
   width: 40%;
   margin: auto;
+  font-size: 14px;
 }
+
 /* ////////////////////////////// Detalle del Producto ///////////////////////////////// */
 
 section .product {
@@ -1171,15 +1184,14 @@ main section .img-main {
   font-size: 2.5rem;
 }
 
-.discount-detail {
-  color: var(--orange);
+.discount-detail p{
+  font-size: 1.2rem;
+  border-radius: 50%;
+  padding: 15px;
+  background: rgba(1, 182, 1, 0.55);
+  color: white;
 }
 
-.discount-detail p {
-  font-size: 2.5rem;
-}
-
-main section div .discount-detail,
 main section div .price-detail {
   /* border: red 2px solid; */
   font-size: 2rem;
@@ -1244,7 +1256,7 @@ element.style {
 }
 
 .stock,
-.green {
+.check {
   color: green;
   font-weight: bolder;
 }
@@ -1449,21 +1461,19 @@ main section .button-detail:hover {
 }
 
 main section .product .product-features {
-  font-size: 0.8rem;
-  line-height: 1.1rem;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  padding: 30px;
+  padding: 5%;
 }
 
-.feature {
-  padding: 5px 0;
-}
-
-main section .product .product-features .feature {
+main section .product .product-features .feature h2{
   width: 100%;
-  padding-left: 10px;
+  font-weight: bold;
+  /* text-align: center; */
+  padding-bottom: 10px;
+}
+
+main section .product .product-features .feature h4{
+  width: 100%;
+  font-weight: 500;
 }
 
 main section div .div-quantity {
@@ -1512,13 +1522,11 @@ main section .div-button:hover {
 .prod-recomended {
   /* background-color: var(--oscuro); */
   text-align: center;
-  padding-top: 40px;
 }
 
 .prod-recomended h1 {
   /* background-color: var(--oscuro); */
   text-align: center;
-  padding-top: 40px;
 }
 
 main section .recomended-container {
@@ -1751,12 +1759,13 @@ h2 {
   font-size: 1rem;
   text-align: center;
   text-decoration: none;
+  justify-content: space-around;
 }
 
 .table__item-buttons a {
   color: rgba(0, 0, 255, 0.658);
   align-items: center;
-  padding-left: 40px;
+  padding: 0 -20px
 }
 
 .delete-user-index {
@@ -1978,6 +1987,15 @@ p {
     color: gainsboro;
   }
 
+  
+.purchase-option button {
+  width: 40%;
+  margin: auto;
+  font-size: 16px;
+}
+
+/* ////////////////////////////////////// FOOTER //////////////////////////////////////// */
+
   footer nav {
     justify-content: space-between;
     display: flex;
@@ -2093,11 +2111,6 @@ p {
     border: black 1px solid;
     padding: 5px;
     display: block;
-  }
-
-  main section .product .product-features .feature {
-    width: 33%;
-    padding: 0 1rem;
   }
 
   main section .product .product-features {
@@ -2477,7 +2490,7 @@ LOGIN, REGISTER Y RECOVER PASS
   .btn-avatar input {
     width: 80%;
     font-size: 20px;
-    color: var(--oscuro);
+    color: white;
     /* background-color: green; */
   }
 
