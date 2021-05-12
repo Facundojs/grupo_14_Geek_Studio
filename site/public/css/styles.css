@@ -1759,13 +1759,13 @@ h2 {
   font-size: 1rem;
   text-align: center;
   text-decoration: none;
-  justify-content: space-around;
+  justify-content: stretch;
 }
 
 .table__item-buttons a {
   color: rgba(0, 0, 255, 0.658);
   align-items: center;
-  padding: 0 -20px
+  padding-left: 3rem;
 }
 
 .delete-user-index {
