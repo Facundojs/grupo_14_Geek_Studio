@@ -180,7 +180,7 @@ module.exports = {
           id: req.params.id,
         },
       });
-
+      if(updatedUser){
       const hidePassword =
         updatedUser.dataValues.id != req.session.userLogged.id;
       const response = await fetch("https://restcountries.eu/rest/v2/all");
@@ -193,11 +193,14 @@ module.exports = {
         user: updatedUser,
         countries: nameCountries,
         hidePassword,
-      });
+      })
+      } else {
+        res.send('NO SE ENCONTRÓ EL USUARIO')
+      }
     } catch (err) {
       res.send(err);
     }
-    res.render("users/edit", { user: updatedUser });
+    //res.render("users/edit", { user: updatedUser });
   },
   update: async (req, res) => {
     const response = await fetch("https://restcountries.eu/rest/v2/all");
@@ -207,7 +210,6 @@ module.exports = {
       nameCountries.push(country.name);
     });
     let resultValidation = validationResult(req);
-    console.log(resultValidation)
     
     if (resultValidation.errors.length > 0) {
       let updatedUser = await db.User.findOne({
