@@ -622,6 +622,8 @@ header a:hover {
   color: red;
 }
 
+
+
 /* //////////////////////// LOGIN, REGISTER Y RECOVER PASS ////////////////////////// */
 
 .login-container .form-login {
@@ -1756,7 +1758,7 @@ h2 {
   flex-wrap: wrap;
   align-items: center;
   width: 100%;
-  font-size: 1rem;
+  font-size: 1.2rem;
   text-align: center;
   text-decoration: none;
   justify-content: stretch;
@@ -1765,7 +1767,8 @@ h2 {
 .table__item-buttons a {
   color: rgba(0, 0, 255, 0.658);
   align-items: center;
-  padding-left: 3rem;
+  padding-left: 4rem;
+  padding-bottom: 8px;
 }
 
 .delete-user-index {
@@ -1773,7 +1776,8 @@ h2 {
   align-items: center;
   background-color: white;
   border: white 1px solid;
-  padding: 5px;
+  padding-left: 14px;
+  padding-bottom: 8px;
 }
 
 /********************************** FIN USO GRID LISTADO DE USUARIOS ********************************************************/

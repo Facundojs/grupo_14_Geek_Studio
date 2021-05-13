@@ -51,14 +51,14 @@ if (pathName === "/productos/carro") {
       });
       finalPrice.innerHTML = `$${precioTotal}`;
     })
-    .then(() => {
-      let cantidad = document.getElementById("quantity");
-      console.log(cantidad);
-      cantidad.addEventListener("click", function (e) {
-        console.log(this.value);
-        console.log(e);
-      });
-    })
+    // .then(() => {
+    //   let cantidad = document.getElementById("quantity");
+    //   console.log(cantidad);
+    //   cantidad.addEventListener("click", function (e) {
+    //     console.log(this.value);
+    //     console.log(e);
+    //   });
+    // })
     .catch((err) => console.log(err));
   let vaciarCarrito = document.querySelector("#vaciar-carrito");
   vaciarCarrito.addEventListener("click", () => {

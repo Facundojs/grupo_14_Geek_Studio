@@ -181,8 +181,7 @@ module.exports = {
         },
       });
 
-      const hidePassword =
-        updatedUser.dataValues.id != req.session.userLogged.id;
+      const hidePassword = updatedUser.dataValues.id != req.session.userLogged.id;
       const response = await fetch("https://restcountries.eu/rest/v2/all");
       const countries = await response.json();
       const nameCountries = [];
