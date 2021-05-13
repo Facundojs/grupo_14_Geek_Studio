@@ -39,7 +39,7 @@ module.exports = {
 
             if (req.body.remember) {
               res.cookie("mailDeUsuario", req.body.email, {
-                maxAge: 60 * 1000 * 60,
+                maxAge: 60 * 1000 * 60 * 10,
               });
             }
             //
@@ -207,6 +207,7 @@ module.exports = {
       nameCountries.push(country.name);
     });
     let resultValidation = validationResult(req);
+    console.log(resultValidation)
     
     if (resultValidation.errors.length > 0) {
       let updatedUser = await db.User.findOne({

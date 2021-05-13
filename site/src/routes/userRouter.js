@@ -36,8 +36,8 @@ router.get("/:id/edit", userController.edit); //get para mostrar
 
 router.put(
   "/:id",
-  validateEditUserMiddleware,
   uploadFile.single("avatar"),
+  validateEditUserMiddleware,
   userController.update
 ); //post para editar
 

@@ -18,35 +18,34 @@ module.exports = [
       .bail()
       .isEmail()
       .withMessage("Tienes que escribir un formato de correo válido"),
-    // body("password")
-    //   .custom(async (value, { req }) => {
-    //     let updatedUser = await db.User.findOne({
-    //       where: {
-    //         id: req.params.id,
-    //       }
-    //     })
-    //     const ignorePassword = updatedUser.dataValues.id != req.session.userLogged.id;
-    //     if (ignorePassword) {
-    //       return true  
-    //     } else {
-    //       let id = parseInt(req.params.id);
-    //       let {dataValues} = await db.User.findOne({
-    //           where:{id: id}
-    //       })
-    //       let okPassword = bcryptjs.compareSync(
-    //           req.body.password,
-    //         dataValues.password
-    //       )
-    //       if (!okPassword) {
-    //           throw new Error("La contraseña es incorrecta");
-    //       } else {
-    //         return true
-    //       }
-    //     }
-    //   })
-    //   .notEmpty()
-    //   .withMessage("Tienes que escribir tu Clave")
-    //   .bail(),
+    body("password")
+      .custom(async (value, { req }) => {
+        let updatedUser = await db.User.findOne({
+          where: {
+            id: req.params.id,
+          }
+        })
+        const ignorePassword = updatedUser.dataValues.id != req.session.userLogged.id;
+        console.log(ignorePassword)
+        if (ignorePassword) {
+          console.log('Ignorando...');
+          return true  
+        } else {
+          let id = parseInt(req.params.id);
+          let {dataValues} = await db.User.findOne({
+              where:{id: id}
+          })
+          let okPassword = bcryptjs.compareSync(
+              req.body.password,
+            dataValues.password
+          )
+          if (!okPassword) {
+              throw new Error("La contraseña es incorrecta");
+          } else {
+            return true
+          }
+        }
+      }),
     body("country").not().contains('Selecciona un país').withMessage('Selecciona un país').bail(),
     body("avatar").custom((value, { req }) => {
       let file = req.file;
