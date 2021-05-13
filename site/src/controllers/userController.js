@@ -181,19 +181,19 @@ module.exports = {
         },
       });
       if(updatedUser){
-      const hidePassword =
-        updatedUser.dataValues.id != req.session.userLogged.id;
-      const response = await fetch("https://restcountries.eu/rest/v2/all");
-      const countries = await response.json();
-      const nameCountries = [];
-      countries.forEach((country) => {
-        nameCountries.push(country.name);
-      });
-      res.render("users/edit", {
-        user: updatedUser,
-        countries: nameCountries,
-        hidePassword,
-      })
+        const hidePassword =
+          updatedUser.dataValues.id != req.session.userLogged.id;
+        const response = await fetch("https://restcountries.eu/rest/v2/all");
+        const countries = await response.json();
+        const nameCountries = [];
+        countries.forEach((country) => {
+          nameCountries.push(country.name);
+        });
+        res.render("users/edit", {
+          user: updatedUser,
+          countries: nameCountries,
+          hidePassword,
+        })
       } else {
         res.send('NO SE ENCONTRÓ EL USUARIO')
       }
