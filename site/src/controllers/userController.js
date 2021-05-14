@@ -180,23 +180,27 @@ module.exports = {
           id: req.params.id,
         },
       });
-
-      const hidePassword = updatedUser.dataValues.id != req.session.userLogged.id;
-      const response = await fetch("https://restcountries.eu/rest/v2/all");
-      const countries = await response.json();
-      const nameCountries = [];
-      countries.forEach((country) => {
-        nameCountries.push(country.name);
-      });
-      res.render("users/edit", {
-        user: updatedUser,
-        countries: nameCountries,
-        hidePassword,
-      });
+      if(updatedUser){
+        const hidePassword =
+          updatedUser.dataValues.id != req.session.userLogged.id;
+        const response = await fetch("https://restcountries.eu/rest/v2/all");
+        const countries = await response.json();
+        const nameCountries = [];
+        countries.forEach((country) => {
+          nameCountries.push(country.name);
+        });
+        res.render("users/edit", {
+          user: updatedUser,
+          countries: nameCountries,
+          hidePassword,
+        })
+      } else {
+        res.send('NO SE ENCONTRÓ EL USUARIO')
+      }
     } catch (err) {
       res.send(err);
     }
-    res.render("users/edit", { user: updatedUser });
+    //res.render("users/edit", { user: updatedUser });
   },
   update: async (req, res) => {
     const response = await fetch("https://restcountries.eu/rest/v2/all");
@@ -206,7 +210,6 @@ module.exports = {
       nameCountries.push(country.name);
     });
     let resultValidation = validationResult(req);
-    console.log(resultValidation)
     
     if (resultValidation.errors.length > 0) {
       let updatedUser = await db.User.findOne({

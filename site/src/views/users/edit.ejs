@@ -12,18 +12,9 @@
                 method="POST" class="form-login" 
                 enctype="multipart/form-data">
                 <h1> Editar Usuario </h1>
-
+                
                 <div class="textbox-login">
-                    <input type="email" placeholder="E-Mail" name ="email" value="<%= user.email%>"  />
-                </div>
-                <% if (locals.errors && errors.email) { %>
-                    <div class="text-danger centrar">
-                        <%= errors.email.msg %>
-                    </div>
-                <% }%>
-
-                <div class="textbox-login">
-                    <input type="text" placeholder="Nombre" name="first_name" id="first_name" value="<%= user.first_name%>"  />
+                    <input type="text" placeholder="Nombre" name="first_name" id="first_name" value="<%= user.first_name%>" />
                 </div>
                 <% if (locals.errors && errors.first_name) { %>
                     <div class="text-danger centrar">
@@ -41,6 +32,15 @@
                     </div>
                 <% }%>
                 <p id="feedback-last_name" class="hidden feedback is-danger">El apellido debe tener al menos 2 caractéres</p>
+
+                <div class="textbox-login">
+                    <input type="email" placeholder="E-Mail" name ="email" value="<%= user.email%>"  />
+                </div>
+                <% if (locals.errors && errors.email) { %>
+                    <div class="text-danger centrar">
+                        <%= errors.email.msg %>
+                    </div>
+                <% }%>
 
                 <div class="textbox-login">
                     <input type="text" placeholder="Telefono" name="telephone" value="<%= user.telephone %>" />
@@ -69,12 +69,8 @@
                 
                 <%} %> 
 
-
-
-
-
-                <div class="btn-login">
-                    <label for="avatar">Seleccionar Imagen Perfil</label>
+                <div class="select-img">
+                    <label for="avatar">Seleccionar imagen de perfil:</label>
                     <input type="file" class="file" 
                     value="<%= user.avatar %>"
                     name="avatar" 
@@ -103,8 +99,10 @@
                 <input class="btn-login" type="submit" value="Modificar" >
 
             </form>
-            <form action="/users/<%= user.id %>?_method=DELETE" method="POST" >
-                <input type="submit" name="delete" id="delete" class="btn-danger" value="Eliminar Usuario">
+            <form action="/users/<%= user.id %>?_method=DELETE" method="POST" class="form-login">
+                <div >
+                    <input type="submit" name="delete" id="delete" class="btn-delete-user" value="Eliminar Usuario">
+                </div>
             </form>
         </div>
     </div>

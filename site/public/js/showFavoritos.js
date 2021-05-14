@@ -2,7 +2,12 @@ let productosFavoritosInservible = JSON.parse(localStorage.getItem("articulosFav
 let listaFavoritos = document.querySelector("#lista-favoritos")
 
 if (!productosFavoritosInservible) {
-    listaFavoritos.innerHTML += `<h2>No tiene artículos guardados como Favoritos</h2>`
+    listaFavoritos.innerHTML += `
+    <h2 class="h2-fav">No tiene artículos guardados como Favoritos <i class="fas fa-heart-broken"></i></h2>
+    <a href="/" class="a-fav">
+    Volver a la Home
+    </a>
+    `
 } else {
     let productosFavoritos = productosFavoritosInservible.map((elemento) => {
         return Number(elemento)
