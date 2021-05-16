@@ -2,7 +2,15 @@
         <nav class="nav-1">
             <div class="logo"><a href="/"><img class="logo-img" src="/img/logo.png"></a></div>
             <div class="bvar-container">
-                <input type="search" class="browser-bar" placeholder="Buscar productos, marcas...">
+
+                <div class ="search">                    
+                    <input type="search" class="browser-bar" id="browse-bar" placeholder="Buscar productos, marcas...">
+                    <i class="fas fa-search" id="search-button"></i>
+
+                    <script src="./js/search-product.js"></script>
+                <div class ="search">                    
+
+
             </div>
             <% if (locals.isLogged) { %>
                 <nav id="user-options" class="user-options">

@@ -6,9 +6,8 @@ const { sequelize } = require("../../../database/models");
 
 module.exports = {
   index: async (req, res) => {
-    let products = await db.Product.findAll({ include: 'category' });
-    let categories = await db.Category.findAll({ include: 'products' });
-    
+    let products = await db.Product.findAll({ include: "category" });
+    let categories = await db.Category.findAll({ include: "products" });
 
     res.render("products", { products, categories });
   },
@@ -49,48 +48,43 @@ module.exports = {
       return res.render("products/create", {
         errors: errors.mapped(),
         oldData: req.body,
-        categories
+        categories,
       });
     }
     //console.table(product); //para ver que se creo por consola
   },
   favorite: (req, res) => {
-    res.render("products/favourites")
+    res.render("products/favourites");
   },
   show: async (req, res) => {
-    
     let categories = await db.Category.findAll();
     let products = await db.Product.findAll({
       limit: 4,
-      order: [
-        [sequelize.literal('price'), 'DESC']
-    ]
-  });
+      order: [[sequelize.literal("price"), "DESC"]],
+    });
 
     db.Product.findByPk(req.params.id)
       .then((product) => {
         if (product) {
-
-
           res.render("products/detail", { product, products, categories });
         } else {
-          res.status(400)
-          res.render('badRequest')
+          res.status(400);
+          res.render("badRequest");
         }
       })
       .catch((error) => {
-        res.status(400)
-        res.render('badRequest')
+        res.status(400);
+        res.render("badRequest");
       });
   },
   edit: async (req, res) => {
     let productToEdit = await db.Product.findByPk(req.params.id);
     if (productToEdit != undefined) {
-      let categories = await db.Category.findAll()
-      res.render("products/edit", { categories, productToEdit })
+      let categories = await db.Category.findAll();
+      res.render("products/edit", { categories, productToEdit });
     } else {
-      res.status(400)
-      res.render('badRequest')
+      res.status(400);
+      res.render("badRequest");
     }
   },
   update: async (req, res) => {
@@ -120,7 +114,6 @@ module.exports = {
           res.redirect(`/productos/${id}`);
         });
       });
-
     } else {
       // Renderizo el formulario nuevamente con los errors y los datos completados
       let categories = await db.Category.findAll();
@@ -129,7 +122,7 @@ module.exports = {
         errors: errors.mapped(),
         old: req.body,
         categories,
-        productToEdit
+        productToEdit,
       });
     }
   },
@@ -145,11 +138,15 @@ module.exports = {
   chart: (req, res) => {
     db.Product.findAll()
       .then((productos) => {
-        res.render("carro", {productos});
+        res.render("carro", { productos });
       })
       .catch((error) => {
         console.log(error);
         res.send("Ha ocurrido un error");
       });
+  },
+
+  productsSearched: (req, res) => {
+    res.render("products/search");
   },
 };

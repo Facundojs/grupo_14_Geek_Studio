@@ -7,6 +7,8 @@ const productController = require("../controllers/productsController");
 const uploadFile = require("../middlewares/multerMiddleware");
 const validations = require("../middlewares/validateCreateProductMiddleware");
 
+//Search
+router.get("/search", productController.productsSearched);
 //Otras
 router.get("/carro", productController.chart);
 
@@ -19,14 +21,16 @@ router.get(
   productController.create
 ); // Formulario de creación
 
-router.get("/favoritos", productController.favorite) // Página de Favoritos
+router.get("/favoritos", productController.favorite); // Página de Favoritos
 router.get("/:id", productController.show); // Detalle del producto (Terminado)
+
 router.post(
   "/crear",
   uploadFile.single("image"),
   validations,
   productController.store
 ); //Proceso de Formulario (Terminado)
+
 router.get("/:id/editar", productController.edit); // Formulario de edición
 router.put(
   "/:id",
