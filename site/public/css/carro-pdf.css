@@ -1,27 +1,32 @@
-/************************************** PRESUPUESTO PDF **********************************/
-.carro-pdf {
-    list-style: none;
-    text-align: center;
+/************************************** PRESUPUESTO PDF MAURO **********************************/
+  .header-pdf {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    width: 100%;
+    padding: 20px;
   }
-  .h1-presupuesto {
-    text-align: left;
-    font-size: 2rem;
+
+  .header-pdf .logo-pdf {
+    
+    width: 30%;
   }
-  
-  .table,
-  th,
-  td,
-  tbody {
-    border: 1px solid black;
+
+  .logo-pdf img{
+      width: 100px;
   }
-  
-  /************************************** PRESUPUESTO PDF MAURO **********************************/
-  
+
+  .title-pdf {
+      width: 70%;
+  }
+
   .pdf-table {
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
-    border: 2px red solid;
+    font-weight: bolder;
+    padding: 10px;
+    border-bottom: 1px solid black;
   }
   
   .pdf-column {
@@ -33,9 +38,65 @@
       width: 100%;
   }
 
+  .carro-pdf {
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      align-items: center;
+      border-bottom: 1px solid black;
+  }
+
+  .carro-pdf div {
+      width: 33%;
+      padding: 10px;
+      align-items: center;
+  }
+
   .pdf-item {
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
     border: 2px red solid;
+  }
+
+  .img-item {
+    width: 100%;
+    text-align: center;
+  }
+
+  .name-item h4{
+    font-size: 16px;
+    text-align: center;
+}
+
+.price-item {
+    text-align: center;
+}
+  .border-total {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    padding-top: 40px;
+    border-top: 3px solid black;
+    font-size: 40px;
+  }
+
+  
+  .budget {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      text-align: center;
+    }
+    
+    .border-total h4, 
+    .budget h4 {
+      font-size: 20px;
+    }
+
+  .budget-date, 
+  .final-price {
+    margin-left: 1rem;
+    font-size: 20px;
   }

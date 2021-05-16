@@ -12,27 +12,32 @@
     <main>
 
         <div class="container">
-            <table class="table table-hover">
-                <thead>
-                    <tr>                        
-                      <th><img src="/img/logo.png" width="100" height="100"></th>
-                      <th><h1>Presupuesto Geek Studio</h1></th>
-                    </tr>    
-            </table>
+            <div class="header-pdf">
+              <div class="logo-pdf">
+                <img src="/img/logo.png" width="100" height="100"></th>
+              </div>
+              <div class="title-pdf">
+                <h1>Presupuesto Geek Studio</h1> 
+              </div>                
+            </div>
 
             <div class="pdf-table">
               <div class="pdf-column"> Imagen </div>
               <div class="pdf-column"> Producto </div>
               <div class="pdf-column"> Precio </div>
+            </div>
 
               <div class="lista-presupuesto" id="lista-presupuesto">
 
               </div>
 
-            </div>
-                <div>Importe total: <b id="final-price" class="final-price"></b></div>
+                <div class="border-total"><h4><b>Importe total: </b></h4><h4 id="final-price" class="final-price"></h4></div>
+
+                <div class="budget"><h4><b>Fecha de presupuesto: </b></h4> <h4 id="budget-date" class="budget-date"></h4></div>
         </div> 
     </main>
     <script src="/js/carroPdf.js"></script>
+    <script src="/js/budget-date.js"></script>
+
 </body>
 </html>
