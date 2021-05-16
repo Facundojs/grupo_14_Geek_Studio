@@ -622,6 +622,8 @@ header a:hover {
   color: red;
 }
 
+
+
 /* //////////////////////// LOGIN, REGISTER Y RECOVER PASS ////////////////////////// */
 
 .login-container .form-login {
@@ -673,32 +675,48 @@ header a:hover {
 }
 
 .textbox-login {
-  width: 40%;
-  overflow: hidden;
-  font-size: 20px;
-  padding: 8px 0;
-  margin: 8px 0 30px 0;
-}
+    width: 40%;
+    overflow: hidden;
+    font-size: 20px;
+    padding: 8px 0;
+    margin: 8px 0 30px 0;
+    border-bottom: 2px solid #2ecece;
+  }
 
-.textbox-login i {
-  display: flex;
-  flex-wrap: wrap;
-  width: 26px;
-  float: left;
-  text-align: center;
-  color: var(--oscuro);
-}
+  .textbox-login input .text-form {
+    font-size: 8px;
+  }
 
-.textbox-login input {
-  border: none;
-  outline: none;
-  background: none;
-  font-size: 14px;
-  width: 80%;
-  float: left;
-  margin: 0 10px;
-  color: white;
-}
+  .textbox-login i {
+    display: flex;
+    flex-wrap: wrap;
+    width: 26px;
+    float: left;
+    text-align: center;
+    color: var(--oscuro);
+  }
+
+  .textbox-login input {
+    border: none;
+    outline: none;
+    background: none;
+    font-size: 18px;
+    width: 80%;
+    float: left;
+    margin: 0 10px;
+    color: white;
+  }
+
+  .textbox-login select {
+    height: 40px;
+  }
+
+  .btn-avatar input {
+    width: 80%;
+    font-size: 20px;
+    color: white;
+    /* background-color: green; */
+  }
 
 .btn-login {
   width: 100px;
@@ -727,6 +745,47 @@ header a:hover {
   font-size: 16px;
   padding-right: 16px;
   color: #fff;
+}
+
+/* /////////////////////////////////// EDIT USER MAURO /////////////////////////////////// */
+
+
+.select-img {
+  font-size: 1rem;
+  padding: 20px;
+  color: white;
+}
+
+.select-img label {
+  width: 100%;
+  padding: 10px;
+  color: white;
+}
+
+
+/* .delete-user {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+} */
+
+
+.btn-delete-user {
+  width: 100%;
+  height: 50px;
+  background: none;
+  border: 2px solid white;
+  border-radius: 5px;
+  padding: 10px;
+  font-size: 18px;
+  font-weight: 500;
+  cursor: pointer;
+  color: white;
+  background-color: rgb(173, 24, 24);
+}
+
+.btn-delete-user:hover {
+  background-color: rgb(230, 10, 10);
 }
 
 /* /////////////////////////////////// PROFILE LOGIN /////////////////////////////////// */
@@ -885,6 +944,9 @@ tbody {
   border: 1px solid black;
 }
 
+/************************************** PRESUPUESTO PDF MAURO **********************************/
+
+
 /******************************************** FAQS *************************************/
 .faq {
   color: gainsboro;
@@ -956,8 +1018,10 @@ tbody {
   /*width: 10px;*/
   display: none;
 }
+
+/* Esto agranda el de Seleccionar un pais */ 
 .textbox-login {
-  width: 65%;
+  width: 100%;
   font-size: 15px;
 }
 
@@ -1139,6 +1203,8 @@ main section .img-main {
   background-image: linear-gradient(to right, var(--oscuro) 0%, var(--blue)  51%, var(--oscuro)  100%); */
 }
 
+/* /////////////////// Favorite Heart & Empty /////////////////// */ 
+
 .favorite-heart {
   text-align: center;
   font-size: 35px;
@@ -1164,6 +1230,37 @@ main section .img-main {
 .heart-emptyt:hover {
   color: #cc6b42;
 }
+
+main section .favorite-list {
+  background-color: var(--body-color);
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  padding-bottom: 2rem;
+}
+
+/* main section .favorite-list li {
+  border: gainsboro solid 1px;
+  border-radius: 0.5rem;
+  width: 100%;
+  margin: auto;
+  margin: 0.5rem 0rem 0.3rem;
+  padding: 10px 0;
+} */
+
+ul .h2-fav {
+  color: white;
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+ul .a-fav {
+  font-size: 1.3rem;
+  text-align: center;
+  text-decoration: none;
+}
+
+/* /////////////////// FIN /////////////////// */ 
 
 /* Precio y Descuento */
 .price-discount {
@@ -1584,6 +1681,75 @@ main section .recomended-container img {
   color: rgb(3, 199, 3);
 }
 
+.col-detail a:hover,
+.col-5 a:hover {
+  transform: scale(1.03);
+  box-shadow: rgb(0 0 0 / 70%) 0 -2px 20px;
+}
+/* .col-detail a .image, .col-5 a .image {
+  position: relative;
+} */
+.col-detail a .image img,
+.col-5 a .image img {
+  width: 100%;
+  height: 260px;
+}
+.col-detail .prod-description,
+.col-5 .prod-description {
+  display: block;
+  padding: 0 15px;
+  width: 100%;
+}
+.col-detail a .prod-description h4,
+.col-5 a .prod-description h4 {
+  width: 100%;
+  height: 50px;
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 15px;
+  margin-block-start: 10px;
+  margin-block-end: 0;
+  color: black;
+}
+
+.col-detail a .prod-description p,
+.col-5 a .prod-description p {
+  width: 100%;
+  font-size: 30px;
+  text-align: center;
+  font-weight: bolder;
+  margin-bottom: 2px;
+  color: var(--orange);
+}
+
+.col-detail .chart-button button,
+.col-5 .chart-button,
+.chart-button button {
+  border: none;
+  width: 100%;
+  padding: 10px 0px;
+  font-weight: 500;
+  font-size: 1.5rem;
+  background-image: linear-gradient(
+    to right,
+    var(--oscuro) 0%,
+    var(--blue) 51%,
+    var(--oscuro) 100%
+  );
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: var(--silver);
+  /* box-shadow: 0 0 10px #eee; */
+}
+
+.col-detail .chart-button button:hover,
+.col-5 .chart-button button:hover {
+  background-position: right bottom;
+  color: #fff;
+  text-decoration: none;
+}
+
 /* //////////////////////////////// Footer /////////////////////////////////////// */
 
 footer {
@@ -1756,7 +1922,7 @@ h2 {
   flex-wrap: wrap;
   align-items: center;
   width: 100%;
-  font-size: 1rem;
+  font-size: 1.2rem;
   text-align: center;
   text-decoration: none;
   justify-content: stretch;
@@ -1765,7 +1931,8 @@ h2 {
 .table__item-buttons a {
   color: rgba(0, 0, 255, 0.658);
   align-items: center;
-  padding-left: 3rem;
+  padding-left: 4rem;
+  padding-bottom: 8px;
 }
 
 .delete-user-index {
@@ -1773,7 +1940,8 @@ h2 {
   align-items: center;
   background-color: white;
   border: white 1px solid;
-  padding: 5px;
+  padding-left: 14px;
+  padding-bottom: 8px;
 }
 
 /********************************** FIN USO GRID LISTADO DE USUARIOS ********************************************************/
@@ -1835,6 +2003,21 @@ h2 {
     width: 46%;
     margin: 2%;
   }
+
+  /* /////////////////////////////////// EDIT USER MAURO /////////////////////////////////// */
+
+
+.select-img {
+  font-size: 1.2rem;
+  padding: 20px;
+  color: white;
+}
+
+.select-img label {
+  width: 100%;
+  padding: 10px;
+  color: white;
+}
 
 }
 
@@ -2454,14 +2637,14 @@ LOGIN, REGISTER Y RECOVER PASS
     font-size: 36px;
   }
 
-  .textbox-login {
+  /* .textbox-login {
     width: 40%;
     overflow: hidden;
     font-size: 20px;
     padding: 8px 0;
     margin: 8px 0 30px 0;
     border-bottom: 2px solid #2ecece;
-  }
+  } */
 
   .textbox-login i {
     display: flex;

@@ -27,10 +27,10 @@ fetch("/api/products")
                     <img class="chart-article-image img-chart"src="/img/products/${producto.image}" width="100" height="100">                    
                 </td>
                 <td>
-                    <h3>${producto.name}  <h3>
+                    <h4>${producto.name}  <h4>
                 </td>
                 <td>
-                    <h3>  ${producto.price} </h3>
+                    <h4>  ${producto.price} </h4>
                 </td>
                 </tr>
                 </article>
