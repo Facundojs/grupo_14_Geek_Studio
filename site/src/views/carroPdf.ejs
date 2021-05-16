@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/carro-pdf.css">
     <title>Presupuesto</title>    
 </head>
 <body>
@@ -18,21 +19,19 @@
                       <th><h1>Presupuesto Geek Studio</h1></th>
                     </tr>    
             </table>
-            <div class="row row-presupuesto">
-                <table border="1" class="title-pdf">                    
-                    <thead>
-                      <tr>                        
-                        <th>Imagen</th>
-                        <th>Producto</th>
-                        <th>Precio</th>
-                      </tr>                      
-                    </thead>
-                    <tbody class="lista-presupuesto" id="lista-presupuesto">
 
-                    </tbody>
-                </table>
+            <div class="pdf-table">
+              <div class="pdf-column"> Imagen </div>
+              <div class="pdf-column"> Producto </div>
+              <div class="pdf-column"> Precio </div>
+
+              <div class="lista-presupuesto" id="lista-presupuesto">
+
+              </div>
+
+            </div>
                 <div>Importe total: <b id="final-price" class="final-price"></b></div>
-            </div> 
+        </div> 
     </main>
     <script src="/js/carroPdf.js"></script>
 </body>

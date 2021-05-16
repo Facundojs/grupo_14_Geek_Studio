@@ -21,18 +21,16 @@ fetch("/api/products")
     filtrados.forEach((producto) => {
       precioTotal += parseInt(producto.price);
       listaPresupuesto.innerHTML += `
-                <article class="chart-item lista-presupuesto">
-                <tr>
-                <td class="carro-pdf">
-                    <img class="chart-article-image img-chart"src="/img/products/${producto.image}" width="100" height="100">                    
-                </td>
-                <td>
+                <article class="pdf-item">
+                <div class="carro-pdf">
+                    <img class="chart-article-image img-chart"src="/img/products/${producto.image}" width="100px" height="100px">                    
+                </div>
+                <div>
                     <h4>${producto.name}  <h4>
-                </td>
-                <td>
+                </div>
+                <div>
                     <h4>  ${producto.price} </h4>
-                </td>
-                </tr>
+                </div>
                 </article>
                 `;
     });

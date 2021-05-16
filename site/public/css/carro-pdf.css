@@ -1,0 +1,41 @@
+/************************************** PRESUPUESTO PDF **********************************/
+.carro-pdf {
+    list-style: none;
+    text-align: center;
+  }
+  .h1-presupuesto {
+    text-align: left;
+    font-size: 2rem;
+  }
+  
+  .table,
+  th,
+  td,
+  tbody {
+    border: 1px solid black;
+  }
+  
+  /************************************** PRESUPUESTO PDF MAURO **********************************/
+  
+  .pdf-table {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    border: 2px red solid;
+  }
+  
+  .pdf-column {
+    width: 33%;
+    text-align: center;
+  }
+
+  .lista-presupuesto {
+      width: 100%;
+  }
+
+  .pdf-item {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    border: 2px red solid;
+  }

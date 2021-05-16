@@ -19,7 +19,20 @@ body {
   padding: 0.8rem;
 }
 
-/*Header-section*/
+
+/****************************** IMG NOT FOUND 404 *************************************/
+.img-center {
+  align-items: center;
+}
+
+
+.img-notfound {
+  width: 100%;
+  height: 100%;
+}
+
+
+/************************************** Header-section *******************************/
 
 header {
   max-width: 1300px;
@@ -927,24 +940,6 @@ header a:hover {
   background-color: rgb(150, 14, 14);
   color: white;
 }
-
-/************************************** PRESUPUESTO PDF **********************************/
-.carro-pdf {
-  list-style: none;
-}
-.h1-presupuesto {
-  text-align: left;
-  font-size: 2rem;
-}
-
-.table,
-th,
-td,
-tbody {
-  border: 1px solid black;
-}
-
-/************************************** PRESUPUESTO PDF MAURO **********************************/
 
 
 /******************************************** FAQS *************************************/
