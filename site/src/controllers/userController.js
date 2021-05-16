@@ -66,8 +66,15 @@ module.exports = {
         } ///////////////
       })
       .catch((error) => {
-        res.send("No existe el user");
-        console.log("ERROR CATCHED ", error);
+        console.log(error);
+        return res.render("users/login", {
+          errors: {
+            email: {
+              msg: "No se encontró usuario",
+            },
+          },
+          oldData: req.body,
+        });
       });
   },
   profile: (req, res) => {
