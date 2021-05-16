@@ -8,10 +8,11 @@ clickSearch.addEventListener("click", (e) => {
     fetch("/api/products/search?keyword=" + textSearch.value)
       .then((res) => res.json())
       .then((data) => {
-        alert("tiene que redireccionar");
         location.href = "/productos/search";
-        //document.location.href = "/products/search";
-        console.log("DATA: ", data);
+        let filtrados = data.map((e) => {
+          return e.name
+        })
+        localStorage.setItem('productosEncontrados', filtrados)
         return data;
       });
   }

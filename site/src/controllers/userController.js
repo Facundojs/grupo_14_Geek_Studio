@@ -202,7 +202,7 @@ module.exports = {
           hidePassword,
         })
       } else {
-        res.send('NO SE ENCONTRÓ EL USUARIO')
+        res.redirect('/')
       }
     } catch (err) {
       res.send(err);

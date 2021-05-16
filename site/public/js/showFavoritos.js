@@ -25,7 +25,7 @@ if (!productosFavoritosInservible) {
                     filtrados.forEach((producto) => {
                         listaFavoritos.innerHTML += `
                                 <li>
-                                <article class="chart-item lista-carrito">
+                                    <article class="chart-item lista-carrito">
                                     <div class="chart-article">
                                         <img class="chart-article-image img-chart"src="/img/products/${producto.image}" >
                                     </div>
@@ -35,7 +35,7 @@ if (!productosFavoritosInservible) {
                                             <p class="free-ship"><a href="/productos/${producto.id}">Ver detalle</a></p>
                                     </div>
                                     <div class="chart-price">$
-                                    ${producto.price}
+                                        ${producto.price}
                                     </div>
                                 </article>
                             </li>

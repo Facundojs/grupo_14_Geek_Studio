@@ -89,6 +89,9 @@ ul li {
   max-width: 3rem;
   cursor: pointer;
 }
+.fas.fa-search{
+  cursor: pointer;
+}
 .fa.fa-bars.burger .log {
   max-width: 30%;
   text-align: right;
