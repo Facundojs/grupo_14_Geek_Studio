@@ -1231,12 +1231,25 @@ main section .img-main {
   color: #cc6b42;
 }
 
-main section .favorite-list {
+/* main section .favorite-list {
   background-color: var(--body-color);
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
   padding-bottom: 2rem;
+} */
+
+main section .chart-fav li {
+  border: gainsboro solid 1px;
+  border-radius: 0.5rem;
+  width: 100%;
+  margin: auto;
+  margin: 0.5rem 0rem 0.3rem;
+  padding: 10px 0;
+}
+
+main section .chart-fav li p {
+  text-align: center;
 }
 
 /* main section .favorite-list li {
@@ -2122,10 +2135,11 @@ p {
   }
 
   .chart-article {
-    width: 15%;
+    width: 100%;
     margin: 10px;
-    text-align: left;
+    text-align: center;
   }
+
 
   .chart-article-image {
     width: 100px;
@@ -2451,14 +2465,22 @@ p {
     font-weight: 800;
   }
 
-  /********************CARRITO*********************/
+   /******************** FAVORITOS *********************/
+
+  main section .chart-fav li p {
+    text-align: left;
+  }
+
+  /******************** CARRITO *********************/
 
   main section .chart-list li {
     padding: 0 10px;
   }
 
   .chart-article {
+    width: 15%;
     margin: 10px;
+    text-align: center;
   }
 
   .chart-description {
