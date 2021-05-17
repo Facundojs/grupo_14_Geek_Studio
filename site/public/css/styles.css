@@ -19,18 +19,15 @@ body {
   padding: 0.8rem;
 }
 
-
 /****************************** IMG NOT FOUND 404 *************************************/
 .img-center {
   align-items: center;
 }
 
-
 .img-notfound {
   width: 100%;
   height: 100%;
 }
-
 
 /************************************** Header-section *******************************/
 
@@ -89,7 +86,7 @@ ul li {
   max-width: 3rem;
   cursor: pointer;
 }
-.fas.fa-search{
+.fas.fa-search {
   cursor: pointer;
 }
 .fa.fa-bars.burger .log {
@@ -134,7 +131,7 @@ header a:hover {
 
 .user-options a,
 .user-options a span {
-  padding: .5rem;
+  padding: 0.5rem;
   align-items: flex-end;
   right: 30px;
   display: flex;
@@ -638,8 +635,6 @@ header a:hover {
   color: red;
 }
 
-
-
 /* //////////////////////// LOGIN, REGISTER Y RECOVER PASS ////////////////////////// */
 
 .login-container .form-login {
@@ -691,48 +686,48 @@ header a:hover {
 }
 
 .textbox-login {
-    width: 40%;
-    overflow: hidden;
-    font-size: 20px;
-    padding: 8px 0;
-    margin: 8px 0 30px 0;
-    border-bottom: 2px solid #2ecece;
-  }
+  width: 40%;
+  overflow: hidden;
+  font-size: 20px;
+  padding: 8px 0;
+  margin: 8px 0 30px 0;
+  border-bottom: 2px solid #2ecece;
+}
 
-  .textbox-login input .text-form {
-    font-size: 8px;
-  }
+.textbox-login input .text-form {
+  font-size: 8px;
+}
 
-  .textbox-login i {
-    display: flex;
-    flex-wrap: wrap;
-    width: 26px;
-    float: left;
-    text-align: center;
-    color: var(--oscuro);
-  }
+.textbox-login i {
+  display: flex;
+  flex-wrap: wrap;
+  width: 26px;
+  float: left;
+  text-align: center;
+  color: var(--oscuro);
+}
 
-  .textbox-login input {
-    border: none;
-    outline: none;
-    background: none;
-    font-size: 18px;
-    width: 80%;
-    float: left;
-    margin: 0 10px;
-    color: white;
-  }
+.textbox-login input {
+  border: none;
+  outline: none;
+  background: none;
+  font-size: 18px;
+  width: 80%;
+  float: left;
+  margin: 0 10px;
+  color: white;
+}
 
-  .textbox-login select {
-    height: 40px;
-  }
+.textbox-login select {
+  height: 40px;
+}
 
-  .btn-avatar input {
-    width: 80%;
-    font-size: 20px;
-    color: white;
-    /* background-color: green; */
-  }
+.btn-avatar input {
+  width: 80%;
+  font-size: 20px;
+  color: white;
+  /* background-color: green; */
+}
 
 .btn-login {
   width: 100px;
@@ -765,7 +760,6 @@ header a:hover {
 
 /* /////////////////////////////////// EDIT USER MAURO /////////////////////////////////// */
 
-
 .select-img {
   font-size: 1rem;
   padding: 20px;
@@ -778,13 +772,11 @@ header a:hover {
   color: white;
 }
 
-
 /* .delete-user {
   display: flex;
   flex-direction: column;
   text-align: center;
 } */
-
 
 .btn-delete-user {
   width: 100%;
@@ -944,7 +936,6 @@ header a:hover {
   color: white;
 }
 
-
 /******************************************** FAQS *************************************/
 .faq {
   color: gainsboro;
@@ -1017,7 +1008,7 @@ header a:hover {
   display: none;
 }
 
-/* Esto agranda el de Seleccionar un pais */ 
+/* Esto agranda el de Seleccionar un pais */
 .textbox-login {
   width: 100%;
   font-size: 15px;
@@ -1123,17 +1114,14 @@ main section .chart-item div {
   margin: auto;
 }
 .user-buttons .secondary-options div {
-  border: black 4px solid;
   margin: auto;
   margin: 1rem;
-  padding: 0.5rem;
-  background-color: orange;
   display: inline;
   text-align: center;
 }
 .user-buttons .secondary-options div a {
   text-decoration: none;
-  color: black;
+  display: block;
 }
 .purchase-option {
   color: white;
@@ -1201,7 +1189,7 @@ main section .img-main {
   background-image: linear-gradient(to right, var(--oscuro) 0%, var(--blue)  51%, var(--oscuro)  100%); */
 }
 
-/* /////////////////// Favorite Heart & Empty /////////////////// */ 
+/* /////////////////// Favorite Heart & Empty /////////////////// */
 
 .favorite-heart {
   text-align: center;
@@ -1271,7 +1259,7 @@ ul .a-fav {
   text-decoration: none;
 }
 
-/* /////////////////// FIN /////////////////// */ 
+/* /////////////////// FIN /////////////////// */
 
 /* Precio y Descuento */
 .price-discount {
@@ -1292,7 +1280,7 @@ ul .a-fav {
   font-size: 2.5rem;
 }
 
-.discount-detail p{
+.discount-detail p {
   font-size: 1.2rem;
   border-radius: 50%;
   padding: 15px;
@@ -1572,14 +1560,14 @@ main section .product .product-features {
   padding: 5%;
 }
 
-main section .product .product-features .feature h2{
+main section .product .product-features .feature h2 {
   width: 100%;
   font-weight: bold;
   /* text-align: center; */
   padding-bottom: 10px;
 }
 
-main section .product .product-features .feature h4{
+main section .product .product-features .feature h4 {
   width: 100%;
   font-weight: 500;
 }
@@ -2017,19 +2005,17 @@ h2 {
 
   /* /////////////////////////////////// EDIT USER MAURO /////////////////////////////////// */
 
+  .select-img {
+    font-size: 1.2rem;
+    padding: 20px;
+    color: white;
+  }
 
-.select-img {
-  font-size: 1.2rem;
-  padding: 20px;
-  color: white;
-}
-
-.select-img label {
-  width: 100%;
-  padding: 10px;
-  color: white;
-}
-
+  .select-img label {
+    width: 100%;
+    padding: 10px;
+    color: white;
+  }
 }
 
 @media (min-width: 1200px) {
@@ -2138,7 +2124,6 @@ p {
     text-align: center;
   }
 
-
   .chart-article-image {
     width: 100px;
     height: 100px;
@@ -2182,14 +2167,13 @@ p {
     color: gainsboro;
   }
 
-  
-.purchase-option button {
-  width: 40%;
-  margin: auto;
-  font-size: 16px;
-}
+  .purchase-option button {
+    width: 40%;
+    margin: auto;
+    font-size: 16px;
+  }
 
-/* ////////////////////////////////////// FOOTER //////////////////////////////////////// */
+  /* ////////////////////////////////////// FOOTER //////////////////////////////////////// */
 
   footer nav {
     justify-content: space-between;
@@ -2238,56 +2222,56 @@ p {
 
   /*/////////////////// NUEVA VERSION PROFILE  /////////////////////////*/
 
-.container-profile {
-  margin-top: 30px;
-  justify-content: left;
-}
+  .container-profile {
+    margin-top: 30px;
+    justify-content: left;
+  }
 
-.row {
-  text-align: center;
-}
+  .row {
+    text-align: center;
+  }
 
-.prof-us-title {
-  color: white;
-  text-align: center;
-  font-size: 2.5rem;
-  font-weight: bolder;
-}
+  .prof-us-title {
+    color: white;
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: bolder;
+  }
 
-.prof-us-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: left;
-  max-width: 400px;
-}
+  .prof-us-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    max-width: 400px;
+  }
 
-.img-prof-us {
-  width: 50%;
-  height: 50%;
-  max-width: 200px;
-  max-height: 300px;
-  border-style: inset;
-}
+  .img-prof-us {
+    width: 50%;
+    height: 50%;
+    max-width: 200px;
+    max-height: 300px;
+    border-style: inset;
+  }
 
-.img-avatar {
-  margin-top: 30px;
-}
+  .img-avatar {
+    margin-top: 30px;
+  }
 
-.prof-us {
-  color: white;
-  text-align: left;
-  font-size: 1rem;
-  padding: 1rem 2rem;
-}
+  .prof-us {
+    color: white;
+    text-align: left;
+    font-size: 1rem;
+    padding: 1rem 2rem;
+  }
 
-.span-prof-us {
-  font-weight: bolder;
-}
+  .span-prof-us {
+    font-weight: bolder;
+  }
 
-.container-btn-prof {
-  text-align: center;
-  margin: 10px 0;
-}
+  .container-btn-prof {
+    text-align: center;
+    margin: 10px 0;
+  }
 
   /* //////////////////////////////////// Detalle del Producto /////////////////////////// */
 
@@ -2463,7 +2447,7 @@ p {
     font-weight: 800;
   }
 
-   /******************** FAVORITOS *********************/
+  /******************** FAVORITOS *********************/
 
   main section .chart-fav li p {
     text-align: left;

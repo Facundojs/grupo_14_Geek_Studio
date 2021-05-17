@@ -16,14 +16,14 @@
                     <article class="purchase-option">
                         <h2>Resumén de compra</h2>
                         <div>Importe total: <b id="final-price"></b></div>
-                        <button type="submit" id="presupuesto">Generar presupuesto</button>
+                        <a class="btn btn-primary btn-lg" href="/carroPdf" id="presupuesto" target="_blank">Descargar Presupuesto</a>
                     </article>
                     <div class="secondary-options">
                         <div>
-                            <a href="/productos">Continuar comprando</a>
+                            <a class="btn btn-primary btn-lg" href="/productos">Continuar comprando</a>
                         </div>
                         <div>
-                            <a href="/productos/carro" id="vaciar-carrito">Vaciar carrito</a>
+                            <a class="btn btn-primary btn-lg" href="/productos/carro" id="vaciar-carrito">Vaciar carrito</a>
                         </div>
                     </div>
                 </div>
@@ -36,9 +36,7 @@
             </div>
           </div>
 
-          <script src="/js/gotop.js"></script>
-          <script src="/js/budget.js"></script>
-
+          <script src="/js/gotop.js"></script>        
     </main>
     <%- include('./partials/footer.ejs') %>
     <!-- <script src="/js/show-carrito.js"></script> -->

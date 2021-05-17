@@ -9,6 +9,35 @@ let idCarro = productosEnCarro.map((producto) => {
   return parseInt(producto.id);
 });
 
+function exportPdfFile() {
+  const $convertir = document.body;
+  html2pdf()
+    .set({
+      margin: 1,
+      filename: "presupuesto-geek-studio.pdf",
+      image: {
+        type: "jpeg",
+        quality: 0.98,
+      },
+      html2canvas: {
+        scale: 3,
+        letterRendering: true,
+      },
+      jsPDF: {
+        unit: "in",
+        format: "a3",
+        orientation: "portrait",
+      },
+    })
+    .from($convertir)
+    .save()
+    .catch((err) => console.log(err))
+    .finally()
+    .then(() => {
+      console.log("Guardado");
+    });
+}
+
 fetch("/api/products")
   .then((res) => res.json())
   .then((products) => {
@@ -19,7 +48,7 @@ fetch("/api/products")
     });
     filtrados.forEach((producto) => {
       precioTotal += parseInt(producto.price);
-      console.log(precioTotal)
+      console.log(precioTotal);
       listaPresupuesto.innerHTML += `
                 <article class="carro-pdf">
                 <div class="img-item">
@@ -35,4 +64,5 @@ fetch("/api/products")
                 `;
     });
     finalPrice.innerHTML = `$${precioTotal}`;
+    exportPdfFile();
   });
