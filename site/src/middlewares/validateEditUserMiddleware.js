@@ -49,7 +49,7 @@ module.exports = [
     body("country").not().contains('Selecciona un país').withMessage('Selecciona un país').bail(),
     body("avatar").custom((value, { req }) => {
       let file = req.file;
-      let acceptedExtensions = [".jpg", ".png", ".gif"];
+      let acceptedExtensions = [".jpg", ".jpeg", ".png", ".gif"];
       let fileExtension = path.extname(file.originalname);
   
       if (!file) {

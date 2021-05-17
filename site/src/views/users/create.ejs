@@ -65,8 +65,8 @@
                 </div>
                 <p id="feedback-telephone" class="hidden feedback is-danger">Debe ingresar un telefono correcto</p>
 
-                <div class="btn-avatar">
-                    <!-- <label for="avatar">Seleccionar Imagen Perfil</label> -->
+                <div class="select-img">
+                    <label for="avatar">Seleccionar imagen de perfil:</label>
                     <input type="file" class="file" name="avatar" id="avatar" 
                     value="<%= locals.oldData ? oldData.avatar : null %>">
                 </div>
@@ -75,7 +75,7 @@
                         <%= errors.avatar.msg %>
                     </div>
                 <% } %>
-                <p id="feedback-avatar" class="hidden feedback is-danger">Debe ingresar una imagen correcta</p>
+                <p id="feedback-avatar" class="hidden feedback is-danger">Debe ingresar una extensión de imagen correcta (.jpg, .jpeg, .png o .gif)</p>
 
                 <div class="textbox-login">
                     <i class="fa fa-lock" aria-hidden="true"></i>

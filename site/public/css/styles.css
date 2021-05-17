@@ -107,7 +107,7 @@ ul li {
 }
 
 .nav-2 ul a {
-  font-size: 1rem;
+  font-size: .6rem;
 }
 
 header a:hover {
@@ -877,7 +877,7 @@ header a:hover {
 .prof-us-title {
   color: white;
   text-align: center;
-  font-size: 3rem;
+  font-size: 1.5rem;
   font-weight: bolder;
 }
 
@@ -2116,6 +2116,12 @@ p {
   }
 }
 
+@media (min-width: 468px) {
+  .nav-2 ul a {
+    font-size: .8rem;
+  }
+}
+
 @media (min-width: 576px) {
   .fa.fa-bars.burger {
     display: block;
@@ -2128,6 +2134,10 @@ p {
   .nav-2 {
     display: block;
     padding-top: 40px;
+  }
+
+  .nav-2 ul a {
+    font-size: 1rem;
   }
 
   main section .product .product-features {
