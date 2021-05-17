@@ -89,6 +89,7 @@ ul li {
 .fas.fa-search {
   cursor: pointer;
 }
+
 .fa.fa-bars.burger .log {
   max-width: 30%;
   text-align: right;
@@ -112,21 +113,34 @@ ul li {
 header a:hover {
   color: var(--orange);
 }
+
 .bvar-container {
-  display: flex;
+  width: 100%;
   justify-content: center;
   align-items: center;
+  padding: 1rem;
+}
+
+.search-container {
+  width: 100%;
+  flex-wrap: nowrap;
 }
 
 .browser-bar {
-  width: 70%;
+  width: 80%;
   height: 2rem;
   max-width: 400px;
   border-radius: 0.5rem;
   font-size: 0.8rem;
   padding-left: 0.5rem;
-  order: 1;
-  margin: 1rem auto;
+  margin-left: 0.2rem;
+}
+
+.browser-icon {
+  margin-left: 4px;
+  padding: 4px;
+  color: gainsboro;
+  cursor: pointer;
 }
 
 .user-options a,
@@ -1095,6 +1109,10 @@ main section .chart-item div {
   color: gainsboro;
 }
 
+.chart-quantity select {
+  cursor: pointer;
+}
+
 .chart-price {
   width: 100%;
   text-align: center;
@@ -1181,12 +1199,18 @@ main section .img-main {
 }
 
 .title-detail h2 {
-  font-size: 35px;
+  font-size: 20px;
   font-weight: bolder;
   border-radius: 10px;
   /* background-color: var(--blue);
   color: white;
   background-image: linear-gradient(to right, var(--oscuro) 0%, var(--blue)  51%, var(--oscuro)  100%); */
+}
+
+/******************** FAVORITOS *********************/
+
+main section .chart-fav li p {
+  text-align: left;
 }
 
 /* /////////////////// Favorite Heart & Empty /////////////////// */
@@ -1225,6 +1249,11 @@ main section .img-main {
   padding-bottom: 2rem;
 } */
 
+section .chart-fav {
+  width: 100%;
+  text-align: center;
+}
+
 main section .chart-fav li {
   border: gainsboro solid 1px;
   border-radius: 0.5rem;
@@ -1247,13 +1276,22 @@ main section .chart-fav li p {
   padding: 10px 0;
 } */
 
-ul .h2-fav {
+.h2-fav {
+  width: 100%;
   color: white;
   font-size: 1.5rem;
   text-align: center;
+  padding: 1rem;
+}
+
+.container-a-fav {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
 }
 
 ul .a-fav {
+  width: 100%;
   font-size: 1.3rem;
   text-align: center;
   text-decoration: none;
@@ -1953,7 +1991,7 @@ h2 {
 /************************************************************************************************************************/
 
 @media (min-width: 992px) {
-  ul {
+  /* ul {
     padding: 0;
   }
   section ul {
@@ -1965,7 +2003,7 @@ h2 {
   section ul li {
     width: 40%;
     margin: auto;
-  }
+  } */
 
   header .nav-1 .user-options {
     max-width: 30%;
@@ -2001,6 +2039,15 @@ h2 {
   .for-sale .articles ul li {
     width: 46%;
     margin: 2%;
+  }
+
+  /* /////////////////////////////////// HEADER / BROWSER BAR  /////////////////////////////////// */
+
+  .bvar-container {
+    display: flex;
+    width: 70%;
+    justify-content: center;
+    flex-wrap: wrap;
   }
 
   /* /////////////////////////////////// EDIT USER MAURO /////////////////////////////////// */
@@ -2165,6 +2212,7 @@ p {
     text-align: center;
     align-items: center;
     color: gainsboro;
+    cursor: pointer;
   }
 
   .purchase-option button {
@@ -2218,6 +2266,12 @@ p {
 
   .nav-2 ul a {
     font-size: 1.2rem;
+  }
+
+  /********************************* Detalle del producto **********************************/
+
+  .title-detail h2 {
+    font-size: 28px;
   }
 
   /*/////////////////// NUEVA VERSION PROFILE  /////////////////////////*/
@@ -2447,12 +2501,6 @@ p {
     font-weight: 800;
   }
 
-  /******************** FAVORITOS *********************/
-
-  main section .chart-fav li p {
-    text-align: left;
-  }
-
   /******************** CARRITO *********************/
 
   main section .chart-list li {
@@ -2467,6 +2515,12 @@ p {
 
   .chart-description {
     width: 35%;
+  }
+
+  .chart-description .free-ship,
+  .chart-description h3 {
+    text-align: left;
+    padding-left: 1rem;
   }
 
   .chart-article-image {
@@ -2606,6 +2660,12 @@ p {
     text-align: center;
     margin-top: -100px;
     font-weight: 800;
+  }
+
+  /********************************* Detalle del producto **********************************/
+
+  .title-detail h2 {
+    font-size: 32px;
   }
 
   /***********************************************************************************************/
