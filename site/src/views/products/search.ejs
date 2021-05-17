@@ -5,7 +5,7 @@
 <body>
     <%- include('../partials/header.ejs') %>
     <main>
-      <div> Lista de Productos</div> 
+      <h1 class="chart-title"> Lista de Productos</h1> 
       <ul class="row-all products-list" id="productos-encontrados">
         <% if (productosEncontrados  !== "No se encontraron coincidencias" && productosEncontrados.length !== 0 ) { 
            productosEncontrados.forEach(product => { %>
@@ -35,7 +35,14 @@
 
         <% })
         } else { %>
-          <div> No se encontraron coincidencias</div>
+          <h2 class="h2-fav"> No se encontraron coincidencias <i class="fas fa-frown"></i></h2>
+          <div class="container-a-fav">
+            <a href="/" class="a-fav">
+            Volver a la Home
+            <a href="/productos" class="a-fav">
+            Mostrar catálogo de productos
+            </a>
+          </div>
         <% } %>
       </ul>
     </main>

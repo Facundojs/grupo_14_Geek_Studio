@@ -4,9 +4,13 @@ let listaFavoritos = document.querySelector("#lista-favoritos")
 if (!productosFavoritosInservible) {
     listaFavoritos.innerHTML += `
     <h2 class="h2-fav">No tiene artículos guardados como Favoritos <i class="fas fa-heart-broken"></i></h2>
-    <a href="/" class="a-fav">
-    Volver a la Home
-    </a>
+    <div class="container-a-fav">
+        <a href="/" class="a-fav">
+        Volver a la Home
+        <a href="/productos" class="a-fav">
+        Mostrar catálogo de productos
+        </a>
+    </div>
     `
 } else {
     let productosFavoritos = productosFavoritosInservible.map((elemento) => {
