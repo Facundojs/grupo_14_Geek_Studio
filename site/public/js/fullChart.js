@@ -87,9 +87,15 @@ if (pathName === "/productos/carro") {
     let recoveredData = localStorage.getItem("articulosCarrito");
     if (recoveredData != null) {
       let data = JSON.parse(recoveredData);
-      console.log(data);
       data.push(infoProducto);
-      console.log(data);
+      // Toast
+      console.log("AGREGAR PRODUCTO");
+      Toastify({
+        text: "Articulo agregado al carro",
+        duration: 3000,
+        backgroundColor: "linear-gradient(to right, #00b09b, #96c93d)",
+      }).showToast();
+
       return localStorage.setItem("articulosCarrito", JSON.stringify(data));
     } else {
       articulosCarrito.push(infoProducto);

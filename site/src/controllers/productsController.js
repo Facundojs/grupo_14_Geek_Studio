@@ -1,6 +1,7 @@
 const { validationResult } = require("express-validator");
 const db = require("../../../database/models");
 const { sequelize } = require("../../../database/models");
+const fetch = require("node-fetch");
 
 // const { Product, Category } = require('../database/models')
 
@@ -146,7 +147,19 @@ module.exports = {
       });
   },
 
-  productsSearched: (req, res) => {
-    res.render("products/search");
+  productsSearched: async (req, res) => {
+    let busqueda = req.query.keyword;
+    console.log("busqueda ", busqueda);
+    if (busqueda !== "") {
+      const productosEncontrados = await fetch(
+        "http://localhost:3000/api/products/search?keyword=" + busqueda
+      )
+        .then((res) => res.json())
+        .then((data) => data);
+
+      res.render("products/search", { productosEncontrados });
+    } else {
+      res.render("products/search", { productosEncontrados: [] });
+    }
   },
 };

@@ -7,16 +7,39 @@
     <main>
       <div> Lista de Productos</div> 
       <ul class="row-all products-list" id="productos-encontrados">
-        <!-- MAURO ACA HACES TU MAGIA -->
+        <% if (productosEncontrados  !== "No se encontraron coincidencias" && productosEncontrados.length !== 0 ) { 
+           productosEncontrados.forEach(product => { %>
+            <div class="col-4">
+              <a href="/productos/<%= product.id %>">
+                  <div class="image">
+                  <img src="/img/products/<%= product.image %>" alt="<%= product.name %>">
+                  </div>
+                  
+                  <div class="prod-description">
+                      <h4>
+                        <%= product.name %>
+                      </h4>
+                  
+                      <p>
+                        <%= product.price %>
+                      </p>
+                  </div>
+              </a>
+
+              <div class="chart-button">
+                  <button data-id="<%= product.id %>" id="#<%= product.id %>" class="button-chart agregar-carrito" type="submit">
+                      Agregar al carro <i class="fas fa-shopping-cart "></i>
+                  </button>
+            </div>  
+          </div>
+
+        <% })
+        } else { %>
+          <div> No se encontraron coincidencias</div>
+        <% } %>
       </ul>
-
-    
-
-    
-
     </main>
     <script src="/js/fullChart.js"></script>
-    <script src="/js/showFindedProducts.js"></script>
     <%- include('../partials/footer.ejs') %>
 </body>
 </html>
