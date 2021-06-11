@@ -226,7 +226,7 @@ module.exports = {
         name: "GABINETE MSI VAMPIRIC 010",
         price: 10742,
         discount: 0,
-        category_id: 1,
+        category_id: 3,
         image: "gabinete-msi-vampiric-010-0.jpg",
         features:
           "Inspirada en el duque de Dark Knight: Drácula. Con una combinación de negro y gris, es tan tranquilo y misterioso",

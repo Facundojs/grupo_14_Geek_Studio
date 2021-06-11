@@ -1,11 +1,11 @@
-require('dotenv').config()
+require("dotenv").config();
 module.exports = {
-    development: {
-    username:`${process.env.USERNAME_GEEK_DB}`,
+  development: {
+    username: `${process.env.USERNAME_GEEK_DB}`,
     password: `${process.env.PASSWORD_GEEK_DB}`,
     database: `${process.env.DATABASE_GEEK_DB}`,
     host: `${process.env.HOST_GEEK_DB}`,
-    dialect: `${process.env.DIALECT_GEEK_DB}`
+    dialect: `${process.env.DIALECT_GEEK_DB}`,
   },
   // development: {
   //   username: "root",
@@ -22,12 +22,12 @@ module.exports = {
     dialect: "mysql",
   },
   production: {
-    username:`${process.env.USERNAME_GEEK_DB}`,
+    username: `${process.env.USERNAME_GEEK_DB}`,
     password: `${process.env.PASSWORD_GEEK_DB}`,
     database: `${process.env.DATABASE_GEEK_DB}`,
     host: `${process.env.HOST_GEEK_DB}`,
     dialect: `${process.env.DIALECT_GEEK_DB}`,
-  }
+  },
 };
 
 //"127.0.0.1"
